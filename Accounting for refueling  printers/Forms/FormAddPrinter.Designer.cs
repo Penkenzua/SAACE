@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormAdd
+    partial class FormAddPrinter
     {
         /// <summary>
         /// Required designer variable.
@@ -196,7 +196,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.catridgeTableAdapter.ClearBeforeFill = true;
             // 
-            // FormAdd
+            // FormAddPrinter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,7 +213,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdd);
-            this.Name = "FormAdd";
+            this.Name = "FormAddPrinter";
             this.Text = "Добавление в БД";
             this.Load += new System.EventHandler(this.FormAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();

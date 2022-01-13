@@ -241,7 +241,7 @@ namespace Accounting_for_refueling__printers
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormAdd(), sender);
+            OpenChildForm(new Forms.FormAddPrinter(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
 
@@ -443,6 +443,111 @@ namespace Accounting_for_refueling__printers
             UpdateRAM();
             lblTittle.Text = "Оперативная память" +
                 "";
+        }
+
+        private void btnAddPC_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddPC(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnSearchPC_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchPC(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEdditPC_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchPC(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnAddOC_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddOC(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnSearchOC_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchOC(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEdditOC_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEdditPC(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnAddCPU_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddCPU(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnSearchCPU_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchCPU(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEdditCPU_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEdditCPU(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnAddGPU_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddGPU(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnSearchGPU_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchGPU(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEdditGPU_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEdditGPU(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnAddRAM_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddRAM(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnSearchRAM_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchRAM(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEdditRAM_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEdditRAM(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
         }
     }
 

@@ -100,6 +100,114 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSearchCPU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchCPU.Designer.cs">
+      <DependentUpon>FormSearchCPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddCatridge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddCatridge.Designer.cs">
+      <DependentUpon>FormAddCatridge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddCPU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddCPU.Designer.cs">
+      <DependentUpon>FormAddCPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddGPU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddGPU.Designer.cs">
+      <DependentUpon>FormAddGPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddOC.Designer.cs">
+      <DependentUpon>FormAddOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddPC.Designer.cs">
+      <DependentUpon>FormAddPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddRAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddRAM.Designer.cs">
+      <DependentUpon>FormAddRAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEdditCatridge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEdditCatridge.Designer.cs">
+      <DependentUpon>FormEdditCatridge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEdditCPU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEdditCPU.Designer.cs">
+      <DependentUpon>FormEdditCPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEdditGPU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEdditGPU.Designer.cs">
+      <DependentUpon>FormEdditGPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEdditOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEdditOC.Designer.cs">
+      <DependentUpon>FormEdditOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEdditPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEdditPC.Designer.cs">
+      <DependentUpon>FormEdditPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEdditRAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEdditRAM.Designer.cs">
+      <DependentUpon>FormEdditRAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSearchCatridge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSearchCatridge.Designer.cs">
+      <DependentUpon>FormSearchCatridge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSearchCPU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSearchCPU.Designer.cs">
+      <DependentUpon>FormSearchCPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSearchGPU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSearchGPU.Designer.cs">
+      <DependentUpon>FormSearchGPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSearchOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSearchOC.Designer.cs">
+      <DependentUpon>FormSearchOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSearchPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSearchPC.Designer.cs">
+      <DependentUpon>FormSearchPC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormSearchPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +226,12 @@
     <Compile Include="Forms\FormEdditPrinter.Designer.cs">
       <DependentUpon>FormEdditPrinter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormSearchRAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSearchRAM.Designer.cs">
+      <DependentUpon>FormSearchRAM.cs</DependentUpon>
+    </Compile>
     <Compile Include="PathDatabase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +244,9 @@
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddCPU.resx">
+      <DependentUpon>FormAddCPU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchPrinter.resx">
       <DependentUpon>FormSearchPrinter.cs</DependentUpon>
