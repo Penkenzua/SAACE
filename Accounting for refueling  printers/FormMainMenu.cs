@@ -110,11 +110,58 @@ namespace Accounting_for_refueling__printers
                 PanelRAMSubMenu.Visible = false;
             }
         }
-        public void UpdateTable()
+        public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Id,Printer.Дата,Printer.Кабинет,Catridge.Модель,Printer.Операции,Printer.Состояние From Printer   Join Catridge on Printer.Катридж = Catridge.C_Id", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Id,Printer.Дата,Printer.Кабинет,Catridge.Модель as 'Модель катриджа',Printer.Операции,Printer.Состояние From Printer " +
+                "Join Catridge on Printer.Катридж = Catridge.C_Id", sqlConnection);
             DataSet dataSet = new DataSet();
-            
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdateCatrdige()
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from Catridge", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdateCPU()
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from CPU", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdateGPU()
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from GPU", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdateOC()
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from OC", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdatePC()
+
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as ID, PC.Модель, OC.Модель As 'Операционная система',CPU.Модель as 'Модель процессора',GPU.Модель as 'Модель видеокарты',RAM.Модель as 'Модель ОЗУ' from PC " +
+                "JOIN OC on PC.OC = OC.OC_ID" +
+                "JOIN CPU on PC.CPU = CPU.CPU_ID" +
+                "JOIN GPU on PC.GPU = GPU.GPU_ID" +
+                "JOIN RAM on PC.RAM = RAM.RAM_ID", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdateRAM()
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from RAM", sqlConnection);
+            DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
@@ -285,7 +332,7 @@ namespace Accounting_for_refueling__printers
                         sqlConnection.Open();
                     }
                 } 
-                    UpdateTable();
+                    UpdatePrinter();
 
                         if (sqlConnection.State == ConnectionState.Open)
                         {   
@@ -313,7 +360,7 @@ namespace Accounting_for_refueling__printers
                 {
                     SqlCommand VDeleteLast3 = new SqlCommand($"Delete from Printer where id ={znachenie}", sqlConnection);
                     VDeleteLast3.ExecuteNonQuery();
-                    UpdateTable();
+                    UpdatePrinter();
                 }
                 else
                 {
@@ -334,7 +381,7 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = false;
             ShowSubMenu(PanelPrinterSubMenu);
             dataGridView1.Visible = true;
-            UpdateTable();
+            UpdatePrinter();
             lblTittle.Text = "Принтеры";
         }
 
@@ -346,8 +393,9 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = false;
             ShowSubMenu(PanelPCSubMenu);
             dataGridView1.Visible = true;
-            UpdateTable();
+            UpdatePC();
             lblTittle.Text = "Компьютеры";
+
         }
 
         private void btnOC_Click(object sender, EventArgs e)
@@ -358,7 +406,7 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = false;
             ShowSubMenu(PanelOCSubMenu);
             dataGridView1.Visible = true;
-            UpdateTable();
+            UpdateOC();
             lblTittle.Text = "Операционные системы";
         }
 
@@ -369,7 +417,7 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = false;
             ShowSubMenu(PanelCPUSubMenu);
             dataGridView1.Visible = true;
-            UpdateTable();
+            UpdateCPU();
             lblTittle.Text = "Процессоры";
         }
 
@@ -380,7 +428,7 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = false;
             ShowSubMenu(PanelGPUSubMenu);
             dataGridView1.Visible = true;
-            UpdateTable();
+            UpdateGPU();
             lblTittle.Text = "Видеокарты";
         }
 
@@ -391,7 +439,7 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = false;
             ShowSubMenu(PanelRAMSubMenu);
             dataGridView1.Visible = true;
-            UpdateTable();
+            UpdateRAM();
             lblTittle.Text = "Оперативная память" +
                 "";
         }

@@ -54,7 +54,7 @@ namespace Accounting_for_refueling__printers.Forms
 
             if (Update1.ExecuteNonQuery() >= 1)
             {
-                FormMainMenu.SelfRef.UpdateTable();
+                FormMainMenu.SelfRef.UpdatePrinter();
 
 
             }
