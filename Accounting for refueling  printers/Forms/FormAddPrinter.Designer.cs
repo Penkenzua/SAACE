@@ -40,17 +40,22 @@ namespace Accounting_for_refueling__printers.Forms
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet4 = new Accounting_for_refueling__printers.DatabaseDataSet4();
-            this.printerTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSet4TableAdapters.PrinterTableAdapter();
+            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.catridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.printerTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.PrinterTableAdapter();
+            this.catridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CatridgeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(249, 216);
+            this.btnAdd.Location = new System.Drawing.Point(249, 250);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(200, 45);
             this.btnAdd.TabIndex = 6;
@@ -106,17 +111,17 @@ namespace Accounting_for_refueling__printers.Forms
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(163, 170);
+            this.label4.Location = new System.Drawing.Point(170, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 18);
+            this.label4.Size = new System.Drawing.Size(73, 18);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Операции:";
+            this.label4.Text = "Катридж:";
             // 
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(249, 170);
+            this.textBox2.Location = new System.Drawing.Point(249, 203);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(200, 24);
             this.textBox2.TabIndex = 4;
@@ -147,16 +152,49 @@ namespace Accounting_for_refueling__printers.Forms
             // printerBindingSource
             // 
             this.printerBindingSource.DataMember = "Printer";
-            this.printerBindingSource.DataSource = this.databaseDataSet4;
+            this.printerBindingSource.DataSource = this.databaseDataSet;
             // 
-            // databaseDataSet4
+            // databaseDataSet
             // 
-            this.databaseDataSet4.DataSetName = "DatabaseDataSet4";
-            this.databaseDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(163, 206);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 18);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Операции:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.comboBox2.DataSource = this.catridgeBindingSource;
+            this.comboBox2.DisplayMember = "Модель";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(249, 170);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(200, 26);
+            this.comboBox2.TabIndex = 9;
+            // 
+            // catridgeBindingSource
+            // 
+            this.catridgeBindingSource.DataMember = "Catridge";
+            this.catridgeBindingSource.DataSource = this.databaseDataSet;
             // 
             // printerTableAdapter
             // 
             this.printerTableAdapter.ClearBeforeFill = true;
+            // 
+            // catridgeTableAdapter
+            // 
+            this.catridgeTableAdapter.ClearBeforeFill = true;
             // 
             // FormAdd
             // 
@@ -164,6 +202,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(733, 348);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
@@ -177,7 +217,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Text = "Добавление в БД";
             this.Load += new System.EventHandler(this.FormAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,8 +235,12 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private DatabaseDataSet4 databaseDataSet4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private DatabaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource printerBindingSource;
-        private DatabaseDataSet4TableAdapters.PrinterTableAdapter printerTableAdapter;
+        private DatabaseDataSetTableAdapters.PrinterTableAdapter printerTableAdapter;
+        private System.Windows.Forms.BindingSource catridgeBindingSource;
+        private DatabaseDataSetTableAdapters.CatridgeTableAdapter catridgeTableAdapter;
     }
 }

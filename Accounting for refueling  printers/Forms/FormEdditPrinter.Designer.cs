@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormEddit
+    partial class FormEdditPrinter
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet2 = new Accounting_for_refueling__printers.DatabaseDataSet2();
+           
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,10 +45,10 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.printerTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSet2TableAdapters.PrinterTableAdapter();
+          
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet2)).BeginInit();
+
             this.SuspendLayout();
             // 
             // comboBox2
@@ -77,12 +77,7 @@ namespace Accounting_for_refueling__printers.Forms
             // printerBindingSource
             // 
             this.printerBindingSource.DataMember = "Printer";
-            this.printerBindingSource.DataSource = this.databaseDataSet2;
-            // 
-            // databaseDataSet2
-            // 
-            this.databaseDataSet2.DataSetName = "DatabaseDataSet2";
-            this.databaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+  
             // 
             // dateTimePicker1
             // 
@@ -192,7 +187,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // printerTableAdapter
             // 
-            this.printerTableAdapter.ClearBeforeFill = true;
+
             // 
             // label6
             // 
@@ -228,7 +223,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.Text = "Изменение данных БД";
             this.Load += new System.EventHandler(this.FormEddit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,9 +243,9 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textBox1;
-        private DatabaseDataSet2 databaseDataSet2;
+
         private System.Windows.Forms.BindingSource printerBindingSource;
-        private DatabaseDataSet2TableAdapters.PrinterTableAdapter printerTableAdapter;
+
         private System.Windows.Forms.Label label6;
     }
 }

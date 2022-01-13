@@ -5,18 +5,17 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormEddit : Form
+    public partial class FormEdditPrinter : Form
     {
         private SqlConnection sqlConnection = null;
-        public FormEddit()
+        public FormEdditPrinter()
         {
             InitializeComponent();
         }
 
         private void FormEddit_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet2.Printer". При необходимости она может быть перемещена или удалена.
-            this.printerTableAdapter.Fill(this.databaseDataSet2.Printer);
+
 
             try
             {

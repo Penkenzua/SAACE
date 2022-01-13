@@ -10,11 +10,11 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormSearch : Form
+    public partial class FormSearchPrinter : Form
     {
         public string filter;
         private SqlConnection sqlConnection = null;
-        public FormSearch()
+        public FormSearchPrinter()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace Accounting_for_refueling__printers.Forms
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet5.Printer". При необходимости она может быть перемещена или удалена.
-            this.printerTableAdapter.Fill(this.databaseDataSet5.Printer);
+
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");

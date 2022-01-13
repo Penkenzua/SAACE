@@ -86,35 +86,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseDataSet.cs">
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet5.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormMainMenu.cs">
       <SubType>Form</SubType>
@@ -122,23 +100,23 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormSearch.cs">
+    <Compile Include="Forms\FormSearchPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormSearch.Designer.cs">
-      <DependentUpon>FormSearch.cs</DependentUpon>
+    <Compile Include="Forms\FormSearchPrinter.Designer.cs">
+      <DependentUpon>FormSearchPrinter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAdd.cs">
+    <Compile Include="Forms\FormAddPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAdd.Designer.cs">
-      <DependentUpon>FormAdd.cs</DependentUpon>
+    <Compile Include="Forms\FormAddPrinter.Designer.cs">
+      <DependentUpon>FormAddPrinter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEddit.cs">
+    <Compile Include="Forms\FormEdditPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEddit.Designer.cs">
-      <DependentUpon>FormEddit.cs</DependentUpon>
+    <Compile Include="Forms\FormEdditPrinter.Designer.cs">
+      <DependentUpon>FormEdditPrinter.cs</DependentUpon>
     </Compile>
     <Compile Include="PathDatabase.cs" />
     <Compile Include="Program.cs" />
@@ -153,14 +131,14 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormSearch.resx">
-      <DependentUpon>FormSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormSearchPrinter.resx">
+      <DependentUpon>FormSearchPrinter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAdd.resx">
-      <DependentUpon>FormAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAddPrinter.resx">
+      <DependentUpon>FormAddPrinter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEddit.resx">
-      <DependentUpon>FormEddit.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEdditPrinter.resx">
+      <DependentUpon>FormEdditPrinter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,61 +162,6 @@
     </None>
     <None Include="DatabaseDataSet.xss">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet1.xsc">
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseDataSet1.xss">
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet2.xsc">
-      <DependentUpon>DatabaseDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseDataSet2.xss">
-      <DependentUpon>DatabaseDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet3.xsc">
-      <DependentUpon>DatabaseDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseDataSet3.xss">
-      <DependentUpon>DatabaseDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet4.xsc">
-      <DependentUpon>DatabaseDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseDataSet4.xss">
-      <DependentUpon>DatabaseDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet5.xsc">
-      <DependentUpon>DatabaseDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseDataSet5.xss">
-      <DependentUpon>DatabaseDataSet5.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

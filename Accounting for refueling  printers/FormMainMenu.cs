@@ -33,6 +33,7 @@ namespace Accounting_for_refueling__printers
             Thread.Sleep(5000);
 
             InitializeComponent();
+            customizeDesign();
             t.Abort(t);
             random = new Random();
             SelfRef = this;
@@ -52,10 +53,68 @@ namespace Accounting_for_refueling__printers
         {
             Application.Run(new SplashScreen());
         }
+        void customizeDesign()
+        {
+            PanelCPUSubMenu.Visible = false;
+            PanelGPUSubMenu.Visible = false;
+            PanelRAMSubMenu.Visible = false;
+            PanelOCSubMenu.Visible = false;
+            PanelPCSubMenu.Visible = false;
+            PanelPrinterSubMenu.Visible = false;
+
+        }
+        void hideSubMenu()
+        {
+            if (PanelPrinterSubMenu.Visible == true)
+            {
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelPrinterSubMenu.Visible = false;
+            }
+            if (PanelPCSubMenu.Visible == true)
+            {
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelPCSubMenu.Visible = false;
+            }
+            if (PanelCPUSubMenu.Visible == true)
+            {
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelCPUSubMenu.Visible = false;
+            }
+            if (PanelGPUSubMenu.Visible == true)
+            {
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelGPUSubMenu.Visible = false;
+            }
+            if (PanelOCSubMenu.Visible == true)
+            {
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelOCSubMenu.Visible = false;
+            }
+            if (PanelRAMSubMenu.Visible == true)
+
+            {
+
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelRAMSubMenu.Visible = false;
+            }
+        }
         public void UpdateTable()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * From Printer", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Id,Printer.Дата,Printer.Кабинет,Catridge.Модель,Printer.Операции,Printer.Состояние From Printer   Join Catridge on Printer.Катридж = Catridge.C_Id", sqlConnection);
             DataSet dataSet = new DataSet();
+            
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
@@ -107,6 +166,19 @@ namespace Accounting_for_refueling__printers
             childform.Show();
             lblTittle.Text = childform.Text;
         }
+        void ShowSubMenu(Panel subMenu)
+        {
+
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
         private void DisableButton()
         {
             foreach (Control previousBtn in panelMenu.Controls)
@@ -128,14 +200,14 @@ namespace Accounting_for_refueling__printers
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormSearch(), sender);
+            OpenChildForm(new Forms.FormSearchPrinter(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
 
         }
         private void btnEddit_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEddit(), sender);
+            OpenChildForm(new Forms.FormEdditPrinter(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
 
@@ -253,6 +325,75 @@ namespace Accounting_for_refueling__printers
         private void btnInfo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("\"Учёт заправки принтеров\" v1.0\nРазработал: Балабанов Артём Андреевич\nE-mail: artem.balabanov.2017@gmail.com","О программе",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void btnPrinters_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelPrinterSubMenu);
+            dataGridView1.Visible = true;
+            UpdateTable();
+            lblTittle.Text = "Принтеры";
+        }
+
+        private void btnPC_Click(object sender, EventArgs e)
+        {
+
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelPCSubMenu);
+            dataGridView1.Visible = true;
+            UpdateTable();
+            lblTittle.Text = "Компьютеры";
+        }
+
+        private void btnOC_Click(object sender, EventArgs e)
+        {
+
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelOCSubMenu);
+            dataGridView1.Visible = true;
+            UpdateTable();
+            lblTittle.Text = "Операционные системы";
+        }
+
+        private void btnCPU_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelCPUSubMenu);
+            dataGridView1.Visible = true;
+            UpdateTable();
+            lblTittle.Text = "Процессоры";
+        }
+
+        private void btnGPU_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelGPUSubMenu);
+            dataGridView1.Visible = true;
+            UpdateTable();
+            lblTittle.Text = "Видеокарты";
+        }
+
+        private void btnRAM_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelRAMSubMenu);
+            dataGridView1.Visible = true;
+            UpdateTable();
+            lblTittle.Text = "Оперативная память" +
+                "";
         }
     }
 

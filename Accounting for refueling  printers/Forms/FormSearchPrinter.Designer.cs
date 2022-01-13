@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormSearch
+    partial class FormSearchPrinter
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Accounting_for_refueling__printers.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearch));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearchPrinter));
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -47,18 +47,18 @@ namespace Accounting_for_refueling__printers.Forms
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet5 = new Accounting_for_refueling__printers.DatabaseDataSet5();
+            
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelTool = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.printerTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSet5TableAdapters.PrinterTableAdapter();
+           
             this.ExportinExcel = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet5)).BeginInit();
+
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelTool.SuspendLayout();
@@ -230,13 +230,7 @@ namespace Accounting_for_refueling__printers.Forms
             // printerBindingSource
             // 
             this.printerBindingSource.DataMember = "Printer";
-            this.printerBindingSource.DataSource = this.databaseDataSet5;
-            // 
-            // databaseDataSet5
-            // 
-            this.databaseDataSet5.DataSetName = "DatabaseDataSet5";
-            this.databaseDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
+
             // comboBox2
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -306,7 +300,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // printerTableAdapter
             // 
-            this.printerTableAdapter.ClearBeforeFill = true;
+
             // 
             // ExportinExcel
             // 
@@ -325,7 +319,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet5)).EndInit();
+
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelTool.ResumeLayout(false);
@@ -356,9 +350,9 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Panel panelTool;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnReturn;
-        private DatabaseDataSet5 databaseDataSet5;
+
         private System.Windows.Forms.BindingSource printerBindingSource;
-        private DatabaseDataSet5TableAdapters.PrinterTableAdapter printerTableAdapter;
+  
         private System.ComponentModel.BackgroundWorker ExportinExcel;
     }
 }
