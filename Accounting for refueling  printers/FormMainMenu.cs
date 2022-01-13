@@ -149,11 +149,12 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as ID, PC.Модель, OC.Модель As 'Операционная система',CPU.Модель as 'Модель процессора',GPU.Модель as 'Модель видеокарты',RAM.Модель as 'Модель ОЗУ' from PC " +
-                "JOIN OC on PC.OC = OC.OC_ID" +
-                "JOIN CPU on PC.CPU = CPU.CPU_ID" +
-                "JOIN GPU on PC.GPU = GPU.GPU_ID" +
-                "JOIN RAM on PC.RAM = RAM.RAM_ID", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as ID, PC.Модель, OC.Название As 'Операционная система'," +
+                "CPU.Модель as 'Модель процессора',GPU.Модель as 'Модель видеокарты',RAM.Модель as 'Модель ОЗУ' from PC " +
+                " JOIN OC on PC.OC = OC.OC_ID" +
+                " JOIN CPU on PC.CPU = CPU.CPU_ID" +
+                " JOIN GPU on PC.GPU = GPU.GPU_ID" +
+                " JOIN RAM on PC.RAM = RAM.RAM_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
