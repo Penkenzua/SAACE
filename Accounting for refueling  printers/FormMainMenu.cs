@@ -441,8 +441,7 @@ namespace Accounting_for_refueling__printers
             ShowSubMenu(PanelRAMSubMenu);
             dataGridView1.Visible = true;
             UpdateRAM();
-            lblTittle.Text = "Оперативная память" +
-                "";
+            lblTittle.Text = "Оперативная память";
         }
 
         private void btnAddPC_Click(object sender, EventArgs e)

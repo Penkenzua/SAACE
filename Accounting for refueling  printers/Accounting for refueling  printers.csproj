@@ -248,6 +248,18 @@
     <EmbeddedResource Include="Forms\FormAddCPU.resx">
       <DependentUpon>FormAddCPU.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddGPU.resx">
+      <DependentUpon>FormAddGPU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddOC.resx">
+      <DependentUpon>FormAddOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddPC.resx">
+      <DependentUpon>FormAddPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddRAM.resx">
+      <DependentUpon>FormAddRAM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchPrinter.resx">
       <DependentUpon>FormSearchPrinter.cs</DependentUpon>
     </EmbeddedResource>
