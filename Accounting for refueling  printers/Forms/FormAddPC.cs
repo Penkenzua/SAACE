@@ -17,6 +17,12 @@ namespace Accounting_for_refueling__printers.Forms
         public FormAddPC()
         {
             InitializeComponent();
+            comboBox1.Text = "";
+            comboBox2.Text = "";
+            comboBox3.Text = "";
+            comboBox4.Text = "";
+
+
         }
 
         private void FormAddPC_Load(object sender, EventArgs e)
@@ -39,6 +45,8 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + PathDatabase.Path + ";Integrated Security=True");
                 sqlConnection.Open();
             }
+        
+
 
         }
 
@@ -54,7 +62,7 @@ namespace Accounting_for_refueling__printers.Forms
             var gpu = GPU.ExecuteScalar().ToString();
             var ram = RAM.ExecuteScalar().ToString();
 
-            SqlCommand command = new SqlCommand("INSER INTO [PC] (Модель,OC,CPU,GPU,RAM) VALUES(@Модель,@OC,@CPU,@GPU,@RAM)", sqlConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO [PC] (Модель,OC,CPU,GPU,RAM) VALUES(@Модель,@OC,@CPU,@GPU,@RAM)", sqlConnection);
             command.Parameters.AddWithValue("Модель",textBox1.Text);
             command.Parameters.AddWithValue("OC", oc);
             command.Parameters.AddWithValue("CPU", cpu);

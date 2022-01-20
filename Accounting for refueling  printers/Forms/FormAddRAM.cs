@@ -32,5 +32,26 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection.Open();
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+
+
+                SqlCommand command = new SqlCommand("INSERT INTO [RAM] (Модель) VALUES(@Модель)", sqlConnection);
+                command.Parameters.AddWithValue("Модель", textBox1.Text);
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Вставка успешна завершена");
+                    FormMainMenu.SelfRef.UpdatePrinter();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Заполните все поля", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
