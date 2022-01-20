@@ -70,6 +70,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.textBox1);
             this.Name = "FormAddOC";
             this.Text = "FormAddOC";
+            this.Load += new System.EventHandler(this.FormAddOC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
