@@ -52,11 +52,11 @@ namespace Accounting_for_refueling__printers
             this.btnSearchOC = new System.Windows.Forms.Button();
             this.btnAddOC = new System.Windows.Forms.Button();
             this.btnOC = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelCatridgeSubMenu = new System.Windows.Forms.Panel();
             this.btnEdditCatridge = new System.Windows.Forms.Button();
             this.btnSearchCatridge = new System.Windows.Forms.Button();
             this.btnAddCatridge = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnCatridge = new System.Windows.Forms.Button();
             this.PanelPCSubMenu = new System.Windows.Forms.Panel();
             this.btnEdditPC = new System.Windows.Forms.Button();
             this.btnSearchPC = new System.Windows.Forms.Button();
@@ -83,7 +83,7 @@ namespace Accounting_for_refueling__printers
             this.PanelGPUSubMenu.SuspendLayout();
             this.PanelCPUSubMenu.SuspendLayout();
             this.PanelOCSubMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.PanelCatridgeSubMenu.SuspendLayout();
             this.PanelPCSubMenu.SuspendLayout();
             this.PanelPrinterSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -106,8 +106,8 @@ namespace Accounting_for_refueling__printers
             this.panelMenu.Controls.Add(this.btnCPU);
             this.panelMenu.Controls.Add(this.PanelOCSubMenu);
             this.panelMenu.Controls.Add(this.btnOC);
-            this.panelMenu.Controls.Add(this.panel1);
-            this.panelMenu.Controls.Add(this.button4);
+            this.panelMenu.Controls.Add(this.PanelCatridgeSubMenu);
+            this.panelMenu.Controls.Add(this.btnCatridge);
             this.panelMenu.Controls.Add(this.PanelPCSubMenu);
             this.panelMenu.Controls.Add(this.btnPC);
             this.panelMenu.Controls.Add(this.PanelPrinterSubMenu);
@@ -467,17 +467,17 @@ namespace Accounting_for_refueling__printers
             this.btnOC.UseVisualStyleBackColor = true;
             this.btnOC.Click += new System.EventHandler(this.btnOC_Click);
             // 
-            // panel1
+            // PanelCatridgeSubMenu
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.btnEdditCatridge);
-            this.panel1.Controls.Add(this.btnSearchCatridge);
-            this.panel1.Controls.Add(this.btnAddCatridge);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 485);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(168, 150);
-            this.panel1.TabIndex = 6;
+            this.PanelCatridgeSubMenu.AutoSize = true;
+            this.PanelCatridgeSubMenu.Controls.Add(this.btnEdditCatridge);
+            this.PanelCatridgeSubMenu.Controls.Add(this.btnSearchCatridge);
+            this.PanelCatridgeSubMenu.Controls.Add(this.btnAddCatridge);
+            this.PanelCatridgeSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelCatridgeSubMenu.Location = new System.Drawing.Point(0, 485);
+            this.PanelCatridgeSubMenu.Name = "PanelCatridgeSubMenu";
+            this.PanelCatridgeSubMenu.Size = new System.Drawing.Size(168, 150);
+            this.PanelCatridgeSubMenu.TabIndex = 6;
             // 
             // btnEdditCatridge
             // 
@@ -536,17 +536,18 @@ namespace Accounting_for_refueling__printers
             this.btnAddCatridge.UseVisualStyleBackColor = false;
             this.btnAddCatridge.Click += new System.EventHandler(this.btnAddCatridge_Click);
             // 
-            // button4
+            // btnCatridge
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button4.Location = new System.Drawing.Point(0, 448);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 37);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Катриджы";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCatridge.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCatridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatridge.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCatridge.Location = new System.Drawing.Point(0, 448);
+            this.btnCatridge.Name = "btnCatridge";
+            this.btnCatridge.Size = new System.Drawing.Size(168, 37);
+            this.btnCatridge.TabIndex = 13;
+            this.btnCatridge.Text = "Катриджы";
+            this.btnCatridge.UseVisualStyleBackColor = true;
+            this.btnCatridge.Click += new System.EventHandler(this.btnCatridge_Click);
             // 
             // PanelPCSubMenu
             // 
@@ -871,7 +872,7 @@ namespace Accounting_for_refueling__printers
             this.PanelGPUSubMenu.ResumeLayout(false);
             this.PanelCPUSubMenu.ResumeLayout(false);
             this.PanelOCSubMenu.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.PanelCatridgeSubMenu.ResumeLayout(false);
             this.PanelPCSubMenu.ResumeLayout(false);
             this.PanelPrinterSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -930,11 +931,11 @@ namespace Accounting_for_refueling__printers
         private System.Windows.Forms.Button btnSearchOC;
         private System.Windows.Forms.Button btnAddOC;
         private System.Windows.Forms.Button btnOC;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelCatridgeSubMenu;
         private System.Windows.Forms.Button btnEdditCatridge;
         private System.Windows.Forms.Button btnSearchCatridge;
         private System.Windows.Forms.Button btnAddCatridge;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCatridge;
     }
 }
 

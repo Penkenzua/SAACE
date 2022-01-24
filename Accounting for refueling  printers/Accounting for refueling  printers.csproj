@@ -266,8 +266,20 @@
     <EmbeddedResource Include="Forms\FormEdditCatridge.resx">
       <DependentUpon>FormEdditCatridge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEdditCPU.resx">
+      <DependentUpon>FormEdditCPU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEdditGPU.resx">
+      <DependentUpon>FormEdditGPU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEdditOC.resx">
+      <DependentUpon>FormEdditOC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEdditPC.resx">
       <DependentUpon>FormEdditPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEdditRAM.resx">
+      <DependentUpon>FormEdditRAM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchPrinter.resx">
       <DependentUpon>FormSearchPrinter.cs</DependentUpon>

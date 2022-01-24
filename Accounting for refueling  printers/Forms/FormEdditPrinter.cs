@@ -30,7 +30,7 @@ namespace Accounting_for_refueling__printers.Forms
 
 
             LoadTheme();
-            comboBox1.Text = "";
+            
 
 
 
@@ -84,7 +84,7 @@ namespace Accounting_for_refueling__printers.Forms
             }
             else
             {
-                MessageBox.Show("Записис таким id не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Запись таким id не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";

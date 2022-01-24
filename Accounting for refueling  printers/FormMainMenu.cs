@@ -60,6 +60,7 @@ namespace Accounting_for_refueling__printers
             PanelRAMSubMenu.Visible = false;
             PanelOCSubMenu.Visible = false;
             PanelPCSubMenu.Visible = false;
+            PanelCatridgeSubMenu.Visible = false;
             PanelPrinterSubMenu.Visible = false;
 
         }
@@ -108,6 +109,15 @@ namespace Accounting_for_refueling__printers
                     activeForm.Close();
                 btnCloseChildForm.Visible = false;
                 PanelRAMSubMenu.Visible = false;
+            }
+            if (PanelCatridgeSubMenu.Visible == true)
+
+            {
+
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelCatridgeSubMenu.Visible = false;
             }
         }
         public void UpdatePrinter()
@@ -410,7 +420,16 @@ namespace Accounting_for_refueling__printers
             UpdateOC();
             lblTittle.Text = "Операционные системы";
         }
-
+        private void btnCatridge_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelCatridgeSubMenu);
+            dataGridView1.Visible = true;
+            UpdateCatrdige();
+            lblTittle.Text = "Катриджи";
+        }
         private void btnCPU_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
@@ -482,7 +501,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnEdditOC_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEdditPC(), sender);
+            OpenChildForm(new Forms.FormEdditOC(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
@@ -570,6 +589,8 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
+
+    
     }
 
     } 

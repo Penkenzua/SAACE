@@ -46,7 +46,7 @@ namespace Accounting_for_refueling__printers.Forms
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешна завершена");
-                    FormMainMenu.SelfRef.UpdatePrinter();
+                    FormMainMenu.SelfRef.UpdateCatrdige();
 
                 }
             }
