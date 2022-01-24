@@ -58,6 +58,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Производитель:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
@@ -68,6 +69,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnSearch
             // 
@@ -88,6 +90,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Модель:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox2
             // 
@@ -98,6 +101,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 4;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // databaseDataSet
             // 

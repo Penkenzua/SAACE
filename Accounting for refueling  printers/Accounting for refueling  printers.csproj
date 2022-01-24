@@ -285,6 +285,15 @@
     <EmbeddedResource Include="Forms\FormSearchCatridge.resx">
       <DependentUpon>FormSearchCatridge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchCPU.resx">
+      <DependentUpon>FormSearchCPU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchGPU.resx">
+      <DependentUpon>FormSearchGPU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchOC.resx">
+      <DependentUpon>FormSearchOC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchPrinter.resx">
       <DependentUpon>FormSearchPrinter.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEdditPrinter.resx">
       <DependentUpon>FormEdditPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchRAM.resx">
+      <DependentUpon>FormSearchRAM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

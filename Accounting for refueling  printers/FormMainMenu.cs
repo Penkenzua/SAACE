@@ -122,7 +122,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Id,Printer.Дата,Printer.Кабинет,Catridge.Модель as 'Модель катриджа',Printer.Операции,Printer.Состояние From Printer " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Id as ID,Printer.Дата,Printer.Кабинет,Catridge.Модель as 'Модель катриджа',Printer.Операции,Printer.Состояние From Printer " +
                 "Join Catridge on Printer.Катридж = Catridge.C_Id", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
