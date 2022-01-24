@@ -282,6 +282,9 @@
     <EmbeddedResource Include="Forms\FormEdditRAM.resx">
       <DependentUpon>FormEdditRAM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchCatridge.resx">
+      <DependentUpon>FormSearchCatridge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchPrinter.resx">
       <DependentUpon>FormSearchPrinter.cs</DependentUpon>
     </EmbeddedResource>
