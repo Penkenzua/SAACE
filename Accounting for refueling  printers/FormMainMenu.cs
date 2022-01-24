@@ -460,9 +460,10 @@ namespace Accounting_for_refueling__printers
 
         private void btnEdditPC_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormSearchPC(), sender);
+            OpenChildForm(new Forms.FormEdditPC(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
+            
         }
 
         private void btnAddOC_Click(object sender, EventArgs e)

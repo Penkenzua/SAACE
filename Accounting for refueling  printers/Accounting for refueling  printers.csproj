@@ -260,6 +260,9 @@
     <EmbeddedResource Include="Forms\FormAddRAM.resx">
       <DependentUpon>FormAddRAM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEdditPC.resx">
+      <DependentUpon>FormEdditPC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchPrinter.resx">
       <DependentUpon>FormSearchPrinter.cs</DependentUpon>
     </EmbeddedResource>
