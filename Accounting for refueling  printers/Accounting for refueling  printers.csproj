@@ -232,6 +232,7 @@
     <Compile Include="Forms\FormSearchRAM.Designer.cs">
       <DependentUpon>FormSearchRAM.cs</DependentUpon>
     </Compile>
+    <Compile Include="NameActiveForm.cs" />
     <Compile Include="PathDatabase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

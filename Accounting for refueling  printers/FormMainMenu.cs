@@ -280,7 +280,7 @@ namespace Accounting_for_refueling__printers
         private void Reset()
         {
             DisableButton();
-            lblTittle.Text = "HOME";
+            lblTittle.Text = NameActiveForm.NameForm;
             panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             curentButton = null;
@@ -343,7 +343,7 @@ namespace Accounting_for_refueling__printers
                         sqlConnection.Open();
                     }
                 } 
-                    UpdatePrinter();
+                    
 
                         if (sqlConnection.State == ConnectionState.Open)
                         {   
@@ -394,6 +394,7 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = true;
             UpdatePrinter();
             lblTittle.Text = "Принтеры";
+            NameActiveForm.NameForm = "Принтеры";
         }
 
         private void btnPC_Click(object sender, EventArgs e)
@@ -406,6 +407,8 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = true;
             UpdatePC();
             lblTittle.Text = "Компьютеры";
+            NameActiveForm.NameForm = "Компьютеры";
+
 
         }
 
@@ -419,6 +422,8 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = true;
             UpdateOC();
             lblTittle.Text = "Операционные системы";
+            NameActiveForm.NameForm = "Операционные системы";
+
         }
         private void btnCatridge_Click(object sender, EventArgs e)
         {
@@ -429,6 +434,7 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = true;
             UpdateCatrdige();
             lblTittle.Text = "Катриджи";
+            NameActiveForm.NameForm = "Катридж";
         }
         private void btnCPU_Click(object sender, EventArgs e)
         {
@@ -439,6 +445,8 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = true;
             UpdateCPU();
             lblTittle.Text = "Процессоры";
+            NameActiveForm.NameForm = "Процессоры";
+
         }
 
         private void btnGPU_Click(object sender, EventArgs e)
@@ -450,6 +458,8 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = true;
             UpdateGPU();
             lblTittle.Text = "Видеокарты";
+            NameActiveForm.NameForm = "Видеокарты";
+
         }
 
         private void btnRAM_Click(object sender, EventArgs e)
@@ -461,6 +471,8 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = true;
             UpdateRAM();
             lblTittle.Text = "Оперативная память";
+            NameActiveForm.NameForm = "Оперативная память";
+
         }
 
         private void btnAddPC_Click(object sender, EventArgs e)

@@ -29,6 +29,7 @@ namespace Accounting_for_refueling__printers.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -37,6 +38,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.catridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
+            this.catridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CatridgeTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -109,6 +115,20 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // catridgeBindingSource
+            // 
+            this.catridgeBindingSource.DataMember = "Catridge";
+            this.catridgeBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // catridgeTableAdapter
+            // 
+            this.catridgeTableAdapter.ClearBeforeFill = true;
+            // 
             // FormEdditCatridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +145,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormEdditCatridge";
             this.Text = "FormEdditCatridge";
             this.Load += new System.EventHandler(this.FormEdditCatridge_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +162,8 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
+        private DatabaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource catridgeBindingSource;
+        private DatabaseDataSetTableAdapters.CatridgeTableAdapter catridgeTableAdapter;
     }
 }

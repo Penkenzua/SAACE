@@ -23,6 +23,11 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormEdditCatridge_Load(object sender, EventArgs e)
         {
+           
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Catridge". При необходимости она может быть перемещена или удалена.
+            this.catridgeTableAdapter.Fill(this.databaseDataSet.Catridge);
+            
+
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
@@ -33,6 +38,7 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + PathDatabase.Path + ";Integrated Security=True");
                 sqlConnection.Open();
             }
+           
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
