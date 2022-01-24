@@ -549,6 +549,27 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
+
+        private void btnAddCatridge_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddCatridge(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnSearchCatridge_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchCatridge(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEdditCatridge_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEdditCatridge(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
     }
 
     } 

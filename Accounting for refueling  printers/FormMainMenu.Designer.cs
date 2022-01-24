@@ -52,6 +52,11 @@ namespace Accounting_for_refueling__printers
             this.btnSearchOC = new System.Windows.Forms.Button();
             this.btnAddOC = new System.Windows.Forms.Button();
             this.btnOC = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEdditCatridge = new System.Windows.Forms.Button();
+            this.btnSearchCatridge = new System.Windows.Forms.Button();
+            this.btnAddCatridge = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.PanelPCSubMenu = new System.Windows.Forms.Panel();
             this.btnEdditPC = new System.Windows.Forms.Button();
             this.btnSearchPC = new System.Windows.Forms.Button();
@@ -78,6 +83,7 @@ namespace Accounting_for_refueling__printers
             this.PanelGPUSubMenu.SuspendLayout();
             this.PanelCPUSubMenu.SuspendLayout();
             this.PanelOCSubMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.PanelPCSubMenu.SuspendLayout();
             this.PanelPrinterSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -100,6 +106,8 @@ namespace Accounting_for_refueling__printers
             this.panelMenu.Controls.Add(this.btnCPU);
             this.panelMenu.Controls.Add(this.PanelOCSubMenu);
             this.panelMenu.Controls.Add(this.btnOC);
+            this.panelMenu.Controls.Add(this.panel1);
+            this.panelMenu.Controls.Add(this.button4);
             this.panelMenu.Controls.Add(this.PanelPCSubMenu);
             this.panelMenu.Controls.Add(this.btnPC);
             this.panelMenu.Controls.Add(this.PanelPrinterSubMenu);
@@ -121,7 +129,7 @@ namespace Accounting_for_refueling__printers
             this.btnInfo.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInfo.Location = new System.Drawing.Point(0, 1196);
+            this.btnInfo.Location = new System.Drawing.Point(0, 1383);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnInfo.Size = new System.Drawing.Size(168, 50);
@@ -138,7 +146,7 @@ namespace Accounting_for_refueling__printers
             this.PanelRAMSubMenu.Controls.Add(this.btnSearchRAM);
             this.PanelRAMSubMenu.Controls.Add(this.btnAddRAM);
             this.PanelRAMSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelRAMSubMenu.Location = new System.Drawing.Point(0, 1046);
+            this.PanelRAMSubMenu.Location = new System.Drawing.Point(0, 1233);
             this.PanelRAMSubMenu.Name = "PanelRAMSubMenu";
             this.PanelRAMSubMenu.Size = new System.Drawing.Size(168, 150);
             this.PanelRAMSubMenu.TabIndex = 11;
@@ -205,7 +213,7 @@ namespace Accounting_for_refueling__printers
             this.btnRAM.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRAM.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnRAM.Location = new System.Drawing.Point(0, 1009);
+            this.btnRAM.Location = new System.Drawing.Point(0, 1196);
             this.btnRAM.Name = "btnRAM";
             this.btnRAM.Size = new System.Drawing.Size(168, 37);
             this.btnRAM.TabIndex = 12;
@@ -220,7 +228,7 @@ namespace Accounting_for_refueling__printers
             this.PanelGPUSubMenu.Controls.Add(this.btnSearchGPU);
             this.PanelGPUSubMenu.Controls.Add(this.btnAddGPU);
             this.PanelGPUSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelGPUSubMenu.Location = new System.Drawing.Point(0, 859);
+            this.PanelGPUSubMenu.Location = new System.Drawing.Point(0, 1046);
             this.PanelGPUSubMenu.Name = "PanelGPUSubMenu";
             this.PanelGPUSubMenu.Size = new System.Drawing.Size(168, 150);
             this.PanelGPUSubMenu.TabIndex = 10;
@@ -287,7 +295,7 @@ namespace Accounting_for_refueling__printers
             this.btnGPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGPU.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnGPU.Location = new System.Drawing.Point(0, 822);
+            this.btnGPU.Location = new System.Drawing.Point(0, 1009);
             this.btnGPU.Name = "btnGPU";
             this.btnGPU.Size = new System.Drawing.Size(168, 37);
             this.btnGPU.TabIndex = 11;
@@ -302,7 +310,7 @@ namespace Accounting_for_refueling__printers
             this.PanelCPUSubMenu.Controls.Add(this.btnSearchCPU);
             this.PanelCPUSubMenu.Controls.Add(this.btnAddCPU);
             this.PanelCPUSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelCPUSubMenu.Location = new System.Drawing.Point(0, 672);
+            this.PanelCPUSubMenu.Location = new System.Drawing.Point(0, 859);
             this.PanelCPUSubMenu.Name = "PanelCPUSubMenu";
             this.PanelCPUSubMenu.Size = new System.Drawing.Size(168, 150);
             this.PanelCPUSubMenu.TabIndex = 9;
@@ -369,7 +377,7 @@ namespace Accounting_for_refueling__printers
             this.btnCPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCPU.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCPU.Location = new System.Drawing.Point(0, 635);
+            this.btnCPU.Location = new System.Drawing.Point(0, 822);
             this.btnCPU.Name = "btnCPU";
             this.btnCPU.Size = new System.Drawing.Size(168, 37);
             this.btnCPU.TabIndex = 10;
@@ -384,7 +392,7 @@ namespace Accounting_for_refueling__printers
             this.PanelOCSubMenu.Controls.Add(this.btnSearchOC);
             this.PanelOCSubMenu.Controls.Add(this.btnAddOC);
             this.PanelOCSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelOCSubMenu.Location = new System.Drawing.Point(0, 485);
+            this.PanelOCSubMenu.Location = new System.Drawing.Point(0, 672);
             this.PanelOCSubMenu.Name = "PanelOCSubMenu";
             this.PanelOCSubMenu.Size = new System.Drawing.Size(168, 150);
             this.PanelOCSubMenu.TabIndex = 8;
@@ -451,13 +459,94 @@ namespace Accounting_for_refueling__printers
             this.btnOC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOC.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnOC.Location = new System.Drawing.Point(0, 448);
+            this.btnOC.Location = new System.Drawing.Point(0, 635);
             this.btnOC.Name = "btnOC";
             this.btnOC.Size = new System.Drawing.Size(168, 37);
             this.btnOC.TabIndex = 9;
             this.btnOC.Text = "OC";
             this.btnOC.UseVisualStyleBackColor = true;
             this.btnOC.Click += new System.EventHandler(this.btnOC_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.btnEdditCatridge);
+            this.panel1.Controls.Add(this.btnSearchCatridge);
+            this.panel1.Controls.Add(this.btnAddCatridge);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 485);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(168, 150);
+            this.panel1.TabIndex = 6;
+            // 
+            // btnEdditCatridge
+            // 
+            this.btnEdditCatridge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnEdditCatridge.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEdditCatridge.FlatAppearance.BorderSize = 0;
+            this.btnEdditCatridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdditCatridge.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEdditCatridge.Image = ((System.Drawing.Image)(resources.GetObject("btnEdditCatridge.Image")));
+            this.btnEdditCatridge.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdditCatridge.Location = new System.Drawing.Point(0, 100);
+            this.btnEdditCatridge.Name = "btnEdditCatridge";
+            this.btnEdditCatridge.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnEdditCatridge.Size = new System.Drawing.Size(168, 50);
+            this.btnEdditCatridge.TabIndex = 3;
+            this.btnEdditCatridge.Text = "   Изменить";
+            this.btnEdditCatridge.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEdditCatridge.UseVisualStyleBackColor = false;
+            this.btnEdditCatridge.Click += new System.EventHandler(this.btnEdditCatridge_Click);
+            // 
+            // btnSearchCatridge
+            // 
+            this.btnSearchCatridge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnSearchCatridge.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSearchCatridge.FlatAppearance.BorderSize = 0;
+            this.btnSearchCatridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCatridge.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSearchCatridge.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchCatridge.Image")));
+            this.btnSearchCatridge.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchCatridge.Location = new System.Drawing.Point(0, 50);
+            this.btnSearchCatridge.Name = "btnSearchCatridge";
+            this.btnSearchCatridge.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnSearchCatridge.Size = new System.Drawing.Size(168, 50);
+            this.btnSearchCatridge.TabIndex = 2;
+            this.btnSearchCatridge.Text = "  Найти";
+            this.btnSearchCatridge.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearchCatridge.UseVisualStyleBackColor = false;
+            this.btnSearchCatridge.Click += new System.EventHandler(this.btnSearchCatridge_Click);
+            // 
+            // btnAddCatridge
+            // 
+            this.btnAddCatridge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddCatridge.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddCatridge.FlatAppearance.BorderSize = 0;
+            this.btnAddCatridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCatridge.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAddCatridge.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCatridge.Image")));
+            this.btnAddCatridge.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCatridge.Location = new System.Drawing.Point(0, 0);
+            this.btnAddCatridge.Name = "btnAddCatridge";
+            this.btnAddCatridge.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnAddCatridge.Size = new System.Drawing.Size(168, 50);
+            this.btnAddCatridge.TabIndex = 1;
+            this.btnAddCatridge.Text = "   Добавить";
+            this.btnAddCatridge.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddCatridge.UseVisualStyleBackColor = false;
+            this.btnAddCatridge.Click += new System.EventHandler(this.btnAddCatridge_Click);
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button4.Location = new System.Drawing.Point(0, 448);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(168, 37);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Катриджы";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // PanelPCSubMenu
             // 
@@ -782,6 +871,7 @@ namespace Accounting_for_refueling__printers
             this.PanelGPUSubMenu.ResumeLayout(false);
             this.PanelCPUSubMenu.ResumeLayout(false);
             this.PanelOCSubMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.PanelPCSubMenu.ResumeLayout(false);
             this.PanelPrinterSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -840,6 +930,11 @@ namespace Accounting_for_refueling__printers
         private System.Windows.Forms.Button btnSearchOC;
         private System.Windows.Forms.Button btnAddOC;
         private System.Windows.Forms.Button btnOC;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnEdditCatridge;
+        private System.Windows.Forms.Button btnSearchCatridge;
+        private System.Windows.Forms.Button btnAddCatridge;
+        private System.Windows.Forms.Button button4;
     }
 }
 

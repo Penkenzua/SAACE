@@ -12,9 +12,15 @@ namespace Accounting_for_refueling__printers.Forms
 {
     public partial class FormEdditCatridge : Form
     {
+     
         public FormEdditCatridge()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

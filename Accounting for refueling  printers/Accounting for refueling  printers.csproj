@@ -245,6 +245,9 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddCatridge.resx">
+      <DependentUpon>FormAddCatridge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddCPU.resx">
       <DependentUpon>FormAddCPU.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddRAM.resx">
       <DependentUpon>FormAddRAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEdditCatridge.resx">
+      <DependentUpon>FormEdditCatridge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEdditPC.resx">
       <DependentUpon>FormEdditPC.cs</DependentUpon>
