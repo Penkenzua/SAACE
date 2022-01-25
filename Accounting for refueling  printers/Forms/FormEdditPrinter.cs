@@ -41,14 +41,16 @@ namespace Accounting_for_refueling__printers.Forms
 
             DateTime date = DateTime.Parse(dateTimePicker1.Text);
             SqlCommand command = new SqlCommand($"Select id from Printer where id = {textBox1.Text}", sqlConnection);
-            if (textBox1.Text != "" && command.ExecuteScalar() != null)
+            SqlCommand command1 = new SqlCommand($"Select C_id form Catridge where Модель = {comboBox2.Text} ",sqlConnection);
+            if (textBox1.Text != "" && command.ExecuteScalar() != null&&command1.ExecuteScalar()!=null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update Printer SET " +
                     $"Дата = '{date.Month}/{date.Day}/{date.Year}'," +
                     $"Кабинет = N'{textBox2.Text}'," +
                     $"Модель = N'{comboBox1.Text}', " +
+                    $"Катридж = {command1.ExecuteScalar()}, " +
                     $"Операции = N'{textBox3.Text}', " +
-                    $"Состояние = N'{comboBox2.Text}' " +
+                    $"Состояние = N'{comboBox3.Text}' " +
                     $"where id = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
@@ -70,13 +72,15 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand Edit1 = new SqlCommand($"Select Кабинет from Printer where id ={textBox1.Text}", sqlConnection);
                 SqlCommand Edit2 = new SqlCommand($"Select Операции from Printer where id ={textBox1.Text}", sqlConnection);
                 SqlCommand Edit3 = new SqlCommand($"Select Модель from Printer where id ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit4 = new SqlCommand($"Select Состояние from Printer where id ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit5 = new SqlCommand($"Select Дата from Printer where id ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit4 = new SqlCommand($"Select Модель from Catridge where (Select Катридж from Printer where id = {textBox1.Text})", sqlConnection);
+                SqlCommand Edit5 = new SqlCommand($"Select Состояние from Printer where id ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit6 = new SqlCommand($"Select Дата from Printer where id ={textBox1.Text}", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
                 comboBox1.Text = Edit3.ExecuteScalar().ToString();
-                comboBox2.Text = Edit4.ExecuteScalar().ToString();
-                DateTime date = DateTime.Parse(Edit5.ExecuteScalar().ToString());
+                comboBox2.Text= Edit4.ExecuteScalar().ToString();
+                comboBox3.Text = Edit5.ExecuteScalar().ToString();
+                DateTime date = DateTime.Parse(Edit6.ExecuteScalar().ToString());
                 int x = Convert.ToInt32(date.Year);
                 int y = Convert.ToInt32(date.Month);
                 int z = Convert.ToInt32(date.Day);
@@ -90,6 +94,7 @@ namespace Accounting_for_refueling__printers.Forms
                 textBox3.Text = "";
                 comboBox1.Text = "";
                 comboBox2.Text = "";
+                comboBox3.Text = "";
             }
         }
         void LoadTheme()
@@ -114,7 +119,7 @@ namespace Accounting_for_refueling__printers.Forms
             textBox2.ForeColor = ThemeColor.PrimaryColor;
             textBox3.ForeColor = ThemeColor.PrimaryColor;
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
-            comboBox2.ForeColor = ThemeColor.PrimaryColor;
+            comboBox3.ForeColor = ThemeColor.PrimaryColor;
         }
     }
 }

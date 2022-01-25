@@ -71,7 +71,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormAddCPU";
-            this.Text = "FormAddCPU";
+            this.Text = "Добавление процессора";
             this.Load += new System.EventHandler(this.FormAddCPU_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

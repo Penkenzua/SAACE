@@ -23,7 +23,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormEdditCatridge_Load(object sender, EventArgs e)
         {
-           
+          
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Catridge". При необходимости она может быть перемещена или удалена.
             this.catridgeTableAdapter.Fill(this.databaseDataSet.Catridge);
             

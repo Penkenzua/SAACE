@@ -50,6 +50,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
@@ -59,7 +61,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(344, 127);
+            this.textBox1.Location = new System.Drawing.Point(344, 101);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 0;
@@ -205,11 +207,29 @@ namespace Accounting_for_refueling__printers.Forms
             this.label5.TabIndex = 13;
             this.label5.Text = "Оперативная память:";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(344, 127);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(121, 20);
+            this.textBox2.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(271, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Кабинет:";
+            // 
             // FormAddPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -222,7 +242,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormAddPC";
-            this.Text = "FormAddPC";
+            this.Text = "Добавление компьютера";
             this.Load += new System.EventHandler(this.FormAddPC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
@@ -256,5 +276,7 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
     }
 }

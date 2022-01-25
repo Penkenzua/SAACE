@@ -38,11 +38,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.catridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
+            this.catridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.catridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CatridgeTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -115,15 +115,15 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // catridgeBindingSource
-            // 
-            this.catridgeBindingSource.DataMember = "Catridge";
-            this.catridgeBindingSource.DataSource = this.databaseDataSet;
-            // 
             // databaseDataSet
             // 
             this.databaseDataSet.DataSetName = "DatabaseDataSet";
             this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // catridgeBindingSource
+            // 
+            this.catridgeBindingSource.DataMember = "Catridge";
+            this.catridgeBindingSource.DataSource = this.databaseDataSet;
             // 
             // catridgeTableAdapter
             // 
@@ -145,8 +145,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormEdditCatridge";
             this.Text = "FormEdditCatridge";
             this.Load += new System.EventHandler(this.FormEdditCatridge_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

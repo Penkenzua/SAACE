@@ -30,12 +30,11 @@ namespace Accounting_for_refueling__printers.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.btnOutput = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,80 +42,77 @@ namespace Accounting_for_refueling__printers.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
-            this.pCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pCTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.PCTableAdapter();
+            this.oCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oCTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.OCTableAdapter();
+            this.cPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CPUTableAdapter();
+            this.gPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.GPUTableAdapter();
+            this.rAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rAMTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.RAMTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.pCBindingSource;
-            this.comboBox1.DisplayMember = "PC_ID";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(307, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(307, 149);
+            this.textBox1.Location = new System.Drawing.Point(307, 93);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 1;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.oCBindingSource;
+            this.comboBox1.DisplayMember = "Название";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(307, 176);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 2;
+            // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.pCBindingSource;
-            this.comboBox2.DisplayMember = "OC";
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.DataSource = this.cPUBindingSource;
+            this.comboBox2.DisplayMember = "Модель";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(307, 176);
+            this.comboBox2.Location = new System.Drawing.Point(307, 203);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 2;
+            this.comboBox2.TabIndex = 3;
             // 
             // comboBox3
             // 
-            this.comboBox3.DataSource = this.pCBindingSource;
-            this.comboBox3.DisplayMember = "CPU";
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.DataSource = this.gPUBindingSource;
+            this.comboBox3.DisplayMember = "Модель";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(307, 203);
+            this.comboBox3.Location = new System.Drawing.Point(307, 230);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 3;
+            this.comboBox3.TabIndex = 4;
             // 
             // comboBox4
             // 
-            this.comboBox4.DataSource = this.pCBindingSource;
-            this.comboBox4.DisplayMember = "GPU";
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.DataSource = this.rAMBindingSource;
+            this.comboBox4.DisplayMember = "Модель";
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(307, 230);
+            this.comboBox4.Location = new System.Drawing.Point(307, 257);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 4;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DataSource = this.pCBindingSource;
-            this.comboBox5.DisplayMember = "RAM";
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(307, 257);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 5;
+            this.comboBox4.TabIndex = 5;
             // 
             // btnOutput
             // 
             this.btnOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOutput.Location = new System.Drawing.Point(183, 300);
+            this.btnOutput.Location = new System.Drawing.Point(185, 300);
             this.btnOutput.Name = "btnOutput";
             this.btnOutput.Size = new System.Drawing.Size(121, 54);
             this.btnOutput.TabIndex = 6;
@@ -127,7 +123,7 @@ namespace Accounting_for_refueling__printers.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(238, 118);
+            this.label1.Location = new System.Drawing.Point(238, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 7;
@@ -136,11 +132,11 @@ namespace Accounting_for_refueling__printers.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 156);
+            this.label2.Location = new System.Drawing.Point(223, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Модель:";
+            this.label2.Text = "Кабинет:";
             // 
             // label3
             // 
@@ -178,36 +174,90 @@ namespace Accounting_for_refueling__printers.Forms
             this.label6.TabIndex = 12;
             this.label6.Text = "RAM:";
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(416, 300);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 54);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Ввод";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Location = new System.Drawing.Point(416, 300);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(121, 54);
+            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.Text = "Ввод";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(307, 124);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(121, 20);
+            this.textBox2.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(226, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Модель:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(307, 150);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.TabIndex = 14;
             // 
             // databaseDataSet
             // 
             this.databaseDataSet.DataSetName = "DatabaseDataSet";
             this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pCBindingSource
+            // oCBindingSource
             // 
-            this.pCBindingSource.DataMember = "PC";
-            this.pCBindingSource.DataSource = this.databaseDataSet;
+            this.oCBindingSource.DataMember = "OC";
+            this.oCBindingSource.DataSource = this.databaseDataSet;
             // 
-            // pCTableAdapter
+            // oCTableAdapter
             // 
-            this.pCTableAdapter.ClearBeforeFill = true;
+            this.oCTableAdapter.ClearBeforeFill = true;
+            // 
+            // cPUBindingSource
+            // 
+            this.cPUBindingSource.DataMember = "CPU";
+            this.cPUBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // cPUTableAdapter
+            // 
+            this.cPUTableAdapter.ClearBeforeFill = true;
+            // 
+            // gPUBindingSource
+            // 
+            this.gPUBindingSource.DataMember = "GPU";
+            this.gPUBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // gPUTableAdapter
+            // 
+            this.gPUTableAdapter.ClearBeforeFill = true;
+            // 
+            // rAMBindingSource
+            // 
+            this.rAMBindingSource.DataMember = "RAM";
+            this.rAMBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // rAMTableAdapter
+            // 
+            this.rAMTableAdapter.ClearBeforeFill = true;
             // 
             // FormEdditPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -215,30 +265,30 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOutput);
-            this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox1);
             this.Name = "FormEdditPC";
             this.Text = "FormEdditPC";
             this.Load += new System.EventHandler(this.FormEdditPC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Button btnOutput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -246,9 +296,18 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
         private DatabaseDataSet databaseDataSet;
-        private System.Windows.Forms.BindingSource pCBindingSource;
-        private DatabaseDataSetTableAdapters.PCTableAdapter pCTableAdapter;
+        private System.Windows.Forms.BindingSource oCBindingSource;
+        private DatabaseDataSetTableAdapters.OCTableAdapter oCTableAdapter;
+        private System.Windows.Forms.BindingSource cPUBindingSource;
+        private DatabaseDataSetTableAdapters.CPUTableAdapter cPUTableAdapter;
+        private System.Windows.Forms.BindingSource gPUBindingSource;
+        private DatabaseDataSetTableAdapters.GPUTableAdapter gPUTableAdapter;
+        private System.Windows.Forms.BindingSource rAMBindingSource;
+        private DatabaseDataSetTableAdapters.RAMTableAdapter rAMTableAdapter;
     }
 }

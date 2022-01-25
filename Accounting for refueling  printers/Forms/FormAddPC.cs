@@ -62,8 +62,9 @@ namespace Accounting_for_refueling__printers.Forms
             var gpu = GPU.ExecuteScalar().ToString();
             var ram = RAM.ExecuteScalar().ToString();
 
-            SqlCommand command = new SqlCommand("INSERT INTO [PC] (Модель,OC,CPU,GPU,RAM) VALUES(@Модель,@OC,@CPU,@GPU,@RAM)", sqlConnection);
-            command.Parameters.AddWithValue("Модель",textBox1.Text);
+            SqlCommand command = new SqlCommand("INSERT INTO [PC] (Кабинет,Модель,OC,CPU,GPU,RAM) VALUES(@Кабинет,@Модель,@OC,@CPU,@GPU,@RAM)", sqlConnection);
+            command.Parameters.AddWithValue("Кабинет", textBox1.Text);
+            command.Parameters.AddWithValue("Модель",textBox2.Text);
             command.Parameters.AddWithValue("OC", oc);
             command.Parameters.AddWithValue("CPU", cpu);
             command.Parameters.AddWithValue("GPU", gpu);
@@ -79,6 +80,7 @@ namespace Accounting_for_refueling__printers.Forms
 
                 }
                 textBox1.Text = "";
+                textBox2.Text = "";
                 comboBox1.Text = "";
                 comboBox2.Text = "";
                 comboBox3.Text = "";
