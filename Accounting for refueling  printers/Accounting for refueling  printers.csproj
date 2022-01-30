@@ -142,35 +142,35 @@
     <Compile Include="Forms\FormAddRAM.Designer.cs">
       <DependentUpon>FormAddRAM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEdditCatridge.cs">
+    <Compile Include="Forms\FormEditCatridge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEdditCatridge.Designer.cs">
-      <DependentUpon>FormEdditCatridge.cs</DependentUpon>
+    <Compile Include="Forms\FormEditCatridge.Designer.cs">
+      <DependentUpon>FormEditCatridge.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEdditCPU.cs">
+    <Compile Include="Forms\FormEditCPU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEdditCPU.Designer.cs">
-      <DependentUpon>FormEdditCPU.cs</DependentUpon>
+    <Compile Include="Forms\FormEditCPU.Designer.cs">
+      <DependentUpon>FormEditCPU.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEdditGPU.cs">
+    <Compile Include="Forms\FormEditGPU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEdditGPU.Designer.cs">
-      <DependentUpon>FormEdditGPU.cs</DependentUpon>
+    <Compile Include="Forms\FormEditGPU.Designer.cs">
+      <DependentUpon>FormEditGPU.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEdditOC.cs">
+    <Compile Include="Forms\FormEditOC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEdditOC.Designer.cs">
-      <DependentUpon>FormEdditOC.cs</DependentUpon>
+    <Compile Include="Forms\FormEditOC.Designer.cs">
+      <DependentUpon>FormEditOC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEdditPC.cs">
+    <Compile Include="Forms\FormEditPC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEdditPC.Designer.cs">
-      <DependentUpon>FormEdditPC.cs</DependentUpon>
+    <Compile Include="Forms\FormEditPC.Designer.cs">
+      <DependentUpon>FormEditPC.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormEdditRAM.cs">
       <SubType>Form</SubType>
@@ -264,20 +264,20 @@
     <EmbeddedResource Include="Forms\FormAddRAM.resx">
       <DependentUpon>FormAddRAM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEdditCatridge.resx">
-      <DependentUpon>FormEdditCatridge.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEditCatridge.resx">
+      <DependentUpon>FormEditCatridge.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEdditCPU.resx">
-      <DependentUpon>FormEdditCPU.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEditCPU.resx">
+      <DependentUpon>FormEditCPU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEdditGPU.resx">
-      <DependentUpon>FormEdditGPU.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEditGPU.resx">
+      <DependentUpon>FormEditGPU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEdditOC.resx">
-      <DependentUpon>FormEdditOC.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEditOC.resx">
+      <DependentUpon>FormEditOC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEdditPC.resx">
-      <DependentUpon>FormEdditPC.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEditPC.resx">
+      <DependentUpon>FormEditPC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEdditRAM.resx">
       <DependentUpon>FormEdditRAM.cs</DependentUpon>

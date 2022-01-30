@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormEdditCPU : Form
+    public partial class FormEditCPU : Form
     {
             private SqlConnection sqlConnection = null;
-        public FormEdditCPU()
+        public FormEditCPU()
         {
             InitializeComponent();
         }

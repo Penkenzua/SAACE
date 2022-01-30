@@ -31,6 +31,7 @@ namespace Accounting_for_refueling__printers
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelTools = new System.Windows.Forms.Panel();
             this.btnInfo = new System.Windows.Forms.Button();
             this.PanelRAMSubMenu = new System.Windows.Forms.Panel();
             this.btnEdditRAM = new System.Windows.Forms.Button();
@@ -78,8 +79,9 @@ namespace Accounting_for_refueling__printers
             this.lblTittle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panelTools = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
+            this.panelTools.SuspendLayout();
             this.PanelRAMSubMenu.SuspendLayout();
             this.PanelGPUSubMenu.SuspendLayout();
             this.PanelCPUSubMenu.SuspendLayout();
@@ -92,7 +94,7 @@ namespace Accounting_for_refueling__printers
             this.panelTitleBar.SuspendLayout();
             this.panelDesktopPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panelTools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -106,6 +108,30 @@ namespace Accounting_for_refueling__printers
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(185, 461);
             this.panelMenu.TabIndex = 0;
+            // 
+            // panelTools
+            // 
+            this.panelTools.AutoScroll = true;
+            this.panelTools.Controls.Add(this.btnInfo);
+            this.panelTools.Controls.Add(this.PanelRAMSubMenu);
+            this.panelTools.Controls.Add(this.btnRAM);
+            this.panelTools.Controls.Add(this.PanelGPUSubMenu);
+            this.panelTools.Controls.Add(this.btnGPU);
+            this.panelTools.Controls.Add(this.PanelCPUSubMenu);
+            this.panelTools.Controls.Add(this.btnCPU);
+            this.panelTools.Controls.Add(this.PanelOCSubMenu);
+            this.panelTools.Controls.Add(this.btnOC);
+            this.panelTools.Controls.Add(this.PanelCatridgeSubMenu);
+            this.panelTools.Controls.Add(this.btnCatridge);
+            this.panelTools.Controls.Add(this.PanelPCSubMenu);
+            this.panelTools.Controls.Add(this.btnPC);
+            this.panelTools.Controls.Add(this.PanelPrinterSubMenu);
+            this.panelTools.Controls.Add(this.btnPrinters);
+            this.panelTools.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTools.Location = new System.Drawing.Point(0, 74);
+            this.panelTools.Name = "panelTools";
+            this.panelTools.Size = new System.Drawing.Size(185, 387);
+            this.panelTools.TabIndex = 14;
             // 
             // btnInfo
             // 
@@ -714,12 +740,13 @@ namespace Accounting_for_refueling__printers
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 57);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(179, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelTitleBar
             // 
@@ -809,7 +836,7 @@ namespace Accounting_for_refueling__printers
             this.lblTittle.AutoSize = true;
             this.lblTittle.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTittle.ForeColor = System.Drawing.Color.White;
-            this.lblTittle.Location = new System.Drawing.Point(346, 23);
+            this.lblTittle.Location = new System.Drawing.Point(308, 22);
             this.lblTittle.Name = "lblTittle";
             this.lblTittle.Size = new System.Drawing.Size(70, 24);
             this.lblTittle.TabIndex = 0;
@@ -818,6 +845,7 @@ namespace Accounting_for_refueling__printers
             // panelDesktopPane
             // 
             this.panelDesktopPane.Controls.Add(this.dataGridView1);
+            this.panelDesktopPane.Controls.Add(this.pictureBox2);
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(185, 74);
             this.panelDesktopPane.Name = "panelDesktopPane";
@@ -838,29 +866,16 @@ namespace Accounting_for_refueling__printers
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // panelTools
+            // pictureBox2
             // 
-            this.panelTools.AutoScroll = true;
-            this.panelTools.Controls.Add(this.btnInfo);
-            this.panelTools.Controls.Add(this.PanelRAMSubMenu);
-            this.panelTools.Controls.Add(this.btnRAM);
-            this.panelTools.Controls.Add(this.PanelGPUSubMenu);
-            this.panelTools.Controls.Add(this.btnGPU);
-            this.panelTools.Controls.Add(this.PanelCPUSubMenu);
-            this.panelTools.Controls.Add(this.btnCPU);
-            this.panelTools.Controls.Add(this.PanelOCSubMenu);
-            this.panelTools.Controls.Add(this.btnOC);
-            this.panelTools.Controls.Add(this.PanelCatridgeSubMenu);
-            this.panelTools.Controls.Add(this.btnCatridge);
-            this.panelTools.Controls.Add(this.PanelPCSubMenu);
-            this.panelTools.Controls.Add(this.btnPC);
-            this.panelTools.Controls.Add(this.PanelPrinterSubMenu);
-            this.panelTools.Controls.Add(this.btnPrinters);
-            this.panelTools.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTools.Location = new System.Drawing.Point(0, 74);
-            this.panelTools.Name = "panelTools";
-            this.panelTools.Size = new System.Drawing.Size(185, 387);
-            this.panelTools.TabIndex = 14;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(749, 387);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // FormMainMenu
             // 
@@ -878,6 +893,8 @@ namespace Accounting_for_refueling__printers
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormMainMenu_Load);
             this.panelMenu.ResumeLayout(false);
+            this.panelTools.ResumeLayout(false);
+            this.panelTools.PerformLayout();
             this.PanelRAMSubMenu.ResumeLayout(false);
             this.PanelGPUSubMenu.ResumeLayout(false);
             this.PanelCPUSubMenu.ResumeLayout(false);
@@ -886,14 +903,12 @@ namespace Accounting_for_refueling__printers
             this.PanelPCSubMenu.ResumeLayout(false);
             this.PanelPrinterSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelDesktopPane.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panelTools.ResumeLayout(false);
-            this.panelTools.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -949,6 +964,7 @@ namespace Accounting_for_refueling__printers
         private System.Windows.Forms.Button btnAddCatridge;
         private System.Windows.Forms.Button btnCatridge;
         private System.Windows.Forms.Panel panelTools;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

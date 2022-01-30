@@ -239,7 +239,68 @@ namespace Accounting_for_refueling__printers
         }
         private void DisableButton()
         {
-            foreach (Control previousBtn in panelMenu.Controls)
+           //Printer
+            foreach (Control previousBtn in PanelPrinterSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //PC
+            foreach (Control previousBtn in PanelPCSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //Catridge
+            foreach (Control previousBtn in PanelCatridgeSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //OC
+            foreach (Control previousBtn in PanelOCSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //CPU
+            foreach (Control previousBtn in PanelCPUSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //GPU
+            foreach (Control previousBtn in PanelGPUSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //RAM
+            foreach (Control previousBtn in PanelRAMSubMenu.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
@@ -275,6 +336,7 @@ namespace Accounting_for_refueling__printers
             if (activeForm != null)
                 activeForm.Close();
             Reset();
+         
 
         }
         private void Reset()
@@ -342,10 +404,12 @@ namespace Accounting_for_refueling__printers
                         sqlConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =" + PathDatabase.Path + " Integrated Security = True");
                         sqlConnection.Open();
                     }
-                } 
-                    
+                }
 
-                        if (sqlConnection.State == ConnectionState.Open)
+            dataGridView1.Visible = false;
+            btnDelete.Visible = false;
+            lblTittle.Text = "Домашняя страница";
+            if (sqlConnection.State == ConnectionState.Open)
                         {   
                             MessageBox.Show(new Form { TopMost = true },"Соеденение открыто","Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         }
@@ -382,7 +446,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("\"Учёт заправки принтеров\" v1.0\nРазработал: Балабанов Артём Андреевич\nE-mail: artem.balabanov.2017@gmail.com","О программе",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("\"Учёт компьютерной техники\" v1.0\nРазработал: Балабанов Артём Андреевич\nE-mail: artem.balabanov.2017@gmail.com","О программе",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void btnPrinters_Click(object sender, EventArgs e)
@@ -395,6 +459,7 @@ namespace Accounting_for_refueling__printers
             UpdatePrinter();
             lblTittle.Text = "Принтеры";
             NameActiveForm.NameForm = "Принтеры";
+            
         }
 
         private void btnPC_Click(object sender, EventArgs e)
@@ -491,7 +556,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnEdditPC_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEdditPC(), sender);
+            OpenChildForm(new Forms.FormEditPC(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
             
@@ -513,7 +578,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnEdditOC_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEdditOC(), sender);
+            OpenChildForm(new Forms.FormEditOC(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
@@ -534,7 +599,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnEdditCPU_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEdditCPU(), sender);
+            OpenChildForm(new Forms.FormEditCPU(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
@@ -555,7 +620,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnEdditGPU_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEdditGPU(), sender);
+            OpenChildForm(new Forms.FormEditGPU(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
@@ -597,12 +662,20 @@ namespace Accounting_for_refueling__printers
 
         private void btnEdditCatridge_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEdditCatridge(), sender);
+            OpenChildForm(new Forms.FormEditCatridge(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
 
-    
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            Reset();
+            dataGridView1.Visible = false;
+            btnDelete.Visible = false;
+            lblTittle.Text = "Домашняя страница";
+        }
     }
 
     } 

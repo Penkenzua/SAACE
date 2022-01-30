@@ -11,14 +11,15 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormEdditGPU : Form
+    public partial class FormEditOC : Form
     {
-           private SqlConnection sqlConnection = null;
-        public FormEdditGPU()
+         private SqlConnection sqlConnection = null;
+        public FormEditOC()
         {
             InitializeComponent();
         }
-        private void FormEdditGPU_Load(object sender, EventArgs e)
+
+        private void FormEdditOC_Load(object sender, EventArgs e)
         {
             try
             {
@@ -30,13 +31,15 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + PathDatabase.Path + ";Integrated Security=True");
                 sqlConnection.Open();
             }
+
         }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"Select GPU_ID from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+            SqlCommand command = new SqlCommand($"Select OC_ID from OC where OC_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Edit1 = new SqlCommand($"Select Модель from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit1 = new SqlCommand($"Select Название from OC where OC_ID = {textBox1.Text}", sqlConnection);
 
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
 
@@ -53,16 +56,16 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"Select GPU_ID from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+            SqlCommand command = new SqlCommand($"Select OC_ID from OC where OC_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Update1 = new SqlCommand($"Update GPU SET " +
-                    $"Модель = N'{textBox2.Text}' " +
-                    $"where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Update1 = new SqlCommand($"Update OC SET " +
+                    $"Название = N'{textBox2.Text}' " +
+                    $"where OC_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешно выполнена");
-                    FormMainMenu.SelfRef.UpdateGPU();
+                    FormMainMenu.SelfRef.UpdateOC();
                 }
                 else
                 {
@@ -71,7 +74,5 @@ namespace Accounting_for_refueling__printers.Forms
                 }
             }
         }
-
-        
     }
 }

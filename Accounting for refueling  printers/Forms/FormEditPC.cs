@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormEdditPC : Form
+    public partial class FormEditPC : Form
     {
          private SqlConnection sqlConnection = null;
-        public FormEdditPC()
+        public FormEditPC()
         {
             InitializeComponent();
         }
@@ -62,12 +62,12 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand command = new SqlCommand($"Select PC_ID from PC where PC_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Edit1 = new SqlCommand($"Select Кабинет from PC where PC_ID ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit2 = new SqlCommand($"Select Модель from PC where PC_ID ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit3 = new SqlCommand($"Select OC from PC where PC_ID ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit4 = new SqlCommand($"Select CPU from PC where PC_ID ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit5 = new SqlCommand($"Select GPU from PC where PC_ID ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit6 = new SqlCommand($"Select RAM from PC where PC_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit1 = new SqlCommand($"Select Кабинет  from PC  where PC_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Модель   from PC  where PC_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit3 = new SqlCommand($"Select Название from OC  where OC_ID = (Select OC  from PC where PC_ID = {textBox1.Text})", sqlConnection);
+                SqlCommand Edit4 = new SqlCommand($"Select Модель   from CPU where CPU_ID = (Select CPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
+                SqlCommand Edit5 = new SqlCommand($"Select Модель   from GPU where GPU_ID = (Select GPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
+                SqlCommand Edit6 = new SqlCommand($"Select Модель   from RAM where RAM_ID = (Select RAM from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
                 comboBox1.Text = Edit3.ExecuteScalar().ToString();
@@ -76,16 +76,26 @@ namespace Accounting_for_refueling__printers.Forms
                 comboBox4.Text = Edit6.ExecuteScalar().ToString();
 
             }
+            else
+            {
+                textBox1.Text = "";
+                MessageBox.Show("Запись таким ID не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            SqlCommand Edit
             SqlCommand command = new SqlCommand($"Select PC_ID from PC where PC_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update PC SET " +
-                    $"Производитель = N'{textBox2.Text}'," +
-                    $"Модель = N'{textBox3.Text}' " +
+                    $"Кабинет = N'{textBox2.Text}'," +
+                    $"Модель = N'{textBox3.Text}', " +
+                    $"OC = N''," +
+                    $"GPU" +
+                    $"RAM" +
                     $"where C_Id = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {

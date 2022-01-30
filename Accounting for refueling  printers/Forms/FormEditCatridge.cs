@@ -11,16 +11,23 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormEdditOC : Form
+    public partial class FormEditCatridge : Form
     {
-         private SqlConnection sqlConnection = null;
-        public FormEdditOC()
+      private SqlConnection sqlConnection = null;
+        public FormEditCatridge()
         {
             InitializeComponent();
         }
 
-        private void FormEdditOC_Load(object sender, EventArgs e)
+       
+
+        private void FormEdditCatridge_Load(object sender, EventArgs e)
         {
+          
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Catridge". При необходимости она может быть перемещена или удалена.
+            this.catridgeTableAdapter.Fill(this.databaseDataSet.Catridge);
+            
+
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
@@ -31,18 +38,17 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + PathDatabase.Path + ";Integrated Security=True");
                 sqlConnection.Open();
             }
-
+           
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"Select OC_ID from OC where OC_ID = {textBox1.Text}", sqlConnection);
-            if (textBox1.Text != "" && command.ExecuteScalar() != null)
+            SqlCommand command = new SqlCommand($"Select C_Id from Catridge where C_Id = {textBox1.Text}", sqlConnection);
+            if (textBox1.Text!="" && command.ExecuteScalar()!= null)
             {
-                SqlCommand Edit1 = new SqlCommand($"Select Название from OC where OC_ID = {textBox1.Text}", sqlConnection);
-
+                SqlCommand Edit1 = new SqlCommand($"Select Производитель from Catridge where C_Id ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Модель from Catridge where C_Id ={textBox1.Text}", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
-
+                textBox3.Text = Edit2.ExecuteScalar().ToString();
 
             }
             else
@@ -50,22 +56,23 @@ namespace Accounting_for_refueling__printers.Forms
                 MessageBox.Show("Запись таким ID не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox1.Text = "";
                 textBox2.Text = "";
-
+                textBox3.Text = "";
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"Select OC_ID from OC where OC_ID = {textBox1.Text}", sqlConnection);
+            SqlCommand command = new SqlCommand($"Select C_Id from Catridge where C_Id = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Update1 = new SqlCommand($"Update OC SET " +
-                    $"Название = N'{textBox2.Text}' " +
-                    $"where OC_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Update1 = new SqlCommand($"Update Catridge SET " +
+                    $"Производитель = N'{textBox2.Text}'," +
+                    $"Модель = N'{textBox3.Text}' " +
+                    $"where C_Id = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешно выполнена");
-                    FormMainMenu.SelfRef.UpdateOC();
+                    FormMainMenu.SelfRef.UpdateCatrdige();
                 }
                 else
                 {

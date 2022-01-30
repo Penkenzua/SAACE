@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormEdditCatridge
+    partial class FormEditCatridge
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@ namespace Accounting_for_refueling__printers.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(246, 123);
+            this.label1.Location = new System.Drawing.Point(298, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 1;
@@ -89,20 +89,20 @@ namespace Accounting_for_refueling__printers.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(246, 152);
+            this.label2.Location = new System.Drawing.Point(230, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.label2.Text = "Производитель:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(246, 182);
+            this.label3.Location = new System.Drawing.Point(270, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
+            this.label3.Text = "Модель:";
             // 
             // btnAdd
             // 
