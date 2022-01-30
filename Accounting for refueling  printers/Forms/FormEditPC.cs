@@ -86,17 +86,22 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            SqlCommand Edit
+            SqlCommand OC = new SqlCommand($"Select OC_ID from OC where Название=N'{comboBox1.Text}'", sqlConnection);
+            SqlCommand CPU = new SqlCommand($"Select CPU_ID from CPU where Модель=N'{comboBox2.Text}'", sqlConnection);
+            SqlCommand GPU = new SqlCommand($"Select GPU_ID from GPU where Модель=N'{comboBox3.Text}'", sqlConnection);
+            SqlCommand RAM = new SqlCommand($"Select RAM_ID from RAM where Модель=N'{comboBox4.Text}'", sqlConnection);
+
             SqlCommand command = new SqlCommand($"Select PC_ID from PC where PC_ID = {textBox1.Text}", sqlConnection);
-            if (textBox1.Text != "" && command.ExecuteScalar() != null)
+            if (textBox1.Text != "" && command.ExecuteScalar() != null && OC.ExecuteScalar()!= null&& CPU.ExecuteScalar()!= null&& GPU.ExecuteScalar()!= null&& RAM.ExecuteScalar()!= null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update PC SET " +
                     $"Кабинет = N'{textBox2.Text}'," +
                     $"Модель = N'{textBox3.Text}', " +
-                    $"OC = N''," +
-                    $"GPU" +
-                    $"RAM" +
-                    $"where C_Id = {textBox1.Text}", sqlConnection);
+                    $"OC =  {OC.ExecuteScalar()}," +
+                    $"CPU = {CPU.ExecuteScalar()}," +
+                    $"GPU = {GPU.ExecuteScalar()}," +
+                    $"RAM = {RAM.ExecuteScalar()}" +
+                    $"where  PC_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешно выполнена");
@@ -107,6 +112,10 @@ namespace Accounting_for_refueling__printers.Forms
                     MessageBox.Show("Введены неверные данные или неверный формат");
                     Update1.Cancel();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Таких данных нету в бд");  
             }
         }
     }
