@@ -294,6 +294,9 @@
     <EmbeddedResource Include="Forms\FormSearchOC.resx">
       <DependentUpon>FormSearchOC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchPC.resx">
+      <DependentUpon>FormSearchPC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchPrinter.resx">
       <DependentUpon>FormSearchPrinter.cs</DependentUpon>
     </EmbeddedResource>

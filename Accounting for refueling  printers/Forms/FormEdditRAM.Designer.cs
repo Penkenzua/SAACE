@@ -103,7 +103,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormEdditRAM";
-            this.Text = "FormEdditRAM";
+            this.Text = "Изменение данных в оперативной памяти";
             this.Load += new System.EventHandler(this.FormEdditRAM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

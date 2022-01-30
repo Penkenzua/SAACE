@@ -832,11 +832,10 @@ namespace Accounting_for_refueling__printers
             // 
             // lblTittle
             // 
-            this.lblTittle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTittle.AutoSize = true;
             this.lblTittle.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTittle.ForeColor = System.Drawing.Color.White;
-            this.lblTittle.Location = new System.Drawing.Point(308, 22);
+            this.lblTittle.Location = new System.Drawing.Point(214, 25);
             this.lblTittle.Name = "lblTittle";
             this.lblTittle.Size = new System.Drawing.Size(70, 24);
             this.lblTittle.TabIndex = 0;

@@ -91,7 +91,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 16;
             // 
-            // FormEdditGPU
+            // FormEditGPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,8 +102,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "FormEdditGPU";
-            this.Text = "FormEdditGPU";
+            this.Name = "FormEditGPU";
+            this.Text = "Изменение данных в видеокартах";
             this.Load += new System.EventHandler(this.FormEdditGPU_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

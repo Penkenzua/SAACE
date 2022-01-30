@@ -33,17 +33,17 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
-            this.cPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CPUTableAdapter();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +76,16 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
             // 
+            // cPUBindingSource
+            // 
+            this.cPUBindingSource.DataMember = "CPU";
+            this.cPUBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnSearch
             // 
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -106,16 +116,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 8;
             // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cPUBindingSource
-            // 
-            this.cPUBindingSource.DataMember = "CPU";
-            this.cPUBindingSource.DataSource = this.databaseDataSet;
-            // 
             // cPUTableAdapter
             // 
             this.cPUTableAdapter.ClearBeforeFill = true;
@@ -128,14 +128,14 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "FormSearchCPU";
-            this.Text = "FormSearchCPU";
+            this.Text = "Поиск в процессарах";
             this.Load += new System.EventHandler(this.FormSearchCPU_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

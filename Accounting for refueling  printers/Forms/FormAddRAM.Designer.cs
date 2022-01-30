@@ -70,7 +70,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormAddRAM";
-            this.Text = "FormAddRAM";
+            this.Text = "Добавление в опративную память";
             this.Load += new System.EventHandler(this.FormAddRAM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

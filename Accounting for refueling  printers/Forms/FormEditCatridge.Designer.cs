@@ -129,7 +129,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.catridgeTableAdapter.ClearBeforeFill = true;
             // 
-            // FormEdditCatridge
+            // FormEditCatridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,8 +142,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "FormEdditCatridge";
-            this.Text = "FormEdditCatridge";
+            this.Name = "FormEditCatridge";
+            this.Text = "Изменения данных в сатриджах";
             this.Load += new System.EventHandler(this.FormEdditCatridge_Load);
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();

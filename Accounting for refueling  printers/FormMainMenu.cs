@@ -428,20 +428,20 @@ namespace Accounting_for_refueling__printers
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите безвозвратно удалить этоту запись? ", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dialogResult == DialogResult.OK)
-            {
-                if (znachenie >= 0)
-                {
-                    SqlCommand VDeleteLast3 = new SqlCommand($"Delete from Printer where id ={znachenie}", sqlConnection);
-                    VDeleteLast3.ExecuteNonQuery();
-                    UpdatePrinter();
-                }
-                else
-                {
-                    MessageBox.Show("Выберите запись перед удалением", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
+            //DialogResult dialogResult = MessageBox.Show("Вы действительно хотите безвозвратно удалить этоту запись? ", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            //if (dialogResult == DialogResult.OK)
+            //{
+            //    if (znachenie >= 0)
+            //    {
+            //        SqlCommand VDeleteLast3 = new SqlCommand($"Delete from Printer where id ={znachenie}", sqlConnection);
+            //        VDeleteLast3.ExecuteNonQuery();
+            //        UpdatePrinter();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Выберите запись перед удалением", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //}
         }
 
         private void btnInfo_Click(object sender, EventArgs e)

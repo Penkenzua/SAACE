@@ -237,7 +237,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormEdditPrinter";
-            this.Text = "Изменение данных БД";
+            this.Text = "Изменение данных принтеров";
             this.Load += new System.EventHandler(this.FormEddit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
             this.ResumeLayout(false);

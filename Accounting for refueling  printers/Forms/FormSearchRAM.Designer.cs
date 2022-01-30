@@ -128,7 +128,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "FormSearchRAM";
-            this.Text = "FormSearchRAM";
+            this.Text = "Поиск в оперативной памяти";
             this.Load += new System.EventHandler(this.FormSearchRAM_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

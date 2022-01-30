@@ -47,18 +47,15 @@ namespace Accounting_for_refueling__printers.Forms
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelTool = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-           
             this.ExportinExcel = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
-
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelTool.SuspendLayout();
@@ -230,7 +227,7 @@ namespace Accounting_for_refueling__printers.Forms
             // printerBindingSource
             // 
             this.printerBindingSource.DataMember = "Printer";
-
+            // 
             // comboBox2
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -298,28 +295,23 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // printerTableAdapter
-            // 
-
-            // 
             // ExportinExcel
             // 
             this.ExportinExcel.DoWork += new System.ComponentModel.DoWorkEventHandler(this.ExportinExcel_DoWork);
             // 
-            // FormSearch
+            // FormSearchPrinter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Name = "FormSearch";
-            this.Text = "Поиск в БД";
+            this.Name = "FormSearchPrinter";
+            this.Text = "Поиск в принтерах";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
-
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelTool.ResumeLayout(false);

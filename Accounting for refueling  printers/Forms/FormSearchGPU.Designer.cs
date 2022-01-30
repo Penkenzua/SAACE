@@ -126,7 +126,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "FormSearchGPU";
-            this.Text = "FormSearchGPU";
+            this.Text = "Поиск в видеокартах";
             this.Load += new System.EventHandler(this.FormSearchGPU_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
