@@ -257,8 +257,8 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     worksheet.Cells[2, i] = dataGridView1.Columns[i - 1].HeaderText;
                 }
-                worksheet.Cells[2, 5] = "Стоимость с НДС";
-                worksheet.Cells[2, 6] = "Б или В/Б";
+                worksheet.Cells[2, 6] = "Стоимость с НДС";
+                worksheet.Cells[2, 7] = "Б или В/Б";
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
                     for (int j = 0; j < dataGridView1.Columns.Count; j++)
@@ -283,9 +283,9 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                     //Format export in Excel.
 
-                ((Range)worksheet.get_Range($"A1:F1")).Merge();
-                ((Range)worksheet.get_Range($"A1:F{dataGridView1.Rows.Count + 1}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
-                ((Range)worksheet.get_Range($"A1:F2")).Cells.Font.FontStyle = "Bold";
+                ((Range)worksheet.get_Range($"A1:G1")).Merge();
+                ((Range)worksheet.get_Range($"A1:G{dataGridView1.Rows.Count + 1}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:G2")).Cells.Font.FontStyle = "Bold";
                 worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 worksheet.Cells.Font.Name = "Arial";
                 worksheet.Cells.Font.Size = 10;

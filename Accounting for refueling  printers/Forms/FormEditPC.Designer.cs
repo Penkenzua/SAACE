@@ -55,6 +55,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.cPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CPUTableAdapter();
             this.gPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.GPUTableAdapter();
             this.rAMTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.RAMTableAdapter();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
@@ -64,7 +66,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(307, 93);
+            this.textBox1.Location = new System.Drawing.Point(307, 67);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 1;
@@ -148,7 +150,7 @@ namespace Accounting_for_refueling__printers.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(238, 93);
+            this.label1.Location = new System.Drawing.Point(238, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 7;
@@ -157,7 +159,7 @@ namespace Accounting_for_refueling__printers.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(223, 127);
+            this.label2.Location = new System.Drawing.Point(223, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 8;
@@ -212,7 +214,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(307, 124);
+            this.textBox2.Location = new System.Drawing.Point(307, 98);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 20);
             this.textBox2.TabIndex = 14;
@@ -220,7 +222,7 @@ namespace Accounting_for_refueling__printers.Forms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(226, 152);
+            this.label7.Location = new System.Drawing.Point(226, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 15;
@@ -228,7 +230,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(307, 150);
+            this.textBox3.Location = new System.Drawing.Point(307, 124);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(121, 20);
             this.textBox3.TabIndex = 14;
@@ -249,11 +251,29 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.rAMTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(307, 150);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(121, 20);
+            this.textBox4.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(208, 150);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Инв.Номер:";
+            // 
             // FormEditPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -309,5 +329,7 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSetTableAdapters.GPUTableAdapter gPUTableAdapter;
         private System.Windows.Forms.BindingSource rAMBindingSource;
         private DatabaseDataSetTableAdapters.RAMTableAdapter rAMTableAdapter;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label8;
     }
 }

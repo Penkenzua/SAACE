@@ -159,7 +159,7 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as ID, PC.Модель, OC.Название As 'Операционная система'," +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as ID,PC.Кабинет, PC.Модель, OC.Название As 'Операционная система'," +
                 "CPU.Модель as 'Модель процессора',GPU.Модель as 'Модель видеокарты',RAM.Модель as 'Модель ОЗУ' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
                 " JOIN CPU on PC.CPU = CPU.CPU_ID" +
@@ -498,8 +498,8 @@ namespace Accounting_for_refueling__printers
             ShowSubMenu(PanelCatridgeSubMenu);
             dataGridView1.Visible = true;
             UpdateCatrdige();
-            lblTittle.Text = "Катриджи";
-            NameActiveForm.NameForm = "Катридж";
+            lblTittle.Text = "Картриджи";
+            NameActiveForm.NameForm = "Картридж";
         }
         private void btnCPU_Click(object sender, EventArgs e)
         {

@@ -52,6 +52,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
@@ -61,7 +63,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(344, 101);
+            this.textBox1.Location = new System.Drawing.Point(344, 64);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 0;
@@ -158,14 +160,14 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(189, 47);
             this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "button1";
+            this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(271, 127);
+            this.label1.Location = new System.Drawing.Point(271, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 9;
@@ -209,7 +211,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(344, 127);
+            this.textBox2.Location = new System.Drawing.Point(344, 90);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 20);
             this.textBox2.TabIndex = 14;
@@ -217,17 +219,35 @@ namespace Accounting_for_refueling__printers.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(271, 104);
+            this.label6.Location = new System.Drawing.Point(271, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 15;
             this.label6.Text = "Кабинет:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(253, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Инв.Номер:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(344, 118);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.TabIndex = 17;
             // 
             // FormAddPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
@@ -278,5 +298,7 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

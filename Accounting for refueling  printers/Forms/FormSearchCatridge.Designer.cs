@@ -162,7 +162,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "FormSearchCatridge";
-            this.Text = "Поиск в катриджах";
+            this.Text = "Поиск в картриджах";
             this.Load += new System.EventHandler(this.FormSearchCatridge_Load);
             ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();

@@ -44,7 +44,8 @@ namespace Accounting_for_refueling__printers.Forms
             {
 
                 DateTime date = DateTime.Parse(dateTimePicker1.Text);
-                SqlCommand command = new SqlCommand("INSERT INTO [Printer] (Дата,Кабинет,Модель,Катридж,Операции,Состояние) VALUES(@Дата,@Кабинет,@Модель,@Катридж,@Операции,N'Не выписано')", sqlConnection);
+                SqlCommand command = new SqlCommand("INSERT INTO [Printer] (Дата,Кабинет,Модель,Катридж,Операции,Состояние) VALUES(@Дата,@Кабинет," +
+                "@Модель,@Катридж,@Операции,N'Не выписано')", sqlConnection);
                 command.Parameters.AddWithValue("Дата", $"{date.Month}/{date.Day}/{date.Year}");
                 command.Parameters.AddWithValue("Кабинет", textBox1.Text);
                 command.Parameters.AddWithValue("Модель", comboBox1.Text);

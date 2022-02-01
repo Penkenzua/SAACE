@@ -143,7 +143,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormEditCatridge";
-            this.Text = "Изменения данных в сатриджах";
+            this.Text = "Изменения данных в картриджах";
             this.Load += new System.EventHandler(this.FormEdditCatridge_Load);
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();

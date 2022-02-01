@@ -558,7 +558,7 @@ namespace Accounting_for_refueling__printers
             this.btnCatridge.Name = "btnCatridge";
             this.btnCatridge.Size = new System.Drawing.Size(168, 37);
             this.btnCatridge.TabIndex = 13;
-            this.btnCatridge.Text = "Катриджы";
+            this.btnCatridge.Text = "Картриджи";
             this.btnCatridge.UseVisualStyleBackColor = true;
             this.btnCatridge.Click += new System.EventHandler(this.btnCatridge_Click);
             // 
@@ -722,7 +722,7 @@ namespace Accounting_for_refueling__printers
             this.btnPrinters.Name = "btnPrinters";
             this.btnPrinters.Size = new System.Drawing.Size(168, 37);
             this.btnPrinters.TabIndex = 0;
-            this.btnPrinters.Text = "Принтер";
+            this.btnPrinters.Text = "Принтеры";
             this.btnPrinters.UseVisualStyleBackColor = true;
             this.btnPrinters.Click += new System.EventHandler(this.btnPrinters_Click);
             // 
