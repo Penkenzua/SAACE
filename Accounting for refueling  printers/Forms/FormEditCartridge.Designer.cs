@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormEditCatridge
+    partial class FormEditCartridge
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@ namespace Accounting_for_refueling__printers.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -38,11 +37,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
-            this.catridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.catridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CatridgeTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -66,9 +60,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Location = new System.Drawing.Point(172, 240);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(152, 61);
+            this.btnSearch.Size = new System.Drawing.Size(152, 34);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "button1";
+            this.btnSearch.Text = "Найти";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -109,27 +103,13 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(428, 240);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(152, 61);
+            this.btnAdd.Size = new System.Drawing.Size(152, 34);
             this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "button2";
+            this.btnAdd.Text = "Изменить";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // catridgeBindingSource
-            // 
-            this.catridgeBindingSource.DataMember = "Catridge";
-            this.catridgeBindingSource.DataSource = this.databaseDataSet;
-            // 
-            // catridgeTableAdapter
-            // 
-            this.catridgeTableAdapter.ClearBeforeFill = true;
-            // 
-            // FormEditCatridge
+            // FormEditCartridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,11 +122,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "FormEditCatridge";
+            this.Name = "FormEditCartridge";
             this.Text = "Изменения данных в картриджах";
             this.Load += new System.EventHandler(this.FormEdditCatridge_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,8 +140,5 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
-        private DatabaseDataSet databaseDataSet;
-        private System.Windows.Forms.BindingSource catridgeBindingSource;
-        private DatabaseDataSetTableAdapters.CatridgeTableAdapter catridgeTableAdapter;
     }
 }

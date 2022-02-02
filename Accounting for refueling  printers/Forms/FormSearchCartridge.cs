@@ -11,19 +11,18 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormSearchCatridge : Form
+    public partial class FormSearchCartridge : Form
     {
         public string filter;
         private SqlConnection sqlConnection = null;
-        public FormSearchCatridge()
+        public FormSearchCartridge()
         {
             InitializeComponent();
         }
 
         private void FormSearchCatridge_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Catridge". При необходимости она может быть перемещена или удалена.
-            this.catridgeTableAdapter.Fill(this.databaseDataSet.Catridge);
+         
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
@@ -54,10 +53,10 @@ namespace Accounting_for_refueling__printers.Forms
                     filter += $"Модель like '{comboBox2.Text}%' and ";
                 }
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select C_id as ID, Производитель, Модель from Catridge where {filter}", sqlConnection);
+                SqlCommand command = new SqlCommand($"Select Cartridge_ID as ID, Производитель, Модель from Cartridge where {filter}", sqlConnection);
                 if (command.ExecuteScalar()!=null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select C_id as ID, Производитель, Модель from Catridge where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Cartridge_ID as ID, Производитель, Модель from Cartridge where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];
@@ -78,24 +77,6 @@ namespace Accounting_for_refueling__printers.Forms
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+   
     }
 }

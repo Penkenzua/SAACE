@@ -122,15 +122,15 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Id as ID,Printer.Дата,Printer.Кабинет,Catridge.Модель as 'Модель катриджа',Printer.Операции,Printer.Состояние From Printer " +
-                "Join Catridge on Printer.Катридж = Catridge.C_Id", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Id as ID,Printer.Дата,Printer.Кабинет,Cartridge.Модель as 'Модель картриджа',Printer.Операции,Printer.Состояние From Printer " +
+                "Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
-        public void UpdateCatrdige()
+        public void UpdateCartrdige()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from Catridge", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from Cartridge", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -497,7 +497,7 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = false;
             ShowSubMenu(PanelCatridgeSubMenu);
             dataGridView1.Visible = true;
-            UpdateCatrdige();
+            UpdateCartrdige();
             lblTittle.Text = "Картриджи";
             NameActiveForm.NameForm = "Картридж";
         }
@@ -648,21 +648,21 @@ namespace Accounting_for_refueling__printers
 
         private void btnAddCatridge_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormAddCatridge(), sender);
+            OpenChildForm(new Forms.FormAddСartridge(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
 
         private void btnSearchCatridge_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormSearchCatridge(), sender);
+            OpenChildForm(new Forms.FormSearchCartridge(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
 
         private void btnEdditCatridge_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEditCatridge(), sender);
+            OpenChildForm(new Forms.FormEditCartridge(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }

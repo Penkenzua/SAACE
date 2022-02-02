@@ -35,16 +35,19 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            if (textBox1.Text != ""&&textBox2.Text != ""&&textBox3.Text != ""&&textBox4.Text != "")
             {
 
 
-                SqlCommand command = new SqlCommand("INSERT INTO [RAM] (Модель) VALUES(@Модель)", sqlConnection);
-                command.Parameters.AddWithValue("Модель", textBox1.Text);
+                SqlCommand command = new SqlCommand("INSERT INTO [RAM] (Название,Производитель,Тип,Объём) VALUES(@Название,@Производитель,@Тип,@Объём)", sqlConnection);
+                command.Parameters.AddWithValue("Название", textBox1.Text);
+                command.Parameters.AddWithValue("Производитель", textBox2.Text);
+                command.Parameters.AddWithValue("Тип", textBox3.Text);
+                command.Parameters.AddWithValue("Объём", textBox4.Text);
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешна завершена");
-                    FormMainMenu.SelfRef.UpdatePrinter();
+                    FormMainMenu.SelfRef.UpdateRAM();
 
                 }
             }

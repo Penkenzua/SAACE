@@ -24,7 +24,7 @@ namespace Accounting_for_refueling__printers {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DatabaseDataSet : global::System.Data.DataSet {
         
-        private CatridgeDataTable tableCatridge;
+        private CartridgeDataTable tableCartridge;
         
         private CPUDataTable tableCPU;
         
@@ -76,8 +76,8 @@ namespace Accounting_for_refueling__printers {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Catridge"] != null)) {
-                    base.Tables.Add(new CatridgeDataTable(ds.Tables["Catridge"]));
+                if ((ds.Tables["Cartridge"] != null)) {
+                    base.Tables.Add(new CartridgeDataTable(ds.Tables["Cartridge"]));
                 }
                 if ((ds.Tables["CPU"] != null)) {
                     base.Tables.Add(new CPUDataTable(ds.Tables["CPU"]));
@@ -119,9 +119,9 @@ namespace Accounting_for_refueling__printers {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CatridgeDataTable Catridge {
+        public CartridgeDataTable Cartridge {
             get {
-                return this.tableCatridge;
+                return this.tableCartridge;
             }
         }
         
@@ -252,8 +252,8 @@ namespace Accounting_for_refueling__printers {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Catridge"] != null)) {
-                    base.Tables.Add(new CatridgeDataTable(ds.Tables["Catridge"]));
+                if ((ds.Tables["Cartridge"] != null)) {
+                    base.Tables.Add(new CartridgeDataTable(ds.Tables["Cartridge"]));
                 }
                 if ((ds.Tables["CPU"] != null)) {
                     base.Tables.Add(new CPUDataTable(ds.Tables["CPU"]));
@@ -306,10 +306,10 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableCatridge = ((CatridgeDataTable)(base.Tables["Catridge"]));
+            this.tableCartridge = ((CartridgeDataTable)(base.Tables["Cartridge"]));
             if ((initTable == true)) {
-                if ((this.tableCatridge != null)) {
-                    this.tableCatridge.InitVars();
+                if ((this.tableCartridge != null)) {
+                    this.tableCartridge.InitVars();
                 }
             }
             this.tableCPU = ((CPUDataTable)(base.Tables["CPU"]));
@@ -363,8 +363,8 @@ namespace Accounting_for_refueling__printers {
             this.Namespace = "http://tempuri.org/DatabaseDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableCatridge = new CatridgeDataTable();
-            base.Tables.Add(this.tableCatridge);
+            this.tableCartridge = new CartridgeDataTable();
+            base.Tables.Add(this.tableCartridge);
             this.tableCPU = new CPUDataTable();
             base.Tables.Add(this.tableCPU);
             this.tableGPU = new GPUDataTable();
@@ -394,14 +394,14 @@ namespace Accounting_for_refueling__printers {
                         this.tablePC.RAMColumn}, false);
             this.Relations.Add(this.relationFK_PC_ToTable_3);
             this.relationFK_Printer_ToTable = new global::System.Data.DataRelation("FK_Printer_ToTable", new global::System.Data.DataColumn[] {
-                        this.tableCatridge.C_IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCartridge.Cartridge_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePrinter.КатриджColumn}, false);
             this.Relations.Add(this.relationFK_Printer_ToTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeCatridge() {
+        private bool ShouldSerializeCartridge() {
             return false;
         }
         
@@ -497,7 +497,7 @@ namespace Accounting_for_refueling__printers {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void CatridgeRowChangeEventHandler(object sender, CatridgeRowChangeEvent e);
+        public delegate void CartridgeRowChangeEventHandler(object sender, CartridgeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void CPURowChangeEventHandler(object sender, CPURowChangeEvent e);
@@ -522,9 +522,9 @@ namespace Accounting_for_refueling__printers {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CatridgeDataTable : global::System.Data.TypedTableBase<CatridgeRow> {
+        public partial class CartridgeDataTable : global::System.Data.TypedTableBase<CartridgeRow> {
             
-            private global::System.Data.DataColumn columnC_Id;
+            private global::System.Data.DataColumn columnCartridge_ID;
             
             private global::System.Data.DataColumn columnПроизводитель;
             
@@ -532,8 +532,8 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CatridgeDataTable() {
-                this.TableName = "Catridge";
+            public CartridgeDataTable() {
+                this.TableName = "Cartridge";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -541,7 +541,7 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CatridgeDataTable(global::System.Data.DataTable table) {
+            internal CartridgeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -558,16 +558,16 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected CatridgeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CartridgeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn C_IdColumn {
+            public global::System.Data.DataColumn Cartridge_IDColumn {
                 get {
-                    return this.columnC_Id;
+                    return this.columnCartridge_ID;
                 }
             }
             
@@ -598,54 +598,54 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CatridgeRow this[int index] {
+            public CartridgeRow this[int index] {
                 get {
-                    return ((CatridgeRow)(this.Rows[index]));
+                    return ((CartridgeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CatridgeRowChangeEventHandler CatridgeRowChanging;
+            public event CartridgeRowChangeEventHandler CartridgeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CatridgeRowChangeEventHandler CatridgeRowChanged;
+            public event CartridgeRowChangeEventHandler CartridgeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CatridgeRowChangeEventHandler CatridgeRowDeleting;
+            public event CartridgeRowChangeEventHandler CartridgeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CatridgeRowChangeEventHandler CatridgeRowDeleted;
+            public event CartridgeRowChangeEventHandler CartridgeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddCatridgeRow(CatridgeRow row) {
+            public void AddCartridgeRow(CartridgeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CatridgeRow AddCatridgeRow(int C_Id, string Производитель, string Модель) {
-                CatridgeRow rowCatridgeRow = ((CatridgeRow)(this.NewRow()));
+            public CartridgeRow AddCartridgeRow(int Cartridge_ID, string Производитель, string Модель) {
+                CartridgeRow rowCartridgeRow = ((CartridgeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        C_Id,
+                        Cartridge_ID,
                         Производитель,
                         Модель};
-                rowCatridgeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCatridgeRow);
-                return rowCatridgeRow;
+                rowCartridgeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCartridgeRow);
+                return rowCartridgeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CatridgeRow FindByC_Id(int C_Id) {
-                return ((CatridgeRow)(this.Rows.Find(new object[] {
-                            C_Id})));
+            public CartridgeRow FindByCartridge_ID(int Cartridge_ID) {
+                return ((CartridgeRow)(this.Rows.Find(new object[] {
+                            Cartridge_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                CatridgeDataTable cln = ((CatridgeDataTable)(base.Clone()));
+                CartridgeDataTable cln = ((CartridgeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -653,13 +653,13 @@ namespace Accounting_for_refueling__printers {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new CatridgeDataTable();
+                return new CartridgeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnC_Id = base.Columns["C_Id"];
+                this.columnCartridge_ID = base.Columns["Cartridge_ID"];
                 this.columnПроизводитель = base.Columns["Производитель"];
                 this.columnМодель = base.Columns["Модель"];
             }
@@ -667,44 +667,44 @@ namespace Accounting_for_refueling__printers {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnC_Id = new global::System.Data.DataColumn("C_Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnC_Id);
+                this.columnCartridge_ID = new global::System.Data.DataColumn("Cartridge_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCartridge_ID);
                 this.columnПроизводитель = new global::System.Data.DataColumn("Производитель", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПроизводитель);
                 this.columnМодель = new global::System.Data.DataColumn("Модель", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnМодель);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnC_Id}, true));
-                this.columnC_Id.AllowDBNull = false;
-                this.columnC_Id.Unique = true;
+                                this.columnCartridge_ID}, true));
+                this.columnCartridge_ID.AllowDBNull = false;
+                this.columnCartridge_ID.Unique = true;
                 this.columnПроизводитель.MaxLength = 50;
                 this.columnМодель.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CatridgeRow NewCatridgeRow() {
-                return ((CatridgeRow)(this.NewRow()));
+            public CartridgeRow NewCartridgeRow() {
+                return ((CartridgeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CatridgeRow(builder);
+                return new CartridgeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(CatridgeRow);
+                return typeof(CartridgeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.CatridgeRowChanged != null)) {
-                    this.CatridgeRowChanged(this, new CatridgeRowChangeEvent(((CatridgeRow)(e.Row)), e.Action));
+                if ((this.CartridgeRowChanged != null)) {
+                    this.CartridgeRowChanged(this, new CartridgeRowChangeEvent(((CartridgeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -712,8 +712,8 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.CatridgeRowChanging != null)) {
-                    this.CatridgeRowChanging(this, new CatridgeRowChangeEvent(((CatridgeRow)(e.Row)), e.Action));
+                if ((this.CartridgeRowChanging != null)) {
+                    this.CartridgeRowChanging(this, new CartridgeRowChangeEvent(((CartridgeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -721,8 +721,8 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.CatridgeRowDeleted != null)) {
-                    this.CatridgeRowDeleted(this, new CatridgeRowChangeEvent(((CatridgeRow)(e.Row)), e.Action));
+                if ((this.CartridgeRowDeleted != null)) {
+                    this.CartridgeRowDeleted(this, new CartridgeRowChangeEvent(((CartridgeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -730,14 +730,14 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.CatridgeRowDeleting != null)) {
-                    this.CatridgeRowDeleting(this, new CatridgeRowChangeEvent(((CatridgeRow)(e.Row)), e.Action));
+                if ((this.CartridgeRowDeleting != null)) {
+                    this.CartridgeRowDeleting(this, new CartridgeRowChangeEvent(((CartridgeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveCatridgeRow(CatridgeRow row) {
+            public void RemoveCartridgeRow(CartridgeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -764,7 +764,7 @@ namespace Accounting_for_refueling__printers {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CatridgeDataTable";
+                attribute2.FixedValue = "CartridgeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2112,7 +2112,7 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PrinterRow AddPrinterRow(System.DateTime Дата, string Кабинет, string Модель, CatridgeRow parentCatridgeRowByFK_Printer_ToTable, string Операции, string Состояние) {
+            public PrinterRow AddPrinterRow(System.DateTime Дата, string Кабинет, string Модель, CartridgeRow parentCartridgeRowByFK_Printer_ToTable, string Операции, string Состояние) {
                 PrinterRow rowPrinterRow = ((PrinterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2122,8 +2122,8 @@ namespace Accounting_for_refueling__printers {
                         null,
                         Операции,
                         Состояние};
-                if ((parentCatridgeRowByFK_Printer_ToTable != null)) {
-                    columnValuesArray[4] = parentCatridgeRowByFK_Printer_ToTable[0];
+                if ((parentCartridgeRowByFK_Printer_ToTable != null)) {
+                    columnValuesArray[4] = parentCartridgeRowByFK_Printer_ToTable[0];
                 }
                 rowPrinterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPrinterRow);
@@ -2600,25 +2600,25 @@ namespace Accounting_for_refueling__printers {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class CatridgeRow : global::System.Data.DataRow {
+        public partial class CartridgeRow : global::System.Data.DataRow {
             
-            private CatridgeDataTable tableCatridge;
+            private CartridgeDataTable tableCartridge;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CatridgeRow(global::System.Data.DataRowBuilder rb) : 
+            internal CartridgeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCatridge = ((CatridgeDataTable)(this.Table));
+                this.tableCartridge = ((CartridgeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int C_Id {
+            public int Cartridge_ID {
                 get {
-                    return ((int)(this[this.tableCatridge.C_IdColumn]));
+                    return ((int)(this[this.tableCartridge.Cartridge_IDColumn]));
                 }
                 set {
-                    this[this.tableCatridge.C_IdColumn] = value;
+                    this[this.tableCartridge.Cartridge_IDColumn] = value;
                 }
             }
             
@@ -2627,14 +2627,14 @@ namespace Accounting_for_refueling__printers {
             public string Производитель {
                 get {
                     try {
-                        return ((string)(this[this.tableCatridge.ПроизводительColumn]));
+                        return ((string)(this[this.tableCartridge.ПроизводительColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Производитель\' в таблице \'Catridge\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Производитель\' в таблице \'Cartridge\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCatridge.ПроизводительColumn] = value;
+                    this[this.tableCartridge.ПроизводительColumn] = value;
                 }
             }
             
@@ -2643,39 +2643,39 @@ namespace Accounting_for_refueling__printers {
             public string Модель {
                 get {
                     try {
-                        return ((string)(this[this.tableCatridge.МодельColumn]));
+                        return ((string)(this[this.tableCartridge.МодельColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Модель\' в таблице \'Catridge\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Модель\' в таблице \'Cartridge\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCatridge.МодельColumn] = value;
+                    this[this.tableCartridge.МодельColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsПроизводительNull() {
-                return this.IsNull(this.tableCatridge.ПроизводительColumn);
+                return this.IsNull(this.tableCartridge.ПроизводительColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetПроизводительNull() {
-                this[this.tableCatridge.ПроизводительColumn] = global::System.Convert.DBNull;
+                this[this.tableCartridge.ПроизводительColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsМодельNull() {
-                return this.IsNull(this.tableCatridge.МодельColumn);
+                return this.IsNull(this.tableCartridge.МодельColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetМодельNull() {
-                this[this.tableCatridge.МодельColumn] = global::System.Convert.DBNull;
+                this[this.tableCartridge.МодельColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3188,9 +3188,9 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CatridgeRow CatridgeRow {
+            public CartridgeRow CatridgeRow {
                 get {
-                    return ((CatridgeRow)(this.GetParentRow(this.Table.ParentRelations["FK_Printer_ToTable"])));
+                    return ((CartridgeRow)(this.GetParentRow(this.Table.ParentRelations["FK_Printer_ToTable"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Printer_ToTable"]);
@@ -3267,22 +3267,22 @@ namespace Accounting_for_refueling__printers {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class CatridgeRowChangeEvent : global::System.EventArgs {
+        public class CartridgeRowChangeEvent : global::System.EventArgs {
             
-            private CatridgeRow eventRow;
+            private CartridgeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CatridgeRowChangeEvent(CatridgeRow row, global::System.Data.DataRowAction action) {
+            public CartridgeRowChangeEvent(CartridgeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CatridgeRow Row {
+            public CartridgeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3514,7 +3514,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CatridgeTableAdapter : global::System.ComponentModel.Component {
+    public partial class CartridgeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3528,7 +3528,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public CatridgeTableAdapter() {
+        public CartridgeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3625,8 +3625,8 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Catridge";
-            tableMapping.ColumnMappings.Add("C_Id", "C_Id");
+            tableMapping.DataSetTable = "Cartridge";
+            tableMapping.ColumnMappings.Add("C_Id", "Cartridge_ID");
             tableMapping.ColumnMappings.Add("Производитель", "Производитель");
             tableMapping.ColumnMappings.Add("Модель", "Модель");
             this._adapter.TableMappings.Add(tableMapping);
@@ -3687,7 +3687,7 @@ SELECT C_Id, Производитель, Модель FROM Catridge WHERE (C_Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseDataSet.CatridgeDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.CartridgeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3700,9 +3700,9 @@ SELECT C_Id, Производитель, Модель FROM Catridge WHERE (C_Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseDataSet.CatridgeDataTable GetData() {
+        public virtual DatabaseDataSet.CartridgeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseDataSet.CatridgeDataTable dataTable = new DatabaseDataSet.CatridgeDataTable();
+            DatabaseDataSet.CartridgeDataTable dataTable = new DatabaseDataSet.CartridgeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3710,7 +3710,7 @@ SELECT C_Id, Производитель, Модель FROM Catridge WHERE (C_Id 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet.CatridgeDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.CartridgeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3718,7 +3718,7 @@ SELECT C_Id, Производитель, Модель FROM Catridge WHERE (C_Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DatabaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Catridge");
+            return this.Adapter.Update(dataSet, "Cartridge");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3857,14 +3857,6 @@ SELECT C_Id, Производитель, Модель FROM Catridge WHERE (C_Id 
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Производитель, string Модель, int Original_C_Id, string Original_Производитель, string Original_Модель) {
-            return this.Update(Original_C_Id, Производитель, Модель, Original_C_Id, Original_Производитель, Original_Модель);
         }
     }
     
@@ -6071,7 +6063,7 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
         
         private UpdateOrderOption _updateOrder;
         
-        private CatridgeTableAdapter _catridgeTableAdapter;
+        private CartridgeTableAdapter _cartridgeTableAdapter;
         
         private CPUTableAdapter _cPUTableAdapter;
         
@@ -6105,12 +6097,12 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public CatridgeTableAdapter CatridgeTableAdapter {
+        public CartridgeTableAdapter CartridgeTableAdapter {
             get {
-                return this._catridgeTableAdapter;
+                return this._cartridgeTableAdapter;
             }
             set {
-                this._catridgeTableAdapter = value;
+                this._cartridgeTableAdapter = value;
             }
         }
         
@@ -6217,9 +6209,9 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._catridgeTableAdapter != null) 
-                            && (this._catridgeTableAdapter.Connection != null))) {
-                    return this._catridgeTableAdapter.Connection;
+                if (((this._cartridgeTableAdapter != null) 
+                            && (this._cartridgeTableAdapter.Connection != null))) {
+                    return this._cartridgeTableAdapter.Connection;
                 }
                 if (((this._cPUTableAdapter != null) 
                             && (this._cPUTableAdapter.Connection != null))) {
@@ -6258,7 +6250,7 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._catridgeTableAdapter != null)) {
+                if ((this._cartridgeTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._cPUTableAdapter != null)) {
@@ -6290,12 +6282,12 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._catridgeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Catridge.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cartridgeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Cartridge.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._catridgeTableAdapter.Update(updatedRows));
+                    result = (result + this._cartridgeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6363,11 +6355,11 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._catridgeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Catridge.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cartridgeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Cartridge.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._catridgeTableAdapter.Update(addedRows));
+                    result = (result + this._cartridgeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -6477,11 +6469,11 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._catridgeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Catridge.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cartridgeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Cartridge.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._catridgeTableAdapter.Update(deletedRows));
+                    result = (result + this._cartridgeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -6524,8 +6516,8 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._catridgeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._catridgeTableAdapter.Connection) == false))) {
+            if (((this._cartridgeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cartridgeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -6591,13 +6583,13 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._catridgeTableAdapter != null)) {
-                    revertConnections.Add(this._catridgeTableAdapter, this._catridgeTableAdapter.Connection);
-                    this._catridgeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._catridgeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._catridgeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._catridgeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._catridgeTableAdapter.Adapter);
+                if ((this._cartridgeTableAdapter != null)) {
+                    revertConnections.Add(this._cartridgeTableAdapter, this._cartridgeTableAdapter.Connection);
+                    this._cartridgeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cartridgeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cartridgeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cartridgeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cartridgeTableAdapter.Adapter);
                     }
                 }
                 if ((this._cPUTableAdapter != null)) {
@@ -6712,9 +6704,9 @@ SELECT Id, Дата, Кабинет, Модель, Катридж, Операц�
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._catridgeTableAdapter != null)) {
-                    this._catridgeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._catridgeTableAdapter]));
-                    this._catridgeTableAdapter.Transaction = null;
+                if ((this._cartridgeTableAdapter != null)) {
+                    this._cartridgeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cartridgeTableAdapter]));
+                    this._cartridgeTableAdapter.Transaction = null;
                 }
                 if ((this._cPUTableAdapter != null)) {
                     this._cPUTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cPUTableAdapter]));

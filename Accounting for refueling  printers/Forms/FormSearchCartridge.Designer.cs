@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormSearchCatridge
+    partial class FormSearchCartridge
     {
         /// <summary>
         /// Required designer variable.
@@ -29,22 +29,14 @@ namespace Accounting_for_refueling__printers.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.catridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.catridgeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.catridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CatridgeTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,37 +50,23 @@ namespace Accounting_for_refueling__printers.Forms
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Производитель:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.catridgeBindingSource;
-            this.comboBox1.DisplayMember = "Производитель";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(315, 146);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // catridgeBindingSource
-            // 
-            this.catridgeBindingSource.DataMember = "Catridge";
-            this.catridgeBindingSource.DataSource = this.databaseDataSet;
-            // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSearch
             // 
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(274, 263);
+            this.btnSearch.Location = new System.Drawing.Point(291, 230);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(172, 78);
+            this.btnSearch.Size = new System.Drawing.Size(172, 50);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "button1";
+            this.btnSearch.Text = "Поиск";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -100,27 +78,14 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Модель:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.catridgeBindingSource1;
-            this.comboBox2.DisplayMember = "Модель";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(315, 182);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 4;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // catridgeBindingSource1
-            // 
-            this.catridgeBindingSource1.DataMember = "Catridge";
-            this.catridgeBindingSource1.DataSource = this.databaseDataSet;
-            // 
-            // catridgeTableAdapter
-            // 
-            this.catridgeTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -154,19 +119,16 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 5;
             // 
-            // FormSearchCatridge
+            // FormSearchCartridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Name = "FormSearchCatridge";
+            this.Name = "FormSearchCartridge";
             this.Text = "Поиск в картриджах";
             this.Load += new System.EventHandler(this.FormSearchCatridge_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catridgeBindingSource1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -182,12 +144,8 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
-        private DatabaseDataSet databaseDataSet;
-        private System.Windows.Forms.BindingSource catridgeBindingSource;
-        private DatabaseDataSetTableAdapters.CatridgeTableAdapter catridgeTableAdapter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource catridgeBindingSource1;
     }
 }

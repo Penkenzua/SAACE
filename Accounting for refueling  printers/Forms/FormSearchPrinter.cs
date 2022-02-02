@@ -21,6 +21,8 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Cartridge". При необходимости она может быть перемещена или удалена.
+            this.cartridgeTableAdapter.Fill(this.databaseDataSet.Cartridge);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet5.Printer". При необходимости она может быть перемещена или удалена.
 
             try
@@ -94,9 +96,14 @@ namespace Accounting_for_refueling__printers.Forms
                     filter += $" Операции like N'{textBox4.Text}%' and ";
 
                 }
+                if (comboBox3.Text != "")
+                {
+                    filter += $" Состояние like N'{comboBox3.Text}%' and ";
+
+                }
                 if (comboBox2.Text != "")
                 {
-                    filter += $" Состояние like N'{comboBox2.Text}%' and ";
+                    filter += $" Картридж like N'{comboBox2.Text}%' and ";
 
                 }
 
@@ -133,9 +140,14 @@ namespace Accounting_for_refueling__printers.Forms
                         filter += $" Операции like N'{textBox4.Text}%' and ";
 
                     }
+                    if (comboBox3.Text != "")
+                    {
+                        filter += $" Состояние like N'{comboBox3.Text}%' and ";
+
+                    }
                     if (comboBox2.Text != "")
                     {
-                        filter += $" Состояние like N'{comboBox2.Text}%' and ";
+                        filter += $" Картридж like N'{comboBox2.Text}%' and ";
 
                     }
 
@@ -171,13 +183,19 @@ namespace Accounting_for_refueling__printers.Forms
                                 filter += $" Операции like N'{textBox4.Text}%' and ";
 
                             }
-                if (comboBox2.Text != "")
+                if (comboBox3.Text != "")
                 {
-                    filter += $" Состояние like N'{comboBox2.Text}%' and ";
+                    filter += $" Состояние like N'{comboBox3.Text}%' and ";
 
                 }
+                if (comboBox2.Text != "")
+                {
+                    filter += $" Картридж like N'{comboBox2.Text}%' and ";
+
+                }
+
                 filter = filter.Remove(filter.Length - 4);
-                SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Дата, Кабинет, Модель, Операции, Состояние from Printer where {filter}", sqlConnection);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Дата, Кабинет, Модель, Картридж, Операции, Состояние from Printer where {filter}", sqlConnection);
                 DataSet dataSetSearch = new DataSet();
                 dataAdapter.Fill(dataSetSearch);
                 dataGridView1.DataSource = dataSetSearch.Tables[0];

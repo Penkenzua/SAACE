@@ -106,11 +106,11 @@
     <Compile Include="FormSearchCPU.Designer.cs">
       <DependentUpon>FormSearchCPU.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAddCatridge.cs">
+    <Compile Include="Forms\FormAddСartridge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAddCatridge.Designer.cs">
-      <DependentUpon>FormAddCatridge.cs</DependentUpon>
+    <Compile Include="Forms\FormAddСartridge.Designer.cs">
+      <DependentUpon>FormAddСartridge.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormAddCPU.cs">
       <SubType>Form</SubType>
@@ -142,11 +142,11 @@
     <Compile Include="Forms\FormAddRAM.Designer.cs">
       <DependentUpon>FormAddRAM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEditCatridge.cs">
+    <Compile Include="Forms\FormEditCartridge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEditCatridge.Designer.cs">
-      <DependentUpon>FormEditCatridge.cs</DependentUpon>
+    <Compile Include="Forms\FormEditCartridge.Designer.cs">
+      <DependentUpon>FormEditCartridge.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormEditCPU.cs">
       <SubType>Form</SubType>
@@ -178,11 +178,11 @@
     <Compile Include="Forms\FormEdditRAM.Designer.cs">
       <DependentUpon>FormEdditRAM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormSearchCatridge.cs">
+    <Compile Include="Forms\FormSearchCartridge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormSearchCatridge.Designer.cs">
-      <DependentUpon>FormSearchCatridge.cs</DependentUpon>
+    <Compile Include="Forms\FormSearchCartridge.Designer.cs">
+      <DependentUpon>FormSearchCartridge.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSearchCPU.cs">
       <SubType>Form</SubType>
@@ -246,8 +246,8 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAddCatridge.resx">
-      <DependentUpon>FormAddCatridge.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAddСartridge.resx">
+      <DependentUpon>FormAddСartridge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddCPU.resx">
       <DependentUpon>FormAddCPU.cs</DependentUpon>
@@ -264,8 +264,8 @@
     <EmbeddedResource Include="Forms\FormAddRAM.resx">
       <DependentUpon>FormAddRAM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEditCatridge.resx">
-      <DependentUpon>FormEditCatridge.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEditCartridge.resx">
+      <DependentUpon>FormEditCartridge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEditCPU.resx">
       <DependentUpon>FormEditCPU.cs</DependentUpon>
@@ -282,8 +282,8 @@
     <EmbeddedResource Include="Forms\FormEdditRAM.resx">
       <DependentUpon>FormEdditRAM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormSearchCatridge.resx">
-      <DependentUpon>FormSearchCatridge.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormSearchCartridge.resx">
+      <DependentUpon>FormSearchCartridge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchCPU.resx">
       <DependentUpon>FormSearchCPU.cs</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormAddCatridge
+    partial class FormAddСartridge
     {
         /// <summary>
         /// Required designer variable.
@@ -79,7 +79,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox2.Size = new System.Drawing.Size(175, 20);
             this.textBox2.TabIndex = 12;
             // 
-            // FormAddCatridge
+            // FormAddСartridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,8 +90,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "FormAddCatridge";
-            this.Text = "Добавление картрижа";
+            this.Name = "FormAddСartridge";
+            this.Text = "Добавление в картриджа";
             this.Load += new System.EventHandler(this.FormAddCatridge_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

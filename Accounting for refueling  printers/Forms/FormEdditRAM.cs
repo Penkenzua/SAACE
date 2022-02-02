@@ -39,6 +39,9 @@ namespace Accounting_for_refueling__printers.Forms
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Edit1 = new SqlCommand($"Select Модель from RAM where RAM_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Модель from RAM where RAM_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit3 = new SqlCommand($"Select Модель from RAM where RAM_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit4 = new SqlCommand($"Select Модель from RAM where RAM_ID = {textBox1.Text}", sqlConnection);
 
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
 

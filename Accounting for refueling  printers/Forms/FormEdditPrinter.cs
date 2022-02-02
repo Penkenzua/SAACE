@@ -15,6 +15,10 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormEddit_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Cartridge". При необходимости она может быть перемещена или удалена.
+            this.cartridgeTableAdapter.Fill(this.databaseDataSet.Cartridge);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Printer". При необходимости она может быть перемещена или удалена.
+            this.printerTableAdapter.Fill(this.databaseDataSet.Printer);
 
 
             try
@@ -40,18 +44,18 @@ namespace Accounting_for_refueling__printers.Forms
         {
 
             DateTime date = DateTime.Parse(dateTimePicker1.Text);
-            SqlCommand command = new SqlCommand($"Select id from Printer where id = {textBox1.Text}", sqlConnection);
-            SqlCommand command1 = new SqlCommand($"Select C_id form Catridge where Модель = {comboBox2.Text} ",sqlConnection);
+            SqlCommand command = new SqlCommand($"Select Printer_ID from Printer where Printer_ID = {textBox1.Text}", sqlConnection);
+            SqlCommand command1 = new SqlCommand($"Select Cartridge_ID form Catridge where Модель = {comboBox2.Text} ",sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null&&command1.ExecuteScalar()!=null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update Printer SET " +
                     $"Дата = '{date.Month}/{date.Day}/{date.Year}'," +
                     $"Кабинет = N'{textBox2.Text}'," +
                     $"Модель = N'{comboBox1.Text}', " +
-                    $"Катридж = {command1.ExecuteScalar()}, " +
+                    $"Картридж = {command1.ExecuteScalar()}, " +
                     $"Операции = N'{textBox3.Text}', " +
                     $"Состояние = N'{comboBox3.Text}' " +
-                    $"where id = {textBox1.Text}", sqlConnection);
+                    $"where Printer_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешно выполнена");
@@ -66,15 +70,15 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"Select id from Printer where id = {textBox1.Text}", sqlConnection);
+            SqlCommand command = new SqlCommand($"Select Printer_ID from Printer where Printer_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Edit1 = new SqlCommand($"Select Кабинет from Printer where id ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit2 = new SqlCommand($"Select Операции from Printer where id ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit3 = new SqlCommand($"Select Модель from Printer where id ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit4 = new SqlCommand($"Select Модель from Catridge where (Select Катридж from Printer where id = {textBox1.Text})", sqlConnection);
-                SqlCommand Edit5 = new SqlCommand($"Select Состояние from Printer where id ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit6 = new SqlCommand($"Select Дата from Printer where id ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit1 = new SqlCommand($"Select Кабинет from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Операции from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit3 = new SqlCommand($"Select Модель from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit4 = new SqlCommand($"Select Модель from Cartridge where (Select Картридж from Printer where Printer_ID = {textBox1.Text})", sqlConnection);
+                SqlCommand Edit5 = new SqlCommand($"Select Состояние from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit6 = new SqlCommand($"Select Дата from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
                 comboBox1.Text = Edit3.ExecuteScalar().ToString();
@@ -88,7 +92,7 @@ namespace Accounting_for_refueling__printers.Forms
             }
             else
             {
-                MessageBox.Show("Запись таким id не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Запись таким ID не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";

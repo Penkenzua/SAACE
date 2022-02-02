@@ -32,7 +32,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.components = new System.ComponentModel.Container();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,7 +46,14 @@ namespace Accounting_for_refueling__printers.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
+            this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.printerTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.PrinterTableAdapter();
+            this.cartridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cartridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CartridgeTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox3
@@ -72,10 +78,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 26);
             this.comboBox1.TabIndex = 4;
-            // 
-            // printerBindingSource
-            // 
-            this.printerBindingSource.DataMember = "Printer";
             // 
             // dateTimePicker1
             // 
@@ -199,13 +201,13 @@ namespace Accounting_for_refueling__printers.Forms
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(203, 205);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 18);
+            this.label7.Size = new System.Drawing.Size(81, 18);
             this.label7.TabIndex = 30;
-            this.label7.Text = "Катридж:";
+            this.label7.Text = "Картридж:";
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.printerBindingSource;
+            this.comboBox2.DataSource = this.cartridgeBindingSource;
             this.comboBox2.DisplayMember = "Модель";
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
@@ -213,6 +215,29 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(200, 26);
             this.comboBox2.TabIndex = 31;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // printerBindingSource
+            // 
+            this.printerBindingSource.DataMember = "Printer";
+            this.printerBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // printerTableAdapter
+            // 
+            this.printerTableAdapter.ClearBeforeFill = true;
+            // 
+            // cartridgeBindingSource
+            // 
+            this.cartridgeBindingSource.DataMember = "Cartridge";
+            this.cartridgeBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // cartridgeTableAdapter
+            // 
+            this.cartridgeTableAdapter.ClearBeforeFill = true;
             // 
             // FormEdditPrinter
             // 
@@ -239,7 +264,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormEdditPrinter";
             this.Text = "Изменение данных принтеров";
             this.Load += new System.EventHandler(this.FormEddit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,10 +288,13 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textBox1;
 
-        private System.Windows.Forms.BindingSource printerBindingSource;
-
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox2;
+        private DatabaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource printerBindingSource;
+        private DatabaseDataSetTableAdapters.PrinterTableAdapter printerTableAdapter;
+        private System.Windows.Forms.BindingSource cartridgeBindingSource;
+        private DatabaseDataSetTableAdapters.CartridgeTableAdapter cartridgeTableAdapter;
     }
 }

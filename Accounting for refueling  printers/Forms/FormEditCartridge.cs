@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormEditCatridge : Form
+    public partial class FormEditCartridge : Form
     {
       private SqlConnection sqlConnection = null;
-        public FormEditCatridge()
+        public FormEditCartridge()
         {
             InitializeComponent();
         }
@@ -24,8 +24,7 @@ namespace Accounting_for_refueling__printers.Forms
         private void FormEdditCatridge_Load(object sender, EventArgs e)
         {
           
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Catridge". При необходимости она может быть перемещена или удалена.
-            this.catridgeTableAdapter.Fill(this.databaseDataSet.Catridge);
+        
             
 
             try
@@ -42,11 +41,11 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"Select C_Id from Catridge where C_Id = {textBox1.Text}", sqlConnection);
+            SqlCommand command = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text!="" && command.ExecuteScalar()!= null)
             {
-                SqlCommand Edit1 = new SqlCommand($"Select Производитель from Catridge where C_Id ={textBox1.Text}", sqlConnection);
-                SqlCommand Edit2 = new SqlCommand($"Select Модель from Catridge where C_Id ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit1 = new SqlCommand($"Select Производитель from Cartridge where Cartridge_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Модель from Cartridge where Cartridge_ID ={textBox1.Text}", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
 
@@ -62,17 +61,17 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"Select C_Id from Catridge where C_Id = {textBox1.Text}", sqlConnection);
+            SqlCommand command = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Update1 = new SqlCommand($"Update Catridge SET " +
+                SqlCommand Update1 = new SqlCommand($"Update Cartridge SET " +
                     $"Производитель = N'{textBox2.Text}'," +
                     $"Модель = N'{textBox3.Text}' " +
-                    $"where C_Id = {textBox1.Text}", sqlConnection);
+                    $"where Cartridge_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешно выполнена");
-                    FormMainMenu.SelfRef.UpdateCatrdige();
+                    FormMainMenu.SelfRef.UpdateCartrdige();
                 }
                 else
                 {

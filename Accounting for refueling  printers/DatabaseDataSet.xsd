@@ -7,7 +7,7 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DatabaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Accounting_for_refueling__printers.Properties.Settings.GlobalReference.Default.DatabaseConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CatridgeTableAdapter" GeneratorDataComponentClassName="CatridgeTableAdapter" Name="Catridge" UserDataComponentName="CatridgeTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CartridgeTableAdapter" GeneratorDataComponentClassName="CartridgeTableAdapter" Name="Cartridge" UserDataComponentName="CartridgeTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Catridge" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
@@ -58,7 +58,7 @@ SELECT C_Id, Производитель, Модель FROM Catridge WHERE (C_Id 
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="C_Id" DataSetColumn="C_Id" />
+              <Mapping SourceColumn="C_Id" DataSetColumn="Cartridge_ID" />
               <Mapping SourceColumn="Производитель" DataSetColumn="Производитель" />
               <Mapping SourceColumn="Модель" DataSetColumn="Модель" />
             </Mappings>
@@ -422,10 +422,10 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
   <xs:element name="DatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DatabaseDataSet" msprop:Generator_UserDSName="DatabaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Catridge" msprop:Generator_TableClassName="CatridgeDataTable" msprop:Generator_TableVarName="tableCatridge" msprop:Generator_TablePropName="Catridge" msprop:Generator_RowDeletingName="CatridgeRowDeleting" msprop:Generator_RowChangingName="CatridgeRowChanging" msprop:Generator_RowEvHandlerName="CatridgeRowChangeEventHandler" msprop:Generator_RowDeletedName="CatridgeRowDeleted" msprop:Generator_UserTableName="Catridge" msprop:Generator_RowChangedName="CatridgeRowChanged" msprop:Generator_RowEvArgName="CatridgeRowChangeEvent" msprop:Generator_RowClassName="CatridgeRow">
+        <xs:element name="Cartridge" msprop:Generator_TableClassName="CartridgeDataTable" msprop:Generator_TableVarName="tableCartridge" msprop:Generator_RowChangedName="CartridgeRowChanged" msprop:Generator_TablePropName="Cartridge" msprop:Generator_RowDeletingName="CartridgeRowDeleting" msprop:Generator_RowChangingName="CartridgeRowChanging" msprop:Generator_RowEvHandlerName="CartridgeRowChangeEventHandler" msprop:Generator_RowDeletedName="CartridgeRowDeleted" msprop:Generator_RowClassName="CartridgeRow" msprop:Generator_UserTableName="Cartridge" msprop:Generator_RowEvArgName="CartridgeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="C_Id" msprop:Generator_ColumnVarNameInTable="columnC_Id" msprop:Generator_ColumnPropNameInRow="C_Id" msprop:Generator_ColumnPropNameInTable="C_IdColumn" msprop:Generator_UserColumnName="C_Id" type="xs:int" />
+              <xs:element name="Cartridge_ID" msprop:Generator_ColumnVarNameInTable="columnCartridge_ID" msprop:Generator_ColumnPropNameInRow="Cartridge_ID" msprop:Generator_ColumnPropNameInTable="Cartridge_IDColumn" msprop:Generator_UserColumnName="Cartridge_ID" type="xs:int" />
               <xs:element name="Производитель" msprop:Generator_ColumnVarNameInTable="columnПроизводитель" msprop:Generator_ColumnPropNameInRow="Производитель" msprop:Generator_ColumnPropNameInTable="ПроизводительColumn" msprop:Generator_UserColumnName="Производитель" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -443,7 +443,7 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CPU" msprop:Generator_TableClassName="CPUDataTable" msprop:Generator_TableVarName="tableCPU" msprop:Generator_TablePropName="CPU" msprop:Generator_RowDeletingName="CPURowDeleting" msprop:Generator_RowChangingName="CPURowChanging" msprop:Generator_RowEvHandlerName="CPURowChangeEventHandler" msprop:Generator_RowDeletedName="CPURowDeleted" msprop:Generator_UserTableName="CPU" msprop:Generator_RowChangedName="CPURowChanged" msprop:Generator_RowEvArgName="CPURowChangeEvent" msprop:Generator_RowClassName="CPURow">
+        <xs:element name="CPU" msprop:Generator_TableClassName="CPUDataTable" msprop:Generator_TableVarName="tableCPU" msprop:Generator_RowChangedName="CPURowChanged" msprop:Generator_TablePropName="CPU" msprop:Generator_RowDeletingName="CPURowDeleting" msprop:Generator_RowChangingName="CPURowChanging" msprop:Generator_RowEvHandlerName="CPURowChangeEventHandler" msprop:Generator_RowDeletedName="CPURowDeleted" msprop:Generator_RowClassName="CPURow" msprop:Generator_UserTableName="CPU" msprop:Generator_RowEvArgName="CPURowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CPU_ID" msprop:Generator_ColumnVarNameInTable="columnCPU_ID" msprop:Generator_ColumnPropNameInRow="CPU_ID" msprop:Generator_ColumnPropNameInTable="CPU_IDColumn" msprop:Generator_UserColumnName="CPU_ID" type="xs:int" />
@@ -457,7 +457,7 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GPU" msprop:Generator_TableClassName="GPUDataTable" msprop:Generator_TableVarName="tableGPU" msprop:Generator_TablePropName="GPU" msprop:Generator_RowDeletingName="GPURowDeleting" msprop:Generator_RowChangingName="GPURowChanging" msprop:Generator_RowEvHandlerName="GPURowChangeEventHandler" msprop:Generator_RowDeletedName="GPURowDeleted" msprop:Generator_UserTableName="GPU" msprop:Generator_RowChangedName="GPURowChanged" msprop:Generator_RowEvArgName="GPURowChangeEvent" msprop:Generator_RowClassName="GPURow">
+        <xs:element name="GPU" msprop:Generator_TableClassName="GPUDataTable" msprop:Generator_TableVarName="tableGPU" msprop:Generator_RowChangedName="GPURowChanged" msprop:Generator_TablePropName="GPU" msprop:Generator_RowDeletingName="GPURowDeleting" msprop:Generator_RowChangingName="GPURowChanging" msprop:Generator_RowEvHandlerName="GPURowChangeEventHandler" msprop:Generator_RowDeletedName="GPURowDeleted" msprop:Generator_RowClassName="GPURow" msprop:Generator_UserTableName="GPU" msprop:Generator_RowEvArgName="GPURowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="GPU_ID" msprop:Generator_ColumnVarNameInTable="columnGPU_ID" msprop:Generator_ColumnPropNameInRow="GPU_ID" msprop:Generator_ColumnPropNameInTable="GPU_IDColumn" msprop:Generator_UserColumnName="GPU_ID" type="xs:int" />
@@ -471,7 +471,7 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OC" msprop:Generator_TableClassName="OCDataTable" msprop:Generator_TableVarName="tableOC" msprop:Generator_TablePropName="OC" msprop:Generator_RowDeletingName="OCRowDeleting" msprop:Generator_RowChangingName="OCRowChanging" msprop:Generator_RowEvHandlerName="OCRowChangeEventHandler" msprop:Generator_RowDeletedName="OCRowDeleted" msprop:Generator_UserTableName="OC" msprop:Generator_RowChangedName="OCRowChanged" msprop:Generator_RowEvArgName="OCRowChangeEvent" msprop:Generator_RowClassName="OCRow">
+        <xs:element name="OC" msprop:Generator_TableClassName="OCDataTable" msprop:Generator_TableVarName="tableOC" msprop:Generator_RowChangedName="OCRowChanged" msprop:Generator_TablePropName="OC" msprop:Generator_RowDeletingName="OCRowDeleting" msprop:Generator_RowChangingName="OCRowChanging" msprop:Generator_RowEvHandlerName="OCRowChangeEventHandler" msprop:Generator_RowDeletedName="OCRowDeleted" msprop:Generator_RowClassName="OCRow" msprop:Generator_UserTableName="OC" msprop:Generator_RowEvArgName="OCRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OC_ID" msprop:Generator_ColumnVarNameInTable="columnOC_ID" msprop:Generator_ColumnPropNameInRow="OC_ID" msprop:Generator_ColumnPropNameInTable="OC_IDColumn" msprop:Generator_UserColumnName="OC_ID" type="xs:int" />
@@ -485,7 +485,7 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PC" msprop:Generator_TableClassName="PCDataTable" msprop:Generator_TableVarName="tablePC" msprop:Generator_TablePropName="PC" msprop:Generator_RowDeletingName="PCRowDeleting" msprop:Generator_RowChangingName="PCRowChanging" msprop:Generator_RowEvHandlerName="PCRowChangeEventHandler" msprop:Generator_RowDeletedName="PCRowDeleted" msprop:Generator_UserTableName="PC" msprop:Generator_RowChangedName="PCRowChanged" msprop:Generator_RowEvArgName="PCRowChangeEvent" msprop:Generator_RowClassName="PCRow">
+        <xs:element name="PC" msprop:Generator_TableClassName="PCDataTable" msprop:Generator_TableVarName="tablePC" msprop:Generator_RowChangedName="PCRowChanged" msprop:Generator_TablePropName="PC" msprop:Generator_RowDeletingName="PCRowDeleting" msprop:Generator_RowChangingName="PCRowChanging" msprop:Generator_RowEvHandlerName="PCRowChangeEventHandler" msprop:Generator_RowDeletedName="PCRowDeleted" msprop:Generator_RowClassName="PCRow" msprop:Generator_UserTableName="PC" msprop:Generator_RowEvArgName="PCRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PC_ID" msprop:Generator_ColumnVarNameInTable="columnPC_ID" msprop:Generator_ColumnPropNameInRow="PC_ID" msprop:Generator_ColumnPropNameInTable="PC_IDColumn" msprop:Generator_UserColumnName="PC_ID" type="xs:int" />
@@ -503,7 +503,7 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Printer" msprop:Generator_TableClassName="PrinterDataTable" msprop:Generator_TableVarName="tablePrinter" msprop:Generator_TablePropName="Printer" msprop:Generator_RowDeletingName="PrinterRowDeleting" msprop:Generator_RowChangingName="PrinterRowChanging" msprop:Generator_RowEvHandlerName="PrinterRowChangeEventHandler" msprop:Generator_RowDeletedName="PrinterRowDeleted" msprop:Generator_UserTableName="Printer" msprop:Generator_RowChangedName="PrinterRowChanged" msprop:Generator_RowEvArgName="PrinterRowChangeEvent" msprop:Generator_RowClassName="PrinterRow">
+        <xs:element name="Printer" msprop:Generator_TableClassName="PrinterDataTable" msprop:Generator_TableVarName="tablePrinter" msprop:Generator_RowChangedName="PrinterRowChanged" msprop:Generator_TablePropName="Printer" msprop:Generator_RowDeletingName="PrinterRowDeleting" msprop:Generator_RowChangingName="PrinterRowChanging" msprop:Generator_RowEvHandlerName="PrinterRowChangeEventHandler" msprop:Generator_RowDeletedName="PrinterRowDeleted" msprop:Generator_RowClassName="PrinterRow" msprop:Generator_UserTableName="Printer" msprop:Generator_RowEvArgName="PrinterRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -540,7 +540,7 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RAM" msprop:Generator_TableClassName="RAMDataTable" msprop:Generator_TableVarName="tableRAM" msprop:Generator_TablePropName="RAM" msprop:Generator_RowDeletingName="RAMRowDeleting" msprop:Generator_RowChangingName="RAMRowChanging" msprop:Generator_RowEvHandlerName="RAMRowChangeEventHandler" msprop:Generator_RowDeletedName="RAMRowDeleted" msprop:Generator_UserTableName="RAM" msprop:Generator_RowChangedName="RAMRowChanged" msprop:Generator_RowEvArgName="RAMRowChangeEvent" msprop:Generator_RowClassName="RAMRow">
+        <xs:element name="RAM" msprop:Generator_TableClassName="RAMDataTable" msprop:Generator_TableVarName="tableRAM" msprop:Generator_RowChangedName="RAMRowChanged" msprop:Generator_TablePropName="RAM" msprop:Generator_RowDeletingName="RAMRowDeleting" msprop:Generator_RowChangingName="RAMRowChanging" msprop:Generator_RowEvHandlerName="RAMRowChangeEventHandler" msprop:Generator_RowDeletedName="RAMRowDeleted" msprop:Generator_RowClassName="RAMRow" msprop:Generator_UserTableName="RAM" msprop:Generator_RowEvArgName="RAMRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RAM_ID" msprop:Generator_ColumnVarNameInTable="columnRAM_ID" msprop:Generator_ColumnPropNameInRow="RAM_ID" msprop:Generator_ColumnPropNameInTable="RAM_IDColumn" msprop:Generator_UserColumnName="RAM_ID" type="xs:int" />
@@ -557,8 +557,8 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Catridge" />
-      <xs:field xpath="mstns:C_Id" />
+      <xs:selector xpath=".//mstns:Cartridge" />
+      <xs:field xpath="mstns:Cartridge_ID" />
     </xs:unique>
     <xs:unique name="CPU_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:CPU" />
@@ -587,11 +587,11 @@ SELECT RAM_ID, Модель FROM RAM WHERE (RAM_ID = @RAM_ID)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_PC_ToTable" msdata:parent="OC" msdata:child="PC" msdata:parentkey="OC_ID" msdata:childkey="OC" msprop:Generator_UserChildTable="PC" msprop:Generator_ChildPropName="GetPCRows" msprop:Generator_UserRelationName="FK_PC_ToTable" msprop:Generator_ParentPropName="OCRow" msprop:Generator_RelationVarName="relationFK_PC_ToTable" msprop:Generator_UserParentTable="OC" />
-      <msdata:Relationship name="FK_PC_ToTable_1" msdata:parent="CPU" msdata:child="PC" msdata:parentkey="CPU_ID" msdata:childkey="CPU" msprop:Generator_UserChildTable="PC" msprop:Generator_ChildPropName="GetPCRows" msprop:Generator_UserRelationName="FK_PC_ToTable_1" msprop:Generator_ParentPropName="CPURow" msprop:Generator_RelationVarName="relationFK_PC_ToTable_1" msprop:Generator_UserParentTable="CPU" />
-      <msdata:Relationship name="FK_PC_ToTable_2" msdata:parent="GPU" msdata:child="PC" msdata:parentkey="GPU_ID" msdata:childkey="GPU" msprop:Generator_UserChildTable="PC" msprop:Generator_ChildPropName="GetPCRows" msprop:Generator_UserRelationName="FK_PC_ToTable_2" msprop:Generator_ParentPropName="GPURow" msprop:Generator_RelationVarName="relationFK_PC_ToTable_2" msprop:Generator_UserParentTable="GPU" />
-      <msdata:Relationship name="FK_PC_ToTable_3" msdata:parent="RAM" msdata:child="PC" msdata:parentkey="RAM_ID" msdata:childkey="RAM" msprop:Generator_UserChildTable="PC" msprop:Generator_ChildPropName="GetPCRows" msprop:Generator_UserRelationName="FK_PC_ToTable_3" msprop:Generator_RelationVarName="relationFK_PC_ToTable_3" msprop:Generator_UserParentTable="RAM" msprop:Generator_ParentPropName="RAMRow" />
-      <msdata:Relationship name="FK_Printer_ToTable" msdata:parent="Catridge" msdata:child="Printer" msdata:parentkey="C_Id" msdata:childkey="Катридж" msprop:Generator_UserChildTable="Printer" msprop:Generator_ChildPropName="GetPrinterRows" msprop:Generator_UserRelationName="FK_Printer_ToTable" msprop:Generator_ParentPropName="CatridgeRow" msprop:Generator_RelationVarName="relationFK_Printer_ToTable" msprop:Generator_UserParentTable="Catridge" />
+      <msdata:Relationship name="FK_PC_ToTable" msdata:parent="OC" msdata:child="PC" msdata:parentkey="OC_ID" msdata:childkey="OC" msprop:Generator_UserChildTable="PC" msprop:Generator_ChildPropName="GetPCRows" msprop:Generator_UserRelationName="FK_PC_ToTable" msprop:Generator_RelationVarName="relationFK_PC_ToTable" msprop:Generator_UserParentTable="OC" msprop:Generator_ParentPropName="OCRow" />
+      <msdata:Relationship name="FK_PC_ToTable_1" msdata:parent="CPU" msdata:child="PC" msdata:parentkey="CPU_ID" msdata:childkey="CPU" msprop:Generator_UserChildTable="PC" msprop:Generator_ChildPropName="GetPCRows" msprop:Generator_UserRelationName="FK_PC_ToTable_1" msprop:Generator_RelationVarName="relationFK_PC_ToTable_1" msprop:Generator_UserParentTable="CPU" msprop:Generator_ParentPropName="CPURow" />
+      <msdata:Relationship name="FK_PC_ToTable_2" msdata:parent="GPU" msdata:child="PC" msdata:parentkey="GPU_ID" msdata:childkey="GPU" msprop:Generator_UserChildTable="PC" msprop:Generator_ChildPropName="GetPCRows" msprop:Generator_UserRelationName="FK_PC_ToTable_2" msprop:Generator_RelationVarName="relationFK_PC_ToTable_2" msprop:Generator_UserParentTable="GPU" msprop:Generator_ParentPropName="GPURow" />
+      <msdata:Relationship name="FK_PC_ToTable_3" msdata:parent="RAM" msdata:child="PC" msdata:parentkey="RAM_ID" msdata:childkey="RAM" msprop:Generator_UserChildTable="PC" msprop:Generator_ChildPropName="GetPCRows" msprop:Generator_UserRelationName="FK_PC_ToTable_3" msprop:Generator_ParentPropName="RAMRow" msprop:Generator_RelationVarName="relationFK_PC_ToTable_3" msprop:Generator_UserParentTable="RAM" />
+      <msdata:Relationship name="FK_Printer_ToTable" msdata:parent="Cartridge" msdata:child="Printer" msdata:parentkey="Cartridge_ID" msdata:childkey="Катридж" msprop:Generator_UserChildTable="Printer" msprop:Generator_ChildPropName="GetPrinterRows" msprop:Generator_UserRelationName="FK_Printer_ToTable" msprop:Generator_RelationVarName="relationFK_Printer_ToTable" msprop:Generator_UserParentTable="Cartridge" msprop:Generator_ParentPropName="CatridgeRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

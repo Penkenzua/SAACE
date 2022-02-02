@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormAddCatridge : Form
+    public partial class FormAddСartridge : Form
     {
           private SqlConnection sqlConnection = null;
-        public FormAddCatridge()
+        public FormAddСartridge()
         {
             InitializeComponent();
         }
@@ -39,14 +39,14 @@ namespace Accounting_for_refueling__printers.Forms
             {
 
 
-                SqlCommand command = new SqlCommand("INSERT INTO [Catridge] (Производитель,Модель) VALUES(@Производитель,@Модель)", sqlConnection);
+                SqlCommand command = new SqlCommand("INSERT INTO [Cartridge] (Производитель,Модель) VALUES(@Производитель,@Модель)", sqlConnection);
                 command.Parameters.AddWithValue("Производитель", textBox1.Text);
                 command.Parameters.AddWithValue("Модель", textBox2.Text);
 
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешна завершена");
-                    FormMainMenu.SelfRef.UpdateCatrdige();
+                    FormMainMenu.SelfRef.UpdateCartrdige();
 
                 }
             }
