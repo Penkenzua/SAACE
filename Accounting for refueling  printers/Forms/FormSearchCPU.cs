@@ -43,14 +43,18 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Производитель like '{comboBox1.Text}%' and ";
+                    filter += $"Название like '{comboBox1.Text}%' and ";
                 }
-            
+                if (comboBox2.Text != "")
+                {
+                    filter += $"Производитель like '{comboBox2.Text}%' and ";
+                }
+
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select CPU_ID as ID, Модель from CPU where {filter}", sqlConnection);
+                SqlCommand command = new SqlCommand($"Select CPU_ID as ID, Название,Производитель from CPU where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select CPU_ID as ID, Модель from CPU where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select CPU_ID as ID,  Название,Производительfrom CPU where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

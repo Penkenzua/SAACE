@@ -31,7 +31,6 @@ namespace Accounting_for_refueling__printers.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,6 +38,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
             this.gPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.GPUTableAdapter();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -48,7 +50,9 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,15 +60,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(281, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Модель:";
             // 
             // comboBox1
             // 
@@ -77,11 +72,11 @@ namespace Accounting_for_refueling__printers.Forms
             // btnSearch
             // 
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(297, 223);
+            this.btnSearch.Location = new System.Drawing.Point(297, 215);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(172, 78);
+            this.btnSearch.Size = new System.Drawing.Size(172, 55);
             this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "button1";
+            this.btnSearch.Text = "Поиск";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -118,6 +113,32 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.gPUTableAdapter.ClearBeforeFill = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(253, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Производитель:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(282, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Название:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(348, 167);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 15;
+            // 
             // FormSearchGPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,7 +162,6 @@ namespace Accounting_for_refueling__printers.Forms
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
@@ -149,5 +169,8 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource gPUBindingSource;
         private DatabaseDataSetTableAdapters.GPUTableAdapter gPUTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

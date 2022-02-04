@@ -36,9 +36,12 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand command = new SqlCommand($"Select GPU_ID from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Edit1 = new SqlCommand($"Select Модель from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit1 = new SqlCommand($"Select Название from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Производитель from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
 
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
+                textBox3.Text = Edit2.ExecuteScalar().ToString();
+
 
 
             }
@@ -47,6 +50,8 @@ namespace Accounting_for_refueling__printers.Forms
                 MessageBox.Show("Запись таким ID не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox1.Text = "";
                 textBox2.Text = "";
+                textBox3.Text = "";
+
 
             }
         }
@@ -57,7 +62,8 @@ namespace Accounting_for_refueling__printers.Forms
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update GPU SET " +
-                    $"Модель = N'{textBox2.Text}' " +
+                    $"Название = N'{textBox2.Text}' ," +
+                    $"Производитель =N'{textBox3.Text}'" +
                     $"where GPU_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {

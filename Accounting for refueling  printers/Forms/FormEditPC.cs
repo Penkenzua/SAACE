@@ -21,18 +21,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormEdditPC_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSet.RAM);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.GPU". При необходимости она может быть перемещена или удалена.
-            this.gPUTableAdapter.Fill(this.databaseDataSet.GPU);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.CPU". При необходимости она может быть перемещена или удалена.
-            this.cPUTableAdapter.Fill(this.databaseDataSet.CPU);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.OC". При необходимости она может быть перемещена или удалена.
-            this.oCTableAdapter.Fill(this.databaseDataSet.OC);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.CPU". При необходимости она может быть перемещена или удалена.
-            this.cPUTableAdapter.Fill(this.databaseDataSet.CPU);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.CPU". При необходимости она может быть перемещена или удалена.
-            this.cPUTableAdapter.Fill(this.databaseDataSet.CPU);
+      
 
 
 
@@ -64,7 +53,7 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 SqlCommand Edit1 = new SqlCommand($"Select Кабинет   from PC  where PC_ID = {textBox1.Text}", sqlConnection);
                 SqlCommand Edit2 = new SqlCommand($"Select Модель    from PC  where PC_ID = {textBox1.Text}", sqlConnection);
-                SqlCommand Edit3 = new SqlCommand($"Select Инв.Номер from PC  where PC_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit3 = new SqlCommand($"Select Инв_Номер from PC  where PC_ID = {textBox1.Text}", sqlConnection);
                 SqlCommand Edit4 = new SqlCommand($"Select Название  from OC  where OC_ID =  (Select OC  from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit5 = new SqlCommand($"Select Модель    from CPU where CPU_ID = (Select CPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit6 = new SqlCommand($"Select Модель    from GPU where GPU_ID = (Select GPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
@@ -98,7 +87,7 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand Update1 = new SqlCommand($"Update PC SET " +
                     $"Кабинет = N'{textBox2.Text}'," +
                     $"Модель = N'{textBox3.Text}', " +
-                    $"Инв.Номер = {textBox4.Text}" +
+                    $"Инв_Номер = {textBox4.Text}" +
                     $"OC =  {OC.ExecuteScalar()}," +
                     $"CPU = {CPU.ExecuteScalar()}," +
                     $"GPU = {GPU.ExecuteScalar()}," +
@@ -107,7 +96,7 @@ namespace Accounting_for_refueling__printers.Forms
                 if (Update1.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешно выполнена");
-                    FormMainMenu.SelfRef.UpdateCatrdige();
+                    FormMainMenu.SelfRef.UpdatePC();
                     textBox1.Text = "";
                     textBox2.Text = "";
                     textBox3.Text = "";

@@ -32,6 +32,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -41,18 +43,18 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(175, 41);
             this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "button1";
+            this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(291, 172);
+            this.label1.Location = new System.Drawing.Point(280, 172);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Модель:";
+            this.label1.Text = "Название:";
             // 
             // textBox1
             // 
@@ -61,12 +63,30 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox1.Size = new System.Drawing.Size(175, 20);
             this.textBox1.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(251, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Производитель:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(346, 195);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(175, 20);
+            this.textBox2.TabIndex = 9;
+            // 
             // FormAddCPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -83,5 +103,7 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

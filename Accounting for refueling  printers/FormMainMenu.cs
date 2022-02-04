@@ -122,7 +122,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Id as ID,Printer.Дата,Printer.Кабинет,Cartridge.Модель as 'Модель картриджа',Printer.Операции,Printer.Состояние From Printer " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as ID,Printer.Дата,Printer.Кабинет,Cartridge.Модель as 'Модель картриджа',Printer.Операции,Printer.Состояние From Printer " +
                 "Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
@@ -159,8 +159,8 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as ID,PC.Кабинет, PC.Модель, OC.Название As 'Операционная система'," +
-                "CPU.Модель as 'Модель процессора',GPU.Модель as 'Модель видеокарты',RAM.Модель as 'Модель ОЗУ' from PC " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as ID,PC.Кабинет,PC.Инв_Номер as 'Инв.Номер',PC.Модель, OC.Название As 'Операционная система'," +
+                "CPU.Название as 'Название процессора',GPU.Название as 'Название видеокарты',RAM.Название as 'Название ОЗУ' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
                 " JOIN CPU on PC.CPU = CPU.CPU_ID" +
                 " JOIN GPU on PC.GPU = GPU.GPU_ID" +
@@ -171,7 +171,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateRAM()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from RAM", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as ID, RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём from RAM", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];

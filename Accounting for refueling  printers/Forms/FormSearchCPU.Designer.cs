@@ -39,6 +39,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CPUTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -48,6 +50,8 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.btnSearch);
@@ -62,9 +66,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(281, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Модель:";
+            this.label1.Text = "Название:";
             // 
             // comboBox1
             // 
@@ -73,7 +77,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(348, 136);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(158, 21);
             this.comboBox1.TabIndex = 6;
             // 
             // cPUBindingSource
@@ -89,11 +93,11 @@ namespace Accounting_for_refueling__printers.Forms
             // btnSearch
             // 
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(297, 223);
+            this.btnSearch.Location = new System.Drawing.Point(348, 211);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(172, 78);
+            this.btnSearch.Size = new System.Drawing.Size(158, 43);
             this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "button1";
+            this.btnSearch.Text = "Поиск";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -119,6 +123,25 @@ namespace Accounting_for_refueling__printers.Forms
             // cPUTableAdapter
             // 
             this.cPUTableAdapter.ClearBeforeFill = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(252, 166);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Производитель:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.cPUBindingSource;
+            this.comboBox2.DisplayMember = "Модель";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(348, 163);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(158, 21);
+            this.comboBox2.TabIndex = 9;
             // 
             // FormSearchCPU
             // 
@@ -151,5 +174,7 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource cPUBindingSource;
         private DatabaseDataSetTableAdapters.CPUTableAdapter cPUTableAdapter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

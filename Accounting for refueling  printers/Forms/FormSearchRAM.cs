@@ -22,6 +22,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchRAM_Load(object sender, EventArgs e)
         {
+        
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
@@ -43,14 +44,26 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Модель like '{comboBox1.Text}%' and ";
+                    filter += $"Название like '{comboBox1.Text}%' and ";
+                }
+                if (comboBox2.Text != "")
+                {
+                    filter += $"Производитель like '{comboBox2.Text}%' and ";
+                }
+                if (comboBox3.Text != "")
+                {
+                    filter += $"Тип like '{comboBox3.Text}%' and ";
+                }
+                if (comboBox4.Text != "")
+                {
+                    filter += $"Объём like '{comboBox4.Text}%' and ";
                 }
 
                 filter = filter.Remove(filter.Length - 4);
                 SqlCommand command = new SqlCommand($"Select RAM_ID as ID, Модель from RAM where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as ID, Модель from RAM where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as ID, RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём from RAM where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

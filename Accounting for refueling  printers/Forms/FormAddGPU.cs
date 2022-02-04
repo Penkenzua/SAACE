@@ -35,16 +35,18 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            if (textBox1.Text != "" && textBox2.Text != "")
             {
 
 
-                SqlCommand command = new SqlCommand("INSERT INTO [GPU] (Модель) VALUES(@Модель)", sqlConnection);
-                command.Parameters.AddWithValue("Модель", textBox1.Text);
+                SqlCommand command = new SqlCommand("INSERT INTO [GPU] (Название,Производитель) VALUES(@Название,@Производитель)", sqlConnection);
+                command.Parameters.AddWithValue("Название", textBox1.Text);
+                command.Parameters.AddWithValue("Производитель", textBox1.Text);
+
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешна завершена");
-                    FormMainMenu.SelfRef.UpdatePrinter();
+                    FormMainMenu.SelfRef.UpdateGPU();
 
                 }
             }

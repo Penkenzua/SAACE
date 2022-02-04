@@ -65,7 +65,7 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand command = new SqlCommand("INSERT INTO [PC] (Кабинет,Модель,Инв.Номер,OC,CPU,GPU,RAM) VALUES(@Кабинет,@Модель,@Инв.Номер,@OC,@CPU,@GPU,@RAM)", sqlConnection);
             command.Parameters.AddWithValue("Кабинет", textBox1.Text);
             command.Parameters.AddWithValue("Модель",textBox2.Text);
-            command.Parameters.AddWithValue("Инв.Номер", textBox3.Text);
+            command.Parameters.AddWithValue("Инв_Номер", textBox3.Text);
 
             command.Parameters.AddWithValue("OC", oc);
             command.Parameters.AddWithValue("CPU", cpu);

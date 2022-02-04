@@ -30,8 +30,10 @@ namespace Accounting_for_refueling__printers.Forms
         private void InitializeComponent()
         {
             this.btnAdd = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -45,15 +47,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(280, 172);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Модель:";
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(346, 169);
@@ -61,13 +54,40 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox1.Size = new System.Drawing.Size(175, 20);
             this.textBox1.TabIndex = 3;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(346, 195);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(175, 20);
+            this.textBox2.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(251, 195);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Производитель:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(280, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Название:";
+            // 
             // FormAddGPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormAddGPU";
             this.Text = "Добавление видеокарты";
@@ -80,7 +100,9 @@ namespace Accounting_for_refueling__printers.Forms
         #endregion
 
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

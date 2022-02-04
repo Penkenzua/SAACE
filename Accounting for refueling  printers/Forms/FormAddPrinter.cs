@@ -15,12 +15,6 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormAdd_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet1.Cartridge". При необходимости она может быть перемещена или удалена.
-            this.cartridgeTableAdapter.Fill(this.databaseDataSet1.Cartridge);
-
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Printer". При необходимости она может быть перемещена или удалена.
-            this.printerTableAdapter.Fill(this.databaseDataSet.Printer);
-
 
 
 
