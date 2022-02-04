@@ -21,8 +21,7 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormSearchGPU_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.GPU". При необходимости она может быть перемещена или удалена.
-            this.gPUTableAdapter.Fill(this.databaseDataSet.GPU);
+  
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");

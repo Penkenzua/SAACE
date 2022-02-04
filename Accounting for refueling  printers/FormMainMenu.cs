@@ -120,10 +120,11 @@ namespace Accounting_for_refueling__printers
                 PanelCatridgeSubMenu.Visible = false;
             }
         }
+
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as ID,Printer.Дата,Printer.Кабинет,Cartridge.Модель as 'Модель картриджа',Printer.Операции,Printer.Состояние From Printer " +
-                "Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Cartridge.Модель as 'Модель картриджа',Printer.Операции,Printer.Состояние From Printer " +
+            "Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -159,7 +160,7 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as ID,PC.Кабинет,PC.Инв_Номер as 'Инв.Номер',PC.Модель, OC.Название As 'Операционная система'," +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО МОЛ',PC.Инв_Номер as 'Инв.Номер',PC.Модель, OC.Название As 'Операционная система'," +
                 "CPU.Название as 'Название процессора',GPU.Название as 'Название видеокарты',RAM.Название as 'Название ОЗУ' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
                 " JOIN CPU on PC.CPU = CPU.CPU_ID" +
@@ -169,12 +170,30 @@ namespace Accounting_for_refueling__printers
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
-        public void UpdateRAM()
+        public void UpdateMonitor()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as ID, RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём from RAM", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from Monitor", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdateStorageDestorageDevice()
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from Storage_device", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdateRAM()
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as ID, RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём as 'Объём, ГБ' from RAM", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+        public void UpdateRepPC()
+        {
+
         }
         private Color SelectThemeColor()
         {
@@ -411,7 +430,7 @@ namespace Accounting_for_refueling__printers
             lblTittle.Text = "Домашняя страница";
             if (sqlConnection.State == ConnectionState.Open)
                         {   
-                            MessageBox.Show(new Form { TopMost = true },"Соеденение открыто","Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            MessageBox.Show(new Form { TopMost = true },"Соединение открыто","Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         }
            }
 
