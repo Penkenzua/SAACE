@@ -106,6 +106,18 @@
     <Compile Include="FormSearchCPU.Designer.cs">
       <DependentUpon>FormSearchCPU.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAddMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddMonitor.Designer.cs">
+      <DependentUpon>FormAddMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddStorageDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddStorageDevice.Designer.cs">
+      <DependentUpon>FormAddStorageDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAddСartridge.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +172,12 @@
     <Compile Include="Forms\FormEditGPU.Designer.cs">
       <DependentUpon>FormEditGPU.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEditMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditMonitor.Designer.cs">
+      <DependentUpon>FormEditMonitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormEditOC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +196,12 @@
     <Compile Include="Forms\FormEdditRAM.Designer.cs">
       <DependentUpon>FormEdditRAM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEditStorageDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditStorageDevice.Designer.cs">
+      <DependentUpon>FormEditStorageDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormSearchCartridge.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +219,12 @@
     </Compile>
     <Compile Include="Forms\FormSearchGPU.Designer.cs">
       <DependentUpon>FormSearchGPU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSearchMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSearchMonitor.Designer.cs">
+      <DependentUpon>FormSearchMonitor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSearchOC.cs">
       <SubType>Form</SubType>
@@ -231,6 +261,12 @@
     </Compile>
     <Compile Include="Forms\FormSearchRAM.Designer.cs">
       <DependentUpon>FormSearchRAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSearchStorageDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSearchStorageDevice.Designer.cs">
+      <DependentUpon>FormSearchStorageDevice.cs</DependentUpon>
     </Compile>
     <Compile Include="NameActiveForm.cs" />
     <Compile Include="PathDatabase.cs" />

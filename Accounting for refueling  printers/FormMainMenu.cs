@@ -62,6 +62,9 @@ namespace Accounting_for_refueling__printers
             PanelPCSubMenu.Visible = false;
             PanelCatridgeSubMenu.Visible = false;
             PanelPrinterSubMenu.Visible = false;
+            PanelMonitorSubMenu.Visible = false;
+            PanelStorageDeviceSubMenu.Visible = false;
+                
 
         }
         void hideSubMenu()
@@ -119,6 +122,25 @@ namespace Accounting_for_refueling__printers
                 btnCloseChildForm.Visible = false;
                 PanelCatridgeSubMenu.Visible = false;
             }
+
+            if (PanelMonitorSubMenu.Visible == true)
+
+            {
+
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelMonitorSubMenu.Visible = false;
+            }
+            if (PanelStorageDeviceSubMenu.Visible == true)
+
+            {
+
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelStorageDeviceSubMenu.Visible = false;
+            }
         }
 
         public void UpdatePrinter()
@@ -131,7 +153,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateCartrdige()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from Cartridge", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,Cartridge.Тип from Cartridge", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -152,7 +174,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateOC()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from OC", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select OC.OC_ID as 'Идентификатор', OC.Название from OC", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -160,33 +182,35 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО МОЛ',PC.Инв_Номер as 'Инв.Номер',PC.Модель, OC.Название As 'Операционная система'," +
-                "CPU.Название as 'Название процессора',GPU.Название as 'Название видеокарты',RAM.Название as 'Название ОЗУ' from PC " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО МОЛ',PC.Инв_Номер as 'Инв.Номер',PC.Модель, PC.Монитор, PC.Диск, OC.Название As 'Операционная система'," +
+                "CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Название as 'Название ОЗУ' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
                 " JOIN CPU on PC.CPU = CPU.CPU_ID" +
                 " JOIN GPU on PC.GPU = GPU.GPU_ID" +
-                " JOIN RAM on PC.RAM = RAM.RAM_ID", sqlConnection);
+                " JOIN RAM on PC.RAM = RAM.RAM_ID" +
+                " JOIN Storage_device on PC.Диск = SD_ID" +
+                " JOIN Monitor on PC.Монитор = Monitor_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
         public void UpdateMonitor()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from Monitor", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Monitor.Monitor_ID as 'Идентификатор', Monitor.Инв_Номер, Monitor.Производитель, Monitor.Диагональ, Monitor.Частота from Monitor", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
-        public void UpdateStorageDestorageDevice()
+        public void UpdateStorageDevice()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from Storage_device", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Storage_device.SD_ID as 'Идентификатор', Storage_device.Производитель,Storage_device.Тип,Storage_device.Форм-фактор,Storage_device.Интерфейс from Storage_device", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
         public void UpdateRAM()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as ID, RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём as 'Объём, ГБ' from RAM", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as  'Идентификатор', RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём as 'Объём, ГБ' from RAM", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -694,6 +718,30 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = false;
             btnDelete.Visible = false;
             lblTittle.Text = "Домашняя страница";
+        }
+
+        private void btnMonitor_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelMonitorSubMenu);
+            dataGridView1.Visible = true;
+            UpdateMonitor();
+            lblTittle.Text = "Мониторы";
+            NameActiveForm.NameForm = "Мониторы";
+        }
+
+        private void btnStorageDevice_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            ShowSubMenu(PanelStorageDeviceSubMenu);
+            dataGridView1.Visible = true;
+            UpdateStorageDevice();
+            lblTittle.Text = "Накопительные устройства";
+            NameActiveForm.NameForm = "Накопительные устройства";
         }
     }
 
