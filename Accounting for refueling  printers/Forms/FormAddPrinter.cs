@@ -36,6 +36,8 @@ namespace Accounting_for_refueling__printers.Forms
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SqlCommand sqlCommand = new SqlCommand($"Select Cartridge_ID from Cartridge where Модель=N'{comboBox2.Text}'",sqlConnection);
+            
+
             var temp = sqlCommand.ExecuteScalar().ToString();
             if (textBox1.Text != "" && textBox2.Text != "" && comboBox1.Text != "")
             {
@@ -47,6 +49,7 @@ namespace Accounting_for_refueling__printers.Forms
                 command.Parameters.AddWithValue("Кабинет", textBox1.Text);
                 command.Parameters.AddWithValue("Модель", comboBox1.Text);
                 command.Parameters.AddWithValue("Картридж", temp);
+                command.Parameters.AddWithValue("Тип_картриджа", temp);
                 command.Parameters.AddWithValue("Операции", textBox2.Text);
                 if (command.ExecuteNonQuery() == 1)
                 {

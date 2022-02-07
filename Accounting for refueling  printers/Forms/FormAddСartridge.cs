@@ -39,9 +39,11 @@ namespace Accounting_for_refueling__printers.Forms
             {
 
 
-                SqlCommand command = new SqlCommand("INSERT INTO [Cartridge] (Производитель,Модель) VALUES(@Производитель,@Модель)", sqlConnection);
+                SqlCommand command = new SqlCommand("INSERT INTO [Cartridge] (Производитель,Модель,Тип) VALUES(@Производитель,@Модель,@Тип)", sqlConnection);
                 command.Parameters.AddWithValue("Производитель", textBox1.Text);
                 command.Parameters.AddWithValue("Модель", textBox2.Text);
+                command.Parameters.AddWithValue("Тип", textBox3.Text);
+
 
                 if (command.ExecuteNonQuery() == 1)
                 {

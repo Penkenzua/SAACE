@@ -145,7 +145,7 @@ namespace Accounting_for_refueling__printers
 
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Cartridge.Модель as 'Модель картриджа',Printer.Операции,Printer.Состояние From Printer " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Cartridge.Модель as 'Модель картриджа',Cartridge.Тип as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
             "Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
@@ -182,8 +182,8 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО МОЛ',PC.Инв_Номер as 'Инв.Номер',PC.Модель, PC.Монитор, PC.Диск, OC.Название As 'Операционная система'," +
-                "CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Название as 'Название ОЗУ' from PC " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО МОЛ',PC.Инв_Номер as 'Инв.Номер',PC.Монитор, PC.Диск, OC.Название As 'Операционная система'," +
+                "CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
                 " JOIN CPU on PC.CPU = CPU.CPU_ID" +
                 " JOIN GPU on PC.GPU = GPU.GPU_ID" +

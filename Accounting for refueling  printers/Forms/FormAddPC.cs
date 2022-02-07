@@ -27,7 +27,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormAddPC_Load(object sender, EventArgs e)
         {
-            
+            LoadTheme();
 
             try
             {
@@ -46,21 +46,28 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlCommand OC = new SqlCommand($"Select OC_ID from OC where Название=N'{comboBox1.Text}'", sqlConnection);
-            SqlCommand CPU = new SqlCommand($"Select CPU_ID from CPU where Модель=N'{comboBox2.Text}'", sqlConnection);
-            SqlCommand GPU = new SqlCommand($"Select GPU_ID from GPU where Модель=N'{comboBox3.Text}'", sqlConnection);
-            SqlCommand RAM = new SqlCommand($"Select RAM_ID from RAM where Модель=N'{comboBox4.Text}'", sqlConnection);
+            SqlCommand SD = new SqlCommand($"Select SD_ID from Storage_device where Код_производителя=N'{comboBox2.Text}'", sqlConnection);
+            SqlCommand Monitor = new SqlCommand($"Select Monitor_ID from Monitor where Инв_номер=N'{comboBox1.Text}'", sqlConnection);
+            SqlCommand OC = new SqlCommand($"Select OC_ID from OC where Название=N'{comboBox3.Text}'", sqlConnection);
+            SqlCommand CPU = new SqlCommand($"Select CPU_ID from CPU where Модельный_ряд =N'{comboBox4.Text}'", sqlConnection);
+            SqlCommand GPU = new SqlCommand($"Select GPU_ID from GPU where Графический_процессор=N'{comboBox5.Text}'", sqlConnection);
+            SqlCommand RAM = new SqlCommand($"Select RAM_ID from RAM where Код_производителя =N'{comboBox6.Text}'", sqlConnection);
 
+
+
+            var monitor = Monitor.ExecuteScalar().ToString();
+            var sd = SD.ExecuteScalar().ToString();
             var oc = OC.ExecuteScalar().ToString();
             var cpu = CPU.ExecuteScalar().ToString();
             var gpu = GPU.ExecuteScalar().ToString();
             var ram = RAM.ExecuteScalar().ToString();
 
-            SqlCommand command = new SqlCommand("INSERT INTO [PC] (Кабинет,Модель,Инв.Номер,OC,CPU,GPU,RAM) VALUES(@Кабинет,@Модель,@Инв.Номер,@OC,@CPU,@GPU,@RAM)", sqlConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO [PC] (Кабинет,ФИО_МОЛ,Инв.Номер,Монитор,Диск,OC,CPU,GPU,RAM) VALUES(@Кабинет,@ФИО_МОЛ,@Инв.Номер,@Монитор,@Диск,@OC,@CPU,@GPU,@RAM)", sqlConnection);
             command.Parameters.AddWithValue("Кабинет", textBox1.Text);
-            command.Parameters.AddWithValue("Модель",textBox2.Text);
+            command.Parameters.AddWithValue("ФИО_МОЛ",textBox2.Text);
             command.Parameters.AddWithValue("Инв_Номер", textBox3.Text);
-
+            command.Parameters.AddWithValue("Монитор", monitor);
+            command.Parameters.AddWithValue("Диск", sd);
             command.Parameters.AddWithValue("OC", oc);
             command.Parameters.AddWithValue("CPU", cpu);
             command.Parameters.AddWithValue("GPU", gpu);
@@ -78,10 +85,7 @@ namespace Accounting_for_refueling__printers.Forms
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
-                comboBox1.Text = "";
-                comboBox2.Text = "";
-                comboBox3.Text = "";
-                comboBox4.Text = "";
+             
 
 
 
@@ -92,7 +96,40 @@ namespace Accounting_for_refueling__printers.Forms
             }
 
 
-}
+        }
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+            label5.ForeColor = ThemeColor.PrimaryColor;
+            label6.ForeColor = ThemeColor.PrimaryColor;
+            label7.ForeColor = ThemeColor.PrimaryColor;
+            label8.ForeColor = ThemeColor.PrimaryColor;
+            label9.ForeColor = ThemeColor.PrimaryColor;
+            
+            textBox1.ForeColor = ThemeColor.PrimaryColor;
+            textBox2.ForeColor = ThemeColor.PrimaryColor;
+            textBox3.ForeColor = ThemeColor.PrimaryColor;
+
+            comboBox1.ForeColor = ThemeColor.PrimaryColor;
+            comboBox2.ForeColor = ThemeColor.PrimaryColor;
+            comboBox3.ForeColor = ThemeColor.PrimaryColor;
+            comboBox4.ForeColor = ThemeColor.PrimaryColor;
+            comboBox5.ForeColor = ThemeColor.PrimaryColor;
+            comboBox6.ForeColor = ThemeColor.PrimaryColor;
+        }
 
     }
 }

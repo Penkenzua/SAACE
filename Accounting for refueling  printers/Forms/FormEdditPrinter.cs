@@ -43,13 +43,14 @@ namespace Accounting_for_refueling__printers.Forms
             DateTime date = DateTime.Parse(dateTimePicker1.Text);
             SqlCommand command = new SqlCommand($"Select Printer_ID from Printer where Printer_ID = {textBox1.Text}", sqlConnection);
             SqlCommand command1 = new SqlCommand($"Select Cartridge_ID form Catridge where Модель = {comboBox2.Text} ",sqlConnection);
-            if (textBox1.Text != "" && command.ExecuteScalar() != null&&command1.ExecuteScalar()!=null)
+            if (textBox1.Text != "" && command.ExecuteScalar() != null && command1.ExecuteScalar()!=null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update Printer SET " +
                     $"Дата = '{date.Month}/{date.Day}/{date.Year}'," +
                     $"Кабинет = N'{textBox2.Text}'," +
                     $"Модель = N'{comboBox1.Text}', " +
-                    $"Картридж = {command1.ExecuteScalar()}, " +
+                    $"Картридж = {command1.ExecuteScalar()}," +
+                    $"Тип_картриджа = {command1.ExecuteScalar()}, " +
                     $"Операции = N'{textBox3.Text}', " +
                     $"Состояние = N'{comboBox3.Text}' " +
                     $"where Printer_ID = {textBox1.Text}", sqlConnection);

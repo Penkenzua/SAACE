@@ -81,28 +81,34 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     filter += $" Кабинет like '{textBox1.Text}%' and ";
                 }
-                if (comboBox1.Text != "")
-                {
-                    filter += $" Модель like '{comboBox1.Text}%' and ";
+                    if (comboBox1.Text != "")
+                    {
+                        filter += $" Модель like '{comboBox1.Text}%' and ";
 
-                }
+                    }
 
+                        if (comboBox2.Text != "")
+                        {
+                            filter += $" Картридж like N'{comboBox2.Text}%' and ";
+
+                        }
+                            if (comboBox3.Text != "")
+                            {
+                                filter += $" Тип_картриджа like N'{comboBox3.Text}%' and ";
+
+                            }
+                                if (comboBox4.Text != "")
+                                {
+                                    filter += $" Состояние like N'{comboBox4.Text}%' and ";
+
+                                }             
+                                    if (textBox2.Text != "")
+                                    {
+                                        filter += $" Операции like N'{textBox2.Text}%' and ";
+
+                                    }
                 filter += $" Дата = '{date.Year}.{date.Month}.{date.Day}' and ";
-                if (comboBox1.Text != "")
-                {
-                    filter += $" Операции like N'{textBox4.Text}%' and ";
-
-                }
-                if (comboBox3.Text != "")
-                {
-                    filter += $" Состояние like N'{comboBox3.Text}%' and ";
-
-                }
-                if (comboBox2.Text != "")
-                {
-                    filter += $" Картридж like N'{comboBox2.Text}%' and ";
-
-                }
+               
 
                 filter = filter.Remove(filter.Length - 4);
 
@@ -126,27 +132,32 @@ namespace Accounting_for_refueling__printers.Forms
                     {
                         filter += $" Кабинет like '{textBox1.Text}%' and ";
                     }
-                    if (comboBox1.Text != "")
-                    {
-                        filter += $" Модель like '{comboBox1.Text}%' and ";
+                        if (comboBox1.Text != "")
+                        {
+                            filter += $" Модель like '{comboBox1.Text}%' and ";
 
-                    }
+                        }
 
-                    if (textBox4.Text != "")
-                    {
-                        filter += $" Операции like N'{textBox4.Text}%' and ";
+                            if (comboBox2.Text != "")
+                            {
+                                filter += $" Картридж like N'{comboBox2.Text}%' and ";
 
-                    }
-                    if (comboBox3.Text != "")
-                    {
-                        filter += $" Состояние like N'{comboBox3.Text}%' and ";
+                            }
+                                if (comboBox3.Text != "")
+                                {
+                                    filter += $" Тип_картриджа like N'{comboBox3.Text}%' and ";
 
-                    }
-                    if (comboBox2.Text != "")
-                    {
-                        filter += $" Картридж like N'{comboBox2.Text}%' and ";
+                                }
+                                    if (comboBox4.Text != "")
+                                    {
+                                        filter += $" Состояние like N'{comboBox4.Text}%' and ";
 
-                    }
+                                    }
+                                        if (textBox2.Text != "")
+                                        {
+                                            filter += $" Операции like N'{textBox2.Text}%' and ";
+
+                                        }
 
                     filter = filter.Remove(filter.Length - 4);
                     SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Дата, Кабинет, Модель,  Операции, Состояние from Printer where {filter}", sqlConnection);
@@ -174,23 +185,28 @@ namespace Accounting_for_refueling__printers.Forms
                         filter += $" Модель like '{comboBox1.Text}%' and ";
 
                     }
-                        filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
-                            if (comboBox1.Text != "")
+
+                        if (comboBox2.Text != "")
+                        {
+                            filter += $" Картридж like N'{comboBox2.Text}%' and ";
+
+                        }
+                            if (comboBox3.Text != "")
                             {
-                                filter += $" Операции like N'{textBox4.Text}%' and ";
+                                filter += $" Тип_картриджа like N'{comboBox3.Text}%' and ";
 
                             }
-                if (comboBox3.Text != "")
-                {
-                    filter += $" Состояние like N'{comboBox3.Text}%' and ";
+                                if (comboBox4.Text != "")
+                                {
+                                    filter += $" Состояние like N'{comboBox4.Text}%' and ";
 
-                }
-                if (comboBox2.Text != "")
-                {
-                    filter += $" Картридж like N'{comboBox2.Text}%' and ";
+                                }
+                                    if (textBox2.Text != "")
+                                    {
+                                        filter += $" Операции like N'{textBox2.Text}%' and ";
 
-                }
-
+                                    }
+                filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
                 filter = filter.Remove(filter.Length - 4);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Дата, Кабинет, Модель, Картридж, Операции, Состояние from Printer where {filter}", sqlConnection);
                 DataSet dataSetSearch = new DataSet();
@@ -209,7 +225,7 @@ namespace Accounting_for_refueling__printers.Forms
             label5.ForeColor = ThemeColor.PrimaryColor;
             label6.ForeColor = ThemeColor.PrimaryColor;
             textBox1.ForeColor = ThemeColor.PrimaryColor;
-            textBox4.ForeColor = ThemeColor.PrimaryColor;
+            textBox2.ForeColor = ThemeColor.PrimaryColor;
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
             comboBox2.ForeColor = ThemeColor.PrimaryColor;
             //btnSearch
