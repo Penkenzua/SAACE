@@ -13,20 +13,18 @@ namespace Accounting_for_refueling__printers.Forms
 {
     public partial class FormEditCartridge : Form
     {
-      private SqlConnection sqlConnection = null;
+        private SqlConnection sqlConnection = null;
         public FormEditCartridge()
         {
             InitializeComponent();
         }
 
-       
+
 
         private void FormEdditCatridge_Load(object sender, EventArgs e)
         {
-          
-        
-            
 
+            LoadTheme();
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
@@ -37,17 +35,19 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + PathDatabase.Path + ";Integrated Security=True");
                 sqlConnection.Open();
             }
-           
+
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SqlCommand command = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge_ID = {textBox1.Text}", sqlConnection);
-            if (textBox1.Text!="" && command.ExecuteScalar()!= null)
+            if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Edit1 = new SqlCommand($"Select Производитель from Cartridge where Cartridge_ID ={textBox1.Text}", sqlConnection);
                 SqlCommand Edit2 = new SqlCommand($"Select Модель from Cartridge where Cartridge_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit3 = new SqlCommand($"Select Тип from Cartridge where Cartridge_ID ={textBox1.Text}", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
+                textBox4.Text = Edit3.ExecuteScalar().ToString();
 
             }
             else
@@ -56,6 +56,7 @@ namespace Accounting_for_refueling__printers.Forms
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
+                textBox4.Text = "";
             }
         }
 
@@ -66,7 +67,8 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 SqlCommand Update1 = new SqlCommand($"Update Cartridge SET " +
                     $"Производитель = N'{textBox2.Text}'," +
-                    $"Модель = N'{textBox3.Text}' " +
+                    $"Модель = N'{textBox3.Text}'," +
+                    $"Тип = N'{textBox4.Text}' " +
                     $"where Cartridge_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
@@ -79,6 +81,30 @@ namespace Accounting_for_refueling__printers.Forms
                     Update1.Cancel();
                 }
             }
+
+        }
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+            textBox1.ForeColor = ThemeColor.PrimaryColor;
+            textBox2.ForeColor = ThemeColor.PrimaryColor;
+            textBox3.ForeColor = ThemeColor.PrimaryColor;
+            textBox4.ForeColor = ThemeColor.PrimaryColor;
+
+
         }
     }
 }

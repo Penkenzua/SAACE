@@ -34,7 +34,13 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection.Open();
             }
             filter = "";
+
             comboBox1.Text = "";
+            comboBox2.Text = "";
+            comboBox3.Text = "";
+            comboBox4.Text = "";
+            comboBox5.Text = "";
+            comboBox6.Text = "";
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -42,18 +48,34 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Название like '{comboBox1.Text}%' and ";
+                    filter += $"Производитель like '{comboBox1.Text}%' and ";
                 }
                 if (comboBox2.Text != "")
                 {
-                    filter += $"Производитель like '{comboBox2.Text}%' and ";
+                    filter += $"Модельный_ряд like '{comboBox2.Text}%' and ";
+                }
+                if (comboBox3.Text != "")
+                {
+                    filter += $"Сокет like '{comboBox3.Text}%' and ";
+                }
+                if (comboBox4.Text != "")
+                {
+                    filter += $"Количество_ядер like '{comboBox4.Text}%' and ";
+                }
+                if (comboBox5.Text != "")
+                {
+                    filter += $"Кол_потоков like '{comboBox5.Text}%' and ";
+                }
+                if (comboBox6.Text != "")
+                {
+                    filter += $"Частота like '{comboBox6.Text}%' and ";
                 }
 
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select CPU_ID as ID, Название,Производитель from CPU where {filter}", sqlConnection);
+                SqlCommand command = new SqlCommand($"Select CPU_ID as 'Идентификатор', CPU.Производитель,CPU.Модельный_ряд as 'Модельный ряд',CPU.Сокет,CPU.Количество_ядер as 'Количество ядер',CPU.Кол_потоков as 'Кол-во потоков',CPU.Частота from CPU where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select CPU_ID as ID,  Название,Производительfrom CPU where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select CPU_ID as 'Идентификатор', CPU.Производитель,CPU.Модельный_ряд as 'Модельный ряд',CPU.Сокет,CPU.Количество_ядер as 'Количество ядер',CPU.Кол_потоков as 'Кол-во потоков',CPU.Частота from CPU where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

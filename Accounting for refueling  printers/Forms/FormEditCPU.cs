@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,11 +40,21 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand command = new SqlCommand($"Select CPU_ID from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Edit1 = new SqlCommand($"Select Название from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
-                SqlCommand Edit2 = new SqlCommand($"Select Производитель from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit1 = new SqlCommand($"Select Производитель from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Модельный_ряд from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit3 = new SqlCommand($"Select Сокет from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit4 = new SqlCommand($"Select Количество_ядер from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit5 = new SqlCommand($"Select Кол_потоков from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit6 = new SqlCommand($"Select Частота from CPU where CPU_ID = {textBox1.Text}", sqlConnection);
 
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
+                textBox4.Text = Edit3.ExecuteScalar().ToString();
+                textBox5.Text = Edit4.ExecuteScalar().ToString();
+                textBox6.Text = Edit5.ExecuteScalar().ToString();
+                textBox7.Text = Edit6.ExecuteScalar().ToString();
+
+
 
 
             }
@@ -51,8 +62,7 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 MessageBox.Show("Запись таким ID не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox1.Text = "";
-                textBox2.Text = "";
-                textBox2.Text = "";
+              
 
 
             }
@@ -64,8 +74,12 @@ namespace Accounting_for_refueling__printers.Forms
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update CPU SET " +
-                    $"Название = N'{textBox2.Text}'," +
-                    $"Производитель = N'{textBox3.Text}' " +
+                    $"Производитель = N'{textBox2.Text}'," +
+                    $"Модельный_ряд = N'{textBox3.Text}'," +
+                    $"Сокет = N'{textBox4.Text}'," +
+                    $"Количество_ядер = {textBox5.Text}," +
+                    $"Кол_потоков = {textBox6.Text}," +
+                    $"Частота = {textBox7.Text}" +
                     $"where CPU_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
@@ -76,6 +90,28 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     MessageBox.Show("Введены неверные данные или неверный формат");
                     Update1.Cancel();
+                }
+            }
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            textBox7.Text = new Regex(@",").Replace(textBox7.Text, ".");
+            textBox7.SelectionStart = textBox7.TextLength;
+            if (textBox7.Text != "" && Regex.IsMatch(textBox7.Text[0].ToString(), "[^0-9]"))
+            {
+                MessageBox.Show("Первый знак должен начинаться с цифры ", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                textBox7.Text = textBox7.Text.Remove(textBox7.Text.Length - 1);
+                textBox7.SelectionStart = textBox7.TextLength;
+            }
+            else
+            {
+                if (Regex.IsMatch(textBox7.Text, "[^0-9.]"))
+                {
+                    MessageBox.Show("Только цифры или символ \"Точка\" ", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textBox7.Text = textBox7.Text.Remove(textBox7.Text.Length - 1);
+                    textBox7.SelectionStart = textBox7.TextLength;
                 }
             }
         }

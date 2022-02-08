@@ -37,6 +37,8 @@ namespace Accounting_for_refueling__printers.Forms
             filter = "";
             comboBox1.Text = "";
             comboBox2.Text = "";
+            comboBox3.Text = "";
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -52,11 +54,15 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     filter += $"Модель like '{comboBox2.Text}%' and ";
                 }
+                if (comboBox3.Text != "")
+                {
+                    filter += $"Тип like '{comboBox3.Text}%' and ";
+                }
                 filter = filter.Remove(filter.Length - 4);
                 SqlCommand command = new SqlCommand($"Select Cartridge_ID as ID, Производитель, Модель from Cartridge where {filter}", sqlConnection);
                 if (command.ExecuteScalar()!=null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Cartridge_ID as ID, Производитель, Модель from Cartridge where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Cartridge_ID as ID, Производитель, Модель,Тип from Cartridge where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];
@@ -76,7 +82,27 @@ namespace Accounting_for_refueling__printers.Forms
                 MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);  
             }
         }
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            comboBox1.ForeColor = ThemeColor.PrimaryColor;
+            comboBox2.ForeColor = ThemeColor.PrimaryColor;
+            comboBox3.ForeColor = ThemeColor.PrimaryColor;
+     
+        }
 
-   
     }
+
 }

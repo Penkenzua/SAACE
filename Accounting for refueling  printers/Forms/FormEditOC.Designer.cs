@@ -40,11 +40,11 @@ namespace Accounting_for_refueling__printers.Forms
             // btnAdd
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(452, 253);
+            this.btnAdd.Location = new System.Drawing.Point(443, 253);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(152, 61);
+            this.btnAdd.Size = new System.Drawing.Size(152, 46);
             this.btnAdd.TabIndex = 21;
-            this.btnAdd.Text = "button2";
+            this.btnAdd.Text = "Изменить";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -53,9 +53,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(270, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 20;
-            this.label2.Text = "label2";
+            this.label2.Text = "Название:";
             // 
             // textBox2
             // 
@@ -69,20 +69,20 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Location = new System.Drawing.Point(196, 253);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(152, 61);
+            this.btnSearch.Size = new System.Drawing.Size(152, 46);
             this.btnSearch.TabIndex = 18;
-            this.btnSearch.Text = "button1";
+            this.btnSearch.Text = "Найти";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(270, 136);
+            this.label1.Location = new System.Drawing.Point(240, 143);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "ID:";
+            this.label1.Text = "Идентификатор:";
             // 
             // textBox1
             // 

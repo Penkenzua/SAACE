@@ -22,8 +22,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchOC_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.OC". При необходимости она может быть перемещена или удалена.
-            this.oCTableAdapter.Fill(this.databaseDataSet.OC);
+            LoadTheme(); 
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
@@ -71,6 +70,24 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+         
+
+            comboBox1.ForeColor = ThemeColor.PrimaryColor;
+       
         }
     }
 }
