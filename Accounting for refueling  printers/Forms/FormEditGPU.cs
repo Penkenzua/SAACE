@@ -36,11 +36,15 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand command = new SqlCommand($"Select GPU_ID from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
-                SqlCommand Edit1 = new SqlCommand($"Select Название from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
-                SqlCommand Edit2 = new SqlCommand($"Select Производитель from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit1 = new SqlCommand($"Select Производитель from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Графический_процессор from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit3 = new SqlCommand($"Select Тип_памяти from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit4 = new SqlCommand($"Select Шина_памяти from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
 
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
+                textBox4.Text = Edit3.ExecuteScalar().ToString();
+                textBox5.Text = Edit4.ExecuteScalar().ToString();
 
 
 
@@ -51,6 +55,7 @@ namespace Accounting_for_refueling__printers.Forms
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
+                textBox4.Text = "";
 
 
             }
@@ -62,8 +67,10 @@ namespace Accounting_for_refueling__printers.Forms
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update GPU SET " +
-                    $"Название = N'{textBox2.Text}' ," +
-                    $"Производитель =N'{textBox3.Text}'" +
+                    $"Производитель = N'{textBox2.Text}' ," +
+                    $"Графический_процессор =N'{textBox3.Text}'," +
+                    $"Тип_памяти =N'{textBox4.Text}'," +
+                    $"Шина_памяти = N'{textBox5.Text}' " +
                     $"where GPU_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {

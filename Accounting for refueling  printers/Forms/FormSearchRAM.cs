@@ -63,7 +63,7 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand command = new SqlCommand($"Select RAM_ID as ID, Модель from RAM where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as ID, RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём from RAM where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as 'Идентификатор', RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём from RAM where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

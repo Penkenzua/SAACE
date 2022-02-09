@@ -282,6 +282,9 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddMonitor.resx">
+      <DependentUpon>FormAddMonitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddСartridge.resx">
       <DependentUpon>FormAddСartridge.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +312,9 @@
     <EmbeddedResource Include="Forms\FormEditGPU.resx">
       <DependentUpon>FormEditGPU.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditMonitor.resx">
+      <DependentUpon>FormEditMonitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEditOC.resx">
       <DependentUpon>FormEditOC.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchGPU.resx">
       <DependentUpon>FormSearchGPU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchMonitor.resx">
+      <DependentUpon>FormSearchMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchOC.resx">
       <DependentUpon>FormSearchOC.cs</DependentUpon>

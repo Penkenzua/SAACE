@@ -42,18 +42,28 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Название like '{comboBox1.Text}%' and ";
+                    filter += $"Производитель like '{comboBox1.Text}%' and ";
                 }
-                if (comboBox2.Text != "")
-                {
-                    filter += $"Производитель like '{comboBox2.Text}%' and ";
-                }
+                    if (comboBox2.Text != "")
+                    {
+                        filter += $"Графический_процессор like '{comboBox3.Text}%' and ";
+                    }
+                        if (comboBox3.Text != "")
+                        {
+                            filter += $"Тип_памяти like '{comboBox3.Text}%' and ";
+                        }
+                            if (comboBox4.Text != "")
+                            {
+                                filter += $"Шина_памяти like '{comboBox4.Text}%' and ";
+                            }
 
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select GPU_ID as ID,  Модель from GPU where {filter}", sqlConnection);
+                SqlCommand command = new SqlCommand($"Select GPU_ID as 'Идентификатор', GPU.Производитель,GPU.Графический_процессор as 'Графический процессор'," +
+                    $"GPU.Тип_памяти as 'Тип памяти',GPU.Шина_памяти as 'Шина памяти' from GPU where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select GPU_ID as ID, Название,Производитель from GPU where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select GPU_ID as 'Идентификатор', GPU.Производитель, GPU.Графический_процессор as 'Графический процессор', " +
+                    $"GPU.Тип_памяти as 'Тип памяти',GPU.Шина_памяти as 'Шина памяти' from GPU where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

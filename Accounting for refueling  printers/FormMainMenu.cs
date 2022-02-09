@@ -210,7 +210,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateRAM()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as  'Идентификатор', RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём as 'Объём, ГБ' from RAM", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as  'Идентификатор', RAM.Код_производителя as 'Код производителя',RAM.Производитель,RAM.Тип,RAM.PC_индекс as 'PC-индекс',RAM.Объём as 'Объём, ГБ',RAM.Напряжение as 'Напряжение, В'  from RAM", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
