@@ -36,6 +36,11 @@ namespace Accounting_for_refueling__printers.Forms
             }
             filter = "";
             comboBox1.Text = "";
+            comboBox2.Text = "";
+            comboBox3.Text = "";
+            comboBox4.Text = "";
+            comboBox5.Text = "";
+            comboBox6.Text = "";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -44,7 +49,7 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Название like '{comboBox1.Text}%' and ";
+                    filter += $"Код_производителя like '{comboBox1.Text}%' and ";
                 }
                 if (comboBox2.Text != "")
                 {
@@ -56,14 +61,24 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox4.Text != "")
                 {
-                    filter += $"Объём like '{comboBox4.Text}%' and ";
+                    filter += $"PC_индекс like '{comboBox4.Text}%' and ";
+
+                }
+                if (comboBox5.Text != "")
+                {
+                    filter += $"Объём like '{comboBox5.Text}%' and ";
+                }
+                if (comboBox6.Text != "")
+                {
+                    filter += $"Напряжение like '{comboBox6.Text}%' and ";
                 }
 
                 filter = filter.Remove(filter.Length - 4);
                 SqlCommand command = new SqlCommand($"Select RAM_ID as ID, Модель from RAM where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as 'Идентификатор', RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём from RAM where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as 'Идентификатор', RAM.Код_производителя as 'Код производителя',RAM.Производитель," +
+                        $"RAM.Тип, RAM.PC_индекс as 'PC-индекс',RAM.Объём,RAM. from RAM.Напряжение where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

@@ -285,6 +285,9 @@
     <EmbeddedResource Include="Forms\FormAddMonitor.resx">
       <DependentUpon>FormAddMonitor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddStorageDevice.resx">
+      <DependentUpon>FormAddStorageDevice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddСartridge.resx">
       <DependentUpon>FormAddСartridge.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +327,9 @@
     <EmbeddedResource Include="Forms\FormEdditRAM.resx">
       <DependentUpon>FormEdditRAM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditStorageDevice.resx">
+      <DependentUpon>FormEditStorageDevice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchCartridge.resx">
       <DependentUpon>FormSearchCartridge.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchRAM.resx">
       <DependentUpon>FormSearchRAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchStorageDevice.resx">
+      <DependentUpon>FormSearchStorageDevice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
