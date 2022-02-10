@@ -20,6 +20,7 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormEdditGPU_Load(object sender, EventArgs e)
         {
+            LoadTheme();
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
@@ -85,6 +86,32 @@ namespace Accounting_for_refueling__printers.Forms
             }
         }
 
-        
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+            label5.ForeColor = ThemeColor.PrimaryColor;
+         
+            textBox1.ForeColor = ThemeColor.PrimaryColor;
+            textBox2.ForeColor = ThemeColor.PrimaryColor;
+            textBox3.ForeColor = ThemeColor.PrimaryColor;
+            textBox4.ForeColor = ThemeColor.PrimaryColor;
+            textBox5.ForeColor = ThemeColor.PrimaryColor;
+
+
+        }
+
     }
 }

@@ -33,17 +33,14 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.oCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
+ 
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.gPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.rAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oCTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.OCTableAdapter();
-            this.cPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CPUTableAdapter();
-            this.gPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.GPUTableAdapter();
-            this.rAMTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.RAMTableAdapter();
+          
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,7 +56,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).BeginInit();
@@ -88,12 +85,12 @@ namespace Accounting_for_refueling__printers.Forms
             // oCBindingSource
             // 
             this.oCBindingSource.DataMember = "OC";
-            this.oCBindingSource.DataSource = this.databaseDataSet;
+
             // 
             // databaseDataSet
             // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+    
+
             // 
             // comboBox2
             // 
@@ -110,7 +107,7 @@ namespace Accounting_for_refueling__printers.Forms
             // cPUBindingSource
             // 
             this.cPUBindingSource.DataMember = "CPU";
-            this.cPUBindingSource.DataSource = this.databaseDataSet;
+  
             // 
             // comboBox3
             // 
@@ -127,7 +124,7 @@ namespace Accounting_for_refueling__printers.Forms
             // gPUBindingSource
             // 
             this.gPUBindingSource.DataMember = "GPU";
-            this.gPUBindingSource.DataSource = this.databaseDataSet;
+
             // 
             // comboBox4
             // 
@@ -143,25 +140,9 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // rAMBindingSource
             // 
-            this.rAMBindingSource.DataMember = "RAM";
-            this.rAMBindingSource.DataSource = this.databaseDataSet;
+   
             // 
-            // oCTableAdapter
-            // 
-            this.oCTableAdapter.ClearBeforeFill = true;
-            // 
-            // cPUTableAdapter
-            // 
-            this.cPUTableAdapter.ClearBeforeFill = true;
-            // 
-            // gPUTableAdapter
-            // 
-            this.gPUTableAdapter.ClearBeforeFill = true;
-            // 
-            // rAMTableAdapter
-            // 
-            this.rAMTableAdapter.ClearBeforeFill = true;
-            // 
+
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -332,7 +313,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Text = "Добавление компьютера";
             this.Load += new System.EventHandler(this.FormAddPC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).EndInit();
@@ -348,15 +329,15 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
-        private DatabaseDataSet databaseDataSet;
+
         private System.Windows.Forms.BindingSource oCBindingSource;
-        private DatabaseDataSetTableAdapters.OCTableAdapter oCTableAdapter;
+
         private System.Windows.Forms.BindingSource cPUBindingSource;
-        private DatabaseDataSetTableAdapters.CPUTableAdapter cPUTableAdapter;
+
         private System.Windows.Forms.BindingSource gPUBindingSource;
-        private DatabaseDataSetTableAdapters.GPUTableAdapter gPUTableAdapter;
+
         private System.Windows.Forms.BindingSource rAMBindingSource;
-        private DatabaseDataSetTableAdapters.RAMTableAdapter rAMTableAdapter;
+
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

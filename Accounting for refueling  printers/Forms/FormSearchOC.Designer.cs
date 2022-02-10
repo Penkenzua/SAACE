@@ -34,14 +34,13 @@ namespace Accounting_for_refueling__printers.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.oCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
+
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.oCTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.OCTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+ 
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -81,12 +80,11 @@ namespace Accounting_for_refueling__printers.Forms
             // oCBindingSource
             // 
             this.oCBindingSource.DataMember = "OC";
-            this.oCBindingSource.DataSource = this.databaseDataSet;
+
             // 
             // databaseDataSet
             // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // btnSearch
             // 
@@ -121,7 +119,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // oCTableAdapter
             // 
-            this.oCTableAdapter.ClearBeforeFill = true;
+
             // 
             // FormSearchOC
             // 
@@ -136,7 +134,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -151,8 +149,8 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private DatabaseDataSet databaseDataSet;
+
         private System.Windows.Forms.BindingSource oCBindingSource;
-        private DatabaseDataSetTableAdapters.OCTableAdapter oCTableAdapter;
+
     }
 }

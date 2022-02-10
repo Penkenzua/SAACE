@@ -50,40 +50,45 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // comboBox4
             // 
+            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(315, 186);
+            this.comboBox4.Location = new System.Drawing.Point(315, 220);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(172, 21);
             this.comboBox4.TabIndex = 33;
             // 
             // comboBox3
             // 
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(315, 159);
+            this.comboBox3.Location = new System.Drawing.Point(315, 193);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(172, 21);
             this.comboBox3.TabIndex = 32;
             // 
             // comboBox2
             // 
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(315, 133);
+            this.comboBox2.Location = new System.Drawing.Point(315, 167);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(172, 21);
             this.comboBox2.TabIndex = 31;
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(315, 107);
+            this.comboBox1.Location = new System.Drawing.Point(315, 141);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 21);
             this.comboBox1.TabIndex = 30;
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(315, 261);
+            this.btnSearch.Location = new System.Drawing.Point(315, 295);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(172, 46);
             this.btnSearch.TabIndex = 25;
@@ -93,8 +98,9 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // comboBox5
             // 
+            this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(315, 213);
+            this.comboBox5.Location = new System.Drawing.Point(315, 247);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(172, 21);
             this.comboBox5.TabIndex = 35;
@@ -103,7 +109,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(242, 218);
+            this.label5.Location = new System.Drawing.Point(242, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 39;
@@ -113,7 +119,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 189);
+            this.label4.Location = new System.Drawing.Point(227, 223);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 40;
@@ -123,7 +129,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 162);
+            this.label3.Location = new System.Drawing.Point(280, 196);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 38;
@@ -133,7 +139,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(221, 133);
+            this.label2.Location = new System.Drawing.Point(221, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 37;
@@ -143,7 +149,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(200, 110);
+            this.label1.Location = new System.Drawing.Point(200, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 36;
@@ -194,7 +200,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormSearchStorageDevice";
-            this.Text = "FormSearchStorageDevice";
+            this.Text = "Поиск накопительных устройств";
             this.Load += new System.EventHandler(this.FormSearchStorageDevice_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

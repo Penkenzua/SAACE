@@ -40,17 +40,14 @@ namespace Accounting_for_refueling__printers.Forms
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new Accounting_for_refueling__printers.DatabaseDataSet();
+
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cartridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet1 = new Accounting_for_refueling__printers.DatabaseDataSet();
-            this.printerTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.PrinterTableAdapter();
-            this.cartridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetTableAdapters.CartridgeTableAdapter();
+
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet1)).BeginInit();
+
             this.SuspendLayout();
             // 
             // btnAdd
@@ -154,12 +151,11 @@ namespace Accounting_for_refueling__printers.Forms
             // printerBindingSource
             // 
             this.printerBindingSource.DataMember = "Printer";
-            this.printerBindingSource.DataSource = this.databaseDataSet;
+
             // 
             // databaseDataSet
             // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // label5
             // 
@@ -188,20 +184,7 @@ namespace Accounting_for_refueling__printers.Forms
             // cartridgeBindingSource
             // 
             this.cartridgeBindingSource.DataMember = "Cartridge";
-            this.cartridgeBindingSource.DataSource = this.databaseDataSet1;
-            // 
-            // databaseDataSet1
-            // 
-            this.databaseDataSet1.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // printerTableAdapter
-            // 
-            this.printerTableAdapter.ClearBeforeFill = true;
-            // 
-            // cartridgeTableAdapter
-            // 
-            this.cartridgeTableAdapter.ClearBeforeFill = true;
+       
             // 
             // FormAddPrinter
             // 
@@ -224,9 +207,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.Text = "Добавление в БД";
             this.Load += new System.EventHandler(this.FormAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet1)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,11 +228,11 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox2;
-        private DatabaseDataSet databaseDataSet;
+
         private System.Windows.Forms.BindingSource printerBindingSource;
-        private DatabaseDataSetTableAdapters.PrinterTableAdapter printerTableAdapter;
-        private DatabaseDataSet databaseDataSet1;
+
+
         private System.Windows.Forms.BindingSource cartridgeBindingSource;
-        private DatabaseDataSetTableAdapters.CartridgeTableAdapter cartridgeTableAdapter;
+
     }
 }

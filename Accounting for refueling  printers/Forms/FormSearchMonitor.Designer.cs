@@ -65,40 +65,45 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // comboBox4
             // 
+            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(297, 175);
+            this.comboBox4.Location = new System.Drawing.Point(323, 219);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(172, 21);
             this.comboBox4.TabIndex = 24;
             // 
             // comboBox3
             // 
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(297, 148);
+            this.comboBox3.Location = new System.Drawing.Point(323, 192);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(172, 21);
             this.comboBox3.TabIndex = 23;
             // 
             // comboBox2
             // 
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(297, 122);
+            this.comboBox2.Location = new System.Drawing.Point(323, 166);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(172, 21);
             this.comboBox2.TabIndex = 22;
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(297, 96);
+            this.comboBox1.Location = new System.Drawing.Point(323, 140);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 21);
             this.comboBox1.TabIndex = 21;
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(225, 151);
+            this.label4.Location = new System.Drawing.Point(251, 195);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 19;
@@ -106,8 +111,9 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(239, 175);
+            this.label3.Location = new System.Drawing.Point(265, 219);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 20;
@@ -115,8 +121,9 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 126);
+            this.label2.Location = new System.Drawing.Point(228, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 16;
@@ -124,8 +131,9 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(224, 104);
+            this.label1.Location = new System.Drawing.Point(250, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 14;
@@ -133,8 +141,9 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(297, 223);
+            this.btnSearch.Location = new System.Drawing.Point(323, 267);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(172, 46);
             this.btnSearch.TabIndex = 7;
@@ -169,7 +178,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "FormSearchMonitor";
-            this.Text = "FormSearchMonitor";
+            this.Text = "Поиск мониторов";
             this.Load += new System.EventHandler(this.FormSearchMonitor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

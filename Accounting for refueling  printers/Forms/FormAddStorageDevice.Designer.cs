@@ -46,7 +46,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(265, 213);
+            this.label5.Location = new System.Drawing.Point(266, 244);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 28;
@@ -56,7 +56,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(250, 184);
+            this.label4.Location = new System.Drawing.Point(251, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 29;
@@ -65,7 +65,7 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox5
             // 
             this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.Location = new System.Drawing.Point(338, 206);
+            this.textBox5.Location = new System.Drawing.Point(339, 237);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(175, 20);
             this.textBox5.TabIndex = 27;
@@ -74,7 +74,7 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox3
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(339, 154);
+            this.textBox3.Location = new System.Drawing.Point(340, 185);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(175, 20);
             this.textBox3.TabIndex = 24;
@@ -83,7 +83,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(303, 157);
+            this.label3.Location = new System.Drawing.Point(304, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 23;
@@ -92,7 +92,7 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox4
             // 
             this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(339, 180);
+            this.textBox4.Location = new System.Drawing.Point(340, 211);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(175, 20);
             this.textBox4.TabIndex = 22;
@@ -102,7 +102,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(244, 128);
+            this.label2.Location = new System.Drawing.Point(245, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 21;
@@ -111,7 +111,7 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(339, 128);
+            this.textBox2.Location = new System.Drawing.Point(340, 159);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(175, 20);
             this.textBox2.TabIndex = 20;
@@ -132,7 +132,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(223, 105);
+            this.label1.Location = new System.Drawing.Point(224, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 18;
@@ -141,7 +141,7 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(339, 102);
+            this.textBox1.Location = new System.Drawing.Point(340, 133);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(175, 20);
             this.textBox1.TabIndex = 17;
@@ -164,7 +164,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormAddStorageDevice";
-            this.Text = "FormAddStorageDevice";
+            this.Text = "Добавление накопительный устройств";
             this.Load += new System.EventHandler(this.FormAddStorageDevice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

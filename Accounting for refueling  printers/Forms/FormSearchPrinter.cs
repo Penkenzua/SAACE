@@ -223,6 +223,9 @@ namespace Accounting_for_refueling__printers.Forms
             label3.ForeColor = ThemeColor.PrimaryColor;
             label4.ForeColor = ThemeColor.PrimaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
+            label7.ForeColor = ThemeColor.PrimaryColor;
+            label8.ForeColor = ThemeColor.PrimaryColor;
+
             label6.ForeColor = ThemeColor.PrimaryColor;
             textBox1.ForeColor = ThemeColor.PrimaryColor;
             textBox2.ForeColor = ThemeColor.PrimaryColor;

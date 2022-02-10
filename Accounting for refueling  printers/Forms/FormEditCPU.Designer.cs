@@ -63,7 +63,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(201, 316);
+            this.btnSearch.Location = new System.Drawing.Point(198, 316);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(152, 45);
             this.btnSearch.TabIndex = 10;
@@ -74,9 +74,9 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(332, 103);
+            this.textBox1.Location = new System.Drawing.Point(331, 103);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
+            this.textBox1.Size = new System.Drawing.Size(176, 20);
             this.textBox1.TabIndex = 16;
             // 
             // label3
@@ -112,17 +112,17 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox6
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.Location = new System.Drawing.Point(333, 230);
+            this.textBox6.Location = new System.Drawing.Point(331, 230);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(175, 20);
+            this.textBox6.Size = new System.Drawing.Size(177, 20);
             this.textBox6.TabIndex = 30;
             // 
             // textBox5
             // 
             this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.Location = new System.Drawing.Point(333, 207);
+            this.textBox5.Location = new System.Drawing.Point(331, 207);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(175, 20);
+            this.textBox5.Size = new System.Drawing.Size(177, 20);
             this.textBox5.TabIndex = 31;
             // 
             // label1
@@ -140,7 +140,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox3.Location = new System.Drawing.Point(331, 155);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(175, 20);
+            this.textBox3.Size = new System.Drawing.Size(177, 20);
             this.textBox3.TabIndex = 28;
             // 
             // label4
@@ -156,9 +156,9 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox4
             // 
             this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(332, 181);
+            this.textBox4.Location = new System.Drawing.Point(331, 181);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(175, 20);
+            this.textBox4.Size = new System.Drawing.Size(177, 20);
             this.textBox4.TabIndex = 26;
             // 
             // label2
@@ -174,9 +174,9 @@ namespace Accounting_for_refueling__printers.Forms
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(332, 129);
+            this.textBox2.Location = new System.Drawing.Point(331, 129);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
+            this.textBox2.Size = new System.Drawing.Size(177, 20);
             this.textBox2.TabIndex = 24;
             // 
             // label7
@@ -194,7 +194,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox7.Location = new System.Drawing.Point(331, 256);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(175, 20);
+            this.textBox7.Size = new System.Drawing.Size(177, 20);
             this.textBox7.TabIndex = 22;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 

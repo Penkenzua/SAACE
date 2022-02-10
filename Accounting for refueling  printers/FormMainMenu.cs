@@ -160,14 +160,16 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateCPU()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from CPU", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select CPU.CPU_ID as 'Идентификатор', CPU.Производитель,CPU.Модельный_ряд as 'Модельный ряд'," +
+                "CPU.Сокет,CPU.Количество_ядер as 'Количество ядер',CPU.Кол_потоков as 'Кол потоков',CPU.Частота from CPU", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
         public void UpdateGPU()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select * from GPU", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select GPU.GPU_ID as 'Идентификатор',GPU.Производитель,GPU.Графический_процессор as 'Графический процессор'," +
+                "GPU.Тип_памяти as 'Тип памяти',GPU.Шина_памяти as 'Шина памяти' from GPU", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -203,7 +205,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateStorageDevice()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Storage_device.SD_ID as 'Идентификатор', Storage_device.Производитель,Storage_device.Тип,Storage_device.Форм-фактор,Storage_device.Интерфейс from Storage_device", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Storage_device.SD_ID as 'Идентификатор',Storage_device.Код_производителя as 'Код производителя', Storage_device.Производитель,Storage_device.Тип,Storage_device.Форм_фактор,Storage_device.Интерфейс from Storage_device", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -344,6 +346,26 @@ namespace Accounting_for_refueling__printers
             }
             //RAM
             foreach (Control previousBtn in PanelRAMSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //Monitor
+            foreach (Control previousBtn in PanelMonitorSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //Storage device
+            foreach (Control previousBtn in PanelStorageDeviceSubMenu.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
@@ -742,6 +764,48 @@ namespace Accounting_for_refueling__printers
             UpdateStorageDevice();
             lblTittle.Text = "Накопительные устройства";
             NameActiveForm.NameForm = "Накопительные устройства";
+        }
+
+        private void btnAddMonitor_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddMonitor(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnSearchMonitor_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchMonitor(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEditMonitor_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEditMonitor(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnAddSD_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddStorageDevice(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnSearchSD_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSearchStorageDevice(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEditSD_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEditStorageDevice(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
         }
     }
 

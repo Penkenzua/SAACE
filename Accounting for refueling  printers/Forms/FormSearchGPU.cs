@@ -21,6 +21,7 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormSearchGPU_Load(object sender, EventArgs e)
         {
+            LoadTheme();
   
             try
             {
@@ -83,7 +84,30 @@ namespace Accounting_for_refueling__printers.Forms
                 MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+      
 
-        
+            comboBox1.ForeColor = ThemeColor.PrimaryColor;
+            comboBox2.ForeColor = ThemeColor.PrimaryColor;
+            comboBox3.ForeColor = ThemeColor.PrimaryColor;
+            comboBox4.ForeColor = ThemeColor.PrimaryColor;
+     
+        }
     }
 }

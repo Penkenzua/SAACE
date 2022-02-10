@@ -22,7 +22,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchCatridge_Load(object sender, EventArgs e)
         {
-         
+            LoadTheme();
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
