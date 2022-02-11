@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,8 +22,9 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormSearchCPU_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "cPUDataSet.CPU". При необходимости она может быть перемещена или удалена.
-            this.cPUTableAdapter.Fill(this.cPUDataSet.CPU);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU". При необходимости она может быть перемещена или удалена.
+            this.cPUTableAdapter.Fill(this.databaseDataSetCPU.CPU);
+
             LoadTheme();
             try
             {
@@ -46,6 +48,7 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            filter = "";
             try
             {
                 if (comboBox1.Text != "")
@@ -124,5 +127,28 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox6.ForeColor = ThemeColor.PrimaryColor;
         }
 
+        private void comboBox6_TextChanged(object sender, EventArgs e)
+        {
+            comboBox6.Text = new Regex(@",").Replace(comboBox6.Text, ".");
+            comboBox6.SelectionStart = comboBox6.Text.Length;
+            if (comboBox6.Text != "" && Regex.IsMatch(comboBox6.Text[0].ToString(), "[^0-9]"))
+            {
+                MessageBox.Show("Первый знак должен начинаться с цифры ", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                comboBox6.Text = comboBox6.Text.Remove(comboBox6.Text.Length - 1);
+                comboBox6.SelectionStart = comboBox6.Text.Length;
+            }
+            else
+            {
+              
+                if (Regex.IsMatch(comboBox6.Text, "[^0-9.,]"))
+                {
+
+                    MessageBox.Show("Только цифры", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    comboBox6.Text = comboBox6.Text.Remove(comboBox6.Text.Length - 1);
+                    comboBox6.SelectionStart = comboBox6.Text.Length;
+                }
+            }
+        }
     }
 }

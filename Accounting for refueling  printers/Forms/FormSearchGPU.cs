@@ -21,6 +21,9 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormSearchGPU_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU". При необходимости она может быть перемещена или удалена.
+            this.gPUTableAdapter.Fill(this.databaseDataSetGPU.GPU);
+
             LoadTheme();
   
             try
@@ -39,6 +42,7 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            filter = "";
             try
             {
                 if (comboBox1.Text != "")

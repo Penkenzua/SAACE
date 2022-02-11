@@ -22,6 +22,8 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchRAM_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM". При необходимости она может быть перемещена или удалена.
+            this.rAMTableAdapter.Fill(this.databaseDataSetRAM.RAM);
             LoadTheme();
             try
             {
@@ -45,6 +47,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            filter = "";
             try
             {
                 if (comboBox1.Text != "")

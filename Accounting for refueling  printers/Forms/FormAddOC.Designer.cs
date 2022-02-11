@@ -36,6 +36,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Location = new System.Drawing.Point(346, 169);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(175, 20);
@@ -43,6 +44,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(280, 172);
             this.label1.Name = "label1";
@@ -52,6 +54,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(346, 236);
             this.btnAdd.Name = "btnAdd";

@@ -29,6 +29,7 @@ namespace Accounting_for_refueling__printers.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -43,14 +44,29 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.databaseDataSetSD = new Accounting_for_refueling__printers.DatabaseDataSetSD();
+            this.storagedeviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.storage_deviceTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetSDTableAdapters.Storage_deviceTableAdapter();
+            this.storagedeviceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.storagedeviceBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.storagedeviceBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.storagedeviceBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox4
             // 
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox4.DataSource = this.storagedeviceBindingSource3;
+            this.comboBox4.DisplayMember = "Форм_фактор";
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(315, 220);
             this.comboBox4.Name = "comboBox4";
@@ -60,6 +76,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox3.DataSource = this.storagedeviceBindingSource2;
+            this.comboBox3.DisplayMember = "Тип";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(315, 193);
             this.comboBox3.Name = "comboBox3";
@@ -69,6 +87,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox2.DataSource = this.storagedeviceBindingSource1;
+            this.comboBox2.DisplayMember = "Производитель";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(315, 167);
             this.comboBox2.Name = "comboBox2";
@@ -78,6 +98,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.DataSource = this.storagedeviceBindingSource;
+            this.comboBox1.DisplayMember = "Код_производителя";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(315, 141);
             this.comboBox1.Name = "comboBox1";
@@ -99,6 +121,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox5
             // 
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox5.DataSource = this.storagedeviceBindingSource4;
+            this.comboBox5.DisplayMember = "Интерфейс";
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(315, 247);
             this.comboBox5.Name = "comboBox5";
@@ -192,6 +216,40 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2.Size = new System.Drawing.Size(800, 450);
             this.panel2.TabIndex = 1;
             // 
+            // databaseDataSetSD
+            // 
+            this.databaseDataSetSD.DataSetName = "DatabaseDataSetSD";
+            this.databaseDataSetSD.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // storagedeviceBindingSource
+            // 
+            this.storagedeviceBindingSource.DataMember = "Storage_device";
+            this.storagedeviceBindingSource.DataSource = this.databaseDataSetSD;
+            // 
+            // storage_deviceTableAdapter
+            // 
+            this.storage_deviceTableAdapter.ClearBeforeFill = true;
+            // 
+            // storagedeviceBindingSource1
+            // 
+            this.storagedeviceBindingSource1.DataMember = "Storage_device";
+            this.storagedeviceBindingSource1.DataSource = this.databaseDataSetSD;
+            // 
+            // storagedeviceBindingSource2
+            // 
+            this.storagedeviceBindingSource2.DataMember = "Storage_device";
+            this.storagedeviceBindingSource2.DataSource = this.databaseDataSetSD;
+            // 
+            // storagedeviceBindingSource3
+            // 
+            this.storagedeviceBindingSource3.DataMember = "Storage_device";
+            this.storagedeviceBindingSource3.DataSource = this.databaseDataSetSD;
+            // 
+            // storagedeviceBindingSource4
+            // 
+            this.storagedeviceBindingSource4.DataMember = "Storage_device";
+            this.storagedeviceBindingSource4.DataSource = this.databaseDataSetSD;
+            // 
             // FormSearchStorageDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +264,12 @@ namespace Accounting_for_refueling__printers.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,5 +290,12 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
+        private DatabaseDataSetSD databaseDataSetSD;
+        private System.Windows.Forms.BindingSource storagedeviceBindingSource;
+        private DatabaseDataSetSDTableAdapters.Storage_deviceTableAdapter storage_deviceTableAdapter;
+        private System.Windows.Forms.BindingSource storagedeviceBindingSource3;
+        private System.Windows.Forms.BindingSource storagedeviceBindingSource2;
+        private System.Windows.Forms.BindingSource storagedeviceBindingSource1;
+        private System.Windows.Forms.BindingSource storagedeviceBindingSource4;
     }
 }

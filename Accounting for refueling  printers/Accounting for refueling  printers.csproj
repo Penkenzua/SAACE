@@ -86,10 +86,50 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CPUDataSet.Designer.cs">
+    <Compile Include="DatabaseDataSetCartridge.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CPUDataSet.xsd</DependentUpon>
+      <DependentUpon>DatabaseDataSetCartridge.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetCPU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetCPU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetGPU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetGPU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetMonitor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetMonitor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetOC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetOC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetPC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetPC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetPrinter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetPrinter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetRAM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetRAM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetSD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetSD.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormMainMenu.cs">
       <SubType>Form</SubType>
@@ -372,16 +412,104 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CPUDataSet.xsc">
-      <DependentUpon>CPUDataSet.xsd</DependentUpon>
+    <None Include="DatabaseDataSetCartridge.xsc">
+      <DependentUpon>DatabaseDataSetCartridge.xsd</DependentUpon>
     </None>
-    <None Include="CPUDataSet.xsd">
+    <None Include="DatabaseDataSetCartridge.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CPUDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseDataSetCartridge.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CPUDataSet.xss">
-      <DependentUpon>CPUDataSet.xsd</DependentUpon>
+    <None Include="DatabaseDataSetCartridge.xss">
+      <DependentUpon>DatabaseDataSetCartridge.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetCPU.xsc">
+      <DependentUpon>DatabaseDataSetCPU.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetCPU.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetCPU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetCPU.xss">
+      <DependentUpon>DatabaseDataSetCPU.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetGPU.xsc">
+      <DependentUpon>DatabaseDataSetGPU.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetGPU.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetGPU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetGPU.xss">
+      <DependentUpon>DatabaseDataSetGPU.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetMonitor.xsc">
+      <DependentUpon>DatabaseDataSetMonitor.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetMonitor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetMonitor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetMonitor.xss">
+      <DependentUpon>DatabaseDataSetMonitor.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetOC.xsc">
+      <DependentUpon>DatabaseDataSetOC.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetOC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetOC.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetOC.xss">
+      <DependentUpon>DatabaseDataSetOC.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetPC.xsc">
+      <DependentUpon>DatabaseDataSetPC.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetPC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetPC.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetPC.xss">
+      <DependentUpon>DatabaseDataSetPC.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetPrinter.xsc">
+      <DependentUpon>DatabaseDataSetPrinter.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetPrinter.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetPrinter.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetPrinter.xss">
+      <DependentUpon>DatabaseDataSetPrinter.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetRAM.xsc">
+      <DependentUpon>DatabaseDataSetRAM.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetRAM.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetRAM.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetRAM.xss">
+      <DependentUpon>DatabaseDataSetRAM.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetSD.xsc">
+      <DependentUpon>DatabaseDataSetSD.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetSD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetSD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetSD.xss">
+      <DependentUpon>DatabaseDataSetSD.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

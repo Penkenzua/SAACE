@@ -21,7 +21,11 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPrinter.Printer". При необходимости она может быть перемещена или удалена.
+            this.printerTableAdapter.Fill(this.databaseDataSetPrinter.Printer);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge". При необходимости она может быть перемещена или удалена.
+            this.cartridgeTableAdapter.Fill(this.databaseDataSetCartridge.Cartridge);
+
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");

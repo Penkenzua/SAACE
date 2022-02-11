@@ -27,6 +27,18 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormAddPC_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor". При необходимости она может быть перемещена или удалена.
+            this.monitorTableAdapter.Fill(this.databaseDataSetMonitor.Monitor);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device". При необходимости она может быть перемещена или удалена.
+            this.storage_deviceTableAdapter.Fill(this.databaseDataSetSD.Storage_device);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetOC.OC". При необходимости она может быть перемещена или удалена.
+            this.oCTableAdapter.Fill(this.databaseDataSetOC.OC);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU". При необходимости она может быть перемещена или удалена.
+            this.cPUTableAdapter.Fill(this.databaseDataSetCPU.CPU);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU". При необходимости она может быть перемещена или удалена.
+            this.gPUTableAdapter.Fill(this.databaseDataSetGPU.GPU);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM". При необходимости она может быть перемещена или удалена.
+            this.rAMTableAdapter.Fill(this.databaseDataSetRAM.RAM);
             LoadTheme();
 
             try

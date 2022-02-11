@@ -33,16 +33,17 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.oCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.databaseDataSetOC = new Accounting_for_refueling__printers.DatabaseDataSetOC();
+            this.oCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oCTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters.OCTableAdapter();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
- 
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetOC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,15 +78,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
             // 
-            // oCBindingSource
-            // 
-            this.oCBindingSource.DataMember = "OC";
-
-            // 
-            // databaseDataSet
-            // 
-
-            // 
             // btnSearch
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -117,9 +109,19 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 8;
             // 
+            // databaseDataSetOC
+            // 
+            this.databaseDataSetOC.DataSetName = "DatabaseDataSetOC";
+            this.databaseDataSetOC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // oCBindingSource
+            // 
+            this.oCBindingSource.DataMember = "OC";
+            this.oCBindingSource.DataSource = this.databaseDataSetOC;
+            // 
             // oCTableAdapter
             // 
-
+            this.oCTableAdapter.ClearBeforeFill = true;
             // 
             // FormSearchOC
             // 
@@ -133,10 +135,10 @@ namespace Accounting_for_refueling__printers.Forms
             this.Load += new System.EventHandler(this.FormSearchOC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).EndInit();
-
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetOC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,8 +151,8 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-
+        private DatabaseDataSetOC databaseDataSetOC;
         private System.Windows.Forms.BindingSource oCBindingSource;
-
+        private DatabaseDataSetOCTableAdapters.OCTableAdapter oCTableAdapter;
     }
 }

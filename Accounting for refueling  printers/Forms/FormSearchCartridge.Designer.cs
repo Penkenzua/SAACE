@@ -29,6 +29,7 @@ namespace Accounting_for_refueling__printers.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -39,9 +40,18 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.databaseDataSetCartridge = new Accounting_for_refueling__printers.DatabaseDataSetCartridge();
+            this.cartridgeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cartridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTableAdapters.CartridgeTableAdapter();
+            this.cartridgeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cartridgeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,6 +67,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.DataSource = this.cartridgeBindingSource;
+            this.comboBox1.DisplayMember = "Производитель";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(352, 147);
             this.comboBox1.Name = "comboBox1";
@@ -88,6 +100,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox2.DataSource = this.cartridgeBindingSource1;
+            this.comboBox2.DisplayMember = "Модель";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(352, 178);
             this.comboBox2.Name = "comboBox2";
@@ -122,6 +136,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox3.DataSource = this.cartridgeBindingSource2;
+            this.comboBox3.DisplayMember = "Тип";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(352, 205);
             this.comboBox3.Name = "comboBox3";
@@ -147,6 +163,30 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 5;
             // 
+            // databaseDataSetCartridge
+            // 
+            this.databaseDataSetCartridge.DataSetName = "DatabaseDataSetCartridge";
+            this.databaseDataSetCartridge.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cartridgeBindingSource
+            // 
+            this.cartridgeBindingSource.DataMember = "Cartridge";
+            this.cartridgeBindingSource.DataSource = this.databaseDataSetCartridge;
+            // 
+            // cartridgeTableAdapter
+            // 
+            this.cartridgeTableAdapter.ClearBeforeFill = true;
+            // 
+            // cartridgeBindingSource1
+            // 
+            this.cartridgeBindingSource1.DataMember = "Cartridge";
+            this.cartridgeBindingSource1.DataSource = this.databaseDataSetCartridge;
+            // 
+            // cartridgeBindingSource2
+            // 
+            this.cartridgeBindingSource2.DataMember = "Cartridge";
+            this.cartridgeBindingSource2.DataSource = this.databaseDataSetCartridge;
+            // 
             // FormSearchCartridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +201,10 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,5 +221,10 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox3;
+        private DatabaseDataSetCartridge databaseDataSetCartridge;
+        private System.Windows.Forms.BindingSource cartridgeBindingSource;
+        private DatabaseDataSetCartridgeTableAdapters.CartridgeTableAdapter cartridgeTableAdapter;
+        private System.Windows.Forms.BindingSource cartridgeBindingSource1;
+        private System.Windows.Forms.BindingSource cartridgeBindingSource2;
     }
 }

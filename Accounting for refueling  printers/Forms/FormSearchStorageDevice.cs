@@ -26,6 +26,8 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchStorageDevice_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device". При необходимости она может быть перемещена или удалена.
+            this.storage_deviceTableAdapter.Fill(this.databaseDataSetSD.Storage_device);
             LoadTheme();
             try
             {
@@ -45,6 +47,7 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            filter = "";
             try
             {
                 if (comboBox1.Text != "")

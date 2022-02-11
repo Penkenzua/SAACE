@@ -29,6 +29,7 @@ namespace Accounting_for_refueling__printers.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -41,9 +42,20 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.databaseDataSetMonitor = new Accounting_for_refueling__printers.DatabaseDataSetMonitor();
+            this.monitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monitorTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetMonitorTableAdapters.MonitorTableAdapter();
+            this.monitorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.monitorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.monitorBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetMonitor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitorBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitorBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,6 +78,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox4
             // 
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox4.DataSource = this.monitorBindingSource3;
+            this.comboBox4.DisplayMember = "Частота";
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(323, 219);
             this.comboBox4.Name = "comboBox4";
@@ -75,6 +89,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox3.DataSource = this.monitorBindingSource2;
+            this.comboBox3.DisplayMember = "Диагональ";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(323, 192);
             this.comboBox3.Name = "comboBox3";
@@ -84,6 +100,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox2.DataSource = this.monitorBindingSource1;
+            this.comboBox2.DisplayMember = "Производитель";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(323, 166);
             this.comboBox2.Name = "comboBox2";
@@ -93,6 +111,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.DataSource = this.monitorBindingSource;
+            this.comboBox1.DisplayMember = "Инв_Номер";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(323, 140);
             this.comboBox1.Name = "comboBox1";
@@ -170,6 +190,35 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 0;
             // 
+            // databaseDataSetMonitor
+            // 
+            this.databaseDataSetMonitor.DataSetName = "DatabaseDataSetMonitor";
+            this.databaseDataSetMonitor.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monitorBindingSource
+            // 
+            this.monitorBindingSource.DataMember = "Monitor";
+            this.monitorBindingSource.DataSource = this.databaseDataSetMonitor;
+            // 
+            // monitorTableAdapter
+            // 
+            this.monitorTableAdapter.ClearBeforeFill = true;
+            // 
+            // monitorBindingSource1
+            // 
+            this.monitorBindingSource1.DataMember = "Monitor";
+            this.monitorBindingSource1.DataSource = this.databaseDataSetMonitor;
+            // 
+            // monitorBindingSource2
+            // 
+            this.monitorBindingSource2.DataMember = "Monitor";
+            this.monitorBindingSource2.DataSource = this.databaseDataSetMonitor;
+            // 
+            // monitorBindingSource3
+            // 
+            this.monitorBindingSource3.DataMember = "Monitor";
+            this.monitorBindingSource3.DataSource = this.databaseDataSetMonitor;
+            // 
             // FormSearchMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +233,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetMonitor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitorBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitorBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,5 +256,11 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private DatabaseDataSetMonitor databaseDataSetMonitor;
+        private System.Windows.Forms.BindingSource monitorBindingSource;
+        private DatabaseDataSetMonitorTableAdapters.MonitorTableAdapter monitorTableAdapter;
+        private System.Windows.Forms.BindingSource monitorBindingSource3;
+        private System.Windows.Forms.BindingSource monitorBindingSource2;
+        private System.Windows.Forms.BindingSource monitorBindingSource1;
     }
 }

@@ -46,14 +46,26 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cPUDataSet = new Accounting_for_refueling__printers.CPUDataSet();
+            this.databaseDataSetCPU = new Accounting_for_refueling__printers.DatabaseDataSetCPU();
             this.cPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cPUTableAdapter = new Accounting_for_refueling__printers.CPUDataSetTableAdapters.CPUTableAdapter();
+            this.cPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPUTableAdapter();
+            this.cPUBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cPUBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.cPUBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.cPUBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetCPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cPUBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cPUDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,18 +92,19 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox6
             // 
             this.comboBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox6.DataSource = this.cPUBindingSource;
+            this.comboBox6.DataSource = this.cPUBindingSource5;
             this.comboBox6.DisplayMember = "Частота";
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(338, 265);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(158, 21);
             this.comboBox6.TabIndex = 26;
+            this.comboBox6.TextChanged += new System.EventHandler(this.comboBox6_TextChanged);
             // 
             // comboBox5
             // 
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox5.DataSource = this.cPUBindingSource;
+            this.comboBox5.DataSource = this.cPUBindingSource4;
             this.comboBox5.DisplayMember = "Кол_потоков";
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(338, 238);
@@ -102,7 +115,7 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox4
             // 
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox4.DataSource = this.cPUBindingSource;
+            this.comboBox4.DataSource = this.cPUBindingSource3;
             this.comboBox4.DisplayMember = "Количество_ядер";
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(338, 212);
@@ -113,7 +126,7 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.DataSource = this.cPUBindingSource;
+            this.comboBox3.DataSource = this.cPUBindingSource2;
             this.comboBox3.DisplayMember = "Сокет";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(338, 185);
@@ -184,7 +197,7 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.DataSource = this.cPUBindingSource;
+            this.comboBox2.DataSource = this.cPUBindingSource1;
             this.comboBox2.DisplayMember = "Модельный_ряд";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(338, 160);
@@ -234,19 +247,49 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 8;
             // 
-            // cPUDataSet
+            // databaseDataSetCPU
             // 
-            this.cPUDataSet.DataSetName = "CPUDataSet";
-            this.cPUDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseDataSetCPU.DataSetName = "DatabaseDataSetCPU";
+            this.databaseDataSetCPU.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cPUBindingSource
             // 
             this.cPUBindingSource.DataMember = "CPU";
-            this.cPUBindingSource.DataSource = this.cPUDataSet;
+            this.cPUBindingSource.DataSource = this.databaseDataSetCPU;
             // 
             // cPUTableAdapter
             // 
             this.cPUTableAdapter.ClearBeforeFill = true;
+            // 
+            // cPUBindingSource1
+            // 
+            this.cPUBindingSource1.DataMember = "CPU";
+            this.cPUBindingSource1.DataSource = this.databaseDataSetCPU;
+            // 
+            // cPUBindingSource2
+            // 
+            this.cPUBindingSource2.DataMember = "CPU";
+            this.cPUBindingSource2.DataSource = this.databaseDataSetCPU;
+            // 
+            // cPUBindingSource3
+            // 
+            this.cPUBindingSource3.DataMember = "CPU";
+            this.cPUBindingSource3.DataSource = this.databaseDataSetCPU;
+            // 
+            // cPUBindingSource4
+            // 
+            this.cPUBindingSource4.DataMember = "CPU";
+            this.cPUBindingSource4.DataSource = this.databaseDataSetCPU;
+            // 
+            // databaseDataSetCPUBindingSource
+            // 
+            this.databaseDataSetCPUBindingSource.DataSource = this.databaseDataSetCPU;
+            this.databaseDataSetCPUBindingSource.Position = 0;
+            // 
+            // cPUBindingSource5
+            // 
+            this.cPUBindingSource5.DataMember = "CPU";
+            this.cPUBindingSource5.DataSource = this.databaseDataSetCPUBindingSource;
             // 
             // FormSearchCPU
             // 
@@ -262,8 +305,14 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cPUDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPUBindingSource5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,8 +335,14 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private CPUDataSet cPUDataSet;
+        private DatabaseDataSetCPU databaseDataSetCPU;
         private System.Windows.Forms.BindingSource cPUBindingSource;
-        private CPUDataSetTableAdapters.CPUTableAdapter cPUTableAdapter;
+        private DatabaseDataSetCPUTableAdapters.CPUTableAdapter cPUTableAdapter;
+        private System.Windows.Forms.BindingSource cPUBindingSource1;
+        private System.Windows.Forms.BindingSource cPUBindingSource5;
+        private System.Windows.Forms.BindingSource databaseDataSetCPUBindingSource;
+        private System.Windows.Forms.BindingSource cPUBindingSource4;
+        private System.Windows.Forms.BindingSource cPUBindingSource3;
+        private System.Windows.Forms.BindingSource cPUBindingSource2;
     }
 }

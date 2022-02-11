@@ -20,17 +20,17 @@ namespace Accounting_for_refueling__printers {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("CPUDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DatabaseDataSetGPU")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class CPUDataSet : global::System.Data.DataSet {
+    public partial class DatabaseDataSetGPU : global::System.Data.DataSet {
         
-        private CPUDataTable tableCPU;
+        private GPUDataTable tableGPU;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public CPUDataSet() {
+        public DatabaseDataSetGPU() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Accounting_for_refueling__printers {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected CPUDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DatabaseDataSetGPU(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Accounting_for_refueling__printers {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["CPU"] != null)) {
-                    base.Tables.Add(new CPUDataTable(ds.Tables["CPU"]));
+                if ((ds.Tables["GPU"] != null)) {
+                    base.Tables.Add(new GPUDataTable(ds.Tables["GPU"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Accounting_for_refueling__printers {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CPUDataTable CPU {
+        public GPUDataTable GPU {
             get {
-                return this.tableCPU;
+                return this.tableGPU;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            CPUDataSet cln = ((CPUDataSet)(base.Clone()));
+            DatabaseDataSetGPU cln = ((DatabaseDataSetGPU)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Accounting_for_refueling__printers {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["CPU"] != null)) {
-                    base.Tables.Add(new CPUDataTable(ds.Tables["CPU"]));
+                if ((ds.Tables["GPU"] != null)) {
+                    base.Tables.Add(new GPUDataTable(ds.Tables["GPU"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableCPU = ((CPUDataTable)(base.Tables["CPU"]));
+            this.tableGPU = ((GPUDataTable)(base.Tables["GPU"]));
             if ((initTable == true)) {
-                if ((this.tableCPU != null)) {
-                    this.tableCPU.InitVars();
+                if ((this.tableGPU != null)) {
+                    this.tableGPU.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "CPUDataSet";
+            this.DataSetName = "DatabaseDataSetGPU";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/CPUDataSet.xsd";
+            this.Namespace = "http://tempuri.org/DatabaseDataSetGPU.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableCPU = new CPUDataTable();
-            base.Tables.Add(this.tableCPU);
+            this.tableGPU = new GPUDataTable();
+            base.Tables.Add(this.tableGPU);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeCPU() {
+        private bool ShouldSerializeGPU() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            CPUDataSet ds = new CPUDataSet();
+            DatabaseDataSetGPU ds = new DatabaseDataSetGPU();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,29 @@ namespace Accounting_for_refueling__printers {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void CPURowChangeEventHandler(object sender, CPURowChangeEvent e);
+        public delegate void GPURowChangeEventHandler(object sender, GPURowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CPUDataTable : global::System.Data.TypedTableBase<CPURow> {
+        public partial class GPUDataTable : global::System.Data.TypedTableBase<GPURow> {
             
-            private global::System.Data.DataColumn columnCPU_ID;
+            private global::System.Data.DataColumn columnGPU_ID;
             
             private global::System.Data.DataColumn columnПроизводитель;
             
-            private global::System.Data.DataColumn columnМодельный_ряд;
+            private global::System.Data.DataColumn columnГрафический_процессор;
             
-            private global::System.Data.DataColumn columnСокет;
+            private global::System.Data.DataColumn columnТип_памяти;
             
-            private global::System.Data.DataColumn columnКоличество_ядер;
-            
-            private global::System.Data.DataColumn columnКол_потоков;
-            
-            private global::System.Data.DataColumn columnЧастота;
+            private global::System.Data.DataColumn columnШина_памяти;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CPUDataTable() {
-                this.TableName = "CPU";
+            public GPUDataTable() {
+                this.TableName = "GPU";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +300,7 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CPUDataTable(global::System.Data.DataTable table) {
+            internal GPUDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,16 +317,16 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected CPUDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GPUDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CPU_IDColumn {
+            public global::System.Data.DataColumn GPU_IDColumn {
                 get {
-                    return this.columnCPU_ID;
+                    return this.columnGPU_ID;
                 }
             }
             
@@ -344,41 +340,25 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Модельный_рядColumn {
+            public global::System.Data.DataColumn Графический_процессорColumn {
                 get {
-                    return this.columnМодельный_ряд;
+                    return this.columnГрафический_процессор;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn СокетColumn {
+            public global::System.Data.DataColumn Тип_памятиColumn {
                 get {
-                    return this.columnСокет;
+                    return this.columnТип_памяти;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Количество_ядерColumn {
+            public global::System.Data.DataColumn Шина_памятиColumn {
                 get {
-                    return this.columnКоличество_ядер;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Кол_потоковColumn {
-                get {
-                    return this.columnКол_потоков;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ЧастотаColumn {
-                get {
-                    return this.columnЧастота;
+                    return this.columnШина_памяти;
                 }
             }
             
@@ -393,58 +373,56 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CPURow this[int index] {
+            public GPURow this[int index] {
                 get {
-                    return ((CPURow)(this.Rows[index]));
+                    return ((GPURow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CPURowChangeEventHandler CPURowChanging;
+            public event GPURowChangeEventHandler GPURowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CPURowChangeEventHandler CPURowChanged;
+            public event GPURowChangeEventHandler GPURowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CPURowChangeEventHandler CPURowDeleting;
+            public event GPURowChangeEventHandler GPURowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CPURowChangeEventHandler CPURowDeleted;
+            public event GPURowChangeEventHandler GPURowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddCPURow(CPURow row) {
+            public void AddGPURow(GPURow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CPURow AddCPURow(string Производитель, string Модельный_ряд, string Сокет, int Количество_ядер, int Кол_потоков, double Частота) {
-                CPURow rowCPURow = ((CPURow)(this.NewRow()));
+            public GPURow AddGPURow(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти) {
+                GPURow rowGPURow = ((GPURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Производитель,
-                        Модельный_ряд,
-                        Сокет,
-                        Количество_ядер,
-                        Кол_потоков,
-                        Частота};
-                rowCPURow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCPURow);
-                return rowCPURow;
+                        Графический_процессор,
+                        Тип_памяти,
+                        Шина_памяти};
+                rowGPURow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGPURow);
+                return rowGPURow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CPURow FindByCPU_ID(int CPU_ID) {
-                return ((CPURow)(this.Rows.Find(new object[] {
-                            CPU_ID})));
+            public GPURow FindByGPU_ID(int GPU_ID) {
+                return ((GPURow)(this.Rows.Find(new object[] {
+                            GPU_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                CPUDataTable cln = ((CPUDataTable)(base.Clone()));
+                GPUDataTable cln = ((GPUDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,75 +430,70 @@ namespace Accounting_for_refueling__printers {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new CPUDataTable();
+                return new GPUDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnCPU_ID = base.Columns["CPU_ID"];
+                this.columnGPU_ID = base.Columns["GPU_ID"];
                 this.columnПроизводитель = base.Columns["Производитель"];
-                this.columnМодельный_ряд = base.Columns["Модельный_ряд"];
-                this.columnСокет = base.Columns["Сокет"];
-                this.columnКоличество_ядер = base.Columns["Количество_ядер"];
-                this.columnКол_потоков = base.Columns["Кол_потоков"];
-                this.columnЧастота = base.Columns["Частота"];
+                this.columnГрафический_процессор = base.Columns["Графический_процессор"];
+                this.columnТип_памяти = base.Columns["Тип_памяти"];
+                this.columnШина_памяти = base.Columns["Шина_памяти"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCPU_ID = new global::System.Data.DataColumn("CPU_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCPU_ID);
+                this.columnGPU_ID = new global::System.Data.DataColumn("GPU_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGPU_ID);
                 this.columnПроизводитель = new global::System.Data.DataColumn("Производитель", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПроизводитель);
-                this.columnМодельный_ряд = new global::System.Data.DataColumn("Модельный_ряд", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnМодельный_ряд);
-                this.columnСокет = new global::System.Data.DataColumn("Сокет", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnСокет);
-                this.columnКоличество_ядер = new global::System.Data.DataColumn("Количество_ядер", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКоличество_ядер);
-                this.columnКол_потоков = new global::System.Data.DataColumn("Кол_потоков", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКол_потоков);
-                this.columnЧастота = new global::System.Data.DataColumn("Частота", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnЧастота);
+                this.columnГрафический_процессор = new global::System.Data.DataColumn("Графический_процессор", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnГрафический_процессор);
+                this.columnТип_памяти = new global::System.Data.DataColumn("Тип_памяти", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnТип_памяти);
+                this.columnШина_памяти = new global::System.Data.DataColumn("Шина_памяти", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnШина_памяти);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCPU_ID}, true));
-                this.columnCPU_ID.AutoIncrement = true;
-                this.columnCPU_ID.AutoIncrementSeed = -1;
-                this.columnCPU_ID.AutoIncrementStep = -1;
-                this.columnCPU_ID.AllowDBNull = false;
-                this.columnCPU_ID.ReadOnly = true;
-                this.columnCPU_ID.Unique = true;
+                                this.columnGPU_ID}, true));
+                this.columnGPU_ID.AutoIncrement = true;
+                this.columnGPU_ID.AutoIncrementSeed = -1;
+                this.columnGPU_ID.AutoIncrementStep = -1;
+                this.columnGPU_ID.AllowDBNull = false;
+                this.columnGPU_ID.ReadOnly = true;
+                this.columnGPU_ID.Unique = true;
                 this.columnПроизводитель.MaxLength = 50;
-                this.columnМодельный_ряд.MaxLength = 50;
-                this.columnСокет.MaxLength = 50;
+                this.columnГрафический_процессор.MaxLength = 50;
+                this.columnТип_памяти.MaxLength = 10;
+                this.columnШина_памяти.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CPURow NewCPURow() {
-                return ((CPURow)(this.NewRow()));
+            public GPURow NewGPURow() {
+                return ((GPURow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CPURow(builder);
+                return new GPURow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(CPURow);
+                return typeof(GPURow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.CPURowChanged != null)) {
-                    this.CPURowChanged(this, new CPURowChangeEvent(((CPURow)(e.Row)), e.Action));
+                if ((this.GPURowChanged != null)) {
+                    this.GPURowChanged(this, new GPURowChangeEvent(((GPURow)(e.Row)), e.Action));
                 }
             }
             
@@ -528,8 +501,8 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.CPURowChanging != null)) {
-                    this.CPURowChanging(this, new CPURowChangeEvent(((CPURow)(e.Row)), e.Action));
+                if ((this.GPURowChanging != null)) {
+                    this.GPURowChanging(this, new GPURowChangeEvent(((GPURow)(e.Row)), e.Action));
                 }
             }
             
@@ -537,8 +510,8 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.CPURowDeleted != null)) {
-                    this.CPURowDeleted(this, new CPURowChangeEvent(((CPURow)(e.Row)), e.Action));
+                if ((this.GPURowDeleted != null)) {
+                    this.GPURowDeleted(this, new GPURowChangeEvent(((GPURow)(e.Row)), e.Action));
                 }
             }
             
@@ -546,14 +519,14 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.CPURowDeleting != null)) {
-                    this.CPURowDeleting(this, new CPURowChangeEvent(((CPURow)(e.Row)), e.Action));
+                if ((this.GPURowDeleting != null)) {
+                    this.GPURowDeleting(this, new GPURowChangeEvent(((GPURow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveCPURow(CPURow row) {
+            public void RemoveGPURow(GPURow row) {
                 this.Rows.Remove(row);
             }
             
@@ -562,7 +535,7 @@ namespace Accounting_for_refueling__printers {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CPUDataSet ds = new CPUDataSet();
+                DatabaseDataSetGPU ds = new DatabaseDataSetGPU();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -580,7 +553,7 @@ namespace Accounting_for_refueling__printers {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CPUDataTable";
+                attribute2.FixedValue = "GPUDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -624,25 +597,25 @@ namespace Accounting_for_refueling__printers {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class CPURow : global::System.Data.DataRow {
+        public partial class GPURow : global::System.Data.DataRow {
             
-            private CPUDataTable tableCPU;
+            private GPUDataTable tableGPU;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CPURow(global::System.Data.DataRowBuilder rb) : 
+            internal GPURow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCPU = ((CPUDataTable)(this.Table));
+                this.tableGPU = ((GPUDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CPU_ID {
+            public int GPU_ID {
                 get {
-                    return ((int)(this[this.tableCPU.CPU_IDColumn]));
+                    return ((int)(this[this.tableGPU.GPU_IDColumn]));
                 }
                 set {
-                    this[this.tableCPU.CPU_IDColumn] = value;
+                    this[this.tableGPU.GPU_IDColumn] = value;
                 }
             }
             
@@ -651,167 +624,111 @@ namespace Accounting_for_refueling__printers {
             public string Производитель {
                 get {
                     try {
-                        return ((string)(this[this.tableCPU.ПроизводительColumn]));
+                        return ((string)(this[this.tableGPU.ПроизводительColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Производитель\' в таблице \'CPU\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Производитель\' в таблице \'GPU\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCPU.ПроизводительColumn] = value;
+                    this[this.tableGPU.ПроизводительColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Модельный_ряд {
+            public string Графический_процессор {
                 get {
                     try {
-                        return ((string)(this[this.tableCPU.Модельный_рядColumn]));
+                        return ((string)(this[this.tableGPU.Графический_процессорColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Модельный_ряд\' в таблице \'CPU\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Графический_процессор\' в таблице \'GPU\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCPU.Модельный_рядColumn] = value;
+                    this[this.tableGPU.Графический_процессорColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Сокет {
+            public string Тип_памяти {
                 get {
                     try {
-                        return ((string)(this[this.tableCPU.СокетColumn]));
+                        return ((string)(this[this.tableGPU.Тип_памятиColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Сокет\' в таблице \'CPU\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Тип_памяти\' в таблице \'GPU\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCPU.СокетColumn] = value;
+                    this[this.tableGPU.Тип_памятиColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Количество_ядер {
+            public string Шина_памяти {
                 get {
                     try {
-                        return ((int)(this[this.tableCPU.Количество_ядерColumn]));
+                        return ((string)(this[this.tableGPU.Шина_памятиColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Количество_ядер\' в таблице \'CPU\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Шина_памяти\' в таблице \'GPU\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCPU.Количество_ядерColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Кол_потоков {
-                get {
-                    try {
-                        return ((int)(this[this.tableCPU.Кол_потоковColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Кол_потоков\' в таблице \'CPU\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCPU.Кол_потоковColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double Частота {
-                get {
-                    try {
-                        return ((double)(this[this.tableCPU.ЧастотаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Частота\' в таблице \'CPU\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCPU.ЧастотаColumn] = value;
+                    this[this.tableGPU.Шина_памятиColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsПроизводительNull() {
-                return this.IsNull(this.tableCPU.ПроизводительColumn);
+                return this.IsNull(this.tableGPU.ПроизводительColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetПроизводительNull() {
-                this[this.tableCPU.ПроизводительColumn] = global::System.Convert.DBNull;
+                this[this.tableGPU.ПроизводительColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsМодельный_рядNull() {
-                return this.IsNull(this.tableCPU.Модельный_рядColumn);
+            public bool IsГрафический_процессорNull() {
+                return this.IsNull(this.tableGPU.Графический_процессорColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetМодельный_рядNull() {
-                this[this.tableCPU.Модельный_рядColumn] = global::System.Convert.DBNull;
+            public void SetГрафический_процессорNull() {
+                this[this.tableGPU.Графический_процессорColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsСокетNull() {
-                return this.IsNull(this.tableCPU.СокетColumn);
+            public bool IsТип_памятиNull() {
+                return this.IsNull(this.tableGPU.Тип_памятиColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetСокетNull() {
-                this[this.tableCPU.СокетColumn] = global::System.Convert.DBNull;
+            public void SetТип_памятиNull() {
+                this[this.tableGPU.Тип_памятиColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsКоличество_ядерNull() {
-                return this.IsNull(this.tableCPU.Количество_ядерColumn);
+            public bool IsШина_памятиNull() {
+                return this.IsNull(this.tableGPU.Шина_памятиColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetКоличество_ядерNull() {
-                this[this.tableCPU.Количество_ядерColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsКол_потоковNull() {
-                return this.IsNull(this.tableCPU.Кол_потоковColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetКол_потоковNull() {
-                this[this.tableCPU.Кол_потоковColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsЧастотаNull() {
-                return this.IsNull(this.tableCPU.ЧастотаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetЧастотаNull() {
-                this[this.tableCPU.ЧастотаColumn] = global::System.Convert.DBNull;
+            public void SetШина_памятиNull() {
+                this[this.tableGPU.Шина_памятиColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -819,22 +736,22 @@ namespace Accounting_for_refueling__printers {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class CPURowChangeEvent : global::System.EventArgs {
+        public class GPURowChangeEvent : global::System.EventArgs {
             
-            private CPURow eventRow;
+            private GPURow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CPURowChangeEvent(CPURow row, global::System.Data.DataRowAction action) {
+            public GPURowChangeEvent(GPURow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CPURow Row {
+            public GPURow Row {
                 get {
                     return this.eventRow;
                 }
@@ -850,7 +767,7 @@ namespace Accounting_for_refueling__printers {
         }
     }
 }
-namespace Accounting_for_refueling__printers.CPUDataSetTableAdapters {
+namespace Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters {
     
     
     /// <summary>
@@ -862,7 +779,7 @@ namespace Accounting_for_refueling__printers.CPUDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CPUTableAdapter : global::System.ComponentModel.Component {
+    public partial class GPUTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -876,7 +793,7 @@ namespace Accounting_for_refueling__printers.CPUDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public CPUTableAdapter() {
+        public GPUTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -973,68 +890,54 @@ namespace Accounting_for_refueling__printers.CPUDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "CPU";
-            tableMapping.ColumnMappings.Add("CPU_ID", "CPU_ID");
+            tableMapping.DataSetTable = "GPU";
+            tableMapping.ColumnMappings.Add("GPU_ID", "GPU_ID");
             tableMapping.ColumnMappings.Add("Производитель", "Производитель");
-            tableMapping.ColumnMappings.Add("Модельный_ряд", "Модельный_ряд");
-            tableMapping.ColumnMappings.Add("Сокет", "Сокет");
-            tableMapping.ColumnMappings.Add("Количество_ядер", "Количество_ядер");
-            tableMapping.ColumnMappings.Add("Кол_потоков", "Кол_потоков");
-            tableMapping.ColumnMappings.Add("Частота", "Частота");
+            tableMapping.ColumnMappings.Add("Графический_процессор", "Графический_процессор");
+            tableMapping.ColumnMappings.Add("Тип_памяти", "Тип_памяти");
+            tableMapping.ColumnMappings.Add("Шина_памяти", "Шина_памяти");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[CPU] WHERE (([CPU_ID] = @Original_CPU_ID) AND ((@IsNull_Производитель = 1 AND [Производитель] IS NULL) OR ([Производитель] = @Original_Производитель)) AND ((@IsNull_Модельный_ряд = 1 AND [Модельный_ряд] IS NULL) OR ([Модельный_ряд] = @Original_Модельный_ряд)) AND ((@IsNull_Сокет = 1 AND [Сокет] IS NULL) OR ([Сокет] = @Original_Сокет)) AND ((@IsNull_Количество_ядер = 1 AND [Количество_ядер] IS NULL) OR ([Количество_ядер] = @Original_Количество_ядер)) AND ((@IsNull_Кол_потоков = 1 AND [Кол_потоков] IS NULL) OR ([Кол_потоков] = @Original_Кол_потоков)) AND ((@IsNull_Частота = 1 AND [Частота] IS NULL) OR ([Частота] = @Original_Частота)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[GPU] WHERE (([GPU_ID] = @Original_GPU_ID) AND ((@IsNull_Производитель = 1 AND [Производитель] IS NULL) OR ([Производитель] = @Original_Производитель)) AND ((@IsNull_Графический_процессор = 1 AND [Графический_процессор] IS NULL) OR ([Графический_процессор] = @Original_Графический_процессор)) AND ((@IsNull_Тип_памяти = 1 AND [Тип_памяти] IS NULL) OR ([Тип_памяти] = @Original_Тип_памяти)) AND ((@IsNull_Шина_памяти = 1 AND [Шина_памяти] IS NULL) OR ([Шина_памяти] = @Original_Шина_памяти)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CPU_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPU_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GPU_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPU_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Производитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Производитель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Модельный_ряд", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Модельный_ряд", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Модельный_ряд", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Модельный_ряд", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Сокет", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Сокет", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Сокет", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Сокет", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Количество_ядер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_ядер", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_ядер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_ядер", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Кол_потоков", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кол_потоков", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Кол_потоков", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кол_потоков", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Частота", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Частота", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Частота", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Частота", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Графический_процессор", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Графический_процессор", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Тип_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Тип_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Шина_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Шина_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CPU] ([Производитель], [Модельный_ряд], [Сокет], [Количество_ядер], [Кол_потоков], [Частота]) VALUES (@Производитель, @Модельный_ряд, @Сокет, @Количество_ядер, @Кол_потоков, @Частота);
-SELECT CPU_ID, Производитель, Модельный_ряд, Сокет, Количество_ядер, Кол_потоков, Частота FROM CPU WHERE (CPU_ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GPU] ([Производитель], [Графический_процессор], [Тип_памяти], [Шина_памяти]) VALUES (@Производитель, @Графический_процессор, @Тип_памяти, @Шина_памяти);
+SELECT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_памяти FROM GPU WHERE (GPU_ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Производитель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Модельный_ряд", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Модельный_ряд", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Сокет", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Сокет", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_ядер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_ядер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Кол_потоков", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кол_потоков", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Частота", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Частота", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Графический_процессор", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Шина_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CPU] SET [Производитель] = @Производитель, [Модельный_ряд] = @Модельный_ряд, [Сокет] = @Сокет, [Количество_ядер] = @Количество_ядер, [Кол_потоков] = @Кол_потоков, [Частота] = @Частота WHERE (([CPU_ID] = @Original_CPU_ID) AND ((@IsNull_Производитель = 1 AND [Производитель] IS NULL) OR ([Производитель] = @Original_Производитель)) AND ((@IsNull_Модельный_ряд = 1 AND [Модельный_ряд] IS NULL) OR ([Модельный_ряд] = @Original_Модельный_ряд)) AND ((@IsNull_Сокет = 1 AND [Сокет] IS NULL) OR ([Сокет] = @Original_Сокет)) AND ((@IsNull_Количество_ядер = 1 AND [Количество_ядер] IS NULL) OR ([Количество_ядер] = @Original_Количество_ядер)) AND ((@IsNull_Кол_потоков = 1 AND [Кол_потоков] IS NULL) OR ([Кол_потоков] = @Original_Кол_потоков)) AND ((@IsNull_Частота = 1 AND [Частота] IS NULL) OR ([Частота] = @Original_Частота)));
-SELECT CPU_ID, Производитель, Модельный_ряд, Сокет, Количество_ядер, Кол_потоков, Частота FROM CPU WHERE (CPU_ID = @CPU_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GPU] SET [Производитель] = @Производитель, [Графический_процессор] = @Графический_процессор, [Тип_памяти] = @Тип_памяти, [Шина_памяти] = @Шина_памяти WHERE (([GPU_ID] = @Original_GPU_ID) AND ((@IsNull_Производитель = 1 AND [Производитель] IS NULL) OR ([Производитель] = @Original_Производитель)) AND ((@IsNull_Графический_процессор = 1 AND [Графический_процессор] IS NULL) OR ([Графический_процессор] = @Original_Графический_процессор)) AND ((@IsNull_Тип_памяти = 1 AND [Тип_памяти] IS NULL) OR ([Тип_памяти] = @Original_Тип_памяти)) AND ((@IsNull_Шина_памяти = 1 AND [Шина_памяти] IS NULL) OR ([Шина_памяти] = @Original_Шина_памяти)));
+SELECT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_памяти FROM GPU WHERE (GPU_ID = @GPU_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Производитель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Модельный_ряд", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Модельный_ряд", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Сокет", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Сокет", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_ядер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_ядер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Кол_потоков", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кол_потоков", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Частота", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Частота", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CPU_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPU_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Графический_процессор", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Шина_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GPU_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPU_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Производитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Производитель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Модельный_ряд", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Модельный_ряд", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Модельный_ряд", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Модельный_ряд", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Сокет", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Сокет", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Сокет", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Сокет", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Количество_ядер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_ядер", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_ядер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_ядер", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Кол_потоков", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кол_потоков", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Кол_потоков", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Кол_потоков", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Частота", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Частота", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Частота", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Частота", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPU_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CPU_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Графический_процессор", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Графический_процессор", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Тип_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Тип_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Шина_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Шина_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPU_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "GPU_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1050,8 +953,8 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CPU_ID, Производитель, Модельный_ряд, Сокет, Количество_ядер, Кол_потоков," +
-                " Частота FROM dbo.CPU";
+            this._commandCollection[0].CommandText = "SELECT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_памяти FROM" +
+                " dbo.GPU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1059,7 +962,7 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CPUDataSet.CPUDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSetGPU.GPUDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1072,9 +975,9 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CPUDataSet.CPUDataTable GetData() {
+        public virtual DatabaseDataSetGPU.GPUDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CPUDataSet.CPUDataTable dataTable = new CPUDataSet.CPUDataTable();
+            DatabaseDataSetGPU.GPUDataTable dataTable = new DatabaseDataSetGPU.GPUDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1082,15 +985,15 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CPUDataSet.CPUDataTable dataTable) {
+        public virtual int Update(DatabaseDataSetGPU.GPUDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CPUDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "CPU");
+        public virtual int Update(DatabaseDataSetGPU dataSet) {
+            return this.Adapter.Update(dataSet, "GPU");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1112,8 +1015,8 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_CPU_ID, string Original_Производитель, string Original_Модельный_ряд, string Original_Сокет, global::System.Nullable<int> Original_Количество_ядер, global::System.Nullable<int> Original_Кол_потоков, global::System.Nullable<double> Original_Частота) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CPU_ID));
+        public virtual int Delete(int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, string Original_Шина_памяти) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_GPU_ID));
             if ((Original_Производитель == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -1122,45 +1025,29 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Производитель));
             }
-            if ((Original_Модельный_ряд == null)) {
+            if ((Original_Графический_процессор == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Модельный_ряд));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Графический_процессор));
             }
-            if ((Original_Сокет == null)) {
+            if ((Original_Тип_памяти == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Сокет));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Тип_памяти));
             }
-            if ((Original_Количество_ядер.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Количество_ядер.Value));
-            }
-            else {
+            if ((Original_Шина_памяти == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_Кол_потоков.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_Кол_потоков.Value));
-            }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Частота.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((double)(Original_Частота.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Шина_памяти));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1182,42 +1069,30 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Производитель, string Модельный_ряд, string Сокет, global::System.Nullable<int> Количество_ядер, global::System.Nullable<int> Кол_потоков, global::System.Nullable<double> Частота) {
+        public virtual int Insert(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти) {
             if ((Производитель == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Производитель));
             }
-            if ((Модельный_ряд == null)) {
+            if ((Графический_процессор == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Модельный_ряд));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Графический_процессор));
             }
-            if ((Сокет == null)) {
+            if ((Тип_памяти == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Сокет));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Тип_памяти));
             }
-            if ((Количество_ядер.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Количество_ядер.Value));
-            }
-            else {
+            if ((Шина_памяти == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Кол_потоков.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Кол_потоков.Value));
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Частота.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Частота.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Шина_памяти));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1239,93 +1114,65 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Производитель, string Модельный_ряд, string Сокет, global::System.Nullable<int> Количество_ядер, global::System.Nullable<int> Кол_потоков, global::System.Nullable<double> Частота, int Original_CPU_ID, string Original_Производитель, string Original_Модельный_ряд, string Original_Сокет, global::System.Nullable<int> Original_Количество_ядер, global::System.Nullable<int> Original_Кол_потоков, global::System.Nullable<double> Original_Частота, int CPU_ID) {
+        public virtual int Update(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти, int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, string Original_Шина_памяти, int GPU_ID) {
             if ((Производитель == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Производитель));
             }
-            if ((Модельный_ряд == null)) {
+            if ((Графический_процессор == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Модельный_ряд));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Графический_процессор));
             }
-            if ((Сокет == null)) {
+            if ((Тип_памяти == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Сокет));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Тип_памяти));
             }
-            if ((Количество_ядер.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Количество_ядер.Value));
-            }
-            else {
+            if ((Шина_памяти == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Кол_потоков.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Кол_потоков.Value));
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Шина_памяти));
             }
-            if ((Частота.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Частота.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_CPU_ID));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_GPU_ID));
             if ((Original_Производитель == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Производитель));
+            }
+            if ((Original_Графический_процессор == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Производитель));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Графический_процессор));
             }
-            if ((Original_Модельный_ряд == null)) {
+            if ((Original_Тип_памяти == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Модельный_ряд));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Тип_памяти));
             }
-            if ((Original_Сокет == null)) {
+            if ((Original_Шина_памяти == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Сокет));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Шина_памяти));
             }
-            if ((Original_Количество_ядер.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Количество_ядер.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Кол_потоков.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Кол_потоков.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Частота.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Original_Частота.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(CPU_ID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(GPU_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1346,8 +1193,8 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Производитель, string Модельный_ряд, string Сокет, global::System.Nullable<int> Количество_ядер, global::System.Nullable<int> Кол_потоков, global::System.Nullable<double> Частота, int Original_CPU_ID, string Original_Производитель, string Original_Модельный_ряд, string Original_Сокет, global::System.Nullable<int> Original_Количество_ядер, global::System.Nullable<int> Original_Кол_потоков, global::System.Nullable<double> Original_Частота) {
-            return this.Update(Производитель, Модельный_ряд, Сокет, Количество_ядер, Кол_потоков, Частота, Original_CPU_ID, Original_Производитель, Original_Модельный_ряд, Original_Сокет, Original_Количество_ядер, Original_Кол_потоков, Original_Частота, Original_CPU_ID);
+        public virtual int Update(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти, int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, string Original_Шина_памяти) {
+            return this.Update(Производитель, Графический_процессор, Тип_памяти, Шина_памяти, Original_GPU_ID, Original_Производитель, Original_Графический_процессор, Original_Тип_памяти, Original_Шина_памяти, Original_GPU_ID);
         }
     }
     
@@ -1363,7 +1210,7 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         
         private UpdateOrderOption _updateOrder;
         
-        private CPUTableAdapter _cPUTableAdapter;
+        private GPUTableAdapter _gPUTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1385,12 +1232,12 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public CPUTableAdapter CPUTableAdapter {
+        public GPUTableAdapter GPUTableAdapter {
             get {
-                return this._cPUTableAdapter;
+                return this._gPUTableAdapter;
             }
             set {
-                this._cPUTableAdapter = value;
+                this._gPUTableAdapter = value;
             }
         }
         
@@ -1413,9 +1260,9 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._cPUTableAdapter != null) 
-                            && (this._cPUTableAdapter.Connection != null))) {
-                    return this._cPUTableAdapter.Connection;
+                if (((this._gPUTableAdapter != null) 
+                            && (this._gPUTableAdapter.Connection != null))) {
+                    return this._gPUTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1430,7 +1277,7 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._cPUTableAdapter != null)) {
+                if ((this._gPUTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1442,14 +1289,14 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(CPUDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DatabaseDataSetGPU dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._cPUTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CPU.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._gPUTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.GPU.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cPUTableAdapter.Update(updatedRows));
+                    result = (result + this._gPUTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1461,13 +1308,13 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(CPUDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DatabaseDataSetGPU dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._cPUTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CPU.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._gPUTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.GPU.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cPUTableAdapter.Update(addedRows));
+                    result = (result + this._gPUTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1479,13 +1326,13 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(CPUDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DatabaseDataSetGPU dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._cPUTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CPU.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._gPUTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GPU.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cPUTableAdapter.Update(deletedRows));
+                    result = (result + this._gPUTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1521,15 +1368,15 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(CPUDataSet dataSet) {
+        public virtual int UpdateAll(DatabaseDataSetGPU dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._cPUTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._cPUTableAdapter.Connection) == false))) {
+            if (((this._gPUTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._gPUTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -1565,13 +1412,13 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._cPUTableAdapter != null)) {
-                    revertConnections.Add(this._cPUTableAdapter, this._cPUTableAdapter.Connection);
-                    this._cPUTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._cPUTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._cPUTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._cPUTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._cPUTableAdapter.Adapter);
+                if ((this._gPUTableAdapter != null)) {
+                    revertConnections.Add(this._gPUTableAdapter, this._gPUTableAdapter.Connection);
+                    this._gPUTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._gPUTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._gPUTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._gPUTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._gPUTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1632,9 +1479,9 @@ SELECT CPU_ID, Производитель, Модельный_ряд, Сокет
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._cPUTableAdapter != null)) {
-                    this._cPUTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cPUTableAdapter]));
-                    this._cPUTableAdapter.Transaction = null;
+                if ((this._gPUTableAdapter != null)) {
+                    this._gPUTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._gPUTableAdapter]));
+                    this._gPUTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
