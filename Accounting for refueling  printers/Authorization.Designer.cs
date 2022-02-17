@@ -149,7 +149,7 @@ namespace Accounting_for_refueling__printers
             this.labellogin.AutoSize = true;
             this.labellogin.Font = new System.Drawing.Font("Roboto Cn", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labellogin.ForeColor = System.Drawing.Color.White;
-            this.labellogin.Location = new System.Drawing.Point(179, 148);
+            this.labellogin.Location = new System.Drawing.Point(204, 176);
             this.labellogin.Name = "labellogin";
             this.labellogin.Size = new System.Drawing.Size(97, 38);
             this.labellogin.TabIndex = 0;
@@ -162,7 +162,7 @@ namespace Accounting_for_refueling__printers
             this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInput.Font = new System.Drawing.Font("Roboto Cn", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnInput.ForeColor = System.Drawing.Color.White;
-            this.btnInput.Location = new System.Drawing.Point(282, 273);
+            this.btnInput.Location = new System.Drawing.Point(307, 301);
             this.btnInput.Name = "btnInput";
             this.btnInput.Size = new System.Drawing.Size(155, 54);
             this.btnInput.TabIndex = 4;
@@ -172,16 +172,16 @@ namespace Accounting_for_refueling__printers
             // 
             // textPassword
             // 
-            this.textPassword.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textPassword.Location = new System.Drawing.Point(282, 211);
+            this.textPassword.Font = new System.Drawing.Font("Roboto Bk", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textPassword.Location = new System.Drawing.Point(307, 239);
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(155, 27);
             this.textPassword.TabIndex = 3;
             // 
             // textLogin
             // 
-            this.textLogin.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textLogin.Location = new System.Drawing.Point(282, 157);
+            this.textLogin.Font = new System.Drawing.Font("Roboto Bk", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textLogin.Location = new System.Drawing.Point(307, 185);
             this.textLogin.Name = "textLogin";
             this.textLogin.Size = new System.Drawing.Size(155, 27);
             this.textLogin.TabIndex = 2;
@@ -191,7 +191,7 @@ namespace Accounting_for_refueling__printers
             this.labelpassword.AutoSize = true;
             this.labelpassword.Font = new System.Drawing.Font("Roboto Cn", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelpassword.ForeColor = System.Drawing.Color.White;
-            this.labelpassword.Location = new System.Drawing.Point(161, 202);
+            this.labelpassword.Location = new System.Drawing.Point(186, 230);
             this.labelpassword.Name = "labelpassword";
             this.labelpassword.Size = new System.Drawing.Size(115, 38);
             this.labelpassword.TabIndex = 1;

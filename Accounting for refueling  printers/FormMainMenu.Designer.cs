@@ -120,7 +120,7 @@ namespace Accounting_for_refueling__printers
             this.panelMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(185, 461);
+            this.panelMenu.Size = new System.Drawing.Size(185, 481);
             this.panelMenu.TabIndex = 0;
             // 
             // panelTools
@@ -148,7 +148,7 @@ namespace Accounting_for_refueling__printers
             this.panelTools.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTools.Location = new System.Drawing.Point(0, 74);
             this.panelTools.Name = "panelTools";
-            this.panelTools.Size = new System.Drawing.Size(185, 387);
+            this.panelTools.Size = new System.Drawing.Size(185, 407);
             this.panelTools.TabIndex = 14;
             // 
             // btnInfo
@@ -425,7 +425,7 @@ namespace Accounting_for_refueling__printers
             this.btnRAM.Name = "btnRAM";
             this.btnRAM.Size = new System.Drawing.Size(168, 37);
             this.btnRAM.TabIndex = 12;
-            this.btnRAM.Text = "RAM";
+            this.btnRAM.Text = "Оперативаня память (RAM)";
             this.btnRAM.UseVisualStyleBackColor = true;
             this.btnRAM.Click += new System.EventHandler(this.btnRAM_Click);
             // 
@@ -511,7 +511,7 @@ namespace Accounting_for_refueling__printers
             this.btnGPU.Name = "btnGPU";
             this.btnGPU.Size = new System.Drawing.Size(168, 37);
             this.btnGPU.TabIndex = 11;
-            this.btnGPU.Text = "GPU";
+            this.btnGPU.Text = "Видеокарта (GPU)";
             this.btnGPU.UseVisualStyleBackColor = true;
             this.btnGPU.Click += new System.EventHandler(this.btnGPU_Click);
             // 
@@ -597,7 +597,7 @@ namespace Accounting_for_refueling__printers
             this.btnCPU.Name = "btnCPU";
             this.btnCPU.Size = new System.Drawing.Size(168, 37);
             this.btnCPU.TabIndex = 10;
-            this.btnCPU.Text = "CPU";
+            this.btnCPU.Text = "Процессор (CPU)";
             this.btnCPU.UseVisualStyleBackColor = true;
             this.btnCPU.Click += new System.EventHandler(this.btnCPU_Click);
             // 
@@ -683,7 +683,7 @@ namespace Accounting_for_refueling__printers
             this.btnOC.Name = "btnOC";
             this.btnOC.Size = new System.Drawing.Size(168, 37);
             this.btnOC.TabIndex = 9;
-            this.btnOC.Text = "OC";
+            this.btnOC.Text = "Операционная система (OC)";
             this.btnOC.UseVisualStyleBackColor = true;
             this.btnOC.Click += new System.EventHandler(this.btnOC_Click);
             // 
@@ -1068,7 +1068,7 @@ namespace Accounting_for_refueling__printers
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(185, 74);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(749, 387);
+            this.panelDesktopPane.Size = new System.Drawing.Size(749, 407);
             this.panelDesktopPane.TabIndex = 2;
             // 
             // dataGridView1
@@ -1077,7 +1077,7 @@ namespace Accounting_for_refueling__printers
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1093,13 +1093,12 @@ namespace Accounting_for_refueling__printers
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(749, 407);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -1109,7 +1108,7 @@ namespace Accounting_for_refueling__printers
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(749, 387);
+            this.pictureBox2.Size = new System.Drawing.Size(749, 407);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -1119,13 +1118,13 @@ namespace Accounting_for_refueling__printers
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(934, 461);
+            this.ClientSize = new System.Drawing.Size(934, 481);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(950, 500);
+            this.MinimumSize = new System.Drawing.Size(950, 520);
             this.Name = "FormMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormMainMenu_Load);

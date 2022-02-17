@@ -32,13 +32,20 @@ namespace Accounting_for_refueling__printers.Forms
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.rAMBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.rAMBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.rAMBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.rAMBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.rAMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,24 +53,17 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
-            this.rAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rAMTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetRAMTableAdapters.RAMTableAdapter();
-            this.rAMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.rAMBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.rAMBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.rAMBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.rAMBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,19 +92,31 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox6.DataSource = this.rAMBindingSource5;
             this.comboBox6.DisplayMember = "Напряжение";
+            this.comboBox6.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(341, 244);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(172, 21);
+            this.comboBox6.Size = new System.Drawing.Size(172, 27);
             this.comboBox6.TabIndex = 28;
+            // 
+            // rAMBindingSource5
+            // 
+            this.rAMBindingSource5.DataMember = "RAM";
+            this.rAMBindingSource5.DataSource = this.databaseDataSetRAM;
+            // 
+            // databaseDataSetRAM
+            // 
+            this.databaseDataSetRAM.DataSetName = "DatabaseDataSetRAM";
+            this.databaseDataSetRAM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(261, 247);
+            this.label6.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(239, 247);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.Size = new System.Drawing.Size(96, 19);
             this.label6.TabIndex = 27;
             this.label6.Text = "Напряжение:";
             // 
@@ -113,19 +125,26 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox5.DataSource = this.rAMBindingSource4;
             this.comboBox5.DisplayMember = "Объём";
+            this.comboBox5.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(341, 217);
+            this.comboBox5.Location = new System.Drawing.Point(341, 211);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(172, 21);
+            this.comboBox5.Size = new System.Drawing.Size(172, 27);
             this.comboBox5.TabIndex = 26;
+            // 
+            // rAMBindingSource4
+            // 
+            this.rAMBindingSource4.DataMember = "RAM";
+            this.rAMBindingSource4.DataSource = this.databaseDataSetRAM;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(290, 220);
+            this.label5.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(278, 214);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.Size = new System.Drawing.Size(57, 19);
             this.label5.TabIndex = 25;
             this.label5.Text = "Объём:";
             // 
@@ -134,52 +153,77 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox4.DataSource = this.rAMBindingSource3;
             this.comboBox4.DisplayMember = "PC_индекс";
+            this.comboBox4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(341, 190);
+            this.comboBox4.Location = new System.Drawing.Point(341, 178);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(172, 21);
+            this.comboBox4.Size = new System.Drawing.Size(172, 27);
             this.comboBox4.TabIndex = 24;
+            // 
+            // rAMBindingSource3
+            // 
+            this.rAMBindingSource3.DataMember = "RAM";
+            this.rAMBindingSource3.DataSource = this.databaseDataSetRAM;
             // 
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.DataSource = this.rAMBindingSource2;
             this.comboBox3.DisplayMember = "Тип";
+            this.comboBox3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(341, 163);
+            this.comboBox3.Location = new System.Drawing.Point(341, 145);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(172, 21);
+            this.comboBox3.Size = new System.Drawing.Size(172, 27);
             this.comboBox3.TabIndex = 23;
+            // 
+            // rAMBindingSource2
+            // 
+            this.rAMBindingSource2.DataMember = "RAM";
+            this.rAMBindingSource2.DataSource = this.databaseDataSetRAM;
             // 
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.DataSource = this.rAMBindingSource1;
             this.comboBox2.DisplayMember = "Производитель";
+            this.comboBox2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(341, 137);
+            this.comboBox2.Location = new System.Drawing.Point(341, 112);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 21);
+            this.comboBox2.Size = new System.Drawing.Size(172, 27);
             this.comboBox2.TabIndex = 22;
+            // 
+            // rAMBindingSource1
+            // 
+            this.rAMBindingSource1.DataMember = "RAM";
+            this.rAMBindingSource1.DataSource = this.databaseDataSetRAM;
             // 
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.DataSource = this.rAMBindingSource;
             this.comboBox1.DisplayMember = "Код_производителя";
+            this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(341, 111);
+            this.comboBox1.Location = new System.Drawing.Point(341, 79);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 21);
+            this.comboBox1.Size = new System.Drawing.Size(172, 27);
             this.comboBox1.TabIndex = 21;
+            // 
+            // rAMBindingSource
+            // 
+            this.rAMBindingSource.DataMember = "RAM";
+            this.rAMBindingSource.DataSource = this.databaseDataSetRAM;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 167);
+            this.label4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(299, 148);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(37, 19);
             this.label4.TabIndex = 19;
             this.label4.Text = "Тип:";
             // 
@@ -187,9 +231,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(272, 193);
+            this.label3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(251, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(84, 19);
             this.label3.TabIndex = 20;
             this.label3.Text = "PC-индекс:";
             // 
@@ -197,9 +242,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(246, 141);
+            this.label2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(218, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(118, 19);
             this.label2.TabIndex = 16;
             this.label2.Text = "Производитель:";
             // 
@@ -207,9 +253,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(226, 114);
+            this.label1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(190, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.Size = new System.Drawing.Size(146, 19);
             this.label1.TabIndex = 14;
             this.label1.Text = "Код производителя:";
             // 
@@ -217,6 +264,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearch.Location = new System.Drawing.Point(341, 283);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(172, 46);
@@ -244,44 +292,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 8;
             // 
-            // databaseDataSetRAM
-            // 
-            this.databaseDataSetRAM.DataSetName = "DatabaseDataSetRAM";
-            this.databaseDataSetRAM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rAMBindingSource
-            // 
-            this.rAMBindingSource.DataMember = "RAM";
-            this.rAMBindingSource.DataSource = this.databaseDataSetRAM;
-            // 
             // rAMTableAdapter
             // 
             this.rAMTableAdapter.ClearBeforeFill = true;
-            // 
-            // rAMBindingSource1
-            // 
-            this.rAMBindingSource1.DataMember = "RAM";
-            this.rAMBindingSource1.DataSource = this.databaseDataSetRAM;
-            // 
-            // rAMBindingSource2
-            // 
-            this.rAMBindingSource2.DataMember = "RAM";
-            this.rAMBindingSource2.DataSource = this.databaseDataSetRAM;
-            // 
-            // rAMBindingSource3
-            // 
-            this.rAMBindingSource3.DataMember = "RAM";
-            this.rAMBindingSource3.DataSource = this.databaseDataSetRAM;
-            // 
-            // rAMBindingSource4
-            // 
-            this.rAMBindingSource4.DataMember = "RAM";
-            this.rAMBindingSource4.DataSource = this.databaseDataSetRAM;
-            // 
-            // rAMBindingSource5
-            // 
-            this.rAMBindingSource5.DataMember = "RAM";
-            this.rAMBindingSource5.DataSource = this.databaseDataSetRAM;
             // 
             // FormSearchRAM
             // 
@@ -295,15 +308,15 @@ namespace Accounting_for_refueling__printers.Forms
             this.Load += new System.EventHandler(this.FormSearchRAM_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource5)).EndInit();
             this.ResumeLayout(false);
 
         }

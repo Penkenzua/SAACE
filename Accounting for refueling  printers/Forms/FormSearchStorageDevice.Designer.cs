@@ -31,11 +31,17 @@ namespace Accounting_for_refueling__printers.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.storagedeviceBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetSD = new Accounting_for_refueling__printers.DatabaseDataSetSD();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.storagedeviceBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.storagedeviceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.storagedeviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new System.Windows.Forms.Button();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.storagedeviceBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,22 +50,16 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.databaseDataSetSD = new Accounting_for_refueling__printers.DatabaseDataSetSD();
-            this.storagedeviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.storage_deviceTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetSDTableAdapters.Storage_deviceTableAdapter();
-            this.storagedeviceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.storagedeviceBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.storagedeviceBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.storagedeviceBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource4)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox4
@@ -67,49 +67,79 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox4.DataSource = this.storagedeviceBindingSource3;
             this.comboBox4.DisplayMember = "Форм_фактор";
+            this.comboBox4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(315, 220);
+            this.comboBox4.Location = new System.Drawing.Point(315, 214);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(172, 21);
+            this.comboBox4.Size = new System.Drawing.Size(172, 27);
             this.comboBox4.TabIndex = 33;
+            // 
+            // storagedeviceBindingSource3
+            // 
+            this.storagedeviceBindingSource3.DataMember = "Storage_device";
+            this.storagedeviceBindingSource3.DataSource = this.databaseDataSetSD;
+            // 
+            // databaseDataSetSD
+            // 
+            this.databaseDataSetSD.DataSetName = "DatabaseDataSetSD";
+            this.databaseDataSetSD.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.DataSource = this.storagedeviceBindingSource2;
             this.comboBox3.DisplayMember = "Тип";
+            this.comboBox3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(315, 193);
+            this.comboBox3.Location = new System.Drawing.Point(315, 181);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(172, 21);
+            this.comboBox3.Size = new System.Drawing.Size(172, 27);
             this.comboBox3.TabIndex = 32;
+            // 
+            // storagedeviceBindingSource2
+            // 
+            this.storagedeviceBindingSource2.DataMember = "Storage_device";
+            this.storagedeviceBindingSource2.DataSource = this.databaseDataSetSD;
             // 
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.DataSource = this.storagedeviceBindingSource1;
             this.comboBox2.DisplayMember = "Производитель";
+            this.comboBox2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(315, 167);
+            this.comboBox2.Location = new System.Drawing.Point(315, 148);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 21);
+            this.comboBox2.Size = new System.Drawing.Size(172, 27);
             this.comboBox2.TabIndex = 31;
+            // 
+            // storagedeviceBindingSource1
+            // 
+            this.storagedeviceBindingSource1.DataMember = "Storage_device";
+            this.storagedeviceBindingSource1.DataSource = this.databaseDataSetSD;
             // 
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.DataSource = this.storagedeviceBindingSource;
             this.comboBox1.DisplayMember = "Код_производителя";
+            this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(315, 141);
+            this.comboBox1.Location = new System.Drawing.Point(315, 115);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 21);
+            this.comboBox1.Size = new System.Drawing.Size(172, 27);
             this.comboBox1.TabIndex = 30;
+            // 
+            // storagedeviceBindingSource
+            // 
+            this.storagedeviceBindingSource.DataMember = "Storage_device";
+            this.storagedeviceBindingSource.DataSource = this.databaseDataSetSD;
             // 
             // btnSearch
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearch.Location = new System.Drawing.Point(315, 295);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(172, 46);
@@ -123,19 +153,26 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox5.DataSource = this.storagedeviceBindingSource4;
             this.comboBox5.DisplayMember = "Интерфейс";
+            this.comboBox5.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(315, 247);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(172, 21);
+            this.comboBox5.Size = new System.Drawing.Size(172, 27);
             this.comboBox5.TabIndex = 35;
+            // 
+            // storagedeviceBindingSource4
+            // 
+            this.storagedeviceBindingSource4.DataMember = "Storage_device";
+            this.storagedeviceBindingSource4.DataSource = this.databaseDataSetSD;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(242, 252);
+            this.label5.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(222, 255);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.Size = new System.Drawing.Size(87, 19);
             this.label5.TabIndex = 39;
             this.label5.Text = "Интерфейс:";
             // 
@@ -143,9 +180,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 223);
+            this.label4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(205, 217);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.Size = new System.Drawing.Size(106, 19);
             this.label4.TabIndex = 40;
             this.label4.Text = "Форм-фактор:";
             // 
@@ -153,9 +191,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 196);
+            this.label3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(272, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(37, 19);
             this.label3.TabIndex = 38;
             this.label3.Text = "Тип:";
             // 
@@ -163,9 +202,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(221, 167);
+            this.label2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(193, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(118, 19);
             this.label2.TabIndex = 37;
             this.label2.Text = "Производитель:";
             // 
@@ -173,9 +213,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(200, 144);
+            this.label1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(165, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.Size = new System.Drawing.Size(146, 19);
             this.label1.TabIndex = 36;
             this.label1.Text = "Код производителя:";
             // 
@@ -216,39 +257,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2.Size = new System.Drawing.Size(800, 450);
             this.panel2.TabIndex = 1;
             // 
-            // databaseDataSetSD
-            // 
-            this.databaseDataSetSD.DataSetName = "DatabaseDataSetSD";
-            this.databaseDataSetSD.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // storagedeviceBindingSource
-            // 
-            this.storagedeviceBindingSource.DataMember = "Storage_device";
-            this.storagedeviceBindingSource.DataSource = this.databaseDataSetSD;
-            // 
             // storage_deviceTableAdapter
             // 
             this.storage_deviceTableAdapter.ClearBeforeFill = true;
-            // 
-            // storagedeviceBindingSource1
-            // 
-            this.storagedeviceBindingSource1.DataMember = "Storage_device";
-            this.storagedeviceBindingSource1.DataSource = this.databaseDataSetSD;
-            // 
-            // storagedeviceBindingSource2
-            // 
-            this.storagedeviceBindingSource2.DataMember = "Storage_device";
-            this.storagedeviceBindingSource2.DataSource = this.databaseDataSetSD;
-            // 
-            // storagedeviceBindingSource3
-            // 
-            this.storagedeviceBindingSource3.DataMember = "Storage_device";
-            this.storagedeviceBindingSource3.DataSource = this.databaseDataSetSD;
-            // 
-            // storagedeviceBindingSource4
-            // 
-            this.storagedeviceBindingSource4.DataMember = "Storage_device";
-            this.storagedeviceBindingSource4.DataSource = this.databaseDataSetSD;
             // 
             // FormSearchStorageDevice
             // 
@@ -260,16 +271,16 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormSearchStorageDevice";
             this.Text = "Поиск накопительных устройств";
             this.Load += new System.EventHandler(this.FormSearchStorageDevice_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource4)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedeviceBindingSource4)).EndInit();
             this.ResumeLayout(false);
 
         }

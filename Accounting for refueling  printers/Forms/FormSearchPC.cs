@@ -24,6 +24,7 @@ namespace Accounting_for_refueling__printers.Forms
      
         private void FormSearchPC_Load(object sender, EventArgs e)
         {
+            LoadTheme();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPC.PC". При необходимости она может быть перемещена или удалена.
             this.pCTableAdapter.Fill(this.databaseDataSetPC.PC);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor". При необходимости она может быть перемещена или удалена.
@@ -122,6 +123,40 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+            label5.ForeColor = ThemeColor.PrimaryColor;
+            label6.ForeColor = ThemeColor.PrimaryColor;
+            label7.ForeColor = ThemeColor.PrimaryColor;
+            label8.ForeColor = ThemeColor.PrimaryColor;
+            label9.ForeColor = ThemeColor.PrimaryColor;
+
+
+            comboBox1.ForeColor = ThemeColor.PrimaryColor;
+            comboBox2.ForeColor = ThemeColor.PrimaryColor;
+            comboBox3.ForeColor = ThemeColor.PrimaryColor;
+            comboBox4.ForeColor = ThemeColor.PrimaryColor;
+            comboBox5.ForeColor = ThemeColor.PrimaryColor;
+            comboBox6.ForeColor = ThemeColor.PrimaryColor;
+            comboBox7.ForeColor = ThemeColor.PrimaryColor;
+            comboBox8.ForeColor = ThemeColor.PrimaryColor;
+            comboBox9.ForeColor = ThemeColor.PrimaryColor;
+
         }
 
     }
