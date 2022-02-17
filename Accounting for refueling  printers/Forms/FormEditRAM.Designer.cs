@@ -1,7 +1,7 @@
 ﻿
 namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormEdditRAM
+    partial class FormEditRAM
     {
         /// <summary>
         /// Required designer variable.

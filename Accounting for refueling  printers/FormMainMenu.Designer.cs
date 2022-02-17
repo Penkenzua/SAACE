@@ -46,7 +46,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddMonitor = new System.Windows.Forms.Button();
             this.btnMonitor = new System.Windows.Forms.Button();
             this.PanelRAMSubMenu = new System.Windows.Forms.Panel();
-            this.btnEdditRAM = new System.Windows.Forms.Button();
+            this.btnEditRAM = new System.Windows.Forms.Button();
             this.btnSearchRAM = new System.Windows.Forms.Button();
             this.btnAddRAM = new System.Windows.Forms.Button();
             this.btnRAM = new System.Windows.Forms.Button();
@@ -157,6 +157,7 @@ namespace Accounting_for_refueling__printers
             this.btnInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInfo.FlatAppearance.BorderSize = 0;
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnInfo.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -188,6 +189,7 @@ namespace Accounting_for_refueling__printers
             this.btnEditSD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditSD.FlatAppearance.BorderSize = 0;
             this.btnEditSD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditSD.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditSD.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditSD.Image = ((System.Drawing.Image)(resources.GetObject("btnEditSD.Image")));
             this.btnEditSD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,6 +209,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearchSD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchSD.FlatAppearance.BorderSize = 0;
             this.btnSearchSD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchSD.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearchSD.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearchSD.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchSD.Image")));
             this.btnSearchSD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,6 +229,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddSD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddSD.FlatAppearance.BorderSize = 0;
             this.btnAddSD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSD.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddSD.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAddSD.Image = ((System.Drawing.Image)(resources.GetObject("btnAddSD.Image")));
             this.btnAddSD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,6 +247,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnStorageDevice.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStorageDevice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStorageDevice.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnStorageDevice.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnStorageDevice.Location = new System.Drawing.Point(0, 1496);
             this.btnStorageDevice.Name = "btnStorageDevice";
@@ -270,6 +275,7 @@ namespace Accounting_for_refueling__printers
             this.btnEditMonitor.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditMonitor.FlatAppearance.BorderSize = 0;
             this.btnEditMonitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditMonitor.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditMonitor.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditMonitor.Image = ((System.Drawing.Image)(resources.GetObject("btnEditMonitor.Image")));
             this.btnEditMonitor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,6 +295,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearchMonitor.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchMonitor.FlatAppearance.BorderSize = 0;
             this.btnSearchMonitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchMonitor.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearchMonitor.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearchMonitor.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchMonitor.Image")));
             this.btnSearchMonitor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -308,6 +315,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddMonitor.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddMonitor.FlatAppearance.BorderSize = 0;
             this.btnAddMonitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMonitor.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddMonitor.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAddMonitor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMonitor.Image")));
             this.btnAddMonitor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,6 +333,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnMonitor.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMonitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonitor.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMonitor.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnMonitor.Location = new System.Drawing.Point(0, 1309);
             this.btnMonitor.Name = "btnMonitor";
@@ -337,7 +346,7 @@ namespace Accounting_for_refueling__printers
             // PanelRAMSubMenu
             // 
             this.PanelRAMSubMenu.AutoSize = true;
-            this.PanelRAMSubMenu.Controls.Add(this.btnEdditRAM);
+            this.PanelRAMSubMenu.Controls.Add(this.btnEditRAM);
             this.PanelRAMSubMenu.Controls.Add(this.btnSearchRAM);
             this.PanelRAMSubMenu.Controls.Add(this.btnAddRAM);
             this.PanelRAMSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -346,24 +355,25 @@ namespace Accounting_for_refueling__printers
             this.PanelRAMSubMenu.Size = new System.Drawing.Size(168, 150);
             this.PanelRAMSubMenu.TabIndex = 11;
             // 
-            // btnEdditRAM
+            // btnEditRAM
             // 
-            this.btnEdditRAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnEdditRAM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEdditRAM.FlatAppearance.BorderSize = 0;
-            this.btnEdditRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdditRAM.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnEdditRAM.Image = ((System.Drawing.Image)(resources.GetObject("btnEdditRAM.Image")));
-            this.btnEdditRAM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdditRAM.Location = new System.Drawing.Point(0, 100);
-            this.btnEdditRAM.Name = "btnEdditRAM";
-            this.btnEdditRAM.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnEdditRAM.Size = new System.Drawing.Size(168, 50);
-            this.btnEdditRAM.TabIndex = 3;
-            this.btnEdditRAM.Text = "   Изменить";
-            this.btnEdditRAM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEdditRAM.UseVisualStyleBackColor = false;
-            this.btnEdditRAM.Click += new System.EventHandler(this.btnEdditRAM_Click);
+            this.btnEditRAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnEditRAM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditRAM.FlatAppearance.BorderSize = 0;
+            this.btnEditRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditRAM.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEditRAM.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEditRAM.Image = ((System.Drawing.Image)(resources.GetObject("btnEditRAM.Image")));
+            this.btnEditRAM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditRAM.Location = new System.Drawing.Point(0, 100);
+            this.btnEditRAM.Name = "btnEditRAM";
+            this.btnEditRAM.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnEditRAM.Size = new System.Drawing.Size(168, 50);
+            this.btnEditRAM.TabIndex = 3;
+            this.btnEditRAM.Text = "   Изменить";
+            this.btnEditRAM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditRAM.UseVisualStyleBackColor = false;
+            this.btnEditRAM.Click += new System.EventHandler(this.btnEdditRAM_Click);
             // 
             // btnSearchRAM
             // 
@@ -371,6 +381,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearchRAM.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchRAM.FlatAppearance.BorderSize = 0;
             this.btnSearchRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchRAM.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearchRAM.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearchRAM.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchRAM.Image")));
             this.btnSearchRAM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -390,6 +401,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddRAM.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddRAM.FlatAppearance.BorderSize = 0;
             this.btnAddRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRAM.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddRAM.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAddRAM.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRAM.Image")));
             this.btnAddRAM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -407,6 +419,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnRAM.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRAM.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRAM.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnRAM.Location = new System.Drawing.Point(0, 1122);
             this.btnRAM.Name = "btnRAM";
@@ -434,6 +447,7 @@ namespace Accounting_for_refueling__printers
             this.btnEditGPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditGPU.FlatAppearance.BorderSize = 0;
             this.btnEditGPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditGPU.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditGPU.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditGPU.Image = ((System.Drawing.Image)(resources.GetObject("btnEditGPU.Image")));
             this.btnEditGPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -453,6 +467,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearchGPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchGPU.FlatAppearance.BorderSize = 0;
             this.btnSearchGPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchGPU.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearchGPU.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearchGPU.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchGPU.Image")));
             this.btnSearchGPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -472,6 +487,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddGPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddGPU.FlatAppearance.BorderSize = 0;
             this.btnAddGPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddGPU.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddGPU.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAddGPU.Image = ((System.Drawing.Image)(resources.GetObject("btnAddGPU.Image")));
             this.btnAddGPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -489,6 +505,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnGPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGPU.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnGPU.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnGPU.Location = new System.Drawing.Point(0, 935);
             this.btnGPU.Name = "btnGPU";
@@ -516,6 +533,7 @@ namespace Accounting_for_refueling__printers
             this.btnEditCPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditCPU.FlatAppearance.BorderSize = 0;
             this.btnEditCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditCPU.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditCPU.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditCPU.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCPU.Image")));
             this.btnEditCPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -535,6 +553,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearchCPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchCPU.FlatAppearance.BorderSize = 0;
             this.btnSearchCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCPU.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearchCPU.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearchCPU.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchCPU.Image")));
             this.btnSearchCPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -554,6 +573,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddCPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddCPU.FlatAppearance.BorderSize = 0;
             this.btnAddCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCPU.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddCPU.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAddCPU.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCPU.Image")));
             this.btnAddCPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -571,6 +591,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnCPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCPU.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCPU.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCPU.Location = new System.Drawing.Point(0, 748);
             this.btnCPU.Name = "btnCPU";
@@ -598,6 +619,7 @@ namespace Accounting_for_refueling__printers
             this.btnEditOC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditOC.FlatAppearance.BorderSize = 0;
             this.btnEditOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditOC.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditOC.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditOC.Image = ((System.Drawing.Image)(resources.GetObject("btnEditOC.Image")));
             this.btnEditOC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -617,6 +639,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearchOC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchOC.FlatAppearance.BorderSize = 0;
             this.btnSearchOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchOC.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearchOC.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearchOC.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchOC.Image")));
             this.btnSearchOC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -636,6 +659,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddOC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddOC.FlatAppearance.BorderSize = 0;
             this.btnAddOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOC.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddOC.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAddOC.Image = ((System.Drawing.Image)(resources.GetObject("btnAddOC.Image")));
             this.btnAddOC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -653,6 +677,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnOC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOC.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnOC.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnOC.Location = new System.Drawing.Point(0, 561);
             this.btnOC.Name = "btnOC";
@@ -680,6 +705,7 @@ namespace Accounting_for_refueling__printers
             this.btnEditCatridge.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditCatridge.FlatAppearance.BorderSize = 0;
             this.btnEditCatridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditCatridge.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditCatridge.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditCatridge.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCatridge.Image")));
             this.btnEditCatridge.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -699,6 +725,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearchCatridge.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchCatridge.FlatAppearance.BorderSize = 0;
             this.btnSearchCatridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCatridge.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearchCatridge.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearchCatridge.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchCatridge.Image")));
             this.btnSearchCatridge.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -718,6 +745,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddCatridge.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddCatridge.FlatAppearance.BorderSize = 0;
             this.btnAddCatridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCatridge.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddCatridge.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAddCatridge.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCatridge.Image")));
             this.btnAddCatridge.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -735,6 +763,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnCatridge.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCatridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatridge.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCatridge.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCatridge.Location = new System.Drawing.Point(0, 374);
             this.btnCatridge.Name = "btnCatridge";
@@ -762,6 +791,7 @@ namespace Accounting_for_refueling__printers
             this.btnEditPC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditPC.FlatAppearance.BorderSize = 0;
             this.btnEditPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditPC.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditPC.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditPC.Image = ((System.Drawing.Image)(resources.GetObject("btnEditPC.Image")));
             this.btnEditPC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -781,6 +811,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearchPC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchPC.FlatAppearance.BorderSize = 0;
             this.btnSearchPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchPC.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearchPC.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearchPC.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchPC.Image")));
             this.btnSearchPC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -800,6 +831,7 @@ namespace Accounting_for_refueling__printers
             this.btnAddPC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddPC.FlatAppearance.BorderSize = 0;
             this.btnAddPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPC.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddPC.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAddPC.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPC.Image")));
             this.btnAddPC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -817,6 +849,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnPC.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPC.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnPC.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnPC.Location = new System.Drawing.Point(0, 187);
             this.btnPC.Name = "btnPC";
@@ -844,6 +877,7 @@ namespace Accounting_for_refueling__printers
             this.btnEdit.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEdit.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -863,6 +897,7 @@ namespace Accounting_for_refueling__printers
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearch.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -882,6 +917,7 @@ namespace Accounting_for_refueling__printers
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAdd.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -899,6 +935,7 @@ namespace Accounting_for_refueling__printers
             // 
             this.btnPrinters.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPrinters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrinters.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnPrinters.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnPrinters.Location = new System.Drawing.Point(0, 0);
             this.btnPrinters.Name = "btnPrinters";
@@ -1016,11 +1053,11 @@ namespace Accounting_for_refueling__printers
             // 
             this.lblTittle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTittle.AutoSize = true;
-            this.lblTittle.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTittle.Font = new System.Drawing.Font("Roboto Cn", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTittle.ForeColor = System.Drawing.Color.White;
             this.lblTittle.Location = new System.Drawing.Point(281, 26);
             this.lblTittle.Name = "lblTittle";
-            this.lblTittle.Size = new System.Drawing.Size(70, 24);
+            this.lblTittle.Size = new System.Drawing.Size(59, 24);
             this.lblTittle.TabIndex = 0;
             this.lblTittle.Text = "HOME";
             // 
@@ -1141,7 +1178,7 @@ namespace Accounting_for_refueling__printers
         private System.Windows.Forms.Panel PanelPrinterSubMenu;
         private System.Windows.Forms.Button btnPrinters;
         private System.Windows.Forms.Panel PanelRAMSubMenu;
-        private System.Windows.Forms.Button btnEdditRAM;
+        private System.Windows.Forms.Button btnEditRAM;
         private System.Windows.Forms.Button btnSearchRAM;
         private System.Windows.Forms.Button btnAddRAM;
         private System.Windows.Forms.Button btnRAM;

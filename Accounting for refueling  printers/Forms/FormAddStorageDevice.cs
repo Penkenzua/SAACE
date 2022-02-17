@@ -42,7 +42,7 @@ namespace Accounting_for_refueling__printers.Forms
             {
 
 
-                SqlCommand command = new SqlCommand("INSERT INTO [CPU] (Код_производителя,Производитель,Тип,Форм_фактор,Интерфейс) VALUES(@Код_производителя,@Производитель,@Тип,@Форм_фактор,@Интерфейс)", sqlConnection);
+                SqlCommand command = new SqlCommand("INSERT INTO [Storage_device] (Код_производителя,Производитель,Тип,Форм_фактор,Интерфейс) VALUES(@Код_производителя,@Производитель,@Тип,@Форм_фактор,@Интерфейс)", sqlConnection);
                 command.Parameters.AddWithValue("Код_производителя", textBox1.Text);
                 command.Parameters.AddWithValue("Производитель", textBox2.Text);
                 command.Parameters.AddWithValue("Тип", textBox3.Text);

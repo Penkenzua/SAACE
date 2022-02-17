@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormEdditPrinter : Form
+    public partial class FormEditPrinter : Form
     {
         private SqlConnection sqlConnection = null;
-        public FormEdditPrinter()
+        public FormEditPrinter()
         {
             InitializeComponent();
         }

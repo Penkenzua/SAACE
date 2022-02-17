@@ -86,6 +86,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessRight.cs" />
+    <Compile Include="Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSetCartridge.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -227,11 +234,11 @@
     <Compile Include="Forms\FormEditPC.Designer.cs">
       <DependentUpon>FormEditPC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEdditRAM.cs">
+    <Compile Include="Forms\FormEditRAM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEdditRAM.Designer.cs">
-      <DependentUpon>FormEdditRAM.cs</DependentUpon>
+    <Compile Include="Forms\FormEditRAM.Designer.cs">
+      <DependentUpon>FormEditRAM.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormEditStorageDevice.cs">
       <SubType>Form</SubType>
@@ -287,11 +294,11 @@
     <Compile Include="Forms\FormAddPrinter.Designer.cs">
       <DependentUpon>FormAddPrinter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEdditPrinter.cs">
+    <Compile Include="Forms\FormEditPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEdditPrinter.Designer.cs">
-      <DependentUpon>FormEdditPrinter.cs</DependentUpon>
+    <Compile Include="Forms\FormEditPrinter.Designer.cs">
+      <DependentUpon>FormEditPrinter.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSearchRAM.cs">
       <SubType>Form</SubType>
@@ -316,6 +323,9 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemeColor.cs" />
+    <EmbeddedResource Include="Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,8 +371,8 @@
     <EmbeddedResource Include="Forms\FormEditPC.resx">
       <DependentUpon>FormEditPC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEdditRAM.resx">
-      <DependentUpon>FormEdditRAM.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEditRAM.resx">
+      <DependentUpon>FormEditRAM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEditStorageDevice.resx">
       <DependentUpon>FormEditStorageDevice.cs</DependentUpon>
@@ -391,8 +401,8 @@
     <EmbeddedResource Include="Forms\FormAddPrinter.resx">
       <DependentUpon>FormAddPrinter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEdditPrinter.resx">
-      <DependentUpon>FormEdditPrinter.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormEditPrinter.resx">
+      <DependentUpon>FormEditPrinter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchRAM.resx">
       <DependentUpon>FormSearchRAM.cs</DependentUpon>

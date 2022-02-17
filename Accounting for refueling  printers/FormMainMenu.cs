@@ -33,8 +33,13 @@ namespace Accounting_for_refueling__printers
             Thread.Sleep(5000);
 
             InitializeComponent();
-            customizeDesign();
             t.Abort(t);
+            if (AcessRight.Acess==0)
+            {
+                AcessUser();
+            }
+            customizeDesign();
+           
             random = new Random();
             SelfRef = this;
             this.Text = string.Empty;
@@ -184,7 +189,7 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО МОЛ',PC.Инв_Номер as 'Инв.Номер',PC.Монитор, PC.Диск, OC.Название As 'Операционная система'," +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО МОЛ',PC.Инв_Номер as 'Инв.Номер',Monitor.Инв_Номер, Storage_device.Код_производителя as 'Код производителя', OC.Название As 'Операционная система'," +
                 "CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
                 " JOIN CPU on PC.CPU = CPU.CPU_ID" +
@@ -391,7 +396,7 @@ namespace Accounting_for_refueling__printers
         }
         private void btnEddit_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEdditPrinter(), sender);
+            OpenChildForm(new Forms.FormEditPrinter(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
 
@@ -706,7 +711,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnEdditRAM_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEdditRAM(), sender);
+            OpenChildForm(new Forms.FormEditRAM(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
@@ -807,6 +812,30 @@ namespace Accounting_for_refueling__printers
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
         }
+        public void AcessUser()
+        {
+            //Add.
+            btnAddCPU.Visible = false;
+            btnAddGPU.Visible = false;
+            btnAddMonitor.Visible = false;
+            btnAddOC.Visible = false;
+            btnAddPC.Visible = false;
+            btnAdd.Visible = false;
+            btnAddRAM.Visible = false;
+            btnAddSD.Visible = false;
+            btnAddCatridge.Visible = false;
+            //Edit.
+            btnEditCPU.Visible = false;
+            btnEditGPU.Visible = false;
+            btnEditMonitor.Visible = false;
+            btnEditOC.Visible = false;
+            btnEditPC.Visible = false;
+            btnEdit.Visible = false;
+            btnEditRAM.Visible = false;
+            btnEditSD.Visible = false;
+            btnEditCatridge.Visible = false;
+        }
     }
+  
 
-    } 
+} 
