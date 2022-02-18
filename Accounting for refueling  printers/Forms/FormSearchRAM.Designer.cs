@@ -32,20 +32,15 @@ namespace Accounting_for_refueling__printers.Forms
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.rAMBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.rAMBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.rAMBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.rAMBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.rAMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.rAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,16 +49,23 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rAMTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetRAMTableAdapters.RAMTableAdapter();
+            this.databaseDataSetRAM1 = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
+            this.rAMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.rAMBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.rAMBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.rAMBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.rAMBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,16 +101,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox6.Size = new System.Drawing.Size(172, 27);
             this.comboBox6.TabIndex = 28;
             // 
-            // rAMBindingSource5
-            // 
-            this.rAMBindingSource5.DataMember = "RAM";
-            this.rAMBindingSource5.DataSource = this.databaseDataSetRAM;
-            // 
-            // databaseDataSetRAM
-            // 
-            this.databaseDataSetRAM.DataSetName = "DatabaseDataSetRAM";
-            this.databaseDataSetRAM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -131,11 +123,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(172, 27);
             this.comboBox5.TabIndex = 26;
-            // 
-            // rAMBindingSource4
-            // 
-            this.rAMBindingSource4.DataMember = "RAM";
-            this.rAMBindingSource4.DataSource = this.databaseDataSetRAM;
             // 
             // label5
             // 
@@ -160,11 +147,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox4.Size = new System.Drawing.Size(172, 27);
             this.comboBox4.TabIndex = 24;
             // 
-            // rAMBindingSource3
-            // 
-            this.rAMBindingSource3.DataMember = "RAM";
-            this.rAMBindingSource3.DataSource = this.databaseDataSetRAM;
-            // 
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -176,11 +158,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(172, 27);
             this.comboBox3.TabIndex = 23;
-            // 
-            // rAMBindingSource2
-            // 
-            this.rAMBindingSource2.DataMember = "RAM";
-            this.rAMBindingSource2.DataSource = this.databaseDataSetRAM;
             // 
             // comboBox2
             // 
@@ -194,10 +171,17 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.Size = new System.Drawing.Size(172, 27);
             this.comboBox2.TabIndex = 22;
             // 
-            // rAMBindingSource1
+            // rAMBindingSource
             // 
-            this.rAMBindingSource1.DataMember = "RAM";
-            this.rAMBindingSource1.DataSource = this.databaseDataSetRAM;
+            this.rAMBindingSource.DataMember = "RAM";
+            this.rAMBindingSource.DataSource = this.databaseDataSetRAM;
+            this.rAMBindingSource.Filter = "";
+            this.rAMBindingSource.Sort = "";
+            // 
+            // databaseDataSetRAM
+            // 
+            this.databaseDataSetRAM.DataSetName = "DatabaseDataSetRAM";
+            this.databaseDataSetRAM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox1
             // 
@@ -210,11 +194,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 27);
             this.comboBox1.TabIndex = 21;
-            // 
-            // rAMBindingSource
-            // 
-            this.rAMBindingSource.DataMember = "RAM";
-            this.rAMBindingSource.DataSource = this.databaseDataSetRAM;
             // 
             // label4
             // 
@@ -296,6 +275,36 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.rAMTableAdapter.ClearBeforeFill = true;
             // 
+            // databaseDataSetRAM1
+            // 
+            this.databaseDataSetRAM1.DataSetName = "DatabaseDataSetRAM";
+            this.databaseDataSetRAM1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rAMBindingSource1
+            // 
+            this.rAMBindingSource1.DataMember = "RAM";
+            this.rAMBindingSource1.DataSource = this.databaseDataSetRAM1;
+            // 
+            // rAMBindingSource2
+            // 
+            this.rAMBindingSource2.DataMember = "RAM";
+            this.rAMBindingSource2.DataSource = this.databaseDataSetRAM1;
+            // 
+            // rAMBindingSource3
+            // 
+            this.rAMBindingSource3.DataMember = "RAM";
+            this.rAMBindingSource3.DataSource = this.databaseDataSetRAM1;
+            // 
+            // rAMBindingSource4
+            // 
+            this.rAMBindingSource4.DataMember = "RAM";
+            this.rAMBindingSource4.DataSource = this.databaseDataSetRAM1;
+            // 
+            // rAMBindingSource5
+            // 
+            this.rAMBindingSource5.DataMember = "RAM";
+            this.rAMBindingSource5.DataSource = this.databaseDataSetRAM1;
+            // 
             // FormSearchRAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,15 +317,16 @@ namespace Accounting_for_refueling__printers.Forms
             this.Load += new System.EventHandler(this.FormSearchRAM_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,10 +352,11 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSetRAM databaseDataSetRAM;
         private System.Windows.Forms.BindingSource rAMBindingSource;
         private DatabaseDataSetRAMTableAdapters.RAMTableAdapter rAMTableAdapter;
-        private System.Windows.Forms.BindingSource rAMBindingSource5;
-        private System.Windows.Forms.BindingSource rAMBindingSource4;
-        private System.Windows.Forms.BindingSource rAMBindingSource3;
-        private System.Windows.Forms.BindingSource rAMBindingSource2;
+        private DatabaseDataSetRAM databaseDataSetRAM1;
         private System.Windows.Forms.BindingSource rAMBindingSource1;
+        private System.Windows.Forms.BindingSource rAMBindingSource2;
+        private System.Windows.Forms.BindingSource rAMBindingSource3;
+        private System.Windows.Forms.BindingSource rAMBindingSource4;
+        private System.Windows.Forms.BindingSource rAMBindingSource5;
     }
 }

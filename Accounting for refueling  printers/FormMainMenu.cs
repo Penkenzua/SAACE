@@ -453,6 +453,7 @@ namespace Accounting_for_refueling__printers
 
         public void FormMainMenu_Load(object sender, EventArgs e)
         {
+            dataGridView1.ClearSelection();
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =" + Application.StartupPath + @"\Database.mdf; Integrated Security = True");

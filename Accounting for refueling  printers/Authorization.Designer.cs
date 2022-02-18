@@ -81,6 +81,7 @@ namespace Accounting_for_refueling__printers
             // 
             // btnUser
             // 
+            this.btnUser.FlatAppearance.BorderSize = 3;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.ForeColor = System.Drawing.Color.White;
             this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
@@ -93,6 +94,7 @@ namespace Accounting_for_refueling__printers
             // 
             // btnAdministrator
             // 
+            this.btnAdministrator.FlatAppearance.BorderSize = 3;
             this.btnAdministrator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministrator.ForeColor = System.Drawing.Color.White;
             this.btnAdministrator.Image = ((System.Drawing.Image)(resources.GetObject("btnAdministrator.Image")));
@@ -251,8 +253,8 @@ namespace Accounting_for_refueling__printers
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 440);
-            this.Controls.Add(this.panelAutorization);
             this.Controls.Add(this.panelСhoice);
+            this.Controls.Add(this.panelAutorization);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

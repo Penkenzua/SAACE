@@ -22,8 +22,19 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchRAM_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
+            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
+            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
+            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
+            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
+            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM". При необходимости она может быть перемещена или удалена.
             this.rAMTableAdapter.Fill(this.databaseDataSetRAM.RAM);
+
             LoadTheme();
             try
             {
@@ -45,11 +56,10 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox6.Text = "";
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            filter = "";
-            try
+            private void btnSearch_Click(object sender, EventArgs e)
             {
+                filter = "";
+           
                 if (comboBox1.Text != "")
                 {
                     filter += $"Код_производителя like '{comboBox1.Text}%' and ";
@@ -77,11 +87,12 @@ namespace Accounting_for_refueling__printers.Forms
                 }
 
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select RAM_ID as ID, Модель from RAM where {filter}", sqlConnection);
+                SqlCommand command = new SqlCommand($"Select RAM_ID as 'Идентификатор', RAM.Код_производителя as 'Код производителя',RAM.Производитель," +
+                        $"RAM.Тип, RAM.PC_индекс as 'PC-индекс',RAM.Объём,RAM.Напряжение from RAM where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
                     SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as 'Идентификатор', RAM.Код_производителя as 'Код производителя',RAM.Производитель," +
-                        $"RAM.Тип, RAM.PC_индекс as 'PC-индекс',RAM.Объём,RAM. from RAM.Напряжение where {filter}", sqlConnection);
+                        $"RAM.Тип, RAM.PC_индекс as 'PC-индекс',RAM.Объём,RAM.Напряжение from RAM where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];
@@ -93,14 +104,8 @@ namespace Accounting_for_refueling__printers.Forms
                     MessageBox.Show("Записи с такими условиями не найдено", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-
-
             }
-            catch
-            {
-                MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+   
         void LoadTheme()
         {
             foreach (Control btns in this.Controls)
@@ -119,7 +124,7 @@ namespace Accounting_for_refueling__printers.Forms
             label4.ForeColor = ThemeColor.PrimaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
             label6.ForeColor = ThemeColor.PrimaryColor;
-         
+
 
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
             comboBox2.ForeColor = ThemeColor.PrimaryColor;
@@ -128,5 +133,8 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox5.ForeColor = ThemeColor.PrimaryColor;
             comboBox6.ForeColor = ThemeColor.PrimaryColor;
         }
+
+       
     }
+    
 }

@@ -38,7 +38,7 @@ namespace Accounting_for_refueling__printers.Forms
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU". При необходимости она может быть перемещена или удалена.
             this.gPUTableAdapter.Fill(this.databaseDataSetGPU.GPU);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSetRAM.RAM);
+          
 
             try
             {

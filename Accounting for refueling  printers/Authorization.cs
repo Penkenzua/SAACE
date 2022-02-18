@@ -43,6 +43,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnUser_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormMainMenu formMainMenu = new FormMainMenu();
             formMainMenu.Show();
             AcessRight.Acess = 0;
@@ -66,8 +67,8 @@ namespace Accounting_for_refueling__printers
 
             if (Acess.ExecuteScalar()!= null)
             {
-                AcessRight.Acess = 1;
                 this.Hide();
+                AcessRight.Acess = 1;
                 FormMainMenu formMainMenu = new FormMainMenu();
                 formMainMenu.Show();
             }

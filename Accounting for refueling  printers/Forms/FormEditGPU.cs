@@ -71,7 +71,7 @@ namespace Accounting_for_refueling__printers.Forms
                     $"Производитель = N'{textBox2.Text}' ," +
                     $"Графический_процессор =N'{textBox3.Text}'," +
                     $"Тип_памяти =N'{textBox4.Text}'," +
-                    $"Шина_памяти = N'{textBox5.Text}' " +
+                    $"Шина_памяти = {textBox5.Text} " +
                     $"where GPU_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {

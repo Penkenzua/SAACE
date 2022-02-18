@@ -63,9 +63,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.databaseDataSetGPU = new Accounting_for_refueling__printers.DatabaseDataSetGPU();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.rAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
+          
             this.btnSearch = new System.Windows.Forms.Button();
-            this.rAMTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetRAMTableAdapters.RAMTableAdapter();
+          
             this.gPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPUTableAdapter();
             this.cPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPUTableAdapter();
             this.oCTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters.OCTableAdapter();
@@ -87,7 +87,7 @@ namespace Accounting_for_refueling__printers.Forms
             ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
+
             this.SuspendLayout();
             // 
             // label9
@@ -370,12 +370,11 @@ namespace Accounting_for_refueling__printers.Forms
             // rAMBindingSource
             // 
             this.rAMBindingSource.DataMember = "RAM";
-            this.rAMBindingSource.DataSource = this.databaseDataSetRAM;
+
             // 
             // databaseDataSetRAM
             // 
-            this.databaseDataSetRAM.DataSetName = "DatabaseDataSetRAM";
-            this.databaseDataSetRAM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // btnSearch
             // 
@@ -392,7 +391,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // rAMTableAdapter
             // 
-            this.rAMTableAdapter.ClearBeforeFill = true;
+
             // 
             // gPUTableAdapter
             // 
@@ -460,7 +459,7 @@ namespace Accounting_for_refueling__printers.Forms
             ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,9 +486,9 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Button btnSearch;
-        private DatabaseDataSetRAM databaseDataSetRAM;
+
         private System.Windows.Forms.BindingSource rAMBindingSource;
-        private DatabaseDataSetRAMTableAdapters.RAMTableAdapter rAMTableAdapter;
+      
         private DatabaseDataSetGPU databaseDataSetGPU;
         private System.Windows.Forms.BindingSource gPUBindingSource;
         private DatabaseDataSetGPUTableAdapters.GPUTableAdapter gPUTableAdapter;
