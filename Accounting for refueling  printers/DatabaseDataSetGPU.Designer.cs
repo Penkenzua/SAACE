@@ -289,6 +289,8 @@ namespace Accounting_for_refueling__printers {
             
             private global::System.Data.DataColumn columnШина_памяти;
             
+            private global::System.Data.DataColumn columnШина_памяти1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public GPUDataTable() {
@@ -364,6 +366,14 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Шина_памяти1Column {
+                get {
+                    return this.columnШина_памяти1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +409,15 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GPURow AddGPURow(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти) {
+            public GPURow AddGPURow(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти, int Шина_памяти1) {
                 GPURow rowGPURow = ((GPURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Производитель,
                         Графический_процессор,
                         Тип_памяти,
-                        Шина_памяти};
+                        Шина_памяти,
+                        Шина_памяти1};
                 rowGPURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGPURow);
                 return rowGPURow;
@@ -441,6 +452,7 @@ namespace Accounting_for_refueling__printers {
                 this.columnГрафический_процессор = base.Columns["Графический_процессор"];
                 this.columnТип_памяти = base.Columns["Тип_памяти"];
                 this.columnШина_памяти = base.Columns["Шина_памяти"];
+                this.columnШина_памяти1 = base.Columns["Шина_памяти1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,6 +468,8 @@ namespace Accounting_for_refueling__printers {
                 base.Columns.Add(this.columnТип_памяти);
                 this.columnШина_памяти = new global::System.Data.DataColumn("Шина_памяти", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnШина_памяти);
+                this.columnШина_памяти1 = new global::System.Data.DataColumn("Шина_памяти1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnШина_памяти1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnGPU_ID}, true));
                 this.columnGPU_ID.AutoIncrement = true;
@@ -468,6 +482,7 @@ namespace Accounting_for_refueling__printers {
                 this.columnГрафический_процессор.MaxLength = 50;
                 this.columnТип_памяти.MaxLength = 10;
                 this.columnШина_памяти.MaxLength = 10;
+                this.columnШина_памяти1.Caption = "Шина_памяти";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -685,6 +700,22 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Шина_памяти1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableGPU.Шина_памяти1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Шина_памяти1\' в таблице \'GPU\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGPU.Шина_памяти1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsПроизводительNull() {
                 return this.IsNull(this.tableGPU.ПроизводительColumn);
             }
@@ -729,6 +760,18 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetШина_памятиNull() {
                 this[this.tableGPU.Шина_памятиColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsШина_памяти1Null() {
+                return this.IsNull(this.tableGPU.Шина_памяти1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetШина_памяти1Null() {
+                this[this.tableGPU.Шина_памяти1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -895,7 +938,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters {
             tableMapping.ColumnMappings.Add("Производитель", "Производитель");
             tableMapping.ColumnMappings.Add("Графический_процессор", "Графический_процессор");
             tableMapping.ColumnMappings.Add("Тип_памяти", "Тип_памяти");
-            tableMapping.ColumnMappings.Add("Шина_памяти", "Шина_памяти");
+            tableMapping.ColumnMappings.Add("Шина_памяти", "Шина_памяти1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -907,36 +950,36 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Графический_процессор", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Графический_процессор", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Тип_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Тип_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Тип_памяти", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Шина_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Шина_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Шина_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GPU] ([Производитель], [Графический_процессор], [Тип_памяти], [Шина_памяти]) VALUES (@Производитель, @Графический_процессор, @Тип_памяти, @Шина_памяти);
-SELECT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_памяти FROM GPU WHERE (GPU_ID = SCOPE_IDENTITY())";
+SELECT DISTINCT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_памяти FROM GPU WHERE (GPU_ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Производитель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Графический_процессор", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Шина_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип_памяти", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Шина_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GPU] SET [Производитель] = @Производитель, [Графический_процессор] = @Графический_процессор, [Тип_памяти] = @Тип_памяти, [Шина_памяти] = @Шина_памяти WHERE (([GPU_ID] = @Original_GPU_ID) AND ((@IsNull_Производитель = 1 AND [Производитель] IS NULL) OR ([Производитель] = @Original_Производитель)) AND ((@IsNull_Графический_процессор = 1 AND [Графический_процессор] IS NULL) OR ([Графический_процессор] = @Original_Графический_процессор)) AND ((@IsNull_Тип_памяти = 1 AND [Тип_памяти] IS NULL) OR ([Тип_памяти] = @Original_Тип_памяти)) AND ((@IsNull_Шина_памяти = 1 AND [Шина_памяти] IS NULL) OR ([Шина_памяти] = @Original_Шина_памяти)));
-SELECT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_памяти FROM GPU WHERE (GPU_ID = @GPU_ID)";
+SELECT DISTINCT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_памяти FROM GPU WHERE (GPU_ID = @GPU_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Производитель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Графический_процессор", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Шина_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип_памяти", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Шина_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GPU_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPU_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Производитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Производитель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Производитель", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Графический_процессор", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Графический_процессор", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Графический_процессор", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Тип_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Тип_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Тип_памяти", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Шина_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Шина_памяти", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Шина_памяти", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Шина_памяти", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPU_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "GPU_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -953,8 +996,8 @@ SELECT GPU_ID, Производитель, Графический_процесс
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_памяти FROM" +
-                " dbo.GPU";
+            this._commandCollection[0].CommandText = "SELECT DISTINCT GPU_ID, Производитель, Графический_процессор, Тип_памяти, Шина_па" +
+                "мяти FROM dbo.GPU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1015,7 +1058,7 @@ SELECT GPU_ID, Производитель, Графический_процесс
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, string Original_Шина_памяти) {
+        public virtual int Delete(int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, global::System.Nullable<int> Original_Шина_памяти) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_GPU_ID));
             if ((Original_Производитель == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1041,13 +1084,13 @@ SELECT GPU_ID, Производитель, Графический_процесс
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Тип_памяти));
             }
-            if ((Original_Шина_памяти == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((Original_Шина_памяти.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Шина_памяти.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Шина_памяти));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1069,7 +1112,7 @@ SELECT GPU_ID, Производитель, Графический_процесс
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти) {
+        public virtual int Insert(string Производитель, string Графический_процессор, string Тип_памяти, global::System.Nullable<int> Шина_памяти) {
             if ((Производитель == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1088,11 +1131,11 @@ SELECT GPU_ID, Производитель, Графический_процесс
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Тип_памяти));
             }
-            if ((Шина_памяти == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((Шина_памяти.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Шина_памяти.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Шина_памяти));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1114,7 +1157,7 @@ SELECT GPU_ID, Производитель, Графический_процесс
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти, int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, string Original_Шина_памяти, int GPU_ID) {
+        public virtual int Update(string Производитель, string Графический_процессор, string Тип_памяти, global::System.Nullable<int> Шина_памяти, int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, global::System.Nullable<int> Original_Шина_памяти, int GPU_ID) {
             if ((Производитель == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1133,11 +1176,11 @@ SELECT GPU_ID, Производитель, Графический_процесс
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Тип_памяти));
             }
-            if ((Шина_памяти == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((Шина_памяти.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Шина_памяти.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Шина_памяти));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_GPU_ID));
             if ((Original_Производитель == null)) {
@@ -1164,13 +1207,13 @@ SELECT GPU_ID, Производитель, Графический_процесс
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Тип_памяти));
             }
-            if ((Original_Шина_памяти == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            if ((Original_Шина_памяти.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Шина_памяти.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Шина_памяти));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(GPU_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -1193,7 +1236,7 @@ SELECT GPU_ID, Производитель, Графический_процесс
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Производитель, string Графический_процессор, string Тип_памяти, string Шина_памяти, int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, string Original_Шина_памяти) {
+        public virtual int Update(string Производитель, string Графический_процессор, string Тип_памяти, global::System.Nullable<int> Шина_памяти, int Original_GPU_ID, string Original_Производитель, string Original_Графический_процессор, string Original_Тип_памяти, global::System.Nullable<int> Original_Шина_памяти) {
             return this.Update(Производитель, Графический_процессор, Тип_памяти, Шина_памяти, Original_GPU_ID, Original_Производитель, Original_Графический_процессор, Original_Тип_памяти, Original_Шина_памяти, Original_GPU_ID);
         }
     }

@@ -37,6 +37,10 @@ namespace Accounting_for_refueling__printers
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelTools = new System.Windows.Forms.Panel();
             this.btnInfo = new System.Windows.Forms.Button();
+            this.panelAccountSubMenu = new System.Windows.Forms.Panel();
+            this.btnEditAccount = new System.Windows.Forms.Button();
+            this.btnAddAccount = new System.Windows.Forms.Button();
+            this.btnControlAccount = new System.Windows.Forms.Button();
             this.PanelStorageDeviceSubMenu = new System.Windows.Forms.Panel();
             this.btnEditSD = new System.Windows.Forms.Button();
             this.btnSearchSD = new System.Windows.Forms.Button();
@@ -96,6 +100,7 @@ namespace Accounting_for_refueling__printers
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelTools.SuspendLayout();
+            this.panelAccountSubMenu.SuspendLayout();
             this.PanelStorageDeviceSubMenu.SuspendLayout();
             this.PanelMonitorSubMenu.SuspendLayout();
             this.PanelRAMSubMenu.SuspendLayout();
@@ -129,6 +134,8 @@ namespace Accounting_for_refueling__printers
             // 
             this.panelTools.AutoScroll = true;
             this.panelTools.Controls.Add(this.btnInfo);
+            this.panelTools.Controls.Add(this.panelAccountSubMenu);
+            this.panelTools.Controls.Add(this.btnControlAccount);
             this.panelTools.Controls.Add(this.PanelStorageDeviceSubMenu);
             this.panelTools.Controls.Add(this.btnStorageDevice);
             this.panelTools.Controls.Add(this.PanelMonitorSubMenu);
@@ -163,7 +170,7 @@ namespace Accounting_for_refueling__printers
             this.btnInfo.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInfo.Location = new System.Drawing.Point(0, 1683);
+            this.btnInfo.Location = new System.Drawing.Point(0, 1820);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnInfo.Size = new System.Drawing.Size(168, 50);
@@ -172,6 +179,71 @@ namespace Accounting_for_refueling__printers
             this.btnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // panelAccountSubMenu
+            // 
+            this.panelAccountSubMenu.AutoSize = true;
+            this.panelAccountSubMenu.Controls.Add(this.btnEditAccount);
+            this.panelAccountSubMenu.Controls.Add(this.btnAddAccount);
+            this.panelAccountSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAccountSubMenu.Location = new System.Drawing.Point(0, 1720);
+            this.panelAccountSubMenu.Name = "panelAccountSubMenu";
+            this.panelAccountSubMenu.Size = new System.Drawing.Size(168, 100);
+            this.panelAccountSubMenu.TabIndex = 16;
+            // 
+            // btnEditAccount
+            // 
+            this.btnEditAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnEditAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditAccount.FlatAppearance.BorderSize = 0;
+            this.btnEditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditAccount.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEditAccount.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEditAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnEditAccount.Image")));
+            this.btnEditAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditAccount.Location = new System.Drawing.Point(0, 50);
+            this.btnEditAccount.Name = "btnEditAccount";
+            this.btnEditAccount.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnEditAccount.Size = new System.Drawing.Size(168, 50);
+            this.btnEditAccount.TabIndex = 3;
+            this.btnEditAccount.Text = "   Изменить данные аккаунтов";
+            this.btnEditAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditAccount.UseVisualStyleBackColor = false;
+            this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
+            // 
+            // btnAddAccount
+            // 
+            this.btnAddAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddAccount.FlatAppearance.BorderSize = 0;
+            this.btnAddAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAccount.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddAccount.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAddAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAccount.Image")));
+            this.btnAddAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddAccount.Location = new System.Drawing.Point(0, 0);
+            this.btnAddAccount.Name = "btnAddAccount";
+            this.btnAddAccount.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnAddAccount.Size = new System.Drawing.Size(168, 50);
+            this.btnAddAccount.TabIndex = 1;
+            this.btnAddAccount.Text = "   Создание аккаунта";
+            this.btnAddAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddAccount.UseVisualStyleBackColor = false;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
+            // 
+            // btnControlAccount
+            // 
+            this.btnControlAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnControlAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnControlAccount.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnControlAccount.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnControlAccount.Location = new System.Drawing.Point(0, 1683);
+            this.btnControlAccount.Name = "btnControlAccount";
+            this.btnControlAccount.Size = new System.Drawing.Size(168, 37);
+            this.btnControlAccount.TabIndex = 18;
+            this.btnControlAccount.Text = "Управление аккаунтами";
+            this.btnControlAccount.UseVisualStyleBackColor = true;
+            this.btnControlAccount.Click += new System.EventHandler(this.btnControlAccount_Click);
             // 
             // PanelStorageDeviceSubMenu
             // 
@@ -1081,13 +1153,12 @@ namespace Accounting_for_refueling__printers
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto Cn", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Empty;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 50;
@@ -1150,6 +1221,7 @@ namespace Accounting_for_refueling__printers
             this.panelMenu.ResumeLayout(false);
             this.panelTools.ResumeLayout(false);
             this.panelTools.PerformLayout();
+            this.panelAccountSubMenu.ResumeLayout(false);
             this.PanelStorageDeviceSubMenu.ResumeLayout(false);
             this.PanelMonitorSubMenu.ResumeLayout(false);
             this.PanelRAMSubMenu.ResumeLayout(false);
@@ -1232,6 +1304,10 @@ namespace Accounting_for_refueling__printers
         private System.Windows.Forms.Button btnEditMonitor;
         private System.Windows.Forms.Button btnSearchMonitor;
         private System.Windows.Forms.Button btnAddMonitor;
+        private System.Windows.Forms.Panel panelAccountSubMenu;
+        private System.Windows.Forms.Button btnEditAccount;
+        private System.Windows.Forms.Button btnAddAccount;
+        private System.Windows.Forms.Button btnControlAccount;
     }
 }
 

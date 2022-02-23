@@ -150,6 +150,12 @@
     <Compile Include="FormSearchCPU.Designer.cs">
       <DependentUpon>FormSearchCPU.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAddAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddAccount.Designer.cs">
+      <DependentUpon>FormAddAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAddMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,12 @@
     <Compile Include="Forms\FormSearchStorageDevice.Designer.cs">
       <DependentUpon>FormSearchStorageDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditAccount.Designer.cs">
+      <DependentUpon>FormEditAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="NameActiveForm.cs" />
     <Compile Include="PathDatabase.cs" />
     <Compile Include="Program.cs" />
@@ -328,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddAccount.resx">
+      <DependentUpon>FormAddAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddMonitor.resx">
       <DependentUpon>FormAddMonitor.cs</DependentUpon>
@@ -352,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddRAM.resx">
       <DependentUpon>FormAddRAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditAccount.resx">
+      <DependentUpon>FormEditAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEditCartridge.resx">
       <DependentUpon>FormEditCartridge.cs</DependentUpon>

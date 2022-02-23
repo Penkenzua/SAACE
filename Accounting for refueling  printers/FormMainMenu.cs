@@ -2,9 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
 using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows.Forms;
 
 
@@ -20,32 +18,31 @@ namespace Accounting_for_refueling__printers
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        public int znachenie;
-     
-
+        public int Cell;
 
         //Constructor
         public FormMainMenu()
         {
 
-            Thread t = new Thread(new ThreadStart(StartForm));
-            t.Start();
-            Thread.Sleep(5000);
+
 
             InitializeComponent();
-            t.Abort(t);
-            if (AcessRight.Acess==0)
+
+            if (AcessRight.Acess == 0)
             {
                 AcessUser();
             }
             customizeDesign();
-           
+
             random = new Random();
             SelfRef = this;
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240,240,240);
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -54,10 +51,7 @@ namespace Accounting_for_refueling__printers
         //Metods
 
 
-        public void StartForm()
-        {
-            Application.Run(new SplashScreen());
-        }
+
         void customizeDesign()
         {
             PanelCPUSubMenu.Visible = false;
@@ -69,7 +63,8 @@ namespace Accounting_for_refueling__printers
             PanelPrinterSubMenu.Visible = false;
             PanelMonitorSubMenu.Visible = false;
             PanelStorageDeviceSubMenu.Visible = false;
-                
+            panelAccountSubMenu.Visible = false;
+
 
         }
         void hideSubMenu()
@@ -226,6 +221,13 @@ namespace Accounting_for_refueling__printers
         {
 
         }
+        public void UpdateAccount()
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Account_ID as 'Идентификатор', LoginUser as 'Логин',PasswordUSer as 'Пароль', RightAcess as 'Права администратора' from Account ", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
@@ -289,7 +291,7 @@ namespace Accounting_for_refueling__printers
         }
         private void DisableButton()
         {
-           //Printer
+            //Printer
             foreach (Control previousBtn in PanelPrinterSubMenu.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
@@ -406,7 +408,7 @@ namespace Accounting_for_refueling__printers
             if (activeForm != null)
                 activeForm.Close();
             Reset();
-         
+
 
         }
         private void Reset()
@@ -463,7 +465,7 @@ namespace Accounting_for_refueling__printers
             {
                 DialogResult dialogResult = MessageBox.Show("База данных не найдена или находится в другом месте выберите место нахождение базы данных ", "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 if (dialogResult == DialogResult.OK)
-               
+
                     using (OpenFileDialog openFileDialog = new OpenFileDialog())
                     {
                         openFileDialog.InitialDirectory = Application.StartupPath;
@@ -475,22 +477,23 @@ namespace Accounting_for_refueling__printers
                         sqlConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =" + PathDatabase.Path + " Integrated Security = True");
                         sqlConnection.Open();
                     }
-                }
+            }
 
             dataGridView1.Visible = false;
             btnDelete.Visible = false;
             lblTittle.Text = "Домашняя страница";
             if (sqlConnection.State == ConnectionState.Open)
-                        {   
-                            MessageBox.Show(new Form { TopMost = true },"Соединение открыто","Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        }
-           }
+            {
+                MessageBox.Show(new Form { TopMost = true }, "Соединение открыто", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                znachenie = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
+                Cell = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
+                MessageBox.Show(Cell.ToString());
             }
             catch
             {
@@ -499,25 +502,27 @@ namespace Accounting_for_refueling__printers
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //DialogResult dialogResult = MessageBox.Show("Вы действительно хотите безвозвратно удалить этоту запись? ", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            //if (dialogResult == DialogResult.OK)
-            //{
-            //    if (znachenie >= 0)
-            //    {
-            //        SqlCommand VDeleteLast3 = new SqlCommand($"Delete from Printer where id ={znachenie}", sqlConnection);
-            //        VDeleteLast3.ExecuteNonQuery();
-            //        UpdatePrinter();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Выберите запись перед удалением", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //}
+            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите безвозвратно удалить этоту запись? ", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.OK)
+            {
+                if (Cell >= 0)
+                {
+                    SqlCommand Delete = new SqlCommand($"Delete from {NameActiveForm.NameTable} where {NameActiveForm.NameIdTable} = {Cell}", sqlConnection);
+                    Delete.ExecuteNonQuery();
+                    NameActiveForm.Update(NameActiveForm.NameTable);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите запись перед удалением", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("\"Учёт компьютерной техники\" v1.0\nРазработал: Балабанов Артём Андреевич\nE-mail: artem.balabanov.2017@gmail.com","О программе",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("\"Учёт компьютерной техники\" v1.0\nРазработал: Балабанов Артём Андреевич\nE-mail: artem.balabanov.2017@gmail.com", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnPrinters_Click(object sender, EventArgs e)
@@ -525,12 +530,15 @@ namespace Accounting_for_refueling__printers
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
             ShowSubMenu(PanelPrinterSubMenu);
             dataGridView1.Visible = true;
             UpdatePrinter();
             lblTittle.Text = "Принтеры";
             NameActiveForm.NameForm = "Принтеры";
-            
+            NameActiveForm.NameTable = "Printers";
+            NameActiveForm.NameIdTable = "Printer_ID";
+
         }
 
         private void btnPC_Click(object sender, EventArgs e)
@@ -539,11 +547,16 @@ namespace Accounting_for_refueling__printers
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
             ShowSubMenu(PanelPCSubMenu);
             dataGridView1.Visible = true;
             UpdatePC();
             lblTittle.Text = "Компьютеры";
             NameActiveForm.NameForm = "Компьютеры";
+            NameActiveForm.NameTable = "PC";
+            NameActiveForm.NameIdTable = "PC_ID";
+
+
 
 
         }
@@ -554,11 +567,16 @@ namespace Accounting_for_refueling__printers
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
             ShowSubMenu(PanelOCSubMenu);
             dataGridView1.Visible = true;
             UpdateOC();
             lblTittle.Text = "Операционные системы";
-            NameActiveForm.NameForm = "Операционные системы";
+            NameActiveForm.NameTable = "Операционные системы";
+            NameActiveForm.NameForm = "OC";
+            NameActiveForm.NameIdTable = "OC_ID";
+
+
 
         }
         private void btnCatridge_Click(object sender, EventArgs e)
@@ -566,22 +584,31 @@ namespace Accounting_for_refueling__printers
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
             ShowSubMenu(PanelCatridgeSubMenu);
             dataGridView1.Visible = true;
             UpdateCartrdige();
             lblTittle.Text = "Картриджи";
             NameActiveForm.NameForm = "Картридж";
+            NameActiveForm.NameTable = "Cartridge";
+            NameActiveForm.NameIdTable = "Cartridge_ID";
+
+
         }
         private void btnCPU_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
             ShowSubMenu(PanelCPUSubMenu);
             dataGridView1.Visible = true;
             UpdateCPU();
             lblTittle.Text = "Процессоры";
             NameActiveForm.NameForm = "Процессоры";
+            NameActiveForm.NameTable = "CPU";
+            NameActiveForm.NameIdTable = "CPU_ID";
+
 
         }
 
@@ -590,11 +617,16 @@ namespace Accounting_for_refueling__printers
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
             ShowSubMenu(PanelGPUSubMenu);
             dataGridView1.Visible = true;
             UpdateGPU();
             lblTittle.Text = "Видеокарты";
             NameActiveForm.NameForm = "Видеокарты";
+            NameActiveForm.NameTable = "GPU";
+            NameActiveForm.NameIdTable = "GPU_ID";
+
+
 
         }
 
@@ -603,11 +635,66 @@ namespace Accounting_for_refueling__printers
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
             ShowSubMenu(PanelRAMSubMenu);
             dataGridView1.Visible = true;
             UpdateRAM();
             lblTittle.Text = "Оперативная память";
             NameActiveForm.NameForm = "Оперативная память";
+            NameActiveForm.NameTable = "RAM";
+            NameActiveForm.NameIdTable = "RAM_ID";
+
+
+
+        }
+        private void btnMonitor_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
+            ShowSubMenu(PanelMonitorSubMenu);
+            dataGridView1.Visible = true;
+            UpdateMonitor();
+            lblTittle.Text = "Мониторы";
+            NameActiveForm.NameForm = "Мониторы";
+            NameActiveForm.NameTable = "Monitor";
+            NameActiveForm.NameIdTable = "Monitor_ID";
+
+
+        }
+
+        private void btnStorageDevice_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
+            ShowSubMenu(PanelStorageDeviceSubMenu);
+            dataGridView1.Visible = true;
+            UpdateStorageDevice();
+            lblTittle.Text = "Накопительные устройства";
+            NameActiveForm.NameForm = "Накопительные устройства";
+            NameActiveForm.NameTable = "Storage_device";
+            NameActiveForm.NameIdTable = "SD_ID";
+
+
+        }
+        private void btnControlAccount_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
+            ShowSubMenu(panelAccountSubMenu);
+            dataGridView1.Visible = true;
+            UpdateAccount();
+            lblTittle.Text = "Аккаунты";
+            NameActiveForm.NameForm = "Аккаунты";
+            NameActiveForm.NameTable = "Account";
+            NameActiveForm.NameIdTable = "Account_ID";
+
+
 
         }
 
@@ -630,7 +717,7 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormEditPC(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
-            
+
         }
 
         private void btnAddOC_Click(object sender, EventArgs e)
@@ -748,29 +835,7 @@ namespace Accounting_for_refueling__printers
             lblTittle.Text = "Домашняя страница";
         }
 
-        private void btnMonitor_Click(object sender, EventArgs e)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            btnCloseChildForm.Visible = false;
-            ShowSubMenu(PanelMonitorSubMenu);
-            dataGridView1.Visible = true;
-            UpdateMonitor();
-            lblTittle.Text = "Мониторы";
-            NameActiveForm.NameForm = "Мониторы";
-        }
-
-        private void btnStorageDevice_Click(object sender, EventArgs e)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            btnCloseChildForm.Visible = false;
-            ShowSubMenu(PanelStorageDeviceSubMenu);
-            dataGridView1.Visible = true;
-            UpdateStorageDevice();
-            lblTittle.Text = "Накопительные устройства";
-            NameActiveForm.NameForm = "Накопительные устройства";
-        }
+        
 
         private void btnAddMonitor_Click(object sender, EventArgs e)
         {
@@ -815,28 +880,27 @@ namespace Accounting_for_refueling__printers
         }
         public void AcessUser()
         {
-            //Add.
-            btnAddCPU.Visible = false;
-            btnAddGPU.Visible = false;
-            btnAddMonitor.Visible = false;
-            btnAddOC.Visible = false;
-            btnAddPC.Visible = false;
-            btnAdd.Visible = false;
-            btnAddRAM.Visible = false;
-            btnAddSD.Visible = false;
-            btnAddCatridge.Visible = false;
-            //Edit.
-            btnEditCPU.Visible = false;
-            btnEditGPU.Visible = false;
-            btnEditMonitor.Visible = false;
-            btnEditOC.Visible = false;
-            btnEditPC.Visible = false;
-            btnEdit.Visible = false;
-            btnEditRAM.Visible = false;
-            btnEditSD.Visible = false;
-            btnEditCatridge.Visible = false;
+            panelAccountSubMenu.Visible = false;
+            btnControlAccount.Visible = false;
+
+        }
+
+      
+
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormAddAccount(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
+        }
+
+        private void btnEditAccount_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEditAccount(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
         }
     }
-  
 
-} 
+
+}
