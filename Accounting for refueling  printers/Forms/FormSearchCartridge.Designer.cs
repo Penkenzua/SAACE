@@ -45,6 +45,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cartridgeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTableAdapters.CartridgeTableAdapter();
+            this.cartridge1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTableAdapters.Cartridge1TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartridgeBindingSource1)).BeginInit();
@@ -68,8 +69,6 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.DataSource = this.cartridgeBindingSource;
-            this.comboBox1.DisplayMember = "Производитель";
             this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(352, 139);
@@ -194,6 +193,10 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.cartridgeTableAdapter.ClearBeforeFill = true;
             // 
+            // cartridge1TableAdapter
+            // 
+            this.cartridge1TableAdapter.ClearBeforeFill = true;
+            // 
             // FormSearchCartridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,5 +236,6 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSetCartridgeTableAdapters.CartridgeTableAdapter cartridgeTableAdapter;
         private System.Windows.Forms.BindingSource cartridgeBindingSource1;
         private System.Windows.Forms.BindingSource cartridgeBindingSource2;
+        private DatabaseDataSetCartridgeTableAdapters.Cartridge1TableAdapter cartridge1TableAdapter;
     }
 }

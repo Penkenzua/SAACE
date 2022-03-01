@@ -449,7 +449,7 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PCRow AddPCRow(string Кабинет, string ФИО_МОЛ, int Инв_Номер, int Монитор, int Диск, int OC, int CPU, int GPU, int RAM) {
+            public PCRow AddPCRow(string Кабинет, string ФИО_МОЛ, string Инв_Номер, int Монитор, int Диск, int OC, int CPU, int GPU, int RAM) {
                 PCRow rowPCRow = ((PCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -512,7 +512,7 @@ namespace Accounting_for_refueling__printers {
                 base.Columns.Add(this.columnКабинет);
                 this.columnФИО_МОЛ = new global::System.Data.DataColumn("ФИО_МОЛ", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnФИО_МОЛ);
-                this.columnИнв_Номер = new global::System.Data.DataColumn("Инв_Номер", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnИнв_Номер = new global::System.Data.DataColumn("Инв_Номер", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnИнв_Номер);
                 this.columnМонитор = new global::System.Data.DataColumn("Монитор", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnМонитор);
@@ -721,10 +721,10 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Инв_Номер {
+            public string Инв_Номер {
                 get {
                     try {
-                        return ((int)(this[this.tablePC.Инв_НомерColumn]));
+                        return ((string)(this[this.tablePC.Инв_НомерColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Инв_Номер\' в таблице \'PC\' равно DBNull.", e);

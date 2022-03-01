@@ -36,26 +36,29 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.gPUBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSetGPU = new Accounting_for_refueling__printers.DatabaseDataSetGPU();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.gPUBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.gPUBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetGPU = new Accounting_for_refueling__printers.DatabaseDataSetGPU();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.gPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.gPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPUTableAdapter();
+            this.gPU1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gPU1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPU1TableAdapter();
+            this.gPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPU2TableAdapter();
+            this.gPU3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gPU3TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPU3TableAdapter();
+            this.gPU4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gPU4TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPU4TableAdapter();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU4BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,6 +77,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
@@ -122,7 +126,7 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox4
             // 
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox4.DataSource = this.gPUBindingSource3;
+            this.comboBox4.DataSource = this.gPU4BindingSource;
             this.comboBox4.DisplayMember = "Шина_памяти";
             this.comboBox4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
@@ -131,20 +135,10 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox4.Size = new System.Drawing.Size(121, 27);
             this.comboBox4.TabIndex = 17;
             // 
-            // gPUBindingSource3
-            // 
-            this.gPUBindingSource3.DataMember = "GPU";
-            this.gPUBindingSource3.DataSource = this.databaseDataSetGPU;
-            // 
-            // databaseDataSetGPU
-            // 
-            this.databaseDataSetGPU.DataSetName = "DatabaseDataSetGPU";
-            this.databaseDataSetGPU.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.DataSource = this.gPUBindingSource2;
+            this.comboBox3.DataSource = this.gPU3BindingSource;
             this.comboBox3.DisplayMember = "Тип_памяти";
             this.comboBox3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
@@ -153,15 +147,10 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox3.Size = new System.Drawing.Size(121, 27);
             this.comboBox3.TabIndex = 16;
             // 
-            // gPUBindingSource2
-            // 
-            this.gPUBindingSource2.DataMember = "GPU";
-            this.gPUBindingSource2.DataSource = this.databaseDataSetGPU;
-            // 
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.DataSource = this.gPUBindingSource1;
+            this.comboBox2.DataSource = this.gPU2BindingSource;
             this.comboBox2.DisplayMember = "Графический_процессор";
             this.comboBox2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
@@ -170,15 +159,15 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.Size = new System.Drawing.Size(121, 27);
             this.comboBox2.TabIndex = 15;
             // 
-            // gPUBindingSource1
+            // databaseDataSetGPU
             // 
-            this.gPUBindingSource1.DataMember = "GPU";
-            this.gPUBindingSource1.DataSource = this.databaseDataSetGPU;
+            this.databaseDataSetGPU.DataSetName = "DatabaseDataSetGPU";
+            this.databaseDataSetGPU.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.DataSource = this.gPUBindingSource;
+            this.comboBox1.DataSource = this.gPU1BindingSource;
             this.comboBox1.DisplayMember = "Производитель";
             this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
@@ -186,11 +175,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 27);
             this.comboBox1.TabIndex = 6;
-            // 
-            // gPUBindingSource
-            // 
-            this.gPUBindingSource.DataMember = "GPU";
-            this.gPUBindingSource.DataSource = this.databaseDataSetGPU;
             // 
             // btnSearch
             // 
@@ -224,9 +208,41 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 8;
             // 
-            // gPUTableAdapter
+            // gPU1BindingSource
             // 
-            this.gPUTableAdapter.ClearBeforeFill = true;
+            this.gPU1BindingSource.DataMember = "GPU1";
+            this.gPU1BindingSource.DataSource = this.databaseDataSetGPU;
+            // 
+            // gPU1TableAdapter
+            // 
+            this.gPU1TableAdapter.ClearBeforeFill = true;
+            // 
+            // gPU2BindingSource
+            // 
+            this.gPU2BindingSource.DataMember = "GPU2";
+            this.gPU2BindingSource.DataSource = this.databaseDataSetGPU;
+            // 
+            // gPU2TableAdapter
+            // 
+            this.gPU2TableAdapter.ClearBeforeFill = true;
+            // 
+            // gPU3BindingSource
+            // 
+            this.gPU3BindingSource.DataMember = "GPU3";
+            this.gPU3BindingSource.DataSource = this.databaseDataSetGPU;
+            // 
+            // gPU3TableAdapter
+            // 
+            this.gPU3TableAdapter.ClearBeforeFill = true;
+            // 
+            // gPU4BindingSource
+            // 
+            this.gPU4BindingSource.DataMember = "GPU4";
+            this.gPU4BindingSource.DataSource = this.databaseDataSetGPU;
+            // 
+            // gPU4TableAdapter
+            // 
+            this.gPU4TableAdapter.ClearBeforeFill = true;
             // 
             // FormSearchGPU
             // 
@@ -240,13 +256,13 @@ namespace Accounting_for_refueling__printers.Forms
             this.Load += new System.EventHandler(this.FormSearchGPU_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPUBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU4BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,10 +283,13 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private DatabaseDataSetGPU databaseDataSetGPU;
-        private System.Windows.Forms.BindingSource gPUBindingSource;
-        private DatabaseDataSetGPUTableAdapters.GPUTableAdapter gPUTableAdapter;
-        private System.Windows.Forms.BindingSource gPUBindingSource3;
-        private System.Windows.Forms.BindingSource gPUBindingSource2;
-        private System.Windows.Forms.BindingSource gPUBindingSource1;
+        private System.Windows.Forms.BindingSource gPU1BindingSource;
+        private DatabaseDataSetGPUTableAdapters.GPU1TableAdapter gPU1TableAdapter;
+        private System.Windows.Forms.BindingSource gPU2BindingSource;
+        private DatabaseDataSetGPUTableAdapters.GPU2TableAdapter gPU2TableAdapter;
+        private System.Windows.Forms.BindingSource gPU3BindingSource;
+        private DatabaseDataSetGPUTableAdapters.GPU3TableAdapter gPU3TableAdapter;
+        private System.Windows.Forms.BindingSource gPU4BindingSource;
+        private DatabaseDataSetGPUTableAdapters.GPU4TableAdapter gPU4TableAdapter;
     }
 }

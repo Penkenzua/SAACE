@@ -62,7 +62,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
             this.label9 = new System.Windows.Forms.Label();
             this.rAMTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetRAMTableAdapters.RAMTableAdapter();
-            this.gPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPUTableAdapter();
+           
             this.cPUTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPUTableAdapter();
             this.oCTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters.OCTableAdapter();
             this.storage_deviceTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetSDTableAdapters.Storage_deviceTableAdapter();
@@ -289,6 +289,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(151, 27);
             this.textBox3.TabIndex = 17;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label8
             // 
@@ -364,7 +365,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // gPUTableAdapter
             // 
-            this.gPUTableAdapter.ClearBeforeFill = true;
+        
             // 
             // cPUTableAdapter
             // 
@@ -453,7 +454,7 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSetRAMTableAdapters.RAMTableAdapter rAMTableAdapter;
         private DatabaseDataSetGPU databaseDataSetGPU;
         private System.Windows.Forms.BindingSource gPUBindingSource;
-        private DatabaseDataSetGPUTableAdapters.GPUTableAdapter gPUTableAdapter;
+        
         private DatabaseDataSetCPU databaseDataSetCPU;
         private System.Windows.Forms.BindingSource cPUBindingSource;
         private DatabaseDataSetCPUTableAdapters.CPUTableAdapter cPUTableAdapter;

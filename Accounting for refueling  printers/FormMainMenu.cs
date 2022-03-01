@@ -39,8 +39,9 @@ namespace Accounting_for_refueling__printers
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240,240,240);
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
             this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -49,9 +50,6 @@ namespace Accounting_for_refueling__printers
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         //Metods
-
-
-
         void customizeDesign()
         {
             PanelCPUSubMenu.Visible = false;
@@ -64,9 +62,11 @@ namespace Accounting_for_refueling__printers
             PanelMonitorSubMenu.Visible = false;
             PanelStorageDeviceSubMenu.Visible = false;
             panelAccountSubMenu.Visible = false;
+            PanelBreakingSubMenu.Visible = false;
 
 
         }
+        //Hide Sub Menu when click on another Sub Menu.
         void hideSubMenu()
         {
             if (PanelPrinterSubMenu.Visible == true)
@@ -141,6 +141,15 @@ namespace Accounting_for_refueling__printers
                 btnCloseChildForm.Visible = false;
                 PanelStorageDeviceSubMenu.Visible = false;
             }
+            if (PanelBreakingSubMenu.Visible == true)
+
+            {
+
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                PanelBreakingSubMenu.Visible = false;
+            }
         }
 
         public void UpdatePrinter()
@@ -161,7 +170,7 @@ namespace Accounting_for_refueling__printers
         public void UpdateCPU()
         {
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select CPU.CPU_ID as 'Идентификатор', CPU.Производитель,CPU.Модельный_ряд as 'Модельный ряд'," +
-                "CPU.Сокет,CPU.Количество_ядер as 'Количество ядер',CPU.Кол_потоков as 'Кол потоков',CPU.Частота from CPU", sqlConnection);
+                "CPU.Сокет,CPU.Количество_ядер as 'Количество ядер',CPU.Кол_потоков as 'Кол-во потоков',CPU.Частота as 'Частота ГГц' from CPU", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -184,8 +193,8 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО МОЛ',PC.Инв_Номер as 'Инв.Номер',Monitor.Инв_Номер, Storage_device.Код_производителя as 'Код производителя SD', OC.Название As 'Операционная система'," +
-                "CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя RAM' from PC " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.Номер ПК',Monitor.Инв_Номер as 'Инв.Номер Монитора', Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
+                "CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
                 " JOIN CPU on PC.CPU = CPU.CPU_ID" +
                 " JOIN GPU on PC.GPU = GPU.GPU_ID" +
@@ -198,7 +207,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateMonitor()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Monitor.Monitor_ID as 'Идентификатор', Monitor.Инв_Номер, Monitor.Производитель, Monitor.Диагональ, Monitor.Частота from Monitor", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Monitor.Monitor_ID as 'Идентификатор', Monitor.Инв_Номер as 'Инв.Номер', Monitor.Производитель, Monitor.Диагональ, Monitor.Частота from Monitor", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -217,9 +226,12 @@ namespace Accounting_for_refueling__printers
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
-        public void UpdateRepPC()
+        public void UpdateBreaking()
         {
-
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking", sqlConnection);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
         }
         public void UpdateAccount()
         {
@@ -228,6 +240,7 @@ namespace Accounting_for_refueling__printers
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
+
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
@@ -259,7 +272,8 @@ namespace Accounting_for_refueling__printers
                 }
             }
         }
-        private void OpenChildForm(Form childform, object btnSender)
+
+        public void OpenChildForm(Form childform, object btnSender)
         {
             if (activeForm != null)
             {
@@ -411,7 +425,7 @@ namespace Accounting_for_refueling__printers
 
 
         }
-        private void Reset()
+        public void Reset()
         {
             DisableButton();
             lblTittle.Text = NameActiveForm.NameForm;
@@ -493,7 +507,7 @@ namespace Accounting_for_refueling__printers
             try
             {
                 Cell = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
-                MessageBox.Show(Cell.ToString());
+
             }
             catch
             {
@@ -516,8 +530,6 @@ namespace Accounting_for_refueling__printers
             {
                 MessageBox.Show("Выберите запись перед удалением", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
@@ -555,10 +567,20 @@ namespace Accounting_for_refueling__printers
             NameActiveForm.NameForm = "Компьютеры";
             NameActiveForm.NameTable = "PC";
             NameActiveForm.NameIdTable = "PC_ID";
-
-
-
-
+       }
+        private void btnBreaking_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            btnCloseChildForm.Visible = false;
+            btnDelete.Visible = true;
+            ShowSubMenu(PanelBreakingSubMenu);
+            dataGridView1.Visible = true;
+            UpdateBreaking();
+            lblTittle.Text = "Поломки";
+            NameActiveForm.NameTable = "Поломки";
+            NameActiveForm.NameForm = "Breaking";
+            NameActiveForm.NameIdTable = "Breaking_ID";
         }
 
         private void btnOC_Click(object sender, EventArgs e)
@@ -835,7 +857,7 @@ namespace Accounting_for_refueling__printers
             lblTittle.Text = "Домашняя страница";
         }
 
-        
+
 
         private void btnAddMonitor_Click(object sender, EventArgs e)
         {
@@ -885,7 +907,7 @@ namespace Accounting_for_refueling__printers
 
         }
 
-      
+
 
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
@@ -899,6 +921,11 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormEditAccount(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
+        }
+
+        private void btnSearchBreaking_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

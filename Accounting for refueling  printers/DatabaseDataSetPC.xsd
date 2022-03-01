@@ -120,7 +120,7 @@ SELECT PC_ID, Кабинет, ФИО_МОЛ, Инв_Номер, Монитор, 
   <xs:element name="DatabaseDataSetPC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DatabaseDataSetPC" msprop:Generator_UserDSName="DatabaseDataSetPC">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="PC" msprop:Generator_TableClassName="PCDataTable" msprop:Generator_TableVarName="tablePC" msprop:Generator_TablePropName="PC" msprop:Generator_RowDeletingName="PCRowDeleting" msprop:Generator_RowChangingName="PCRowChanging" msprop:Generator_RowEvHandlerName="PCRowChangeEventHandler" msprop:Generator_RowDeletedName="PCRowDeleted" msprop:Generator_UserTableName="PC" msprop:Generator_RowChangedName="PCRowChanged" msprop:Generator_RowEvArgName="PCRowChangeEvent" msprop:Generator_RowClassName="PCRow">
+        <xs:element name="PC" msprop:Generator_TableClassName="PCDataTable" msprop:Generator_TableVarName="tablePC" msprop:Generator_RowChangedName="PCRowChanged" msprop:Generator_TablePropName="PC" msprop:Generator_RowDeletingName="PCRowDeleting" msprop:Generator_RowChangingName="PCRowChanging" msprop:Generator_RowEvHandlerName="PCRowChangeEventHandler" msprop:Generator_RowDeletedName="PCRowDeleted" msprop:Generator_RowClassName="PCRow" msprop:Generator_UserTableName="PC" msprop:Generator_RowEvArgName="PCRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PC_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPC_ID" msprop:Generator_ColumnPropNameInRow="PC_ID" msprop:Generator_ColumnPropNameInTable="PC_IDColumn" msprop:Generator_UserColumnName="PC_ID" type="xs:int" />
@@ -138,7 +138,7 @@ SELECT PC_ID, Кабинет, ФИО_МОЛ, Инв_Номер, Монитор, 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Инв_Номер" msprop:Generator_ColumnVarNameInTable="columnИнв_Номер" msprop:Generator_ColumnPropNameInRow="Инв_Номер" msprop:Generator_ColumnPropNameInTable="Инв_НомерColumn" msprop:Generator_UserColumnName="Инв_Номер" type="xs:int" minOccurs="0" />
+              <xs:element name="Инв_Номер" msprop:Generator_ColumnVarNameInTable="columnИнв_Номер" msprop:Generator_ColumnPropNameInRow="Инв_Номер" msprop:Generator_ColumnPropNameInTable="Инв_НомерColumn" msprop:Generator_UserColumnName="Инв_Номер" type="xs:string" minOccurs="0" />
               <xs:element name="Монитор" msprop:Generator_ColumnVarNameInTable="columnМонитор" msprop:Generator_ColumnPropNameInRow="Монитор" msprop:Generator_ColumnPropNameInTable="МониторColumn" msprop:Generator_UserColumnName="Монитор" type="xs:int" minOccurs="0" />
               <xs:element name="Диск" msprop:Generator_ColumnVarNameInTable="columnДиск" msprop:Generator_ColumnPropNameInRow="Диск" msprop:Generator_ColumnPropNameInTable="ДискColumn" msprop:Generator_UserColumnName="Диск" type="xs:int" minOccurs="0" />
               <xs:element name="OC" msprop:Generator_ColumnVarNameInTable="columnOC" msprop:Generator_ColumnPropNameInRow="OC" msprop:Generator_ColumnPropNameInTable="OCColumn" msprop:Generator_UserColumnName="OC" type="xs:int" minOccurs="0" />

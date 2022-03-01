@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -36,7 +37,7 @@ namespace Accounting_for_refueling__printers.Forms
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU". При необходимости она может быть перемещена или удалена.
             this.cPUTableAdapter.Fill(this.databaseDataSetCPU.CPU);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU". При необходимости она может быть перемещена или удалена.
-            this.gPUTableAdapter.Fill(this.databaseDataSetGPU.GPU);
+           
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM". При необходимости она может быть перемещена или удалена.
             this.rAMTableAdapter.Fill(this.databaseDataSetRAM.RAM);
             LoadTheme();
@@ -58,8 +59,8 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+                        SqlCommand Monitor = new SqlCommand($"Select Monitor_ID from Monitor where Инв_номер=N'{comboBox1.Text}'", sqlConnection);
             SqlCommand SD = new SqlCommand($"Select SD_ID from Storage_device where Код_производителя=N'{comboBox2.Text}'", sqlConnection);
-            SqlCommand Monitor = new SqlCommand($"Select Monitor_ID from Monitor where Инв_номер=N'{comboBox1.Text}'", sqlConnection);
             SqlCommand OC = new SqlCommand($"Select OC_ID from OC where Название=N'{comboBox3.Text}'", sqlConnection);
             SqlCommand CPU = new SqlCommand($"Select CPU_ID from CPU where Модельный_ряд =N'{comboBox4.Text}'", sqlConnection);
             SqlCommand GPU = new SqlCommand($"Select GPU_ID from GPU where Графический_процессор=N'{comboBox5.Text}'", sqlConnection);
@@ -91,7 +92,7 @@ namespace Accounting_for_refueling__printers.Forms
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешна завершена");
-                    FormMainMenu.SelfRef.UpdatePrinter();
+                    FormMainMenu.SelfRef.UpdatePC();
 
                 }
                 textBox1.Text = "";
@@ -143,5 +144,14 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox6.ForeColor = ThemeColor.PrimaryColor;
         }
 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(textBox3.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Только цифры", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
+                textBox3.SelectionStart = textBox3.TextLength;
+            }
+        }
     }
 }

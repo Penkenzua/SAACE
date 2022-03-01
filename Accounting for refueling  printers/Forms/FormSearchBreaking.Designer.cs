@@ -1,7 +1,7 @@
 ﻿
-namespace Accounting_for_refueling__printers
+namespace Accounting_for_refueling__printers.Forms
 {
-    partial class FormSearchCPU
+    partial class FormSearchBreaking
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Accounting_for_refueling__printers
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormSearchCPU";
+            this.Text = "FormSearchBreaking";
         }
 
         #endregion

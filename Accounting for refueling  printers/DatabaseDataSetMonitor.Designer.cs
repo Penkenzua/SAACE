@@ -399,7 +399,7 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MonitorRow AddMonitorRow(int Инв_Номер, string Производитель, double Диагональ, int Частота) {
+            public MonitorRow AddMonitorRow(string Инв_Номер, string Производитель, double Диагональ, int Частота) {
                 MonitorRow rowMonitorRow = ((MonitorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -448,7 +448,7 @@ namespace Accounting_for_refueling__printers {
             private void InitClass() {
                 this.columnMonitor_ID = new global::System.Data.DataColumn("Monitor_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMonitor_ID);
-                this.columnИнв_Номер = new global::System.Data.DataColumn("Инв_Номер", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnИнв_Номер = new global::System.Data.DataColumn("Инв_Номер", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnИнв_Номер);
                 this.columnПроизводитель = new global::System.Data.DataColumn("Производитель", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПроизводитель);
@@ -618,10 +618,10 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Инв_Номер {
+            public string Инв_Номер {
                 get {
                     try {
-                        return ((int)(this[this.tableMonitor.Инв_НомерColumn]));
+                        return ((string)(this[this.tableMonitor.Инв_НомерColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Инв_Номер\' в таблице \'Monitor\' равно DBNull.", e);

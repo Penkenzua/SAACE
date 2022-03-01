@@ -22,6 +22,8 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchCatridge_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge1". При необходимости она может быть перемещена или удалена.
+            this.cartridge1TableAdapter.Fill(this.databaseDataSetCartridge.Cartridge1);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge". При необходимости она может быть перемещена или удалена.
             this.cartridgeTableAdapter.Fill(this.databaseDataSetCartridge.Cartridge);
             LoadTheme();

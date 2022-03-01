@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Accounting_for_refueling__printers
+namespace Accounting_for_refueling__printers.Forms
 {
-    public partial class FormSearchCPU : Form
+    public partial class FormSearchBreaking : Form
     {
-        public FormSearchCPU()
+        public FormSearchBreaking()
         {
             InitializeComponent();
         }

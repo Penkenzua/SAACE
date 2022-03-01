@@ -14,6 +14,7 @@ namespace Accounting_for_refueling__printers.Forms
     public partial class FormSearchPC : Form
     {
         public string filter;
+         private Form activeForm;
 
         private SqlConnection sqlConnection = null;
         public FormSearchPC()
@@ -36,9 +37,7 @@ namespace Accounting_for_refueling__printers.Forms
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU". При необходимости она может быть перемещена или удалена.
             this.cPUTableAdapter.Fill(this.databaseDataSetCPU.CPU);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU". При необходимости она может быть перемещена или удалена.
-            this.gPUTableAdapter.Fill(this.databaseDataSetGPU.GPU);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM". При необходимости она может быть перемещена или удалена.
-          
+           
 
             try
             {
@@ -55,6 +54,11 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox2.Text = "";
             comboBox3.Text = "";
             comboBox4.Text = "";
+            comboBox5.Text = "";
+            comboBox6.Text = "";
+            comboBox7.Text = "";
+            comboBox8.Text = "";
+            comboBox9.Text = "";
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -71,7 +75,7 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $"Инв_Номер like '{comboBox3.Text}%' and ";
+                    filter += $"PC.Инв_Номер like '{comboBox3.Text}%' and ";
                 }
                 if (comboBox4.Text != "")
                 {
@@ -100,22 +104,39 @@ namespace Accounting_for_refueling__printers.Forms
 
 
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select SD_ID as 'Идентификатор',Storage_device.Код_производителя as 'Код производителя',Storage_device.Производитель,Storage_device.Тип," +
-                    $"Storage_device.Форм_фактор as 'Форм-фактор',Storage_device.Интерфейс, from Storage_device where {filter}", sqlConnection);
-                //if (command.ExecuteScalar() != null)
-                //{
-                //    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as 'Идентификатор', RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём from RAM where {filter}", sqlConnection);
-                //    DataSet dataSet = new DataSet();
-                //    dataAdapter.Fill(dataSet);
-                //    dataGridView1.DataSource = dataSet.Tables[0];
-                //    panel1.Visible = false;
-                //    panel2.Visible = true;
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Записи с такими условиями не найдено", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SqlCommand command = new SqlCommand("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.Номер ПК',Monitor.Инв_Номер as 'Инв.Номер Монитора', " +
+                "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
+           $"CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC   " +
+           " JOIN OC on PC.OC = OC.OC_ID" +
+           " JOIN CPU on PC.CPU = CPU.CPU_ID" +
+           " JOIN GPU on PC.GPU = GPU.GPU_ID" +
+           " JOIN RAM on PC.RAM = RAM.RAM_ID" +
+           " JOIN Storage_device on PC.Диск = SD_ID" +
+           " JOIN Monitor on PC.Монитор = Monitor_ID" +
+           $" where {filter}", sqlConnection);
+                if (command.ExecuteScalar() != null)
+                {
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.Номер ПК',Monitor.Инв_Номер as 'Инв.Номер Монитора', " +
+                    "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
+               $"CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC   " +
+               " JOIN OC on PC.OC = OC.OC_ID" +
+               " JOIN CPU on PC.CPU = CPU.CPU_ID" +
+               " JOIN GPU on PC.GPU = GPU.GPU_ID" +
+               " JOIN RAM on PC.RAM = RAM.RAM_ID" +
+               " JOIN Storage_device on PC.Диск = SD_ID" +
+               " JOIN Monitor on PC.Монитор = Monitor_ID" +
+               $" where {filter}", sqlConnection);
+                    DataSet dataSet = new DataSet();
+                    dataAdapter.Fill(dataSet);
+                    dataGridView1.DataSource = dataSet.Tables[0];
+                    panel1.Visible = false;
+                    panel2.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Записи с такими условиями не найдено", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //}
+                }
 
 
             }
@@ -159,5 +180,33 @@ namespace Accounting_for_refueling__printers.Forms
 
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                TableBreakingAttributes.IndexCell = Convert.ToInt32(dataGridView1[0, e.RowIndex].Value);
+
+            }
+            catch
+            {
+            }
+        }
+
+        private void btnAddBreaking_Click(object sender, EventArgs e)
+        {
+
+            if (TableBreakingAttributes.IndexCell>=1)
+            {
+                FormMainMenu.SelfRef.OpenChildForm(new Forms.FormAddBreaking(), sender);
+                if (activeForm != null)
+                    activeForm.Close();
+                FormMainMenu.SelfRef.Reset();
+            }
+            else
+            {
+                MessageBox.Show("Сначала выберите нужную запись, сделав по ней нажатие левой кнопкой мышки","Предуприждение",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+           
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace Accounting_for_refueling__printers.Forms
     public partial class FormEditPC : Form
     {
          private SqlConnection sqlConnection = null;
+        
         public FormEditPC()
         {
             InitializeComponent();
@@ -58,7 +59,7 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand Edit2 = new SqlCommand($"Select ФИО_МОЛ    from PC  where PC_ID = {textBox1.Text}", sqlConnection);
                 SqlCommand Edit3 = new SqlCommand($"Select Инв_Номер  from PC  where PC_ID = {textBox1.Text}", sqlConnection);
 
-                SqlCommand Edit4 = new SqlCommand($"Select Инв_Номер                from Монитор         where Monitor_ID =  (Select Монитор  from PC where PC_ID = {textBox1.Text})", sqlConnection);
+                SqlCommand Edit4 = new SqlCommand($"Select Инв_Номер                from Monitor         where Monitor_ID =  (Select Монитор  from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit5 = new SqlCommand($"Select Код_производителя        from Storage_device  where SD_ID = (Select Диск from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit6 = new SqlCommand($"Select Название                 from OC              where OC_ID = (Select OC from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit7 = new SqlCommand($"Select Модельный_ряд            from CPU             where CPU_ID = (Select CPU from PC where PC_ID = {textBox1.Text})", sqlConnection);

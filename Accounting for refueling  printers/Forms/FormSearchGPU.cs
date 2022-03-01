@@ -21,8 +21,17 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormSearchGPU_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU". При необходимости она может быть перемещена или удалена.
-            this.gPUTableAdapter.Fill(this.databaseDataSetGPU.GPU);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU4". При необходимости она может быть перемещена или удалена.
+            this.gPU4TableAdapter.Fill(this.databaseDataSetGPU.GPU4);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU3". При необходимости она может быть перемещена или удалена.
+            this.gPU3TableAdapter.Fill(this.databaseDataSetGPU.GPU3);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU2". При необходимости она может быть перемещена или удалена.
+            this.gPU2TableAdapter.Fill(this.databaseDataSetGPU.GPU2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU1". При необходимости она может быть перемещена или удалена.
+            this.gPU1TableAdapter.Fill(this.databaseDataSetGPU.GPU1);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU1". При необходимости она может быть перемещена или удалена.
+            this.gPU1TableAdapter.Fill(this.databaseDataSetGPU.GPU1);
+
 
             LoadTheme();
   
@@ -39,6 +48,9 @@ namespace Accounting_for_refueling__printers.Forms
             }
             filter = "";
             comboBox1.Text = "";
+            comboBox2.Text = "";
+            comboBox3.Text = "";
+            comboBox4.Text = "";
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -114,6 +126,9 @@ namespace Accounting_for_refueling__printers.Forms
      
         }
 
-        
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

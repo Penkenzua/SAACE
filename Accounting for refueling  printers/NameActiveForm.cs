@@ -30,8 +30,8 @@
                 case "PC":
                     FormMainMenu.SelfRef.UpdatePC();
                     break;
-                case "PC_Repair":
-                    FormMainMenu.SelfRef.UpdateRepPC();
+                case "Breakinga":
+                    FormMainMenu.SelfRef.UpdateBreaking();
                     break;
                 case "Printer":
                     FormMainMenu.SelfRef.UpdatePrinter();
