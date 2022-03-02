@@ -22,8 +22,19 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormSearchCPU_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU". При необходимости она может быть перемещена или удалена.
-            this.cPUTableAdapter.Fill(this.databaseDataSetCPU.CPU);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU6". При необходимости она может быть перемещена или удалена.
+            this.cPU6TableAdapter.Fill(this.databaseDataSetCPU.CPU6);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU5". При необходимости она может быть перемещена или удалена.
+            this.cPU5TableAdapter.Fill(this.databaseDataSetCPU.CPU5);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU4". При необходимости она может быть перемещена или удалена.
+            this.cPU4TableAdapter.Fill(this.databaseDataSetCPU.CPU4);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU3". При необходимости она может быть перемещена или удалена.
+            this.cPU3TableAdapter.Fill(this.databaseDataSetCPU.CPU3);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU2". При необходимости она может быть перемещена или удалена.
+            this.cPU2TableAdapter.Fill(this.databaseDataSetCPU.CPU2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU1". При необходимости она может быть перемещена или удалена.
+            this.cPU1TableAdapter.Fill(this.databaseDataSetCPU.CPU1);
+
 
             LoadTheme();
             try

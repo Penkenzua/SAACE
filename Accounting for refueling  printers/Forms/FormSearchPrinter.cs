@@ -21,10 +21,13 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPrinter.Printer". При необходимости она может быть перемещена или удалена.
-            this.printerTableAdapter.Fill(this.databaseDataSetPrinter.Printer);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge". При необходимости она может быть перемещена или удалена.
-            this.cartridgeTableAdapter.Fill(this.databaseDataSetCartridge.Cartridge);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridgeType.CartridgeType". При необходимости она может быть перемещена или удалена.
+            this.cartridgeTypeTableAdapter.Fill(this.databaseDataSetCartridgeType.CartridgeType);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge2". При необходимости она может быть перемещена или удалена.
+            this.cartridge2TableAdapter.Fill(this.databaseDataSetCartridge.Cartridge2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPrinter.Printer2". При необходимости она может быть перемещена или удалена.
+            this.printer2TableAdapter.Fill(this.databaseDataSetPrinter.Printer2);
+
 
             try
             {
@@ -40,6 +43,8 @@ namespace Accounting_for_refueling__printers.Forms
             filter = "";
             comboBox1.Text = "";
             comboBox2.Text = "";
+            comboBox3.Text = "";
+
             LoadTheme();
         }
         private void button2_Click(object sender, EventArgs e)
@@ -75,6 +80,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            filter = "";
             if (checkBox1.Checked && !checkBox2.Checked)
             {
                 DateTime date = DateTime.Parse(dateTimePicker1.Text);
@@ -91,17 +97,16 @@ namespace Accounting_for_refueling__printers.Forms
 
                     }
 
-                        if (comboBox2.Text != "")
-                        {
-                            filter += $" Картридж like N'{comboBox2.Text}%' and ";
+                if (comboBox2.Text != "")
+                {
+                    filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Модель = N'{comboBox2.Text}' and ";
 
-                        }
-                            if (comboBox3.Text != "")
-                            {
-                                filter += $" Тип_картриджа like N'{comboBox3.Text}%' and ";
-
-                            }
-                                if (comboBox4.Text != "")
+                }
+                if (comboBox3.Text != "")
+                {
+                    filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
+                }
+                if (comboBox4.Text != "")
                                 {
                                     filter += $" Состояние like N'{comboBox4.Text}%' and ";
 
@@ -116,10 +121,13 @@ namespace Accounting_for_refueling__printers.Forms
 
                 filter = filter.Remove(filter.Length - 4);
 
-                SqlDataAdapter dataAdapter1 = new SqlDataAdapter($"Select Дата,Кабинет, Модель,  Операции, Состояние from Printer where {filter}", sqlConnection);
-                DataSet dataSet1 = new DataSet();
-                dataAdapter1.Fill(dataSet1);
-                dataGridView1.DataSource = dataSet1.Tables[0];
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
+          " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
+          " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
+          $" where {filter}", sqlConnection);
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet);
+                dataGridView1.DataSource = dataSet.Tables[0];
 
                 panel1.Visible = false;
                 panel2.Visible = true;
@@ -144,13 +152,12 @@ namespace Accounting_for_refueling__printers.Forms
 
                             if (comboBox2.Text != "")
                             {
-                                filter += $" Картридж like N'{comboBox2.Text}%' and ";
+                                filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Модель = N'{comboBox2.Text}' and ";
 
                             }
                                 if (comboBox3.Text != "")
                                 {
-                                    filter += $" Тип_картриджа like N'{comboBox3.Text}%' and ";
-
+                                 filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
                                 }
                                     if (comboBox4.Text != "")
                                     {
@@ -164,9 +171,13 @@ namespace Accounting_for_refueling__printers.Forms
                                         }
 
                     filter = filter.Remove(filter.Length - 4);
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Дата, Кабинет, Модель,  Операции, Состояние from Printer where {filter}", sqlConnection);
+                  
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
+          " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
+          " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
+          $" where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
-                    dataAdapter.Fill(dataSet);
+                    sqlDataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];
                     panel1.Visible = false;
                     panel2.Visible = true;
@@ -190,17 +201,16 @@ namespace Accounting_for_refueling__printers.Forms
 
                     }
 
-                        if (comboBox2.Text != "")
-                        {
-                            filter += $" Картридж like N'{comboBox2.Text}%' and ";
+                if (comboBox2.Text != "")
+                {
+                    filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Модель = N'{comboBox2.Text}' and ";
 
-                        }
-                            if (comboBox3.Text != "")
-                            {
-                                filter += $" Тип_картриджа like N'{comboBox3.Text}%' and ";
-
-                            }
-                                if (comboBox4.Text != "")
+                }
+                if (comboBox3.Text != "")
+                {
+                    filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
+                }
+                if (comboBox4.Text != "")
                                 {
                                     filter += $" Состояние like N'{comboBox4.Text}%' and ";
 
@@ -212,10 +222,13 @@ namespace Accounting_for_refueling__printers.Forms
                                     }
                 filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
                 filter = filter.Remove(filter.Length - 4);
-                SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Дата, Кабинет, Модель, Картридж, Операции, Состояние from Printer where {filter}", sqlConnection);
-                DataSet dataSetSearch = new DataSet();
-                dataAdapter.Fill(dataSetSearch);
-                dataGridView1.DataSource = dataSetSearch.Tables[0];
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
+            " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
+            " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
+            $" where {filter}", sqlConnection);
+                DataSet dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet);
+                dataGridView1.DataSource = dataSet.Tables[0];
                 panel1.Visible = false;
                 panel2.Visible = true;
             }
@@ -289,41 +302,64 @@ namespace Accounting_for_refueling__printers.Forms
                 worksheet = workbook.ActiveSheet;
                 worksheet.Name = "Exported from gridview";
                 //Fill Excel.
-                worksheet.Cells[1, 1] = $"Заправки принтеров за {now.ToString("Y").ToUpper()}";
+                worksheet.Cells[1, 1] = $"Учёт принтеров за {now.ToString("Y").ToUpper()}";
 
-                for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
+                for (int i = 2; i < dataGridView1.Columns.Count + 1; i++)
                 {
-                    worksheet.Cells[2, i] = dataGridView1.Columns[i - 1].HeaderText;
+                    worksheet.Cells[2, i-1] = dataGridView1.Columns[i - 1].HeaderText;
                 }
-                worksheet.Cells[2, 6] = "Стоимость с НДС";
-                worksheet.Cells[2, 7] = "Б или В/Б";
+                worksheet.Cells[2, 8] = "Стоимость с НДС";
+                worksheet.Cells[2, 9] = "Б или В/Б";
+                //for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                //{
+                //    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                //    {
+                //        if (j == 0)
+                //        {
+                //            worksheet.Cells[i + 3, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
+                //        }
+                //        else if (j == 4)
+                //        {
+                //            continue;
+                //        }
+
+                //        else
+                //        {
+                //            worksheet.Cells[i + 3, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                //        }
+
+
+                //    }
+
+                //}
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    for (int j = 1; j < dataGridView1.Columns.Count; j++)
                     {
-                        if (j == 0)
-                        {
-                            worksheet.Cells[i + 3, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
-                        }
-                        else if (j == 4)
-                        {
-                            continue;
-                        }
 
+
+                        if (j==1)
+                        {
+                         worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
+
+                        }
                         else
                         {
-                            worksheet.Cells[i + 3, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
                         }
+
+                        
 
 
                     }
 
                 }
-                    //Format export in Excel.
 
-                ((Range)worksheet.get_Range($"A1:G1")).Merge();
-                ((Range)worksheet.get_Range($"A1:G{dataGridView1.Rows.Count + 1}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
-                ((Range)worksheet.get_Range($"A1:G2")).Cells.Font.FontStyle = "Bold";
+                //Format export in Excel.
+
+                ((Range)worksheet.get_Range($"A1:I1")).Merge();
+                ((Range)worksheet.get_Range($"A1:I{dataGridView1.Rows.Count + 1}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:I2")).Cells.Font.FontStyle = "Bold";
                 worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 worksheet.Cells.Font.Name = "Arial";
                 worksheet.Cells.Font.Size = 10;

@@ -22,18 +22,19 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchRAM_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM1.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSetRAM1.RAM);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSetRAM.RAM);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM6". При необходимости она может быть перемещена или удалена.
+            this.rAM6TableAdapter.Fill(this.databaseDataSetRAM.RAM6);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM5". При необходимости она может быть перемещена или удалена.
+            this.rAM5TableAdapter.Fill(this.databaseDataSetRAM.RAM5);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM4". При необходимости она может быть перемещена или удалена.
+            this.rAM4TableAdapter.Fill(this.databaseDataSetRAM.RAM4);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM3". При необходимости она может быть перемещена или удалена.
+            this.rAM3TableAdapter.Fill(this.databaseDataSetRAM.RAM3);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM2". При необходимости она может быть перемещена или удалена.
+            this.rAM2TableAdapter.Fill(this.databaseDataSetRAM.RAM2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM1". При необходимости она может быть перемещена или удалена.
+            this.rAM1TableAdapter.Fill(this.databaseDataSetRAM.RAM1);
+
 
             LoadTheme();
             try

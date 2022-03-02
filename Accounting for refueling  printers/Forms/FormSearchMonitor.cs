@@ -23,8 +23,15 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchMonitor_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor". При необходимости она может быть перемещена или удалена.
-            this.monitorTableAdapter.Fill(this.databaseDataSetMonitor.Monitor);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor4". При необходимости она может быть перемещена или удалена.
+            this.monitor4TableAdapter.Fill(this.databaseDataSetMonitor.Monitor4);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor3". При необходимости она может быть перемещена или удалена.
+            this.monitor3TableAdapter.Fill(this.databaseDataSetMonitor.Monitor3);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor2". При необходимости она может быть перемещена или удалена.
+            this.monitor2TableAdapter.Fill(this.databaseDataSetMonitor.Monitor2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor1". При необходимости она может быть перемещена или удалена.
+            this.monitor1TableAdapter.Fill(this.databaseDataSetMonitor.Monitor1);
+
             LoadTheme();
             try
             {

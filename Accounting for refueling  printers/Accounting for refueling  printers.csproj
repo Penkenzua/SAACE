@@ -101,6 +101,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSetCartridge.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseDataSetCartridgeType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetCartridgeType.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSetCPU.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -478,6 +483,17 @@
     </None>
     <None Include="DatabaseDataSetCartridge.xss">
       <DependentUpon>DatabaseDataSetCartridge.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetCartridgeType.xsc">
+      <DependentUpon>DatabaseDataSetCartridgeType.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetCartridgeType.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetCartridgeType.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetCartridgeType.xss">
+      <DependentUpon>DatabaseDataSetCartridgeType.xsd</DependentUpon>
     </None>
     <None Include="DatabaseDataSetCPU.xsc">
       <DependentUpon>DatabaseDataSetCPU.xsd</DependentUpon>

@@ -154,15 +154,17 @@ namespace Accounting_for_refueling__printers
 
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Cartridge.Модель as 'Модель картриджа',Cartridge.Тип as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
-            "Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
+            " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
+            " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
         public void UpdateCartrdige()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,Cartridge.Тип from Cartridge", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,CartridgeType.Type as 'Тип картриджа' from Cartridge" +
+                " Join CartridgeType  on Cartridge.Тип = CartridgeType.CartridgeType_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -387,6 +389,26 @@ namespace Accounting_for_refueling__printers
             }
             //Storage device
             foreach (Control previousBtn in PanelStorageDeviceSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //Aacounts
+            foreach (Control previousBtn in panelAccountSubMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
+                }
+            }
+            //Breaking
+            foreach (Control previousBtn in PanelBreakingSubMenu.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {

@@ -21,6 +21,8 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormAddCatridge_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridgeType.CartridgeType". При необходимости она может быть перемещена или удалена.
+            this.cartridgeTypeTableAdapter.Fill(this.databaseDataSetCartridgeType.CartridgeType);
             LoadTheme();
             try
             {
@@ -36,6 +38,8 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            SqlCommand cartridgetype = new SqlCommand($"Select CartridgeType_ID from CartridgeType where Type =N'{comboBox1.Text}'", sqlConnection);
+            var cartype = cartridgetype.ExecuteScalar().ToString();
             if (textBox1.Text != "" && textBox2.Text != "")
             {
 
@@ -43,7 +47,7 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand command = new SqlCommand("INSERT INTO [Cartridge] (Производитель,Модель,Тип) VALUES(@Производитель,@Модель,@Тип)", sqlConnection);
                 command.Parameters.AddWithValue("Производитель", textBox1.Text);
                 command.Parameters.AddWithValue("Модель", textBox2.Text);
-                command.Parameters.AddWithValue("Тип", textBox3.Text);
+                command.Parameters.AddWithValue("Тип", cartype);
 
 
                 if (command.ExecuteNonQuery() == 1)
@@ -75,7 +79,7 @@ namespace Accounting_for_refueling__printers.Forms
             label3.ForeColor = ThemeColor.PrimaryColor;
             textBox1.ForeColor = ThemeColor.PrimaryColor;
             textBox2.ForeColor = ThemeColor.PrimaryColor;
-            textBox3.ForeColor = ThemeColor.PrimaryColor;
+            comboBox1.ForeColor = ThemeColor.PrimaryColor;
 
            
         }

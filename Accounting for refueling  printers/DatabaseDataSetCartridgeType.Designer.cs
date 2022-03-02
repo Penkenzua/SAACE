@@ -20,17 +20,17 @@ namespace Accounting_for_refueling__printers {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DatabaseDataSetOC")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DatabaseDataSetCartridgeType")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DatabaseDataSetOC : global::System.Data.DataSet {
+    public partial class DatabaseDataSetCartridgeType : global::System.Data.DataSet {
         
-        private OCDataTable tableOC;
+        private CartridgeTypeDataTable tableCartridgeType;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DatabaseDataSetOC() {
+        public DatabaseDataSetCartridgeType() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Accounting_for_refueling__printers {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DatabaseDataSetOC(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DatabaseDataSetCartridgeType(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Accounting_for_refueling__printers {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["OC"] != null)) {
-                    base.Tables.Add(new OCDataTable(ds.Tables["OC"]));
+                if ((ds.Tables["CartridgeType"] != null)) {
+                    base.Tables.Add(new CartridgeTypeDataTable(ds.Tables["CartridgeType"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Accounting_for_refueling__printers {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public OCDataTable OC {
+        public CartridgeTypeDataTable CartridgeType {
             get {
-                return this.tableOC;
+                return this.tableCartridgeType;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DatabaseDataSetOC cln = ((DatabaseDataSetOC)(base.Clone()));
+            DatabaseDataSetCartridgeType cln = ((DatabaseDataSetCartridgeType)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Accounting_for_refueling__printers {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["OC"] != null)) {
-                    base.Tables.Add(new OCDataTable(ds.Tables["OC"]));
+                if ((ds.Tables["CartridgeType"] != null)) {
+                    base.Tables.Add(new CartridgeTypeDataTable(ds.Tables["CartridgeType"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableOC = ((OCDataTable)(base.Tables["OC"]));
+            this.tableCartridgeType = ((CartridgeTypeDataTable)(base.Tables["CartridgeType"]));
             if ((initTable == true)) {
-                if ((this.tableOC != null)) {
-                    this.tableOC.InitVars();
+                if ((this.tableCartridgeType != null)) {
+                    this.tableCartridgeType.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DatabaseDataSetOC";
+            this.DataSetName = "DatabaseDataSetCartridgeType";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DatabaseDataSetOC.xsd";
+            this.Namespace = "http://tempuri.org/DatabaseDataSetCartridgeType.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableOC = new OCDataTable();
-            base.Tables.Add(this.tableOC);
+            this.tableCartridgeType = new CartridgeTypeDataTable();
+            base.Tables.Add(this.tableCartridgeType);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeOC() {
+        private bool ShouldSerializeCartridgeType() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Accounting_for_refueling__printers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DatabaseDataSetOC ds = new DatabaseDataSetOC();
+            DatabaseDataSetCartridgeType ds = new DatabaseDataSetCartridgeType();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,21 +270,21 @@ namespace Accounting_for_refueling__printers {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void OCRowChangeEventHandler(object sender, OCRowChangeEvent e);
+        public delegate void CartridgeTypeRowChangeEventHandler(object sender, CartridgeTypeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class OCDataTable : global::System.Data.TypedTableBase<OCRow> {
+        public partial class CartridgeTypeDataTable : global::System.Data.TypedTableBase<CartridgeTypeRow> {
             
-            private global::System.Data.DataColumn columnНазвание;
+            private global::System.Data.DataColumn columnType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OCDataTable() {
-                this.TableName = "OC";
+            public CartridgeTypeDataTable() {
+                this.TableName = "CartridgeType";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -292,7 +292,7 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal OCDataTable(global::System.Data.DataTable table) {
+            internal CartridgeTypeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -309,16 +309,16 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected OCDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CartridgeTypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn НазваниеColumn {
+            public global::System.Data.DataColumn TypeColumn {
                 get {
-                    return this.columnНазвание;
+                    return this.columnType;
                 }
             }
             
@@ -333,45 +333,45 @@ namespace Accounting_for_refueling__printers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OCRow this[int index] {
+            public CartridgeTypeRow this[int index] {
                 get {
-                    return ((OCRow)(this.Rows[index]));
+                    return ((CartridgeTypeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OCRowChangeEventHandler OCRowChanging;
+            public event CartridgeTypeRowChangeEventHandler CartridgeTypeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OCRowChangeEventHandler OCRowChanged;
+            public event CartridgeTypeRowChangeEventHandler CartridgeTypeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OCRowChangeEventHandler OCRowDeleting;
+            public event CartridgeTypeRowChangeEventHandler CartridgeTypeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OCRowChangeEventHandler OCRowDeleted;
+            public event CartridgeTypeRowChangeEventHandler CartridgeTypeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddOCRow(OCRow row) {
+            public void AddCartridgeTypeRow(CartridgeTypeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OCRow AddOCRow(string Название) {
-                OCRow rowOCRow = ((OCRow)(this.NewRow()));
+            public CartridgeTypeRow AddCartridgeTypeRow(string Type) {
+                CartridgeTypeRow rowCartridgeTypeRow = ((CartridgeTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Название};
-                rowOCRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowOCRow);
-                return rowOCRow;
+                        Type};
+                rowCartridgeTypeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCartridgeTypeRow);
+                return rowCartridgeTypeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                OCDataTable cln = ((OCDataTable)(base.Clone()));
+                CartridgeTypeDataTable cln = ((CartridgeTypeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -379,47 +379,48 @@ namespace Accounting_for_refueling__printers {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new OCDataTable();
+                return new CartridgeTypeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnНазвание = base.Columns["Название"];
+                this.columnType = base.Columns["Type"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnНазвание = new global::System.Data.DataColumn("Название", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnНазвание);
-                this.columnНазвание.MaxLength = 50;
+                this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnType);
+                this.columnType.AllowDBNull = false;
+                this.columnType.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OCRow NewOCRow() {
-                return ((OCRow)(this.NewRow()));
+            public CartridgeTypeRow NewCartridgeTypeRow() {
+                return ((CartridgeTypeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new OCRow(builder);
+                return new CartridgeTypeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(OCRow);
+                return typeof(CartridgeTypeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.OCRowChanged != null)) {
-                    this.OCRowChanged(this, new OCRowChangeEvent(((OCRow)(e.Row)), e.Action));
+                if ((this.CartridgeTypeRowChanged != null)) {
+                    this.CartridgeTypeRowChanged(this, new CartridgeTypeRowChangeEvent(((CartridgeTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -427,8 +428,8 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.OCRowChanging != null)) {
-                    this.OCRowChanging(this, new OCRowChangeEvent(((OCRow)(e.Row)), e.Action));
+                if ((this.CartridgeTypeRowChanging != null)) {
+                    this.CartridgeTypeRowChanging(this, new CartridgeTypeRowChangeEvent(((CartridgeTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -436,8 +437,8 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.OCRowDeleted != null)) {
-                    this.OCRowDeleted(this, new OCRowChangeEvent(((OCRow)(e.Row)), e.Action));
+                if ((this.CartridgeTypeRowDeleted != null)) {
+                    this.CartridgeTypeRowDeleted(this, new CartridgeTypeRowChangeEvent(((CartridgeTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -445,14 +446,14 @@ namespace Accounting_for_refueling__printers {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.OCRowDeleting != null)) {
-                    this.OCRowDeleting(this, new OCRowChangeEvent(((OCRow)(e.Row)), e.Action));
+                if ((this.CartridgeTypeRowDeleting != null)) {
+                    this.CartridgeTypeRowDeleting(this, new CartridgeTypeRowChangeEvent(((CartridgeTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveOCRow(OCRow row) {
+            public void RemoveCartridgeTypeRow(CartridgeTypeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -461,7 +462,7 @@ namespace Accounting_for_refueling__printers {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseDataSetOC ds = new DatabaseDataSetOC();
+                DatabaseDataSetCartridgeType ds = new DatabaseDataSetCartridgeType();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -479,7 +480,7 @@ namespace Accounting_for_refueling__printers {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "OCDataTable";
+                attribute2.FixedValue = "CartridgeTypeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -523,43 +524,26 @@ namespace Accounting_for_refueling__printers {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class OCRow : global::System.Data.DataRow {
+        public partial class CartridgeTypeRow : global::System.Data.DataRow {
             
-            private OCDataTable tableOC;
+            private CartridgeTypeDataTable tableCartridgeType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal OCRow(global::System.Data.DataRowBuilder rb) : 
+            internal CartridgeTypeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableOC = ((OCDataTable)(this.Table));
+                this.tableCartridgeType = ((CartridgeTypeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Название {
+            public string Type {
                 get {
-                    try {
-                        return ((string)(this[this.tableOC.НазваниеColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Название\' в таблице \'OC\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableCartridgeType.TypeColumn]));
                 }
                 set {
-                    this[this.tableOC.НазваниеColumn] = value;
+                    this[this.tableCartridgeType.TypeColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsНазваниеNull() {
-                return this.IsNull(this.tableOC.НазваниеColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetНазваниеNull() {
-                this[this.tableOC.НазваниеColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -567,22 +551,22 @@ namespace Accounting_for_refueling__printers {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class OCRowChangeEvent : global::System.EventArgs {
+        public class CartridgeTypeRowChangeEvent : global::System.EventArgs {
             
-            private OCRow eventRow;
+            private CartridgeTypeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OCRowChangeEvent(OCRow row, global::System.Data.DataRowAction action) {
+            public CartridgeTypeRowChangeEvent(CartridgeTypeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OCRow Row {
+            public CartridgeTypeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -598,7 +582,7 @@ namespace Accounting_for_refueling__printers {
         }
     }
 }
-namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
+namespace Accounting_for_refueling__printers.DatabaseDataSetCartridgeTypeTableAdapters {
     
     
     /// <summary>
@@ -610,7 +594,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class OCTableAdapter : global::System.ComponentModel.Component {
+    public partial class CartridgeTypeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -624,7 +608,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public OCTableAdapter() {
+        public CartridgeTypeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -721,33 +705,14 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "OC";
-            tableMapping.ColumnMappings.Add("Название", "Название");
+            tableMapping.DataSetTable = "CartridgeType";
+            tableMapping.ColumnMappings.Add("Type", "Type");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[OC] WHERE (([OC_ID] = @Original_OC_ID) AND ((@IsNull_Название " +
-                "= 1 AND [Название] IS NULL) OR ([Название] = @Original_Название)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OC_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OC_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Название", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Название", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [OC] ([Название]) VALUES (@Название)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[CartridgeType] ([Type]) VALUES (@Type)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Название", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[OC] SET [Название] = @Название WHERE (([OC_ID] = @Original_OC_ID) A" +
-                "ND ((@IsNull_Название = 1 AND [Название] IS NULL) OR ([Название] = @Original_Наз" +
-                "вание)));\r\nSELECT OC_ID, Название FROM OC WHERE (OC_ID = @OC_ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Название", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OC_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OC_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Название", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Название", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Название", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OC_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OC_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -763,7 +728,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DISTINCT Название\r\nFROM            OC";
+            this._commandCollection[0].CommandText = "SELECT DISTINCT Type\r\nFROM            CartridgeType";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -771,7 +736,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseDataSetOC.OCDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSetCartridgeType.CartridgeTypeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -784,9 +749,9 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseDataSetOC.OCDataTable GetData() {
+        public virtual DatabaseDataSetCartridgeType.CartridgeTypeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseDataSetOC.OCDataTable dataTable = new DatabaseDataSetOC.OCDataTable();
+            DatabaseDataSetCartridgeType.CartridgeTypeDataTable dataTable = new DatabaseDataSetCartridgeType.CartridgeTypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -794,15 +759,15 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSetOC.OCDataTable dataTable) {
+        public virtual int Update(DatabaseDataSetCartridgeType.CartridgeTypeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSetOC dataSet) {
-            return this.Adapter.Update(dataSet, "OC");
+        public virtual int Update(DatabaseDataSetCartridgeType dataSet) {
+            return this.Adapter.Update(dataSet, "CartridgeType");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -823,43 +788,13 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_OC_ID, string Original_Название) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OC_ID));
-            if ((Original_Название == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Название));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Название) {
-            if ((Название == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(string Type) {
+            if ((Type == null)) {
+                throw new global::System.ArgumentNullException("Type");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Название));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Type));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -873,43 +808,6 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Название, int Original_OC_ID, string Original_Название, int OC_ID) {
-            if ((Название == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Название));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_OC_ID));
-            if ((Original_Название == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Название));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(OC_ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
         }
@@ -927,7 +825,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private OCTableAdapter _oCTableAdapter;
+        private CartridgeTypeTableAdapter _cartridgeTypeTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -949,12 +847,12 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public OCTableAdapter OCTableAdapter {
+        public CartridgeTypeTableAdapter CartridgeTypeTableAdapter {
             get {
-                return this._oCTableAdapter;
+                return this._cartridgeTypeTableAdapter;
             }
             set {
-                this._oCTableAdapter = value;
+                this._cartridgeTypeTableAdapter = value;
             }
         }
         
@@ -977,9 +875,9 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._oCTableAdapter != null) 
-                            && (this._oCTableAdapter.Connection != null))) {
-                    return this._oCTableAdapter.Connection;
+                if (((this._cartridgeTypeTableAdapter != null) 
+                            && (this._cartridgeTypeTableAdapter.Connection != null))) {
+                    return this._cartridgeTypeTableAdapter.Connection;
                 }
                 return null;
             }
@@ -994,7 +892,7 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._oCTableAdapter != null)) {
+                if ((this._cartridgeTypeTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1006,14 +904,14 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DatabaseDataSetOC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DatabaseDataSetCartridgeType dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._oCTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.OC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cartridgeTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CartridgeType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._oCTableAdapter.Update(updatedRows));
+                    result = (result + this._cartridgeTypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1025,13 +923,13 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DatabaseDataSetOC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DatabaseDataSetCartridgeType dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._oCTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.OC.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cartridgeTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CartridgeType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._oCTableAdapter.Update(addedRows));
+                    result = (result + this._cartridgeTypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1043,13 +941,13 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DatabaseDataSetOC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DatabaseDataSetCartridgeType dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._oCTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.OC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cartridgeTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CartridgeType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._oCTableAdapter.Update(deletedRows));
+                    result = (result + this._cartridgeTypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1085,15 +983,15 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DatabaseDataSetOC dataSet) {
+        public virtual int UpdateAll(DatabaseDataSetCartridgeType dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._oCTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._oCTableAdapter.Connection) == false))) {
+            if (((this._cartridgeTypeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cartridgeTypeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -1129,13 +1027,13 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._oCTableAdapter != null)) {
-                    revertConnections.Add(this._oCTableAdapter, this._oCTableAdapter.Connection);
-                    this._oCTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._oCTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._oCTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._oCTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._oCTableAdapter.Adapter);
+                if ((this._cartridgeTypeTableAdapter != null)) {
+                    revertConnections.Add(this._cartridgeTypeTableAdapter, this._cartridgeTypeTableAdapter.Connection);
+                    this._cartridgeTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cartridgeTypeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cartridgeTypeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cartridgeTypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cartridgeTypeTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1196,9 +1094,9 @@ namespace Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._oCTableAdapter != null)) {
-                    this._oCTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._oCTableAdapter]));
-                    this._oCTableAdapter.Transaction = null;
+                if ((this._cartridgeTypeTableAdapter != null)) {
+                    this._cartridgeTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cartridgeTypeTableAdapter]));
+                    this._cartridgeTypeTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

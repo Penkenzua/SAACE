@@ -15,10 +15,11 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormAdd_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge". При необходимости она может быть перемещена или удалена.
-            this.cartridgeTableAdapter.Fill(this.databaseDataSetCartridge.Cartridge);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPrinter.Printer". При необходимости она может быть перемещена или удалена.
-            this.printerTableAdapter.Fill(this.databaseDataSetPrinter.Printer);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge2". При необходимости она может быть перемещена или удалена.
+            this.cartridge2TableAdapter.Fill(this.databaseDataSetCartridge.Cartridge2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPrinter.Printer2". При необходимости она может быть перемещена или удалена.
+            this.printer2TableAdapter.Fill(this.databaseDataSetPrinter.Printer2);
+
 
 
 
@@ -39,22 +40,23 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Select Cartridge_ID from Cartridge where Модель=N'{comboBox2.Text}'",sqlConnection);
             
-
-            var temp = sqlCommand.ExecuteScalar().ToString();
+           
             if (textBox1.Text != "" && textBox2.Text != "" && comboBox1.Text != "")
             {
-
+                SqlCommand SelectID = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge.Модель = N'{comboBox2.Text}'",sqlConnection);
+                SqlCommand SelectTypeCartridge = new SqlCommand($"Select Cartridge.Тип from Cartridge where Cartridge_ID = {SelectID.ExecuteScalar()}",sqlConnection);
                 DateTime date = DateTime.Parse(dateTimePicker1.Text);
-                SqlCommand command = new SqlCommand("INSERT INTO [Printer] (Дата,Кабинет,Модель,Катридж,Операции,Состояние) VALUES(@Дата,@Кабинет," +
-                "@Модель,@Катридж,@Операции,N'Не выписано')", sqlConnection);
-                command.Parameters.AddWithValue("Дата", $"{date.Month}/{date.Day}/{date.Year}");
-                command.Parameters.AddWithValue("Кабинет", textBox1.Text);
+                SqlCommand command = new SqlCommand($"INSERT INTO [PRINTER](Дата,Кабинет,Модель,Картридж,Тип_картриджа,Операции,Состояние) Values(@Дата,@Кабинет,@Модель,@Картридж,@Тип_картриджа,@Операции,N'Не выписанно')", sqlConnection);
+                command.Parameters.AddWithValue("Дата",$"{date.Month}/{date.Day}/{date.Year}");
+                command.Parameters.AddWithValue("Кабинет",textBox1.Text);
                 command.Parameters.AddWithValue("Модель", comboBox1.Text);
-                command.Parameters.AddWithValue("Картридж", temp);
-                command.Parameters.AddWithValue("Тип_картриджа", temp);
-                command.Parameters.AddWithValue("Операции", textBox2.Text);
+                command.Parameters.AddWithValue("Картридж",SelectID.ExecuteScalar());
+                command.Parameters.AddWithValue("Тип_картриджа",SelectTypeCartridge.ExecuteScalar());
+                command.Parameters.AddWithValue("Операции",textBox2.Text);
+
+             
+
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вставка успешна завершена");

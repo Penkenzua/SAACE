@@ -26,8 +26,17 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchStorageDevice_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device". При необходимости она может быть перемещена или удалена.
-            this.storage_deviceTableAdapter.Fill(this.databaseDataSetSD.Storage_device);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device5". При необходимости она может быть перемещена или удалена.
+            this.storage_device5TableAdapter.Fill(this.databaseDataSetSD.Storage_device5);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device4". При необходимости она может быть перемещена или удалена.
+            this.storage_device4TableAdapter.Fill(this.databaseDataSetSD.Storage_device4);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device3". При необходимости она может быть перемещена или удалена.
+            this.storage_device3TableAdapter.Fill(this.databaseDataSetSD.Storage_device3);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device2". При необходимости она может быть перемещена или удалена.
+            this.storage_device2TableAdapter.Fill(this.databaseDataSetSD.Storage_device2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device1". При необходимости она может быть перемещена или удалена.
+            this.storage_device1TableAdapter.Fill(this.databaseDataSetSD.Storage_device1);
+
             LoadTheme();
             try
             {

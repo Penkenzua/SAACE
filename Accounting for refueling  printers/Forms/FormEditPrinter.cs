@@ -15,8 +15,12 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormEddit_Load(object sender, EventArgs e)
         {
-            
-        
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPrinter.Printer2". При необходимости она может быть перемещена или удалена.
+            this.printer2TableAdapter.Fill(this.databaseDataSetPrinter.Printer2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge2". При необходимости она может быть перемещена или удалена.
+            this.cartridge2TableAdapter.Fill(this.databaseDataSetCartridge.Cartridge2);
+
+
 
             try
             {
@@ -42,15 +46,16 @@ namespace Accounting_for_refueling__printers.Forms
 
             DateTime date = DateTime.Parse(dateTimePicker1.Text);
             SqlCommand command = new SqlCommand($"Select Printer_ID from Printer where Printer_ID = {textBox1.Text}", sqlConnection);
-            SqlCommand command1 = new SqlCommand($"Select Cartridge_ID form Catridge where Модель = {comboBox2.Text} ",sqlConnection);
-            if (textBox1.Text != "" && command.ExecuteScalar() != null && command1.ExecuteScalar()!=null)
+            SqlCommand SelectID = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge.Модель = N'{comboBox2.Text}'", sqlConnection);
+            SqlCommand SelectTypeCartridge = new SqlCommand($"Select Cartridge.Тип from Cartridge where Cartridge_ID = {SelectID.ExecuteScalar()}", sqlConnection);
+            if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update Printer SET " +
                     $"Дата = '{date.Month}/{date.Day}/{date.Year}'," +
                     $"Кабинет = N'{textBox2.Text}'," +
                     $"Модель = N'{comboBox1.Text}', " +
-                    $"Картридж = {command1.ExecuteScalar()}," +
-                    $"Тип_картриджа = {command1.ExecuteScalar()}, " +
+                    $"Картридж = {SelectID.ExecuteScalar()}," +
+                    $"Тип_картриджа = {SelectTypeCartridge.ExecuteScalar()}, " +
                     $"Операции = N'{textBox3.Text}', " +
                     $"Состояние = N'{comboBox3.Text}' " +
                     $"where Printer_ID = {textBox1.Text}", sqlConnection);

@@ -28,18 +28,23 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormAddPC_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor". При необходимости она может быть перемещена или удалена.
-            this.monitorTableAdapter.Fill(this.databaseDataSetMonitor.Monitor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device". При необходимости она может быть перемещена или удалена.
-            this.storage_deviceTableAdapter.Fill(this.databaseDataSetSD.Storage_device);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM1". При необходимости она может быть перемещена или удалена.
+            this.rAM1TableAdapter.Fill(this.databaseDataSetRAM.RAM1);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU2". При необходимости она может быть перемещена или удалена.
+            this.gPU2TableAdapter.Fill(this.databaseDataSetGPU.GPU2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU2". При необходимости она может быть перемещена или удалена.
+            this.cPU2TableAdapter.Fill(this.databaseDataSetCPU.CPU2);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetOC.OC". При необходимости она может быть перемещена или удалена.
             this.oCTableAdapter.Fill(this.databaseDataSetOC.OC);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU". При необходимости она может быть перемещена или удалена.
-            this.cPUTableAdapter.Fill(this.databaseDataSetCPU.CPU);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU". При необходимости она может быть перемещена или удалена.
-           
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM". При необходимости она может быть перемещена или удалена.
-            this.rAMTableAdapter.Fill(this.databaseDataSetRAM.RAM);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device1". При необходимости она может быть перемещена или удалена.
+            this.storage_device1TableAdapter.Fill(this.databaseDataSetSD.Storage_device1);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor1". При необходимости она может быть перемещена или удалена.
+            this.monitor1TableAdapter.Fill(this.databaseDataSetMonitor.Monitor1);
+
+
+
+
+
             LoadTheme();
 
             try
@@ -59,7 +64,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-                        SqlCommand Monitor = new SqlCommand($"Select Monitor_ID from Monitor where Инв_номер=N'{comboBox1.Text}'", sqlConnection);
+            SqlCommand Monitor = new SqlCommand($"Select Monitor_ID from Monitor where Инв_номер=N'{comboBox1.Text}'", sqlConnection);
             SqlCommand SD = new SqlCommand($"Select SD_ID from Storage_device where Код_производителя=N'{comboBox2.Text}'", sqlConnection);
             SqlCommand OC = new SqlCommand($"Select OC_ID from OC where Название=N'{comboBox3.Text}'", sqlConnection);
             SqlCommand CPU = new SqlCommand($"Select CPU_ID from CPU where Модельный_ряд =N'{comboBox4.Text}'", sqlConnection);
