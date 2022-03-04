@@ -84,8 +84,9 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox6.Text != "")
                 {
-                    filter += $"Частота like '{comboBox6.Text}%' and ";
+                    filter += $"Частота like '{comboBox6.Text = new Regex(@",").Replace(comboBox6.Text, ".")}%' and ";
                 }
+                
 
                 filter = filter.Remove(filter.Length - 4);
                 SqlCommand command = new SqlCommand($"Select CPU_ID as 'Идентификатор', CPU.Производитель,CPU.Модельный_ряд as 'Модельный ряд',CPU.Сокет,CPU.Количество_ядер as 'Количество ядер',CPU.Кол_потоков as 'Кол-во потоков',CPU.Частота from CPU where {filter}", sqlConnection);

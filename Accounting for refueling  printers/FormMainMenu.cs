@@ -216,14 +216,14 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateStorageDevice()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Storage_device.SD_ID as 'Идентификатор',Storage_device.Код_производителя as 'Код производителя', Storage_device.Производитель,Storage_device.Тип,Storage_device.Форм_фактор,Storage_device.Интерфейс from Storage_device", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Storage_device.SD_ID as 'Идентификатор',Storage_device.Код_производителя as 'Код производителя', Storage_device.Производитель,Storage_device.Тип,Storage_device.Форм_фактор as 'Форм-фактор',Storage_device.Интерфейс from Storage_device", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
         }
         public void UpdateRAM()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as  'Идентификатор', RAM.Код_производителя as 'Код производителя',RAM.Производитель,RAM.Тип,RAM.PC_индекс as 'PC-индекс',RAM.Объём as 'Объём, ГБ',RAM.Напряжение as 'Напряжение, В'  from RAM", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select RAM_ID as  'Идентификатор', RAM.Код_производителя as 'Код производителя',RAM.Производитель,RAM.Тип,RAM.PC_индекс as 'PC-индекс',RAM.Объём as 'Объём ГБ',RAM.Напряжение as 'Напряжение В'  from RAM", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -947,7 +947,9 @@ namespace Accounting_for_refueling__printers
 
         private void btnSearchBreaking_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Forms.FormSearchBreaking(), sender);
+            btnCloseChildForm.Visible = true;
+            btnDelete.Visible = false;
         }
     }
 

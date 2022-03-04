@@ -20,6 +20,7 @@ namespace Accounting_for_refueling__printers.Forms
         public FormSearchPC()
         {
             InitializeComponent();
+
         }
 
      
@@ -70,6 +71,7 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox7.Text = "";
             comboBox8.Text = "";
             comboBox9.Text = "";
+            TableBreakingAttributes.IndexCell = 0;
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -78,7 +80,7 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Кабинет like '{comboBox1.Text}%' and ";
+                    filter += $"Кабинет  = N'{comboBox1.Text}' and ";
                 }
                 if (comboBox2.Text != "")
                 {

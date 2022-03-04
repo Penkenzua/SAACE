@@ -29,6 +29,7 @@ namespace Accounting_for_refueling__printers.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,10 +37,17 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.databaseDataSetAcccount = new Accounting_for_refueling__printers.DatabaseDataSetAcccount();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetAcccountTableAdapters.AccountTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetAcccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.accountBindingSource;
+            this.comboBox1.DisplayMember = "Account_ID";
             this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(326, 112);
@@ -106,6 +114,20 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // databaseDataSetAcccount
+            // 
+            this.databaseDataSetAcccount.DataSetName = "DatabaseDataSetAcccount";
+            this.databaseDataSetAcccount.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataMember = "Account";
+            this.accountBindingSource.DataSource = this.databaseDataSetAcccount;
+            // 
+            // accountTableAdapter
+            // 
+            this.accountTableAdapter.ClearBeforeFill = true;
+            // 
             // FormEditAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +143,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormEditAccount";
             this.Text = "FromEditAccount";
             this.Load += new System.EventHandler(this.FormEditAccount_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetAcccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +159,8 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnEdit;
+        private DatabaseDataSetAcccount databaseDataSetAcccount;
+        private System.Windows.Forms.BindingSource accountBindingSource;
+        private DatabaseDataSetAcccountTableAdapters.AccountTableAdapter accountTableAdapter;
     }
 }

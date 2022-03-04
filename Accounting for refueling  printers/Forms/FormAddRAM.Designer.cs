@@ -87,7 +87,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2.Size = new System.Drawing.Size(118, 19);
             this.label2.TabIndex = 10;
             this.label2.Text = "Производитель:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // textBox2
             // 
@@ -108,7 +108,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label3.Size = new System.Drawing.Size(37, 19);
             this.label3.TabIndex = 12;
             this.label3.Text = "Тип:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // textBox3
             // 
@@ -138,7 +138,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label4.Size = new System.Drawing.Size(84, 19);
             this.label4.TabIndex = 12;
             this.label4.Text = "PC-индекс:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+         
             // 
             // textBox5
             // 
@@ -148,6 +148,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(175, 27);
             this.textBox5.TabIndex = 13;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
@@ -169,7 +170,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label5.Size = new System.Drawing.Size(57, 19);
             this.label5.TabIndex = 15;
             this.label5.Text = "Объём:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+          
             // 
             // label6
             // 
@@ -181,7 +182,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label6.Size = new System.Drawing.Size(96, 19);
             this.label6.TabIndex = 16;
             this.label6.Text = "Напряжение:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+    
             // 
             // FormAddRAM
             // 

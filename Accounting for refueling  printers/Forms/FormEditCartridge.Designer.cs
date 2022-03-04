@@ -29,6 +29,7 @@ namespace Accounting_for_refueling__printers.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -38,7 +39,12 @@ namespace Accounting_for_refueling__printers.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.databaseDataSetCartridgeType = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeType();
+            this.cartridgeTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cartridgeTypeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTypeTableAdapters.CartridgeTypeTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridgeType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -138,22 +144,38 @@ namespace Accounting_for_refueling__printers.Forms
             this.label4.TabIndex = 9;
             this.label4.Text = "Тип картриджа:";
             // 
-            // textBox4
+            // comboBox1
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(357, 212);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 27);
-            this.textBox4.TabIndex = 8;
+            this.comboBox1.DataSource = this.cartridgeTypeBindingSource;
+            this.comboBox1.DisplayMember = "Type";
+            this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(357, 212);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 27);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // databaseDataSetCartridgeType
+            // 
+            this.databaseDataSetCartridgeType.DataSetName = "DatabaseDataSetCartridgeType";
+            this.databaseDataSetCartridgeType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cartridgeTypeBindingSource
+            // 
+            this.cartridgeTypeBindingSource.DataMember = "CartridgeType";
+            this.cartridgeTypeBindingSource.DataSource = this.databaseDataSetCartridgeType;
+            // 
+            // cartridgeTypeTableAdapter
+            // 
+            this.cartridgeTypeTableAdapter.ClearBeforeFill = true;
             // 
             // FormEditCartridge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -165,6 +187,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormEditCartridge";
             this.Text = "Изменения данных в картриджах";
             this.Load += new System.EventHandler(this.FormEdditCatridge_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridgeType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +205,9 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private DatabaseDataSetCartridgeType databaseDataSetCartridgeType;
+        private System.Windows.Forms.BindingSource cartridgeTypeBindingSource;
+        private DatabaseDataSetCartridgeTypeTableAdapters.CartridgeTypeTableAdapter cartridgeTypeTableAdapter;
     }
 }

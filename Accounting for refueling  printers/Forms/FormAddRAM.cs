@@ -112,29 +112,16 @@ namespace Accounting_for_refueling__printers.Forms
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+     
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            if (Regex.IsMatch(textBox5.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Только цифры", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                textBox5.Text = textBox5.Text.Remove(textBox5.Text.Length - 1);
+                textBox5.SelectionStart = textBox5.TextLength;
+            }
         }
     }
 }

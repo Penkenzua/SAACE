@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -79,6 +80,16 @@ namespace Accounting_for_refueling__printers.Forms
             textBox4.ForeColor = ThemeColor.PrimaryColor;
 
 
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(textBox4.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Только цифры", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                textBox4.Text = textBox4.Text.Remove(textBox4.Text.Length - 1);
+                textBox4.SelectionStart = textBox4.TextLength;
+            }
         }
     }
 }

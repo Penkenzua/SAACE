@@ -94,30 +94,43 @@ namespace Accounting_for_refueling__printers.Forms
 
 
             DateTime date = DateTime.Parse(dateTimePicker1.Text);
-            SqlCommand SelectRoom = new SqlCommand($"Select Кабинет from PC where PC_ID = {TableBreakingAttributes.IndexCell}",sqlConnection);
-            SqlCommand FIO = new SqlCommand($"Select ФИО_МОЛ from PC where PC_ID = {TableBreakingAttributes.IndexCell} ",sqlConnection);
-            SqlCommand InventNumber = new SqlCommand($"Select Инв_Номер from PC where PC_ID = {TableBreakingAttributes.IndexCell}  ",sqlConnection);
+            try
+            {
 
-            
+
+                SqlCommand SelectRoom = new SqlCommand($"Select Кабинет from PC where PC_ID = {TableBreakingAttributes.IndexCell}", sqlConnection);
+                SqlCommand FIO = new SqlCommand($"Select ФИО_МОЛ from PC where PC_ID = {TableBreakingAttributes.IndexCell} ", sqlConnection);
+                SqlCommand InventNumber = new SqlCommand($"Select Инв_Номер from PC where PC_ID = {TableBreakingAttributes.IndexCell}  ", sqlConnection);
+
+
                 SqlCommand command = new SqlCommand("INSERT INTO [BREAKING](PC_ID,Дата,Кабинет,ФИО_МОЛ,Инв_Номер,Монитор,Диск,CPU,GPU,RAM,Причина) Values (@PC_ID,@Дата,@Кабинет,@ФИО_МОЛ,@Инв_Номер,@Монитор,@Диск,@CPU,@GPU,@RAM,@Причина)", sqlConnection);
                 command.Parameters.AddWithValue("PC_ID", TableBreakingAttributes.IndexCell);
                 command.Parameters.AddWithValue("Дата", $"{date.Month}/{date.Day}/{date.Year}");
-                command.Parameters.AddWithValue("Кабинет",SelectRoom.ExecuteScalar().ToString());
-                command.Parameters.AddWithValue("ФИО_МОЛ",FIO.ExecuteScalar().ToString());
-                command.Parameters.AddWithValue("Инв_Номер",InventNumber.ExecuteScalar().ToString());
+                command.Parameters.AddWithValue("Кабинет", SelectRoom.ExecuteScalar().ToString());
+                command.Parameters.AddWithValue("ФИО_МОЛ", FIO.ExecuteScalar().ToString());
+                command.Parameters.AddWithValue("Инв_Номер", InventNumber.ExecuteScalar().ToString());
                 command.Parameters.AddWithValue("Монитор", monitor);
                 command.Parameters.AddWithValue("Диск", sd);
-                command.Parameters.AddWithValue("CPU",cpu);
-                command.Parameters.AddWithValue("GPU",gpu);
-                command.Parameters.AddWithValue("RAM",ram);
-                command.Parameters.AddWithValue("Причина",textBox6.Text);
-            if (command.ExecuteNonQuery() == 1)
-            {
-                MessageBox.Show("Вставка успешна завершена");
-                FormMainMenu.SelfRef.UpdateBreaking();
+                command.Parameters.AddWithValue("CPU", cpu);
+                command.Parameters.AddWithValue("GPU", gpu);
+                command.Parameters.AddWithValue("RAM", ram);
+                command.Parameters.AddWithValue("Причина", textBox6.Text);
+                if (command.ExecuteNonQuery() == 1 && textBox6.Text!="")
+                {
+                    MessageBox.Show("Вставка успешна завершена");
+                    FormMainMenu.SelfRef.UpdateBreaking();
 
+                }
+                else
+                {
+                    MessageBox.Show("Заполните все поля","Предуприждение",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
             }
-
+            catch
+            {
+            
+            }
+            
         }
         private void SelectAcess()
         {

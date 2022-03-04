@@ -93,6 +93,16 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseDataSetAcccount.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetAcccount.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseDataSetBreaking.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetBreaking.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSetCartridge.cs">
       <DependentUpon>DatabaseDataSetCartridge.xsd</DependentUpon>
     </Compile>
@@ -424,6 +434,9 @@
     <EmbeddedResource Include="Forms\FormEditStorageDevice.resx">
       <DependentUpon>FormEditStorageDevice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSearchBreaking.resx">
+      <DependentUpon>FormSearchBreaking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSearchCartridge.resx">
       <DependentUpon>FormSearchCartridge.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +486,28 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DatabaseDataSetAcccount.xsc">
+      <DependentUpon>DatabaseDataSetAcccount.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetAcccount.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetAcccount.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetAcccount.xss">
+      <DependentUpon>DatabaseDataSetAcccount.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetBreaking.xsc">
+      <DependentUpon>DatabaseDataSetBreaking.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetBreaking.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetBreaking.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetBreaking.xss">
+      <DependentUpon>DatabaseDataSetBreaking.xsd</DependentUpon>
+    </None>
     <None Include="DatabaseDataSetCartridge.xsc">
       <DependentUpon>DatabaseDataSetCartridge.xsd</DependentUpon>
     </None>

@@ -22,8 +22,8 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormSearchCatridge_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge3". При необходимости она может быть перемещена или удалена.
-            this.cartridge3TableAdapter.Fill(this.databaseDataSetCartridge.Cartridge3);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridgeType.CartridgeType". При необходимости она может быть перемещена или удалена.
+            this.cartridgeTypeTableAdapter.Fill(this.databaseDataSetCartridgeType.CartridgeType);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge2". При необходимости она может быть перемещена или удалена.
             this.cartridge2TableAdapter.Fill(this.databaseDataSetCartridge.Cartridge2);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCartridge.Cartridge1". При необходимости она может быть перемещена или удалена.
@@ -63,15 +63,16 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $"Тип like '{comboBox3.Text}%' and ";
+                    filter += $"Тип  = (Select CartrdigeType_ID from CartrdigeType where Type  = N'{comboBox3.Text}' )";
                 }
                 filter = filter.Remove(filter.Length - 4);
                 SqlCommand command = new SqlCommand($"Select Cartridge_ID as ID, Производитель, Модель from Cartridge where {filter}", sqlConnection);
                 if (command.ExecuteScalar()!=null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Cartridge_ID as ID, Производитель, Модель,Тип from Cartridge where {filter}", sqlConnection);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,CartridgeType.Type as 'Тип картриджа' from Cartridge" +
+             " Join CartridgeType  on Cartridge.Тип = CartridgeType.CartridgeType_ID", sqlConnection);
                     DataSet dataSet = new DataSet();
-                    dataAdapter.Fill(dataSet);
+                    sqlDataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];
                     panel1.Visible = false;
                     panel2.Visible = true;

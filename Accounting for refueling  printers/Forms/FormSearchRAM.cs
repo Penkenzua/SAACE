@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -84,7 +85,7 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox6.Text != "")
                 {
-                    filter += $"Напряжение like '{comboBox6.Text}%' and ";
+                    filter += $"Напряжение like '{comboBox6.Text = new Regex(@",").Replace(comboBox6.Text, ".")}%' and ";
                 }
 
                 filter = filter.Remove(filter.Length - 4);

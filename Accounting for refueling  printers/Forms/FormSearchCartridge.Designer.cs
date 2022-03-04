@@ -32,28 +32,30 @@ namespace Accounting_for_refueling__printers.Forms
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cartridge1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetCartridge = new Accounting_for_refueling__printers.DatabaseDataSetCartridge();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cartridge2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cartridge1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cartridge1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTableAdapters.Cartridge1TableAdapter();
-            this.cartridge2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cartridge2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTableAdapters.Cartridge2TableAdapter();
-            this.cartridge3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cartridge3TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTableAdapters.Cartridge3TableAdapter();
+            this.databaseDataSetCartridgeType = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeType();
+            this.cartridgeTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cartridgeTypeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTypeTableAdapters.CartridgeTypeTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridge1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridge2BindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartridge1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartridge2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartridge3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridgeType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +80,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 27);
             this.comboBox1.TabIndex = 1;
+            // 
+            // cartridge1BindingSource
+            // 
+            this.cartridge1BindingSource.DataMember = "Cartridge1";
+            this.cartridge1BindingSource.DataSource = this.databaseDataSetCartridge;
             // 
             // databaseDataSetCartridge
             // 
@@ -120,6 +127,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.Size = new System.Drawing.Size(121, 27);
             this.comboBox2.TabIndex = 4;
             // 
+            // cartridge2BindingSource
+            // 
+            this.cartridge2BindingSource.DataMember = "Cartridge2";
+            this.cartridge2BindingSource.DataSource = this.databaseDataSetCartridge;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label3);
@@ -149,8 +161,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.DataSource = this.cartridge3BindingSource;
-            this.comboBox3.DisplayMember = "Тип";
+            this.comboBox3.DataSource = this.cartridgeTypeBindingSource;
+            this.comboBox3.DisplayMember = "Type";
             this.comboBox3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(352, 205);
@@ -177,32 +189,27 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 5;
             // 
-            // cartridge1BindingSource
-            // 
-            this.cartridge1BindingSource.DataMember = "Cartridge1";
-            this.cartridge1BindingSource.DataSource = this.databaseDataSetCartridge;
-            // 
             // cartridge1TableAdapter
             // 
             this.cartridge1TableAdapter.ClearBeforeFill = true;
-            // 
-            // cartridge2BindingSource
-            // 
-            this.cartridge2BindingSource.DataMember = "Cartridge2";
-            this.cartridge2BindingSource.DataSource = this.databaseDataSetCartridge;
             // 
             // cartridge2TableAdapter
             // 
             this.cartridge2TableAdapter.ClearBeforeFill = true;
             // 
-            // cartridge3BindingSource
+            // databaseDataSetCartridgeType
             // 
-            this.cartridge3BindingSource.DataMember = "Cartridge3";
-            this.cartridge3BindingSource.DataSource = this.databaseDataSetCartridge;
+            this.databaseDataSetCartridgeType.DataSetName = "DatabaseDataSetCartridgeType";
+            this.databaseDataSetCartridgeType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cartridge3TableAdapter
+            // cartridgeTypeBindingSource
             // 
-            this.cartridge3TableAdapter.ClearBeforeFill = true;
+            this.cartridgeTypeBindingSource.DataMember = "CartridgeType";
+            this.cartridgeTypeBindingSource.DataSource = this.databaseDataSetCartridgeType;
+            // 
+            // cartridgeTypeTableAdapter
+            // 
+            this.cartridgeTypeTableAdapter.ClearBeforeFill = true;
             // 
             // FormSearchCartridge
             // 
@@ -214,14 +221,15 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormSearchCartridge";
             this.Text = "Поиск в картриджах";
             this.Load += new System.EventHandler(this.FormSearchCatridge_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cartridge1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridge2BindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartridge1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartridge2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartridge3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridgeType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartridgeTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,7 +251,8 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSetCartridgeTableAdapters.Cartridge1TableAdapter cartridge1TableAdapter;
         private System.Windows.Forms.BindingSource cartridge2BindingSource;
         private DatabaseDataSetCartridgeTableAdapters.Cartridge2TableAdapter cartridge2TableAdapter;
-        private System.Windows.Forms.BindingSource cartridge3BindingSource;
-        private DatabaseDataSetCartridgeTableAdapters.Cartridge3TableAdapter cartridge3TableAdapter;
+        private DatabaseDataSetCartridgeType databaseDataSetCartridgeType;
+        private System.Windows.Forms.BindingSource cartridgeTypeBindingSource;
+        private DatabaseDataSetCartridgeTypeTableAdapters.CartridgeTypeTableAdapter cartridgeTypeTableAdapter;
     }
 }

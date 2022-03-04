@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -65,7 +66,7 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $"Диагональ like '{comboBox3.Text}%' and ";
+                    filter += $"Диагональ like '{comboBox3.Text = new Regex(@",").Replace(comboBox3.Text, ".")}%' and ";
                 }
                 if (comboBox4.Text != "")
                 {
