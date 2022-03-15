@@ -19,7 +19,6 @@ namespace Accounting_for_refueling__printers
         private int tempIndex;
         private Form activeForm;
         public int Cell;
-
         //Constructor
         public FormMainMenu()
         {
@@ -150,6 +149,15 @@ namespace Accounting_for_refueling__printers
                 btnCloseChildForm.Visible = false;
                 PanelBreakingSubMenu.Visible = false;
             }
+            if (panelAccountSubMenu.Visible == true)
+
+            {
+
+                if (activeForm != null)
+                    activeForm.Close();
+                btnCloseChildForm.Visible = false;
+                panelAccountSubMenu.Visible = false;
+            }
         }
 
         public void UpdatePrinter()
@@ -179,8 +187,9 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateGPU()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select GPU.GPU_ID as 'Идентификатор',GPU.Производитель,GPU.Графический_процессор as 'Графический процессор'," +
-                "GPU.Тип_памяти as 'Тип памяти',GPU.Шина_памяти as 'Шина памяти' from GPU", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select GPU.GPU_ID as 'Идентификатор',GPU.Код_производителя as 'Код производителя',GPU.Производитель,GPUModel.Model as 'Графический процессор'," +
+                "GPU.Тип_памяти as 'Тип памяти',GPU.Шина_памяти as 'Шина памяти' from GPU" +
+                " Join GPUModel on GPU.Графический_процессор = GPUModel_ID", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -195,11 +204,12 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.Номер ПК',Monitor.Инв_Номер as 'Инв.Номер Монитора', Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
-                "CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.Номер ПК',Monitor.Инв_Номер as 'Инв.Номер монитора', " +
+                "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
+                "CPU.Модельный_ряд as 'Название процессора',GPU.Код_производителя as 'Код производителя видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
                 " JOIN CPU on PC.CPU = CPU.CPU_ID" +
-                " JOIN GPU on PC.GPU = GPU.GPU_ID" +
+                " Join GPU on GPU_ID = PC.GPU" +
                 " JOIN RAM on PC.RAM = RAM.RAM_ID" +
                 " JOIN Storage_device on PC.Диск = SD_ID" +
                 " JOIN Monitor on PC.Монитор = Monitor_ID", sqlConnection);
@@ -589,7 +599,7 @@ namespace Accounting_for_refueling__printers
             NameActiveForm.NameForm = "Компьютеры";
             NameActiveForm.NameTable = "PC";
             NameActiveForm.NameIdTable = "PC_ID";
-       }
+        }
         private void btnBreaking_Click(object sender, EventArgs e)
         {
             if (activeForm != null)

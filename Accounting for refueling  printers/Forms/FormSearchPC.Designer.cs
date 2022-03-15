@@ -30,11 +30,12 @@ namespace Accounting_for_refueling__printers.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearchPC));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,66 +46,70 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pC1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetPC = new Accounting_for_refueling__printers.DatabaseDataSetPC();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.pC2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.pC3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.monitor1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetMonitor = new Accounting_for_refueling__printers.DatabaseDataSetMonitor();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.storagedevice1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetSD = new Accounting_for_refueling__printers.DatabaseDataSetSD();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.oCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetOC = new Accounting_for_refueling__printers.DatabaseDataSetOC();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetCPU = new Accounting_for_refueling__printers.DatabaseDataSetCPU();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.gPU2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetGPU = new Accounting_for_refueling__printers.DatabaseDataSetGPU();
+            this.gPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.rAM1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelTool = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.btnAddBreaking = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
-            this.rAM1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rAM1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetRAMTableAdapters.RAM1TableAdapter();
-            this.gPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPU2TableAdapter();
-            this.cPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU2TableAdapter();
-            this.oCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oCTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetOCTableAdapters.OCTableAdapter();
-            this.storagedevice1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.storage_device1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetSDTableAdapters.Storage_device1TableAdapter();
-            this.monitor1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.monitor1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetMonitorTableAdapters.Monitor1TableAdapter();
-            this.databaseDataSetPC = new Accounting_for_refueling__printers.DatabaseDataSetPC();
-            this.pC3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pC3TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetPCTableAdapters.PC3TableAdapter();
-            this.pC2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pC2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetPCTableAdapters.PC2TableAdapter();
-            this.pC1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pC1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetPCTableAdapters.PC1TableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnReturn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pC1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetPC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pC2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pC3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitor1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetMonitor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedevice1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetOC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPU2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAM1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelTool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAM1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cPU2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedevice1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monitor1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetPC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pC3BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pC2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pC1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -218,6 +223,16 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Size = new System.Drawing.Size(137, 27);
             this.comboBox1.TabIndex = 32;
             // 
+            // pC1BindingSource
+            // 
+            this.pC1BindingSource.DataMember = "PC1";
+            this.pC1BindingSource.DataSource = this.databaseDataSetPC;
+            // 
+            // databaseDataSetPC
+            // 
+            this.databaseDataSetPC.DataSetName = "DatabaseDataSetPC";
+            this.databaseDataSetPC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox2
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -229,6 +244,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(137, 27);
             this.comboBox2.TabIndex = 33;
+            // 
+            // pC2BindingSource
+            // 
+            this.pC2BindingSource.DataMember = "PC2";
+            this.pC2BindingSource.DataSource = this.databaseDataSetPC;
             // 
             // comboBox3
             // 
@@ -242,6 +262,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox3.Size = new System.Drawing.Size(137, 27);
             this.comboBox3.TabIndex = 34;
             // 
+            // pC3BindingSource
+            // 
+            this.pC3BindingSource.DataMember = "PC3";
+            this.pC3BindingSource.DataSource = this.databaseDataSetPC;
+            // 
             // comboBox4
             // 
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -253,6 +278,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(137, 27);
             this.comboBox4.TabIndex = 35;
+            // 
+            // monitor1BindingSource
+            // 
+            this.monitor1BindingSource.DataMember = "Monitor1";
+            this.monitor1BindingSource.DataSource = this.databaseDataSetMonitor;
             // 
             // databaseDataSetMonitor
             // 
@@ -271,6 +301,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox5.Size = new System.Drawing.Size(137, 27);
             this.comboBox5.TabIndex = 36;
             // 
+            // storagedevice1BindingSource
+            // 
+            this.storagedevice1BindingSource.DataMember = "Storage_device1";
+            this.storagedevice1BindingSource.DataSource = this.databaseDataSetSD;
+            // 
             // databaseDataSetSD
             // 
             this.databaseDataSetSD.DataSetName = "DatabaseDataSetSD";
@@ -287,6 +322,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(137, 27);
             this.comboBox6.TabIndex = 37;
+            // 
+            // oCBindingSource
+            // 
+            this.oCBindingSource.DataMember = "OC";
+            this.oCBindingSource.DataSource = this.databaseDataSetOC;
             // 
             // databaseDataSetOC
             // 
@@ -305,6 +345,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox7.Size = new System.Drawing.Size(137, 27);
             this.comboBox7.TabIndex = 38;
             // 
+            // cPU2BindingSource
+            // 
+            this.cPU2BindingSource.DataMember = "CPU2";
+            this.cPU2BindingSource.DataSource = this.databaseDataSetCPU;
+            // 
             // databaseDataSetCPU
             // 
             this.databaseDataSetCPU.DataSetName = "DatabaseDataSetCPU";
@@ -313,8 +358,8 @@ namespace Accounting_for_refueling__printers.Forms
             // comboBox8
             // 
             this.comboBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox8.DataSource = this.gPU2BindingSource;
-            this.comboBox8.DisplayMember = "Графический_процессор";
+            this.comboBox8.DataSource = this.gPU2BindingSource1;
+            this.comboBox8.DisplayMember = "Код_производителя";
             this.comboBox8.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(380, 290);
@@ -322,10 +367,20 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox8.Size = new System.Drawing.Size(137, 27);
             this.comboBox8.TabIndex = 39;
             // 
+            // gPU2BindingSource1
+            // 
+            this.gPU2BindingSource1.DataMember = "GPU2";
+            this.gPU2BindingSource1.DataSource = this.databaseDataSetGPU;
+            // 
             // databaseDataSetGPU
             // 
             this.databaseDataSetGPU.DataSetName = "DatabaseDataSetGPU";
             this.databaseDataSetGPU.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gPU2BindingSource
+            // 
+            this.gPU2BindingSource.DataMember = "GPU2";
+            this.gPU2BindingSource.DataSource = this.databaseDataSetGPU;
             // 
             // comboBox9
             // 
@@ -338,6 +393,16 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(137, 27);
             this.comboBox9.TabIndex = 40;
+            // 
+            // rAM1BindingSource
+            // 
+            this.rAM1BindingSource.DataMember = "RAM1";
+            this.rAM1BindingSource.DataSource = this.databaseDataSetRAM;
+            // 
+            // databaseDataSetRAM
+            // 
+            this.databaseDataSetRAM.DataSetName = "DatabaseDataSetRAM";
+            this.databaseDataSetRAM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSearch
             // 
@@ -381,8 +446,8 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.panelTool);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -390,78 +455,41 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2.TabIndex = 42;
             this.panel2.Visible = false;
             // 
-            // panel3
+            // panelTool
             // 
-            this.panel3.Controls.Add(this.btnAddBreaking);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 64);
-            this.panel3.TabIndex = 2;
+            this.panelTool.Controls.Add(this.btnReturn);
+            this.panelTool.Controls.Add(this.btnPrint);
+            this.panelTool.Controls.Add(this.btnAddBreaking);
+            this.panelTool.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTool.Location = new System.Drawing.Point(0, 0);
+            this.panelTool.Name = "panelTool";
+            this.panelTool.Size = new System.Drawing.Size(800, 64);
+            this.panelTool.TabIndex = 2;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(224, 16);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(127, 32);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Text = "Экспорт в Excel";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnAddBreaking
             // 
-            this.btnAddBreaking.Location = new System.Drawing.Point(12, 12);
+            this.btnAddBreaking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddBreaking.Location = new System.Drawing.Point(93, 16);
             this.btnAddBreaking.Name = "btnAddBreaking";
             this.btnAddBreaking.Size = new System.Drawing.Size(118, 32);
             this.btnAddBreaking.TabIndex = 0;
             this.btnAddBreaking.Text = "Добавить поломку";
             this.btnAddBreaking.UseVisualStyleBackColor = true;
             this.btnAddBreaking.Click += new System.EventHandler(this.btnAddBreaking_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle71;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle72.Font = new System.Drawing.Font("Roboto Bk", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle72.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle72;
-            this.dataGridView1.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle73.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle73.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle73;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 70);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle74.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle74.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle74.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle74;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 60;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle75;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 380);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel4
             // 
@@ -472,96 +500,106 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel4.TabIndex = 3;
             this.panel4.Visible = false;
             // 
-            // databaseDataSetRAM
-            // 
-            this.databaseDataSetRAM.DataSetName = "DatabaseDataSetRAM";
-            this.databaseDataSetRAM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rAM1BindingSource
-            // 
-            this.rAM1BindingSource.DataMember = "RAM1";
-            this.rAM1BindingSource.DataSource = this.databaseDataSetRAM;
-            // 
             // rAM1TableAdapter
             // 
             this.rAM1TableAdapter.ClearBeforeFill = true;
-            // 
-            // gPU2BindingSource
-            // 
-            this.gPU2BindingSource.DataMember = "GPU2";
-            this.gPU2BindingSource.DataSource = this.databaseDataSetGPU;
             // 
             // gPU2TableAdapter
             // 
             this.gPU2TableAdapter.ClearBeforeFill = true;
             // 
-            // cPU2BindingSource
-            // 
-            this.cPU2BindingSource.DataMember = "CPU2";
-            this.cPU2BindingSource.DataSource = this.databaseDataSetCPU;
-            // 
             // cPU2TableAdapter
             // 
             this.cPU2TableAdapter.ClearBeforeFill = true;
-            // 
-            // oCBindingSource
-            // 
-            this.oCBindingSource.DataMember = "OC";
-            this.oCBindingSource.DataSource = this.databaseDataSetOC;
             // 
             // oCTableAdapter
             // 
             this.oCTableAdapter.ClearBeforeFill = true;
             // 
-            // storagedevice1BindingSource
-            // 
-            this.storagedevice1BindingSource.DataMember = "Storage_device1";
-            this.storagedevice1BindingSource.DataSource = this.databaseDataSetSD;
-            // 
             // storage_device1TableAdapter
             // 
             this.storage_device1TableAdapter.ClearBeforeFill = true;
-            // 
-            // monitor1BindingSource
-            // 
-            this.monitor1BindingSource.DataMember = "Monitor1";
-            this.monitor1BindingSource.DataSource = this.databaseDataSetMonitor;
             // 
             // monitor1TableAdapter
             // 
             this.monitor1TableAdapter.ClearBeforeFill = true;
             // 
-            // databaseDataSetPC
-            // 
-            this.databaseDataSetPC.DataSetName = "DatabaseDataSetPC";
-            this.databaseDataSetPC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pC3BindingSource
-            // 
-            this.pC3BindingSource.DataMember = "PC3";
-            this.pC3BindingSource.DataSource = this.databaseDataSetPC;
-            // 
             // pC3TableAdapter
             // 
             this.pC3TableAdapter.ClearBeforeFill = true;
-            // 
-            // pC2BindingSource
-            // 
-            this.pC2BindingSource.DataMember = "PC2";
-            this.pC2BindingSource.DataSource = this.databaseDataSetPC;
             // 
             // pC2TableAdapter
             // 
             this.pC2TableAdapter.ClearBeforeFill = true;
             // 
-            // pC1BindingSource
-            // 
-            this.pC1BindingSource.DataMember = "PC1";
-            this.pC1BindingSource.DataSource = this.databaseDataSetPC;
-            // 
             // pC1TableAdapter
             // 
             this.pC1TableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto Bk", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 64);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 60;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 386);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Location = new System.Drawing.Point(12, 16);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 33);
+            this.btnReturn.TabIndex = 3;
+            this.btnReturn.Text = "Назад";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // FormSearchPC
             // 
@@ -574,27 +612,28 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormSearchPC";
             this.Text = "Поиск в компьютерах";
             this.Load += new System.EventHandler(this.FormSearchPC_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pC1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetPC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pC2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pC3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monitor1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetMonitor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storagedevice1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetOC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cPU2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAM1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panelTool.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rAM1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cPU2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oCBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storagedevice1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monitor1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetPC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pC3BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pC2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pC1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -631,8 +670,7 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSetMonitor databaseDataSetMonitor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelTool;
         private System.Windows.Forms.Button btnAddBreaking;
         private System.Windows.Forms.Panel panel4;
         private DatabaseDataSetRAM databaseDataSetRAM;
@@ -655,5 +693,9 @@ namespace Accounting_for_refueling__printers.Forms
         private DatabaseDataSetPCTableAdapters.PC2TableAdapter pC2TableAdapter;
         private System.Windows.Forms.BindingSource pC1BindingSource;
         private DatabaseDataSetPCTableAdapters.PC1TableAdapter pC1TableAdapter;
+        private System.Windows.Forms.BindingSource gPU2BindingSource1;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

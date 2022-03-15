@@ -20,6 +20,9 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormEdditGPU_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPUModel.GPUModel". При необходимости она может быть перемещена или удалена.
+            this.gPUModelTableAdapter.Fill(this.databaseDataSetGPUModel.GPUModel);
+
             LoadTheme();
             try
             {
@@ -38,7 +41,7 @@ namespace Accounting_for_refueling__printers.Forms
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
                 SqlCommand Edit1 = new SqlCommand($"Select Производитель from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
-                SqlCommand Edit2 = new SqlCommand($"Select Графический_процессор from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select Код_производителя from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
                 SqlCommand Edit3 = new SqlCommand($"Select Тип_памяти from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
                 SqlCommand Edit4 = new SqlCommand($"Select Шина_памяти from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
 
@@ -65,11 +68,14 @@ namespace Accounting_for_refueling__printers.Forms
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SqlCommand command = new SqlCommand($"Select GPU_ID from GPU where GPU_ID = {textBox1.Text}", sqlConnection);
+            
             if (textBox1.Text != "" && command.ExecuteScalar() != null)
             {
+SqlCommand command1 = new SqlCommand($"Select GPUMOdel_ID from GPUModel where Model = N'{comboBox1.Text}'", sqlConnection);
                 SqlCommand Update1 = new SqlCommand($"Update GPU SET " +
                     $"Производитель = N'{textBox2.Text}' ," +
-                    $"Графический_процессор =N'{textBox3.Text}'," +
+                    $"Код_производителя = N'{textBox3.Text}' ," +
+                    $"Графический_процессор ={command1.ExecuteScalar()}," +
                     $"Тип_памяти =N'{textBox4.Text}'," +
                     $"Шина_памяти = {textBox5.Text} " +
                     $"where GPU_ID = {textBox1.Text}", sqlConnection);
@@ -103,9 +109,12 @@ namespace Accounting_for_refueling__printers.Forms
             label3.ForeColor = ThemeColor.PrimaryColor;
             label4.ForeColor = ThemeColor.PrimaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
-         
+            label6.ForeColor = ThemeColor.PrimaryColor;
+
+
             textBox1.ForeColor = ThemeColor.PrimaryColor;
             textBox2.ForeColor = ThemeColor.PrimaryColor;
+            textBox3.ForeColor = ThemeColor.PrimaryColor;
             textBox3.ForeColor = ThemeColor.PrimaryColor;
             textBox4.ForeColor = ThemeColor.PrimaryColor;
             textBox5.ForeColor = ThemeColor.PrimaryColor;

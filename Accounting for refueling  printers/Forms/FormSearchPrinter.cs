@@ -93,13 +93,13 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                     if (comboBox1.Text != "")
                     {
-                        filter += $" Модель like '{comboBox1.Text}%' and ";
+                        filter += $" Printer.Модель like '{comboBox1.Text}%' and ";
 
                     }
 
                 if (comboBox2.Text != "")
                 {
-                    filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Модель = N'{comboBox2.Text}' and ";
+                    filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Модель = N'{comboBox2.Text}') and ";
 
                 }
                 if (comboBox3.Text != "")
@@ -113,7 +113,7 @@ namespace Accounting_for_refueling__printers.Forms
                                 }             
                                     if (textBox2.Text != "")
                                     {
-                                        filter += $" Операции like N'{textBox2.Text}%' and ";
+                                        filter += $" Операции like N'%{textBox2.Text}%' and ";
 
                                     }
                 filter += $" Дата = '{date.Year}.{date.Month}.{date.Day}' and ";
@@ -146,13 +146,13 @@ namespace Accounting_for_refueling__printers.Forms
                     }
                         if (comboBox1.Text != "")
                         {
-                            filter += $" Модель like '{comboBox1.Text}%' and ";
+                            filter += $" Printer.Модель like '{comboBox1.Text}%' and ";
 
                         }
 
                             if (comboBox2.Text != "")
                             {
-                                filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Модель = N'{comboBox2.Text}' and ";
+                                filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Cartridge.Модель = N'{comboBox2.Text}') and ";
 
                             }
                                 if (comboBox3.Text != "")
@@ -166,12 +166,12 @@ namespace Accounting_for_refueling__printers.Forms
                                     }
                                         if (textBox2.Text != "")
                                         {
-                                            filter += $" Операции like N'{textBox2.Text}%' and ";
+                                            filter += $" Операции like N'%{textBox2.Text}%' and ";
 
                                         }
 
                     filter = filter.Remove(filter.Length - 4);
-                  
+                
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
           " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
           " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
@@ -197,13 +197,13 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                     if (comboBox1.Text != "")
                     {
-                        filter += $" Модель like '{comboBox1.Text}%' and ";
+                        filter += $" Printer.Модель like '{comboBox1.Text}%' and ";
 
                     }
 
                 if (comboBox2.Text != "")
                 {
-                    filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Модель = N'{comboBox2.Text}' and ";
+                    filter += $" Картридж =  (Select Cartridge_ID  from Cartridge where Модель = N'{comboBox2.Text}') and ";
 
                 }
                 if (comboBox3.Text != "")
@@ -217,7 +217,7 @@ namespace Accounting_for_refueling__printers.Forms
                                 }
                                     if (textBox2.Text != "")
                                     {
-                                        filter += $" Операции like N'{textBox2.Text}%' and ";
+                                        filter += $" Операции like N'%{textBox2.Text}%' and ";
 
                                     }
                 filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
@@ -310,29 +310,8 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 worksheet.Cells[2, 8] = "Стоимость с НДС";
                 worksheet.Cells[2, 9] = "Б или В/Б";
-                //for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                //{
-                //    for (int j = 0; j < dataGridView1.Columns.Count; j++)
-                //    {
-                //        if (j == 0)
-                //        {
-                //            worksheet.Cells[i + 3, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
-                //        }
-                //        else if (j == 4)
-                //        {
-                //            continue;
-                //        }
-
-                //        else
-                //        {
-                //            worksheet.Cells[i + 3, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-                //        }
-
-
-                //    }
-
-                //}
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+              
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     for (int j = 1; j < dataGridView1.Columns.Count; j++)
                     {
@@ -358,7 +337,7 @@ namespace Accounting_for_refueling__printers.Forms
                 //Format export in Excel.
 
                 ((Range)worksheet.get_Range($"A1:I1")).Merge();
-                ((Range)worksheet.get_Range($"A1:I{dataGridView1.Rows.Count + 1}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:I{dataGridView1.Rows.Count+2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
                 ((Range)worksheet.get_Range($"A1:I2")).Cells.Font.FontStyle = "Bold";
                 worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 worksheet.Cells.Font.Name = "Arial";

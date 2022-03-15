@@ -270,7 +270,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "FormAddBreaking";
-            this.Text = "FormAddBreaking";
+            this.Text = "Добавление поломки";
             this.Load += new System.EventHandler(this.FormAddBreaking_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

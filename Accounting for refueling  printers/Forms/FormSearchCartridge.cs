@@ -63,14 +63,15 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $"Тип  = (Select CartrdigeType_ID from CartrdigeType where Type  = N'{comboBox3.Text}' )";
+                    filter += $"Тип  = (Select CartridgeType_ID from CartridgeType where Type  = N'{comboBox3.Text}') and ";
                 }
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select Cartridge_ID as ID, Производитель, Модель from Cartridge where {filter}", sqlConnection);
+                SqlCommand command = new SqlCommand($"Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,CartridgeType.Type as 'Тип картриджа' from Cartridge" +
+                $" Join CartridgeType  on Cartridge.Тип = CartridgeType.CartridgeType_ID where {filter}", sqlConnection);
                 if (command.ExecuteScalar()!=null)
                 {
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Cartridge.Cartridge_ID as 'Идентификатор', Cartridge.Производитель,Cartridge.Модель,CartridgeType.Type as 'Тип картриджа' from Cartridge" +
-             " Join CartridgeType  on Cartridge.Тип = CartridgeType.CartridgeType_ID", sqlConnection);
+                $" Join CartridgeType  on Cartridge.Тип = CartridgeType.CartridgeType_ID where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     sqlDataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

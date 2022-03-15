@@ -1317,7 +1317,6 @@ namespace Accounting_for_refueling__printers
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.Panel PanelPCSubMenu;
         private System.Windows.Forms.Button btnEditPC;
@@ -1370,6 +1369,7 @@ namespace Accounting_for_refueling__printers
         private System.Windows.Forms.Panel PanelBreakingSubMenu;
         private System.Windows.Forms.Button btnSearchBreaking;
         private System.Windows.Forms.Button btnBreaking;
+        public System.Windows.Forms.Button btnDelete;
     }
 }
 

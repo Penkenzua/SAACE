@@ -129,6 +129,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSetGPU.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseDataSetGPUModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSetGPUModel.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseDataSetMonitor.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -551,6 +556,17 @@
     </None>
     <None Include="DatabaseDataSetGPU.xss">
       <DependentUpon>DatabaseDataSetGPU.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetGPUModel.xsc">
+      <DependentUpon>DatabaseDataSetGPUModel.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSetGPUModel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSetGPUModel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSetGPUModel.xss">
+      <DependentUpon>DatabaseDataSetGPUModel.xsd</DependentUpon>
     </None>
     <None Include="DatabaseDataSetMonitor.xsc">
       <DependentUpon>DatabaseDataSetMonitor.xsd</DependentUpon>

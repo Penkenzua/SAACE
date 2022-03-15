@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Application = System.Windows.Forms.Application;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Accounting_for_refueling__printers.Forms
 {
     public partial class FormSearchPC : Form
     {
         public string filter;
-         private Form activeForm;
+#pragma warning disable CS0649 // Полю "FormSearchPC.activeForm" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null.
+        private Form activeForm;
+#pragma warning restore CS0649 // Полю "FormSearchPC.activeForm" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null.
 
         private SqlConnection sqlConnection = null;
         public FormSearchPC()
@@ -23,7 +24,7 @@ namespace Accounting_for_refueling__printers.Forms
 
         }
 
-     
+
         private void FormSearchPC_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPC.PC1". При необходимости она может быть перемещена или удалена.
@@ -46,10 +47,10 @@ namespace Accounting_for_refueling__printers.Forms
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM1". При необходимости она может быть перемещена или удалена.
             this.rAM1TableAdapter.Fill(this.databaseDataSetRAM.RAM1);
             LoadTheme();
-        
-            
-          
-           
+
+
+
+
 
             try
             {
@@ -80,11 +81,11 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Кабинет  = N'{comboBox1.Text}' and ";
+                    filter += $"Кабинет  like N'%{comboBox1.Text}%' and ";
                 }
                 if (comboBox2.Text != "")
                 {
-                    filter += $"ФИО_МОЛ like '{comboBox2.Text}%' and ";
+                    filter += $"PC.ФИО_МОЛ like N'%{comboBox2.Text}%' and ";
                 }
                 if (comboBox3.Text != "")
                 {
@@ -108,7 +109,7 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox8.Text != "")
                 {
-                    filter += $"GPU =(Select GPU_ID from GPU where Графический_процессор=N'{comboBox8.Text}') and ";
+                    filter += $"GPU =(Select GPU_ID from GPU where Код_производителя=N'{comboBox8.Text}') and ";
                 }
                 if (comboBox9.Text != "")
                 {
@@ -119,7 +120,7 @@ namespace Accounting_for_refueling__printers.Forms
                 filter = filter.Remove(filter.Length - 4);
                 SqlCommand command = new SqlCommand("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.Номер ПК',Monitor.Инв_Номер as 'Инв.Номер Монитора', " +
                 "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
-           $"CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC   " +
+           $"CPU.Модельный_ряд as 'Название процессора',GPU.Код_производителя as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC   " +
            " JOIN OC on PC.OC = OC.OC_ID" +
            " JOIN CPU on PC.CPU = CPU.CPU_ID" +
            " JOIN GPU on PC.GPU = GPU.GPU_ID" +
@@ -131,7 +132,7 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     SqlDataAdapter dataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.Номер ПК',Monitor.Инв_Номер as 'Инв.Номер Монитора', " +
                     "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
-               $"CPU.Модельный_ряд as 'Название процессора',GPU.Графический_процессор as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC   " +
+               $"CPU.Модельный_ряд as 'Название процессора',GPU.Код_производителя as 'Название видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC   " +
                " JOIN OC on PC.OC = OC.OC_ID" +
                " JOIN CPU on PC.CPU = CPU.CPU_ID" +
                " JOIN GPU on PC.GPU = GPU.GPU_ID" +
@@ -162,9 +163,9 @@ namespace Accounting_for_refueling__printers.Forms
         {
             foreach (Control btns in this.Controls)
             {
-                if (btns.GetType() == typeof(Button))
+                if (btns.GetType() == typeof(System.Windows.Forms.Button))
                 {
-                    Button btn = (Button)btns;
+                    System.Windows.Forms.Button btn = (System.Windows.Forms.Button)btns;
                     btn.BackColor = ThemeColor.PrimaryColor;
                     btn.ForeColor = Color.White;
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
@@ -191,6 +192,64 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox8.ForeColor = ThemeColor.PrimaryColor;
             comboBox9.ForeColor = ThemeColor.PrimaryColor;
 
+            //btnSearch
+            btnSearch.BackColor = ThemeColor.PrimaryColor;
+            btnSearch.ForeColor = Color.White;
+            btnSearch.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+            //btnReturn
+            btnReturn.BackColor = ThemeColor.PrimaryColor;
+            btnReturn.ForeColor = Color.White;
+            btnReturn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+            //btnAddBreaking
+            btnAddBreaking.BackColor = ThemeColor.PrimaryColor;
+            btnAddBreaking.ForeColor = Color.White;
+            btnAddBreaking.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+            //btnPrint
+            btnPrint.BackColor = ThemeColor.PrimaryColor;
+            btnPrint.ForeColor = Color.White;
+            btnPrint.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+            //Panel
+            panelTool.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, -0.3);
+
+        }
+
+       
+
+        private void btnAddBreaking_Click(object sender, EventArgs e)
+        {
+
+            if (TableBreakingAttributes.IndexCell >= 1)
+            {
+                FormMainMenu.SelfRef.OpenChildForm(new Forms.FormAddBreaking(), sender);
+                if (activeForm != null)
+                    activeForm.Close();
+ 
+
+
+            }
+            else
+            {
+                MessageBox.Show("Сначала выберите нужную запись, сделав по ней нажатие левой кнопкой мышки", "Предуприждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += ExportinExcel_DoWork;
+            worker.RunWorkerAsync();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            if (panel2.Visible)
+            {
+                panel2.Visible = false;
+                panel1.Visible = true;
+                filter = "";
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -204,22 +263,63 @@ namespace Accounting_for_refueling__printers.Forms
             {
             }
         }
-
-        private void btnAddBreaking_Click(object sender, EventArgs e)
+        private void ExportinExcel_DoWork(object sender, DoWorkEventArgs e)
         {
+            try
+            {
 
-            if (TableBreakingAttributes.IndexCell>=1)
-            {
-                FormMainMenu.SelfRef.OpenChildForm(new Forms.FormAddBreaking(), sender);
-                if (activeForm != null)
-                    activeForm.Close();
-                FormMainMenu.SelfRef.Reset();
+                DateTime now = DateTime.Now;
+                Excel.Application app = new Excel.Application();
+                Workbook workbook = app.Workbooks.Add(Type.Missing);
+                Worksheet worksheet = null;
+
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+                worksheet.Name = "Exported from gridview";
+                //Fill Excel.
+                worksheet.Cells[1, 1] = $"МЕСТО ДЛЯ ЗАПОЛНЕНИЕ ШАПКИ";
+
+                for (int i = 2; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[2, i - 1] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 1; j < dataGridView1.Columns.Count; j++)
+                    {
+
+                        if (j==3 && j ==4)
+                        {
+                            worksheet.Cells[i + 3, j].NumberFormat = "Текстовый";
+                        }
+                    worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                       
+                    }
+
+                }
+
+               //Format export in Excel.
+
+               ((Range)worksheet.get_Range($"A1:I1")).Merge();
+                ((Range)worksheet.get_Range($"A1:I{dataGridView1.Rows.Count + 2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:I2")).Cells.Font.FontStyle = "Bold";
+                
+                worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                worksheet.Cells.Font.Name = "Arial";
+                worksheet.Cells.Font.Size = 10;
+                worksheet.Columns.AutoFit();
+                app.Visible = true;
+
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Сначала выберите нужную запись, сделав по ней нажатие левой кнопкой мышки","Предуприждение",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
+
+
+                MessageBox.Show(ex.Message, "Ошибка экспорта данных Excel таблицу");
             }
-           
+
         }
     }
 }

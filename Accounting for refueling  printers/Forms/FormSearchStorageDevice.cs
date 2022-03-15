@@ -53,6 +53,7 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox2.Text = "";
             comboBox3.Text = "";
             comboBox4.Text = "";
+            comboBox5.Text = "";
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -61,32 +62,33 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Код_производителя like '{comboBox1.Text}%' and ";
+                    filter += $"Код_производителя like N'%{comboBox1.Text}%' and ";
                 }
                 if (comboBox2.Text != "")
                 {
-                    filter += $"Производитель like '{comboBox2.Text}%' and ";
+                    filter += $"Производитель like N'%{comboBox2.Text}%' and ";
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $"Тип like '{comboBox3.Text}%' and ";
+                    filter += $"Тип like N'%{comboBox3.Text}%' and ";
                 }
                 if (comboBox4.Text != "")
                 {
-                    filter += $"Форм_фактор like '{comboBox4.Text}%' and ";
+                    filter += $"Форм_фактор like N'%{comboBox4.Text}%' and ";
                 }
                 if (comboBox5.Text != "")
                 {
-                    filter += $"Интерфейс like '{comboBox5.Text}%' and ";
+                    filter += $"Интерфейс like N'%{comboBox5.Text}%' and ";
                 }
 
 
                 filter = filter.Remove(filter.Length - 4);
                 SqlCommand command = new SqlCommand($"Select SD_ID as 'Идентификатор',Storage_device.Код_производителя as 'Код производителя',Storage_device.Производитель,Storage_device.Тип," +
-                    $"Storage_device.Форм_фактор as 'Форм-фактор',Storage_device.Интерфейс, from Storage_device where {filter}", sqlConnection);
+                    $"Storage_device.Форм_фактор as 'Форм-фактор',Storage_device.Интерфейс from Storage_device where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select RAM_ID as 'Идентификатор', RAM.Название,RAM.Производитель,RAM.Тип,RAM.Объём from RAM where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select SD_ID as 'Идентификатор',Storage_device.Код_производителя as 'Код производителя',Storage_device.Производитель,Storage_device.Тип," +
+                    $"Storage_device.Форм_фактор as 'Форм-фактор',Storage_device.Интерфейс from Storage_device where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

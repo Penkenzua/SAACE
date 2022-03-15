@@ -115,10 +115,18 @@ namespace Accounting_for_refueling__printers.Forms
                 command.Parameters.AddWithValue("GPU", gpu);
                 command.Parameters.AddWithValue("RAM", ram);
                 command.Parameters.AddWithValue("Причина", textBox6.Text);
-                if (command.ExecuteNonQuery() == 1 && textBox6.Text!="")
+                if (textBox6.Text!="")
                 {
-                    MessageBox.Show("Вставка успешна завершена");
-                    FormMainMenu.SelfRef.UpdateBreaking();
+                    if (command.ExecuteNonQuery()==1)
+                    {
+                        MessageBox.Show("Вставка успешна завершена");
+                        FormMainMenu.SelfRef.UpdateBreaking();
+                    }
+                    else
+                    {
+                        command.Cancel();
+                    }
+                    
 
                 }
                 else
@@ -137,7 +145,7 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand Edit1 = new SqlCommand($"Select Инв_Номер                from Monitor         where Monitor_ID =  (Select Монитор from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
             SqlCommand Edit2 = new SqlCommand($"Select Код_производителя        from Storage_device  where SD_ID = (Select Диск from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
             SqlCommand Edit3 = new SqlCommand($"Select Модельный_ряд            from CPU             where CPU_ID = (Select CPU from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
-            SqlCommand Edit4 = new SqlCommand($"Select Графический_процессор    from GPU             where GPU_ID = (Select GPU from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
+            SqlCommand Edit4 = new SqlCommand($"Select Код_производителя    from GPU             where GPU_ID = (Select GPU from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
             SqlCommand Edit5 = new SqlCommand($"Select Код_производителя        from RAM             where RAM_ID = (Select RAM from PC where PC_ID = {TableBreakingAttributes.IndexCell})", sqlConnection);
             textBox1.Text = Edit1.ExecuteScalar().ToString();
             textBox2.Text = Edit2.ExecuteScalar().ToString();

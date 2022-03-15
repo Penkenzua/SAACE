@@ -68,7 +68,7 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand SD = new SqlCommand($"Select SD_ID from Storage_device where Код_производителя=N'{comboBox2.Text}'", sqlConnection);
             SqlCommand OC = new SqlCommand($"Select OC_ID from OC where Название=N'{comboBox3.Text}'", sqlConnection);
             SqlCommand CPU = new SqlCommand($"Select CPU_ID from CPU where Модельный_ряд =N'{comboBox4.Text}'", sqlConnection);
-            SqlCommand GPU = new SqlCommand($"Select GPU_ID from GPU where Графический_процессор=N'{comboBox5.Text}'", sqlConnection);
+            SqlCommand GPU = new SqlCommand($"Select GPU_ID from GPU where Код_производителя=N'{comboBox5.Text}'", sqlConnection);
             SqlCommand RAM = new SqlCommand($"Select RAM_ID from RAM where Код_производителя =N'{comboBox6.Text}'", sqlConnection);
 
 
@@ -136,7 +136,8 @@ namespace Accounting_for_refueling__printers.Forms
             label7.ForeColor = ThemeColor.PrimaryColor;
             label8.ForeColor = ThemeColor.PrimaryColor;
             label9.ForeColor = ThemeColor.PrimaryColor;
-            
+         
+
             textBox1.ForeColor = ThemeColor.PrimaryColor;
             textBox2.ForeColor = ThemeColor.PrimaryColor;
             textBox3.ForeColor = ThemeColor.PrimaryColor;
@@ -157,6 +158,11 @@ namespace Accounting_for_refueling__printers.Forms
                 textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
                 textBox3.SelectionStart = textBox3.TextLength;
             }
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

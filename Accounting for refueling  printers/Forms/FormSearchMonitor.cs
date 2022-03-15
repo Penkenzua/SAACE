@@ -58,26 +58,28 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 if (comboBox1.Text != "")
                 {
-                    filter += $"Инв_Номер like '{comboBox1.Text}%' and ";
+                    filter += $"Инв_Номер like N'%{comboBox1.Text}%' and ";
                 }
                 if (comboBox2.Text != "")
                 {
-                    filter += $"Производитель like '{comboBox2.Text}%' and ";
+                    filter += $"Производитель like N'%{comboBox2.Text}%' and ";
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $"Диагональ like '{comboBox3.Text = new Regex(@",").Replace(comboBox3.Text, ".")}%' and ";
+                    filter += $"Диагональ like N'%{comboBox3.Text = new Regex(@",").Replace(comboBox3.Text, ".")}%' and ";
                 }
                 if (comboBox4.Text != "")
                 {
-                    filter += $"Частота like '{comboBox4.Text}%' and ";
+                    filter += $"Частота like N'%{comboBox4.Text}%' and ";
                 }
 
                 filter = filter.Remove(filter.Length - 4);
-                SqlCommand command = new SqlCommand($"Select Monitor_ID as ID, Модель from Monitor where {filter}", sqlConnection);
+                SqlCommand command = new SqlCommand($"Select Monitor.Monitor_ID as 'Идентификатор', Monitor.Инв_Номер as 'Инв.Номер'," +
+                    $" Monitor.Производитель, Monitor.Диагональ, Monitor.Частота from Monitor where {filter}", sqlConnection);
                 if (command.ExecuteScalar() != null)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Monitor_ID as 'Идентификатор', Monitor.Инв_Номер,Monitor.Производитель,Monitor.Диагональ,Monitor.Частота from Monitor where {filter}", sqlConnection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select Monitor.Monitor_ID as 'Идентификатор', Monitor.Инв_Номер as 'Инв.Номер'," +
+                    $" Monitor.Производитель, Monitor.Диагональ, Monitor.Частота from Monitor where {filter}", sqlConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
                     dataGridView1.DataSource = dataSet.Tables[0];

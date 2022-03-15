@@ -22,6 +22,9 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormAddGPU_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPUModel.GPUModel". При необходимости она может быть перемещена или удалена.
+            this.gPUModelTableAdapter.Fill(this.databaseDataSetGPUModel.GPUModel);
+
             LoadTheme();
             try
             {
@@ -37,21 +40,48 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "")
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" )
             {
-                SqlCommand command = new SqlCommand("INSERT INTO [GPU] (Производитель,Графический_процессор,Тип_памяти,Шина_памяти) VALUES(@Производитель,@Графический_процессор,@Тип_памяти,@Шина_памяти)", sqlConnection);
-                command.Parameters.AddWithValue("Производитель", textBox1.Text);
-                command.Parameters.AddWithValue("Графический_процессор", textBox2.Text);
-                command.Parameters.AddWithValue("Тип_памяти", textBox3.Text);
-                command.Parameters.AddWithValue("Шина_памяти", textBox4.Text);
 
-                if (command.ExecuteNonQuery() == 1)
+
+                SqlCommand selectmodel = new SqlCommand($"Select Model from GPUModel where Model = N'{comboBox1.Text}'", sqlConnection);
+                if (selectmodel.ExecuteScalar() == null)
                 {
-                    MessageBox.Show("Вставка успешна завершена");
-                    FormMainMenu.SelfRef.UpdateGPU();
+                    SqlCommand gpumodel = new SqlCommand("INSERT INTO [GPUModel](Model)VALUES(@Model)", sqlConnection);
+                    gpumodel.Parameters.AddWithValue("Model", comboBox1.Text);
+                    gpumodel.ExecuteNonQuery();
+                    SqlCommand idgpumodel = new SqlCommand($"Select GPUModel_ID from GPUModel where Model = N'{comboBox1.Text}'", sqlConnection);
+                    SqlCommand command = new SqlCommand("INSERT INTO [GPU] (Производитель,Код_производителя,Графический_процессор,Тип_памяти,Шина_памяти) VALUES(@Производитель,@Код_производителя,@Графический_процессор,@Тип_памяти,@Шина_памяти)", sqlConnection);
+                    command.Parameters.AddWithValue("Производитель", textBox1.Text);
+                    command.Parameters.AddWithValue("Код_производителя", textBox2.Text);
+                    command.Parameters.AddWithValue("Графический_процессор", idgpumodel.ExecuteScalar());
+                    command.Parameters.AddWithValue("Тип_памяти", textBox3.Text);
+                    command.Parameters.AddWithValue("Шина_памяти", textBox4.Text);
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Вставка успешна завершена");
+                        FormMainMenu.SelfRef.UpdateGPU();
 
+                    }
                 }
+                else
+                {
+                    SqlCommand idgpumodel2 = new SqlCommand($"Select GPUModel_ID from GPUModel where Model = N'{comboBox1.Text}'", sqlConnection);
+                    SqlCommand command = new SqlCommand("INSERT INTO [GPU] (Производитель,Код_производителя,Графический_процессор,Тип_памяти,Шина_памяти) VALUES(@Производитель,@Код_производителя,@Графический_процессор,@Тип_памяти,@Шина_памяти)", sqlConnection);
+                    command.Parameters.AddWithValue("Производитель", textBox1.Text);
+                    command.Parameters.AddWithValue("Код_производителя", textBox2.Text);
+                    command.Parameters.AddWithValue("Графический_процессор",idgpumodel2.ExecuteScalar());
+                    command.Parameters.AddWithValue("Тип_памяти", textBox3.Text);
+                    command.Parameters.AddWithValue("Шина_памяти", textBox4.Text);
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Вставка успешна завершена");
+                        FormMainMenu.SelfRef.UpdateGPU();
+
+                    }
+                } 
             }
+
             else
             {
                 MessageBox.Show("Заполните все поля", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -73,7 +103,8 @@ namespace Accounting_for_refueling__printers.Forms
             label2.ForeColor = ThemeColor.PrimaryColor;
             label3.ForeColor = ThemeColor.PrimaryColor;
             label4.ForeColor = ThemeColor.PrimaryColor;
-        
+            label5.ForeColor = ThemeColor.PrimaryColor;
+
             textBox1.ForeColor = ThemeColor.PrimaryColor;
             textBox2.ForeColor = ThemeColor.PrimaryColor;
             textBox3.ForeColor = ThemeColor.PrimaryColor;

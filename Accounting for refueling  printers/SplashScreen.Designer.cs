@@ -53,9 +53,9 @@ namespace Accounting_for_refueling__printers
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(132, 201);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 33);
+            this.label1.Size = new System.Drawing.Size(332, 33);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Учёт комьютерной техники";
+            this.label1.Text = "Учёт компьютерной техники";
             // 
             // pictureBox1
             // 

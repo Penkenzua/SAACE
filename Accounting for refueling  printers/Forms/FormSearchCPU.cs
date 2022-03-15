@@ -84,7 +84,7 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox6.Text != "")
                 {
-                    filter += $"Частота like '{comboBox6.Text = new Regex(@",").Replace(comboBox6.Text, ".")}%' and ";
+                    filter += $"Частота = N'{comboBox6.Text = new Regex(@",").Replace(comboBox6.Text, ".")}' and ";
                 }
                 
 

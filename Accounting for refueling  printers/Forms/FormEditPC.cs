@@ -23,6 +23,18 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void FormEdditPC_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM1". При необходимости она может быть перемещена или удалена.
+            this.rAM1TableAdapter.Fill(this.databaseDataSetRAM.RAM1);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU2". При необходимости она может быть перемещена или удалена.
+            this.gPU2TableAdapter.Fill(this.databaseDataSetGPU.GPU2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU2". При необходимости она может быть перемещена или удалена.
+            this.cPU2TableAdapter.Fill(this.databaseDataSetCPU.CPU2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetOC.OC". При необходимости она может быть перемещена или удалена.
+            this.oCTableAdapter.Fill(this.databaseDataSetOC.OC);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device1". При необходимости она может быть перемещена или удалена.
+            this.storage_device1TableAdapter.Fill(this.databaseDataSetSD.Storage_device1);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetMonitor.Monitor1". При необходимости она может быть перемещена или удалена.
+            this.monitor1TableAdapter.Fill(this.databaseDataSetMonitor.Monitor1);
 
             LoadTheme();
 
@@ -58,12 +70,11 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand Edit1 = new SqlCommand($"Select Кабинет    from PC  where PC_ID = {textBox1.Text}", sqlConnection);
                 SqlCommand Edit2 = new SqlCommand($"Select ФИО_МОЛ    from PC  where PC_ID = {textBox1.Text}", sqlConnection);
                 SqlCommand Edit3 = new SqlCommand($"Select Инв_Номер  from PC  where PC_ID = {textBox1.Text}", sqlConnection);
-
                 SqlCommand Edit4 = new SqlCommand($"Select Инв_Номер                from Monitor         where Monitor_ID =  (Select Монитор  from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit5 = new SqlCommand($"Select Код_производителя        from Storage_device  where SD_ID = (Select Диск from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit6 = new SqlCommand($"Select Название                 from OC              where OC_ID = (Select OC from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit7 = new SqlCommand($"Select Модельный_ряд            from CPU             where CPU_ID = (Select CPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
-                SqlCommand Edit8 = new SqlCommand($"Select Графический_процессор    from GPU             where GPU_ID = (Select GPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
+                SqlCommand Edit8 = new SqlCommand($"Select Код_производителя        from GPU             where GPU_ID = (Select GPU from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 SqlCommand Edit9 = new SqlCommand($"Select Код_производителя        from RAM             where RAM_ID = (Select RAM from PC where PC_ID = {textBox1.Text})", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();

@@ -22,6 +22,7 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormSearchBreaking_Load(object sender, EventArgs e)
         {
+            LoadTheme();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM1". При необходимости она может быть перемещена или удалена.
             this.rAM1TableAdapter.Fill(this.databaseDataSetRAM.RAM1);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU2". При необходимости она может быть перемещена или удалена.
@@ -82,7 +83,7 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $" ФИО_МОЛ  like '{comboBox3.Text}%' and ";
+                    filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
                 }
                 if (comboBox4.Text != "")
                 {
@@ -116,7 +117,6 @@ namespace Accounting_for_refueling__printers.Forms
                 if (textBox1.Text != "")
                 {
                     filter += $"Причина like '{textBox1.Text}%' and ";
-
                 }
                 filter += $" Дата = '{date.Year}.{date.Month}.{date.Day}' and ";
                 filter = filter.Remove(filter.Length - 4);
@@ -141,7 +141,7 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $" ФИО_МОЛ  like '{comboBox3.Text}%' and ";
+                    filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
                 }
                 if (comboBox4.Text != "")
                 {
@@ -175,9 +175,8 @@ namespace Accounting_for_refueling__printers.Forms
                 if (textBox1.Text != "")
                 {
                     filter += $"Причина like '{textBox1.Text}%' and ";
-
                 }
-          
+
                 filter = filter.Remove(filter.Length - 4);
                 MessageBox.Show(filter);
 
@@ -203,7 +202,7 @@ namespace Accounting_for_refueling__printers.Forms
                 }
                 if (comboBox3.Text != "")
                 {
-                    filter += $" ФИО_МОЛ  like '{comboBox3.Text}%' and ";
+                    filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
                 }
                 if (comboBox4.Text != "")
                 {
@@ -237,7 +236,6 @@ namespace Accounting_for_refueling__printers.Forms
                 if (textBox1.Text != "")
                 {
                     filter += $"Причина like '{textBox1.Text}%' and ";
-
                 }
                 filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
                 filter = filter.Remove(filter.Length - 4);
@@ -262,6 +260,65 @@ namespace Accounting_for_refueling__printers.Forms
             {
                 checkBox1.Checked = false;
                 checkBox1.Enabled = true;
+            }
+        }
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
+            label5.ForeColor = ThemeColor.PrimaryColor;
+            label6.ForeColor = ThemeColor.PrimaryColor;
+            label7.ForeColor = ThemeColor.PrimaryColor;
+            label8.ForeColor = ThemeColor.PrimaryColor;
+            label9.ForeColor = ThemeColor.PrimaryColor;
+
+
+            comboBox1.ForeColor = ThemeColor.PrimaryColor;
+            comboBox2.ForeColor = ThemeColor.PrimaryColor;
+            comboBox3.ForeColor = ThemeColor.PrimaryColor;
+            comboBox4.ForeColor = ThemeColor.PrimaryColor;
+            comboBox5.ForeColor = ThemeColor.PrimaryColor;
+            comboBox6.ForeColor = ThemeColor.PrimaryColor;
+            comboBox7.ForeColor = ThemeColor.PrimaryColor;
+            comboBox8.ForeColor = ThemeColor.PrimaryColor;
+            comboBox9.ForeColor = ThemeColor.PrimaryColor;
+
+            //btnSearch
+            btnSearch.BackColor = ThemeColor.PrimaryColor;
+            btnSearch.ForeColor = Color.White;
+            btnSearch.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+            //btnReturn
+            btnReturn.BackColor = ThemeColor.PrimaryColor;
+            btnReturn.ForeColor = Color.White;
+            btnReturn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+            //btnPrint
+            btnPrint.BackColor = ThemeColor.PrimaryColor;
+            btnPrint.ForeColor = Color.White;
+            btnPrint.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+            //Panel
+            panelTool.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, -0.3);
+
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            if (PanelSelects.Visible)
+            {
+                PanelSelects.Visible = false;
+                PanelDatagrid.Visible = true;
+                filter = "";
             }
         }
     }
