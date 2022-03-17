@@ -162,7 +162,7 @@ namespace Accounting_for_refueling__printers
 
         public void UpdatePrinter()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
             " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
             " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID", sqlConnection);
             DataSet dataSet = new DataSet();

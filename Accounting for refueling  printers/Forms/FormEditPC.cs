@@ -109,7 +109,7 @@ namespace Accounting_for_refueling__printers.Forms
             if (textBox1.Text != "" && command.ExecuteScalar() != null && SD.ExecuteScalar()!=null && Monitor.ExecuteScalar()!=null && OC.ExecuteScalar()!= null && CPU.ExecuteScalar()!= null&& GPU.ExecuteScalar()!= null&& RAM.ExecuteScalar()!= null)
             {
                 SqlCommand Update1 = new SqlCommand($"Update PC SET " +
-                    $"Кабинет = N'{textBox2.Text}'," +
+                    $"Кабинет = {textBox2.Text}," +
                     $"ФИО_МОЛ = N'{textBox3.Text}', " +
                     $"Инв_Номер = {textBox4.Text}," +
                     $"Монитор = {Monitor.ExecuteScalar()}," +
