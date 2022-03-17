@@ -31,17 +31,17 @@ namespace Accounting_for_refueling__printers.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetAcccount = new Accounting_for_refueling__printers.DatabaseDataSetAcccount();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.databaseDataSetAcccount = new Accounting_for_refueling__printers.DatabaseDataSetAcccount();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accountTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetAcccountTableAdapters.AccountTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetAcccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetAcccount)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -55,6 +55,16 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Size = new System.Drawing.Size(121, 27);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.TextUpdate += new System.EventHandler(this.comboBox1_TextUpdate);
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataMember = "Account";
+            this.accountBindingSource.DataSource = this.databaseDataSetAcccount;
+            // 
+            // databaseDataSetAcccount
+            // 
+            this.databaseDataSetAcccount.DataSetName = "DatabaseDataSetAcccount";
+            this.databaseDataSetAcccount.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -114,16 +124,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // databaseDataSetAcccount
-            // 
-            this.databaseDataSetAcccount.DataSetName = "DatabaseDataSetAcccount";
-            this.databaseDataSetAcccount.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataMember = "Account";
-            this.accountBindingSource.DataSource = this.databaseDataSetAcccount;
-            // 
             // accountTableAdapter
             // 
             this.accountTableAdapter.ClearBeforeFill = true;
@@ -141,10 +141,10 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Name = "FormEditAccount";
-            this.Text = "FromEditAccount";
+            this.Text = "Изменение данных в Аккаунтах";
             this.Load += new System.EventHandler(this.FormEditAccount_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetAcccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetAcccount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

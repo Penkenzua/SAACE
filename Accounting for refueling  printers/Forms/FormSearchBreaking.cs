@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Application = System.Windows.Forms.Application;
+using Button = System.Windows.Forms.Button;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Accounting_for_refueling__printers.Forms
 {
@@ -321,5 +325,81 @@ namespace Accounting_for_refueling__printers.Forms
                 filter = "";
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += ExportinExcel_DoWork;
+            worker.RunWorkerAsync();
+        }
+        private void ExportinExcel_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+
+                DateTime now = DateTime.Now;
+                Excel.Application app = new Excel.Application();
+                Workbook workbook = app.Workbooks.Add(Type.Missing);
+                Worksheet worksheet = null;
+
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+                worksheet.Name = "Exported from gridview";
+                //Fill Excel.
+                worksheet.Cells[1, 1] = $"Учёт поломок за {now.ToString("Y").ToUpper()}";
+
+                for (int i = 2; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[2, i - 1] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+              
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 1; j < dataGridView1.Columns.Count; j++)
+                    {
+
+
+                        if (j == 1)
+                        {
+                            worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
+
+                        }
+                        else
+                        {
+                            worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        }
+
+
+
+
+                    }
+
+                }
+
+                //Format export in Excel.
+
+
+                ((Range)worksheet.get_Range($"A1:I1")).Merge();
+                ((Range)worksheet.get_Range($"A1:I{dataGridView1.Rows.Count + 2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:I2")).Cells.Font.FontStyle = "Bold";
+                worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                worksheet.Cells.Font.Name = "Arial";
+                worksheet.Cells.Font.Size = 10;
+                worksheet.Columns.AutoFit();
+                app.Visible = true;
+
+            }
+            catch (Exception ex)
+            {
+
+
+
+                MessageBox.Show(ex.Message, "Ошибка экспорта данных Excel таблицу");
+            }
+
+        }
+
     }
 }

@@ -110,6 +110,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.DataSource = this.cartridgeTypeBindingSource;
             this.comboBox1.DisplayMember = "Type";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

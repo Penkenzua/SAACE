@@ -40,11 +40,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.databaseDataSetCartridgeType = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeType();
             this.cartridgeTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetCartridgeType = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeType();
             this.cartridgeTypeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTypeTableAdapters.CartridgeTypeTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridgeType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartridgeTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridgeType)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -146,6 +146,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.DataSource = this.cartridgeTypeBindingSource;
             this.comboBox1.DisplayMember = "Type";
             this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -155,15 +156,15 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.Size = new System.Drawing.Size(100, 27);
             this.comboBox1.TabIndex = 10;
             // 
-            // databaseDataSetCartridgeType
-            // 
-            this.databaseDataSetCartridgeType.DataSetName = "DatabaseDataSetCartridgeType";
-            this.databaseDataSetCartridgeType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cartridgeTypeBindingSource
             // 
             this.cartridgeTypeBindingSource.DataMember = "CartridgeType";
             this.cartridgeTypeBindingSource.DataSource = this.databaseDataSetCartridgeType;
+            // 
+            // databaseDataSetCartridgeType
+            // 
+            this.databaseDataSetCartridgeType.DataSetName = "DatabaseDataSetCartridgeType";
+            this.databaseDataSetCartridgeType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cartridgeTypeTableAdapter
             // 
@@ -187,8 +188,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.Name = "FormEditCartridge";
             this.Text = "Изменения данных в картриджах";
             this.Load += new System.EventHandler(this.FormEdditCatridge_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridgeType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartridgeTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridgeType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

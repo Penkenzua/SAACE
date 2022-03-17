@@ -49,10 +49,10 @@ namespace Accounting_for_refueling__printers.Forms
             this.cartridgeTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetCartridgeType = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeType();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cartridge1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTableAdapters.Cartridge1TableAdapter();
             this.cartridge2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTableAdapters.Cartridge2TableAdapter();
             this.cartridgeTypeTableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCartridgeTypeTableAdapters.CartridgeTypeTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.cartridge1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCartridge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartridge2BindingSource)).BeginInit();
@@ -83,7 +83,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(352, 139);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 27);
+            this.comboBox1.Size = new System.Drawing.Size(145, 27);
             this.comboBox1.TabIndex = 1;
             // 
             // cartridge1BindingSource
@@ -101,9 +101,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSearch.Location = new System.Drawing.Point(325, 256);
+            this.btnSearch.Location = new System.Drawing.Point(352, 256);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(172, 50);
+            this.btnSearch.Size = new System.Drawing.Size(145, 50);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Поиск";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(352, 172);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 27);
+            this.comboBox2.Size = new System.Drawing.Size(145, 27);
             this.comboBox2.TabIndex = 4;
             // 
             // cartridge2BindingSource
@@ -172,7 +172,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(352, 205);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 27);
+            this.comboBox3.Size = new System.Drawing.Size(145, 27);
             this.comboBox3.TabIndex = 6;
             // 
             // cartridgeTypeBindingSource
@@ -194,18 +194,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2.Size = new System.Drawing.Size(800, 450);
             this.panel2.TabIndex = 6;
             this.panel2.Visible = false;
-            // 
-            // cartridge1TableAdapter
-            // 
-            this.cartridge1TableAdapter.ClearBeforeFill = true;
-            // 
-            // cartridge2TableAdapter
-            // 
-            this.cartridge2TableAdapter.ClearBeforeFill = true;
-            // 
-            // cartridgeTypeTableAdapter
-            // 
-            this.cartridgeTypeTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridView1
             // 
@@ -259,6 +247,18 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // cartridge1TableAdapter
+            // 
+            this.cartridge1TableAdapter.ClearBeforeFill = true;
+            // 
+            // cartridge2TableAdapter
+            // 
+            this.cartridge2TableAdapter.ClearBeforeFill = true;
+            // 
+            // cartridgeTypeTableAdapter
+            // 
+            this.cartridgeTypeTableAdapter.ClearBeforeFill = true;
             // 
             // FormSearchCartridge
             // 

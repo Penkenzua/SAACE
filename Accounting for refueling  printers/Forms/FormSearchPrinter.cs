@@ -55,31 +55,12 @@ namespace Accounting_for_refueling__printers.Forms
             worker.DoWork += ExportinExcel_DoWork;
             worker.RunWorkerAsync();
 
-
-            SqlCommand Update1 = new SqlCommand($"Update Printer " +
-             $"SET Состояние  = N'Выписано'" +
-             $" where {filter}", sqlConnection);
-
-            if (Update1.ExecuteNonQuery() >= 1)
-            {
-                FormMainMenu.SelfRef.UpdatePrinter();
-
-
-            }
-            else
-            {
-                MessageBox.Show("Произошла ошибка обновления бд");
-                Update1.Cancel();
-
-            }
-        
-           
-
         }
         
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+           
             filter = "";
             if (checkBox1.Checked && !checkBox2.Checked)
             {
@@ -106,11 +87,7 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
                 }
-                if (comboBox4.Text != "")
-                                {
-                                    filter += $" Состояние like N'{comboBox4.Text}%' and ";
-
-                                }             
+                      
                                     if (textBox2.Text != "")
                                     {
                                         filter += $" Операции like N'%{textBox2.Text}%' and ";
@@ -121,7 +98,7 @@ namespace Accounting_for_refueling__printers.Forms
 
                 filter = filter.Remove(filter.Length - 4);
 
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
           " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
           " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
           $" where {filter}", sqlConnection);
@@ -159,11 +136,7 @@ namespace Accounting_for_refueling__printers.Forms
                                 {
                                  filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
                                 }
-                                    if (comboBox4.Text != "")
-                                    {
-                                        filter += $" Состояние like N'{comboBox4.Text}%' and ";
-
-                                    }
+                                   
                                         if (textBox2.Text != "")
                                         {
                                             filter += $" Операции like N'%{textBox2.Text}%' and ";
@@ -172,7 +145,7 @@ namespace Accounting_for_refueling__printers.Forms
 
                     filter = filter.Remove(filter.Length - 4);
                 
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
           " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
           " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
           $" where {filter}", sqlConnection);
@@ -210,11 +183,7 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     filter += $" Тип_картриджа  = (Select CartridgeType_ID  from CartridgeType where Type = N'{comboBox3.Text}') and ";
                 }
-                if (comboBox4.Text != "")
-                                {
-                                    filter += $" Состояние like N'{comboBox4.Text}%' and ";
-
-                                }
+                
                                     if (textBox2.Text != "")
                                     {
                                         filter += $" Операции like N'%{textBox2.Text}%' and ";
@@ -222,7 +191,7 @@ namespace Accounting_for_refueling__printers.Forms
                                     }
                 filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
                 filter = filter.Remove(filter.Length - 4);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции,Printer.Состояние From Printer " +
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
             " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
             " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
             $" where {filter}", sqlConnection);
@@ -243,7 +212,7 @@ namespace Accounting_for_refueling__printers.Forms
             label7.ForeColor = ThemeColor.PrimaryColor;
             label8.ForeColor = ThemeColor.PrimaryColor;
 
-            label6.ForeColor = ThemeColor.PrimaryColor;
+
             textBox1.ForeColor = ThemeColor.PrimaryColor;
             textBox2.ForeColor = ThemeColor.PrimaryColor;
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
@@ -308,8 +277,8 @@ namespace Accounting_for_refueling__printers.Forms
                 {
                     worksheet.Cells[2, i-1] = dataGridView1.Columns[i - 1].HeaderText;
                 }
-                worksheet.Cells[2, 8] = "Стоимость с НДС";
-                worksheet.Cells[2, 9] = "Б или В/Б";
+                worksheet.Cells[2, 7] = "Стоимость с НДС";
+                worksheet.Cells[2, 8] = "Б или В/Б";
               
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {

@@ -47,7 +47,7 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand SelectID = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge.Модель = N'{comboBox2.Text}'",sqlConnection);
                 SqlCommand SelectTypeCartridge = new SqlCommand($"Select Cartridge.Тип from Cartridge where Cartridge_ID = {SelectID.ExecuteScalar()}",sqlConnection);
                 DateTime date = DateTime.Parse(dateTimePicker1.Text);
-                SqlCommand command = new SqlCommand($"INSERT INTO [PRINTER](Дата,Кабинет,Модель,Картридж,Тип_картриджа,Операции,Состояние) Values(@Дата,@Кабинет,@Модель,@Картридж,@Тип_картриджа,@Операции,N'Не выписанно')", sqlConnection);
+                SqlCommand command = new SqlCommand($"INSERT INTO [PRINTER](Дата,Кабинет,Модель,Картридж,Тип_картриджа,Операции) Values(@Дата,@Кабинет,@Модель,@Картридж,@Тип_картриджа,@Операции)", sqlConnection);
                 command.Parameters.AddWithValue("Дата",$"{date.Month}/{date.Day}/{date.Year}");
                 command.Parameters.AddWithValue("Кабинет",textBox1.Text);
                 command.Parameters.AddWithValue("Модель", comboBox1.Text);

@@ -102,7 +102,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAddAccount";
-            this.Text = "FormAddAccount";
+            this.Text = "Добавить аккаунт";
             this.Load += new System.EventHandler(this.FormAddAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

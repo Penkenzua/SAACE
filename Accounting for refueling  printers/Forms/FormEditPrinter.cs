@@ -56,8 +56,7 @@ namespace Accounting_for_refueling__printers.Forms
                     $"Модель = N'{comboBox1.Text}', " +
                     $"Картридж = {SelectID.ExecuteScalar()}," +
                     $"Тип_картриджа = {SelectTypeCartridge.ExecuteScalar()}, " +
-                    $"Операции = N'{textBox3.Text}', " +
-                    $"Состояние = N'{comboBox3.Text}' " +
+                    $"Операции = N'{textBox3.Text}' " +
                     $"where Printer_ID = {textBox1.Text}", sqlConnection);
                 if (Update1.ExecuteNonQuery() == 1)
                 {
@@ -80,13 +79,13 @@ namespace Accounting_for_refueling__printers.Forms
                 SqlCommand Edit2 = new SqlCommand($"Select Операции from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
                 SqlCommand Edit3 = new SqlCommand($"Select Модель from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
                 SqlCommand Edit4 = new SqlCommand($"Select Модель from Cartridge where (Select Картридж from Printer where Printer_ID = {textBox1.Text})", sqlConnection);
-                SqlCommand Edit5 = new SqlCommand($"Select Состояние from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
+                
                 SqlCommand Edit6 = new SqlCommand($"Select Дата from Printer where Printer_ID ={textBox1.Text}", sqlConnection);
                 textBox2.Text = Edit1.ExecuteScalar().ToString();
                 textBox3.Text = Edit2.ExecuteScalar().ToString();
                 comboBox1.Text = Edit3.ExecuteScalar().ToString();
                 comboBox2.Text= Edit4.ExecuteScalar().ToString();
-                comboBox3.Text = Edit5.ExecuteScalar().ToString();
+          
                 DateTime date = DateTime.Parse(Edit6.ExecuteScalar().ToString());
                 int x = Convert.ToInt32(date.Year);
                 int y = Convert.ToInt32(date.Month);
@@ -101,7 +100,7 @@ namespace Accounting_for_refueling__printers.Forms
                 textBox3.Text = "";
                 comboBox1.Text = "";
                 comboBox2.Text = "";
-                comboBox3.Text = "";
+
             }
         }
         void LoadTheme()
@@ -121,14 +120,14 @@ namespace Accounting_for_refueling__printers.Forms
             label3.ForeColor = ThemeColor.PrimaryColor;
             label4.ForeColor = ThemeColor.PrimaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
-            label6.ForeColor = ThemeColor.PrimaryColor;
+   
             label7.ForeColor = ThemeColor.PrimaryColor;
             textBox1.ForeColor = ThemeColor.PrimaryColor;
             textBox2.ForeColor = ThemeColor.PrimaryColor;
             textBox3.ForeColor = ThemeColor.PrimaryColor;
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
             comboBox2.ForeColor = ThemeColor.PrimaryColor;
-            comboBox3.ForeColor = ThemeColor.PrimaryColor;
+
         }
     }
 }
