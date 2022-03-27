@@ -73,7 +73,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(220, 80);
+            this.label2.Location = new System.Drawing.Point(237, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 19);
             this.label2.TabIndex = 11;
@@ -83,11 +83,11 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(220, 106);
+            this.label3.Location = new System.Drawing.Point(157, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 19);
+            this.label3.Size = new System.Drawing.Size(141, 19);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Монитор";
+            this.label3.Text = "Инв.номер монитор";
             // 
             // label4
             // 
@@ -95,45 +95,45 @@ namespace Accounting_for_refueling__printers.Forms
             this.label4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(100, 135);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 19);
+            this.label4.Size = new System.Drawing.Size(195, 19);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Накоптиельное устройство";
+            this.label4.Text = "Накоптиельное устройство:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(220, 168);
+            this.label6.Location = new System.Drawing.Point(204, 168);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 19);
+            this.label6.Size = new System.Drawing.Size(84, 19);
             this.label6.TabIndex = 15;
-            this.label6.Text = "CPU";
+            this.label6.Text = "Процессор:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(220, 201);
+            this.label7.Location = new System.Drawing.Point(195, 201);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 19);
+            this.label7.Size = new System.Drawing.Size(93, 19);
             this.label7.TabIndex = 16;
-            this.label7.Text = "GPU";
+            this.label7.Text = "Видеокарта:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(220, 234);
+            this.label8.Location = new System.Drawing.Point(134, 234);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 19);
+            this.label8.Size = new System.Drawing.Size(154, 19);
             this.label8.TabIndex = 17;
-            this.label8.Text = "RAM";
+            this.label8.Text = "Оперативная память:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(217, 272);
+            this.label9.Location = new System.Drawing.Point(217, 269);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 19);
             this.label9.TabIndex = 18;

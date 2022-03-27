@@ -111,9 +111,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.label1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(241, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
+            this.label1.Size = new System.Drawing.Size(84, 19);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Инв.Номер:";
+            this.label1.Text = "Инв.номер:";
             // 
             // textBox1
             // 

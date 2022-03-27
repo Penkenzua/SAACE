@@ -98,7 +98,7 @@ namespace Accounting_for_refueling__printers.Forms
 
                 filter = filter.Remove(filter.Length - 4);
 
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
           " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
           " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
           $" where {filter}", sqlConnection);
@@ -145,7 +145,7 @@ namespace Accounting_for_refueling__printers.Forms
 
                     filter = filter.Remove(filter.Length - 4);
                 
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
           " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
           " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
           $" where {filter}", sqlConnection);
@@ -191,7 +191,7 @@ namespace Accounting_for_refueling__printers.Forms
                                     }
                 filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
                 filter = filter.Remove(filter.Length - 4);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Дата,Printer.Кабинет,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Printer.Printer_ID as Идентификатор,Printer.Кабинет,Printer.Дата,Printer.Модель as 'Модель принтера',Cartridge.Модель as 'Модель картриджа',CartridgeType.Type as 'Тип картриджа',Printer.Операции From Printer " +
             " Join Cartridge on Printer.Картридж = Cartridge.Cartridge_ID " +
             " Join CartridgeType on Printer.Тип_картриджа = CartridgeType.CartridgeType_ID " +
             $" where {filter}", sqlConnection);
@@ -217,6 +217,7 @@ namespace Accounting_for_refueling__printers.Forms
             textBox2.ForeColor = ThemeColor.PrimaryColor;
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
             comboBox2.ForeColor = ThemeColor.PrimaryColor;
+            comboBox3.ForeColor = ThemeColor.PrimaryColor;
             //btnSearch
             btnSearch.BackColor = ThemeColor.PrimaryColor;
             btnSearch.ForeColor = Color.White;
@@ -271,7 +272,7 @@ namespace Accounting_for_refueling__printers.Forms
                 worksheet = workbook.ActiveSheet;
                 worksheet.Name = "Exported from gridview";
                 //Fill Excel.
-                worksheet.Cells[1, 1] = $"Учёт принтеров за {now.ToString("Y").ToUpper()}";
+                worksheet.Cells[1, 1] = $"Учёт принтеров";
 
                 for (int i = 2; i < dataGridView1.Columns.Count + 1; i++)
                 {
@@ -286,7 +287,7 @@ namespace Accounting_for_refueling__printers.Forms
                     {
 
 
-                        if (j==1)
+                        if (j==2)
                         {
                          worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
 
@@ -305,9 +306,9 @@ namespace Accounting_for_refueling__printers.Forms
 
                 //Format export in Excel.
 
-                ((Range)worksheet.get_Range($"A1:I1")).Merge();
-                ((Range)worksheet.get_Range($"A1:I{dataGridView1.Rows.Count+2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
-                ((Range)worksheet.get_Range($"A1:I2")).Cells.Font.FontStyle = "Bold";
+                ((Range)worksheet.get_Range($"A1:H1")).Merge();
+                ((Range)worksheet.get_Range($"A1:H{dataGridView1.Rows.Count+2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:H2")).Cells.Font.FontStyle = "Bold";
                 worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 worksheet.Cells.Font.Name = "Arial";
                 worksheet.Cells.Font.Size = 10;

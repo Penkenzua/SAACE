@@ -1,10 +1,16 @@
-﻿using System;
+﻿
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
+using Application = System.Windows.Forms.Application;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
+using Button = System.Windows.Forms.Button;
+using Font = System.Drawing.Font;
+using System.ComponentModel;
 
 namespace Accounting_for_refueling__printers
 {
@@ -17,7 +23,7 @@ namespace Accounting_for_refueling__printers
         private Button curentButton;
         private Random random;
         private int tempIndex;
-        private Form activeForm;
+        public Form activeForm;
         public int Cell;
         //Constructor
         public FormMainMenu()
@@ -26,7 +32,7 @@ namespace Accounting_for_refueling__printers
 
 
             InitializeComponent();
-
+            dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             if (AcessRight.Acess == 0)
             {
                 AcessUser();
@@ -49,7 +55,7 @@ namespace Accounting_for_refueling__printers
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         //Metods
-        void customizeDesign()
+        private void customizeDesign()
         {
             PanelCPUSubMenu.Visible = false;
             PanelGPUSubMenu.Visible = false;
@@ -66,7 +72,7 @@ namespace Accounting_for_refueling__printers
 
         }
         //Hide Sub Menu when click on another Sub Menu.
-        void hideSubMenu()
+        public void hideSubMenu()
         {
             if (PanelPrinterSubMenu.Visible == true)
             {
@@ -158,6 +164,7 @@ namespace Accounting_for_refueling__printers
                 btnCloseChildForm.Visible = false;
                 panelAccountSubMenu.Visible = false;
             }
+          
         }
 
         public void UpdatePrinter()
@@ -204,7 +211,7 @@ namespace Accounting_for_refueling__printers
         public void UpdatePC()
 
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.Номер ПК',Monitor.Инв_Номер as 'Инв.Номер монитора', " +
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select PC.PC_ID as Идентификатор,PC.Кабинет,PC.ФИО_МОЛ as 'ФИО материально ответственного лица',PC.Инв_Номер as 'Инв.номер ПК',Monitor.Инв_Номер as 'Инв.номер монитора', " +
                 "Storage_device.Код_производителя as 'Код производителя накопительного устройство', OC.Название As 'Операционная система'," +
                 "CPU.Модельный_ряд as 'Название процессора',GPU.Код_производителя as 'Код производителя видеокарты',RAM.Код_производителя as 'Код производителя оперативной памяти' from PC " +
                 " JOIN OC on PC.OC = OC.OC_ID" +
@@ -219,7 +226,7 @@ namespace Accounting_for_refueling__printers
         }
         public void UpdateMonitor()
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Monitor.Monitor_ID as 'Идентификатор', Monitor.Инв_Номер as 'Инв.Номер', Monitor.Производитель, Monitor.Диагональ, Monitor.Частота from Monitor", sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Monitor.Monitor_ID as 'Идентификатор', Monitor.Инв_Номер as 'Инв.номер', Monitor.Производитель, Monitor.Диагональ, Monitor.Частота from Monitor", sqlConnection);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet);
             dataGridView1.DataSource = dataSet.Tables[0];
@@ -407,7 +414,7 @@ namespace Accounting_for_refueling__printers
                     previousBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
                 }
             }
-            //Aacounts
+            //Accounts
             foreach (Control previousBtn in panelAccountSubMenu.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
@@ -433,6 +440,7 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormAddPrinter(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
+            btnPrint.Visible = false;
 
         }
         private void btnSearch_Click(object sender, EventArgs e)
@@ -440,6 +448,7 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormSearchPrinter(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
+             btnPrint.Visible = false;
 
         }
         private void btnEddit_Click(object sender, EventArgs e)
@@ -447,6 +456,7 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormEditPrinter(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
+             btnPrint.Visible = false;
 
         }
         private void btnCloseChildForm_Click(object sender, EventArgs e)
@@ -548,7 +558,7 @@ namespace Accounting_for_refueling__printers
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите безвозвратно удалить этоту запись? ", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите безвозвратно удалить эту запись? ", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.OK)
             {
                 if (Cell >= 0)
@@ -557,20 +567,26 @@ namespace Accounting_for_refueling__printers
                     Delete.ExecuteNonQuery();
                     NameActiveForm.Update(NameActiveForm.NameTable);
                 }
+                else
+                {
+                    MessageBox.Show("Выберите запись перед удалением", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
-            {
-                MessageBox.Show("Выберите запись перед удалением", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+           
+            
+                
+           
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("\"Учёт компьютерной техники\" v1.0\nРазработал: Балабанов Артём Андреевич\nE-mail: artem.balabanov.2017@gmail.com", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("\"Автоматизированный учёт компьютерной техники\" v1.0\nРазработал: Балабанов Артём Андреевич\nE-mail: artem.balabanov.2018@gmail.com", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnPrinters_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = true;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -587,7 +603,8 @@ namespace Accounting_for_refueling__printers
 
         private void btnPC_Click(object sender, EventArgs e)
         {
-
+            btnPrint.Visible = true;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -602,6 +619,8 @@ namespace Accounting_for_refueling__printers
         }
         private void btnBreaking_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = true;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -610,14 +629,15 @@ namespace Accounting_for_refueling__printers
             dataGridView1.Visible = true;
             UpdateBreaking();
             lblTittle.Text = "Поломки";
-            NameActiveForm.NameTable = "Поломки";
-            NameActiveForm.NameForm = "Breaking";
+            NameActiveForm.NameForm = "Поломки";
+            NameActiveForm.NameTable = "Breaking";
             NameActiveForm.NameIdTable = "Breaking_ID";
         }
 
         private void btnOC_Click(object sender, EventArgs e)
         {
-
+            btnPrint.Visible = false;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -635,6 +655,8 @@ namespace Accounting_for_refueling__printers
         }
         private void btnCatridge_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = false;
+             DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -651,6 +673,8 @@ namespace Accounting_for_refueling__printers
         }
         private void btnCPU_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = false;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -668,6 +692,8 @@ namespace Accounting_for_refueling__printers
 
         private void btnGPU_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = false;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -686,6 +712,8 @@ namespace Accounting_for_refueling__printers
 
         private void btnRAM_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = false;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -703,6 +731,8 @@ namespace Accounting_for_refueling__printers
         }
         private void btnMonitor_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = false;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -720,6 +750,8 @@ namespace Accounting_for_refueling__printers
 
         private void btnStorageDevice_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = false;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -736,6 +768,8 @@ namespace Accounting_for_refueling__printers
         }
         private void btnControlAccount_Click(object sender, EventArgs e)
         {
+            btnPrint.Visible = false;
+            DisableButton();
             if (activeForm != null)
                 activeForm.Close();
             btnCloseChildForm.Visible = false;
@@ -757,6 +791,7 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormAddPC(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
+             btnPrint.Visible = false;
         }
 
         private void btnSearchPC_Click(object sender, EventArgs e)
@@ -764,6 +799,7 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormSearchPC(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
+             btnPrint.Visible = false;
         }
 
         private void btnEdditPC_Click(object sender, EventArgs e)
@@ -771,7 +807,7 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormEditPC(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
-
+             btnPrint.Visible = false;
         }
 
         private void btnAddOC_Click(object sender, EventArgs e)
@@ -886,6 +922,7 @@ namespace Accounting_for_refueling__printers
             Reset();
             dataGridView1.Visible = false;
             btnDelete.Visible = false;
+            btnPrint.Visible = false;
             lblTittle.Text = "Домашняя страница";
         }
 
@@ -960,8 +997,224 @@ namespace Accounting_for_refueling__printers
             OpenChildForm(new Forms.FormSearchBreaking(), sender);
             btnCloseChildForm.Visible = true;
             btnDelete.Visible = false;
+             btnPrint.Visible = false;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+           
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+        
+            if (PanelPrinterSubMenu.Visible)
+            {
+                worker.DoWork += ExportinExcel_DoWorkPrinter;
+                worker.RunWorkerAsync();
+            }
+            else if (PanelBreakingSubMenu.Visible)
+            {
+                worker.DoWork += ExportinExcel_DoWorkBreaking;
+                worker.RunWorkerAsync();
+            }
+            else if (PanelPCSubMenu.Visible)
+            {
+                worker.DoWork += ExportinExcel_DoWorkPC;
+                worker.RunWorkerAsync();
+            }
+        }
+        private void ExportinExcel_DoWorkPrinter(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+
+                DateTime now = DateTime.Now;
+                Excel.Application app = new Excel.Application();
+                Workbook workbook = app.Workbooks.Add(Type.Missing);
+                Worksheet worksheet = null;
+
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+                worksheet.Name = "Exported from gridview";
+                //Fill Excel.
+                worksheet.Cells[1, 1] = $"Учёт принтеров";
+
+                for (int i = 2; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[2, i - 1] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+                worksheet.Cells[2, 7] = "Стоимость с НДС";
+                worksheet.Cells[2, 8] = "Б или В/Б";
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 1; j < dataGridView1.Columns.Count; j++)
+                    {
+
+
+                        if (j == 1)
+                        {
+                            worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
+
+                        }
+                        else
+                        {
+                            worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        }
+
+
+
+
+                    }
+
+                }
+
+                //Format export in Excel.
+
+                ((Range)worksheet.get_Range($"A1:H1")).Merge();
+                ((Range)worksheet.get_Range($"A1:H{dataGridView1.Rows.Count + 2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:H2")).Cells.Font.FontStyle = "Bold";
+                worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                worksheet.Cells.Font.Name = "Arial";
+                worksheet.Cells.Font.Size = 10;
+                worksheet.Columns.AutoFit();
+                app.Visible = true;
+
+        }
+            catch (Exception ex)
+            {
+
+
+
+                MessageBox.Show(ex.Message, "Ошибка экспорта данных Excel таблицу");
+            }
+
+        }
+        private void ExportinExcel_DoWorkBreaking(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+
+                DateTime now = DateTime.Now;
+                Excel.Application app = new Excel.Application();
+                Workbook workbook = app.Workbooks.Add(Type.Missing);
+                Worksheet worksheet = null;
+
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+                worksheet.Name = "Exported from gridview";
+                //Fill Excel.
+                worksheet.Cells[1, 1] = $"Учёт поломок комплектующих";
+
+                for (int i = 2; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[2, i - 1] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 1; j < dataGridView1.Columns.Count; j++)
+                    {
+
+
+                        if (j == 2)
+                        {
+                            worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
+
+                        }
+                        else
+                        {
+                            worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        }
+
+
+
+
+                    }
+
+                }
+
+                //Format export in Excel.
+
+                ((Range)worksheet.get_Range($"A1:J1")).Merge();
+                ((Range)worksheet.get_Range($"A1:J{dataGridView1.Rows.Count + 2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:J2")).Cells.Font.FontStyle = "Bold";
+                worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                worksheet.Cells.Font.Name = "Arial";
+                worksheet.Cells.Font.Size = 10;
+                worksheet.Columns.AutoFit();
+                app.Visible = true;
+
+            }
+            catch (Exception ex)
+            {
+
+
+
+                MessageBox.Show(ex.Message, "Ошибка экспорта данных Excel таблицу");
+            }
+
+        }
+        private void ExportinExcel_DoWorkPC(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+
+                DateTime now = DateTime.Now;
+                Excel.Application app = new Excel.Application();
+                Workbook workbook = app.Workbooks.Add(Type.Missing);
+                Worksheet worksheet = null;
+
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+                worksheet.Name = "Exported from gridview";
+                //Fill Excel.
+                worksheet.Cells[1, 1] = $"Учёт компьютеров";
+
+                for (int i = 2; i < dataGridView1.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[2, i - 1] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 1; j < dataGridView1.Columns.Count; j++)
+                    {
+
+                        if (j == 3 && j == 4)
+                        {
+                            worksheet.Cells[i + 3, j].NumberFormat = "Текстовый";
+                        }
+                        worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+
+                    }
+
+                }
+
+               //Format export in Excel.
+
+               ((Range)worksheet.get_Range($"A1:I1")).Merge();
+                ((Range)worksheet.get_Range($"A1:I{dataGridView1.Rows.Count + 2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:I2")).Cells.Font.FontStyle = "Bold";
+
+                worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                worksheet.Cells.Font.Name = "Arial";
+                worksheet.Cells.Font.Size = 10;
+                worksheet.Columns.AutoFit();
+                app.Visible = true;
+
+            }
+            catch (Exception ex)
+            {
+
+
+
+                MessageBox.Show(ex.Message, "Ошибка экспорта данных Excel таблицу");
+            }
+
         }
     }
+
 
 
 }

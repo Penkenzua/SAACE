@@ -30,11 +30,11 @@ namespace Accounting_for_refueling__printers.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearchBreaking));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.breaking1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,8 +57,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.cPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetCPU = new Accounting_for_refueling__printers.DatabaseDataSetCPU();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.gPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetGPU = new Accounting_for_refueling__printers.DatabaseDataSetGPU();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.rAM1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -92,8 +90,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.monitor1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetMonitorTableAdapters.Monitor1TableAdapter();
             this.storage_device1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetSDTableAdapters.Storage_device1TableAdapter();
             this.cPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU2TableAdapter();
-            this.gPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPU2TableAdapter();
             this.rAM1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetRAMTableAdapters.RAM1TableAdapter();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.databaseDataSetGPUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPU2TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.breaking1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBreaking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pC1BindingSource)).BeginInit();
@@ -106,7 +107,6 @@ namespace Accounting_for_refueling__printers.Forms
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPU2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAM1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
@@ -114,6 +114,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.PanelDatagrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelTool.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -123,7 +125,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox1.DisplayMember = "PC_ID";
             this.comboBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(319, 43);
+            this.comboBox1.Location = new System.Drawing.Point(349, 49);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 27);
             this.comboBox1.TabIndex = 0;
@@ -143,7 +145,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePicker1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(319, 76);
+            this.dateTimePicker1.Location = new System.Drawing.Point(349, 82);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
             this.dateTimePicker1.TabIndex = 1;
@@ -153,7 +155,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePicker2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(319, 108);
+            this.dateTimePicker2.Location = new System.Drawing.Point(349, 114);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 27);
             this.dateTimePicker2.TabIndex = 2;
@@ -165,7 +167,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox2.DisplayMember = "Кабинет";
             this.comboBox2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(319, 141);
+            this.comboBox2.Location = new System.Drawing.Point(349, 147);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(200, 27);
             this.comboBox2.TabIndex = 3;
@@ -187,7 +189,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox3.DisplayMember = "ФИО_МОЛ";
             this.comboBox3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(319, 173);
+            this.comboBox3.Location = new System.Drawing.Point(349, 179);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(200, 27);
             this.comboBox3.TabIndex = 4;
@@ -204,7 +206,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox4.DisplayMember = "Инв_Номер";
             this.comboBox4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(319, 206);
+            this.comboBox4.Location = new System.Drawing.Point(349, 212);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(200, 27);
             this.comboBox4.TabIndex = 5;
@@ -221,7 +223,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox5.DisplayMember = "Инв_Номер";
             this.comboBox5.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(319, 239);
+            this.comboBox5.Location = new System.Drawing.Point(349, 245);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(200, 27);
             this.comboBox5.TabIndex = 6;
@@ -243,7 +245,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox6.DisplayMember = "Код_производителя";
             this.comboBox6.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(319, 272);
+            this.comboBox6.Location = new System.Drawing.Point(349, 278);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(200, 27);
             this.comboBox6.TabIndex = 7;
@@ -265,7 +267,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox7.DisplayMember = "Модельный_ряд";
             this.comboBox7.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(319, 305);
+            this.comboBox7.Location = new System.Drawing.Point(349, 311);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(200, 27);
             this.comboBox7.TabIndex = 8;
@@ -280,23 +282,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.databaseDataSetCPU.DataSetName = "DatabaseDataSetCPU";
             this.databaseDataSetCPU.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // comboBox8
-            // 
-            this.comboBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox8.DataSource = this.gPU2BindingSource;
-            this.comboBox8.DisplayMember = "Графический_процессор";
-            this.comboBox8.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(319, 338);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(200, 27);
-            this.comboBox8.TabIndex = 9;
-            // 
-            // gPU2BindingSource
-            // 
-            this.gPU2BindingSource.DataMember = "GPU2";
-            this.gPU2BindingSource.DataSource = this.databaseDataSetGPU;
-            // 
             // databaseDataSetGPU
             // 
             this.databaseDataSetGPU.DataSetName = "DatabaseDataSetGPU";
@@ -309,7 +294,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox9.DisplayMember = "Код_производителя";
             this.comboBox9.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(319, 371);
+            this.comboBox9.Location = new System.Drawing.Point(349, 377);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(200, 27);
             this.comboBox9.TabIndex = 10;
@@ -328,7 +313,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(319, 404);
+            this.textBox1.Location = new System.Drawing.Point(349, 410);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 27);
             this.textBox1.TabIndex = 12;
@@ -338,7 +323,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(173, 46);
+            this.label1.Location = new System.Drawing.Point(203, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 19);
             this.label1.TabIndex = 13;
@@ -349,7 +334,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(131, 82);
+            this.label2.Location = new System.Drawing.Point(161, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 19);
             this.label2.TabIndex = 14;
@@ -360,7 +345,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(141, 114);
+            this.label3.Location = new System.Drawing.Point(171, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 19);
             this.label3.TabIndex = 14;
@@ -371,7 +356,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(249, 144);
+            this.label4.Location = new System.Drawing.Point(279, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 19);
             this.label4.TabIndex = 14;
@@ -382,7 +367,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(36, 176);
+            this.label5.Location = new System.Drawing.Point(66, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(277, 19);
             this.label5.TabIndex = 14;
@@ -393,7 +378,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(208, 214);
+            this.label6.Location = new System.Drawing.Point(238, 220);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 19);
             this.label6.TabIndex = 14;
@@ -404,7 +389,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(162, 247);
+            this.label7.Location = new System.Drawing.Point(192, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(151, 19);
             this.label7.TabIndex = 14;
@@ -415,7 +400,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(129, 275);
+            this.label8.Location = new System.Drawing.Point(159, 281);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(176, 19);
             this.label8.TabIndex = 14;
@@ -426,7 +411,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(225, 308);
+            this.label9.Location = new System.Drawing.Point(255, 314);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 19);
             this.label9.TabIndex = 14;
@@ -437,7 +422,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(216, 346);
+            this.label10.Location = new System.Drawing.Point(246, 352);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 19);
             this.label10.TabIndex = 14;
@@ -448,7 +433,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(163, 379);
+            this.label11.Location = new System.Drawing.Point(193, 385);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(150, 19);
             this.label11.TabIndex = 14;
@@ -459,7 +444,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(184, 407);
+            this.label12.Location = new System.Drawing.Point(214, 413);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(129, 19);
             this.label12.TabIndex = 14;
@@ -467,6 +452,7 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             // PanelSelects
             // 
+            this.PanelSelects.Controls.Add(this.comboBox8);
             this.PanelSelects.Controls.Add(this.checkBox2);
             this.PanelSelects.Controls.Add(this.checkBox1);
             this.PanelSelects.Controls.Add(this.btnSearch);
@@ -491,7 +477,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.PanelSelects.Controls.Add(this.comboBox5);
             this.PanelSelects.Controls.Add(this.comboBox6);
             this.PanelSelects.Controls.Add(this.comboBox7);
-            this.PanelSelects.Controls.Add(this.comboBox8);
             this.PanelSelects.Controls.Add(this.comboBox9);
             this.PanelSelects.Controls.Add(this.textBox1);
             this.PanelSelects.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -505,7 +490,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.checkBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.Location = new System.Drawing.Point(525, 114);
+            this.checkBox2.Location = new System.Drawing.Point(555, 120);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(128, 23);
             this.checkBox2.TabIndex = 16;
@@ -518,7 +503,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(525, 82);
+            this.checkBox1.Location = new System.Drawing.Point(555, 88);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(127, 23);
             this.checkBox1.TabIndex = 16;
@@ -530,7 +515,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSearch.Location = new System.Drawing.Point(319, 437);
+            this.btnSearch.Location = new System.Drawing.Point(349, 443);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(200, 45);
             this.btnSearch.TabIndex = 15;
@@ -553,30 +538,30 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto Bk", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Roboto Bk", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridView1.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle43;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
@@ -585,19 +570,18 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 60;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle45;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(852, 481);
             this.dataGridView1.TabIndex = 1;
@@ -665,13 +649,35 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.cPU2TableAdapter.ClearBeforeFill = true;
             // 
-            // gPU2TableAdapter
-            // 
-            this.gPU2TableAdapter.ClearBeforeFill = true;
-            // 
             // rAM1TableAdapter
             // 
             this.rAM1TableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox8.DataSource = this.gPU2BindingSource;
+            this.comboBox8.DisplayMember = "Код_производителя";
+            this.comboBox8.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(349, 344);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(200, 27);
+            this.comboBox8.TabIndex = 17;
+            // 
+            // databaseDataSetGPUBindingSource
+            // 
+            this.databaseDataSetGPUBindingSource.DataSource = this.databaseDataSetGPU;
+            this.databaseDataSetGPUBindingSource.Position = 0;
+            // 
+            // gPU2BindingSource
+            // 
+            this.gPU2BindingSource.DataMember = "GPU2";
+            this.gPU2BindingSource.DataSource = this.databaseDataSetGPUBindingSource;
+            // 
+            // gPU2TableAdapter
+            // 
+            this.gPU2TableAdapter.ClearBeforeFill = true;
             // 
             // FormSearchBreaking
             // 
@@ -695,7 +701,6 @@ namespace Accounting_for_refueling__printers.Forms
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetSD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPU2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAM1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
@@ -704,6 +709,8 @@ namespace Accounting_for_refueling__printers.Forms
             this.PanelDatagrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelTool.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -719,7 +726,6 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
@@ -760,13 +766,15 @@ namespace Accounting_for_refueling__printers.Forms
         private System.Windows.Forms.BindingSource cPU2BindingSource;
         private DatabaseDataSetCPUTableAdapters.CPU2TableAdapter cPU2TableAdapter;
         private DatabaseDataSetGPU databaseDataSetGPU;
-        private System.Windows.Forms.BindingSource gPU2BindingSource;
-        private DatabaseDataSetGPUTableAdapters.GPU2TableAdapter gPU2TableAdapter;
         private DatabaseDataSetRAM databaseDataSetRAM;
         private System.Windows.Forms.BindingSource rAM1BindingSource;
         private DatabaseDataSetRAMTableAdapters.RAM1TableAdapter rAM1TableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.BindingSource databaseDataSetGPUBindingSource;
+        private System.Windows.Forms.BindingSource gPU2BindingSource;
+        private DatabaseDataSetGPUTableAdapters.GPU2TableAdapter gPU2TableAdapter;
     }
 }

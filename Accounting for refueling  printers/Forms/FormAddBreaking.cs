@@ -94,51 +94,72 @@ namespace Accounting_for_refueling__printers.Forms
 
 
             DateTime date = DateTime.Parse(dateTimePicker1.Text);
-            try
+            if (checkBox1.Checked || checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked)
             {
 
 
-                SqlCommand SelectRoom = new SqlCommand($"Select Кабинет from PC where PC_ID = {TableBreakingAttributes.IndexCell}", sqlConnection);
-                SqlCommand FIO = new SqlCommand($"Select ФИО_МОЛ from PC where PC_ID = {TableBreakingAttributes.IndexCell} ", sqlConnection);
-                SqlCommand InventNumber = new SqlCommand($"Select Инв_Номер from PC where PC_ID = {TableBreakingAttributes.IndexCell}  ", sqlConnection);
-
-
-                SqlCommand command = new SqlCommand("INSERT INTO [BREAKING](PC_ID,Дата,Кабинет,ФИО_МОЛ,Инв_Номер,Монитор,Диск,CPU,GPU,RAM,Причина) Values (@PC_ID,@Дата,@Кабинет,@ФИО_МОЛ,@Инв_Номер,@Монитор,@Диск,@CPU,@GPU,@RAM,@Причина)", sqlConnection);
-                command.Parameters.AddWithValue("PC_ID", TableBreakingAttributes.IndexCell);
-                command.Parameters.AddWithValue("Дата", $"{date.Month}/{date.Day}/{date.Year}");
-                command.Parameters.AddWithValue("Кабинет", SelectRoom.ExecuteScalar().ToString());
-                command.Parameters.AddWithValue("ФИО_МОЛ", FIO.ExecuteScalar().ToString());
-                command.Parameters.AddWithValue("Инв_Номер", InventNumber.ExecuteScalar().ToString());
-                command.Parameters.AddWithValue("Монитор", monitor);
-                command.Parameters.AddWithValue("Диск", sd);
-                command.Parameters.AddWithValue("CPU", cpu);
-                command.Parameters.AddWithValue("GPU", gpu);
-                command.Parameters.AddWithValue("RAM", ram);
-                command.Parameters.AddWithValue("Причина", textBox6.Text);
-                if (textBox6.Text!="")
+                try
                 {
-                    if (command.ExecuteNonQuery()==1)
+
+
+                    SqlCommand SelectRoom = new SqlCommand($"Select Кабинет from PC where PC_ID = {TableBreakingAttributes.IndexCell}", sqlConnection);
+                    SqlCommand FIO = new SqlCommand($"Select ФИО_МОЛ from PC where PC_ID = {TableBreakingAttributes.IndexCell} ", sqlConnection);
+                    SqlCommand InventNumber = new SqlCommand($"Select Инв_Номер from PC where PC_ID = {TableBreakingAttributes.IndexCell}  ", sqlConnection);
+
+
+                    SqlCommand command = new SqlCommand("INSERT INTO [BREAKING](PC_ID,Дата,Кабинет,ФИО_МОЛ,Инв_Номер,Монитор,Диск,CPU,GPU,RAM,Причина) Values (@PC_ID,@Дата,@Кабинет,@ФИО_МОЛ,@Инв_Номер,@Монитор,@Диск,@CPU,@GPU,@RAM,@Причина)", sqlConnection);
+                    command.Parameters.AddWithValue("PC_ID", TableBreakingAttributes.IndexCell);
+                    command.Parameters.AddWithValue("Дата", $"{date.Month}/{date.Day}/{date.Year}");
+                    command.Parameters.AddWithValue("Кабинет", SelectRoom.ExecuteScalar().ToString());
+                    command.Parameters.AddWithValue("ФИО_МОЛ", FIO.ExecuteScalar().ToString());
+                    command.Parameters.AddWithValue("Инв_Номер", InventNumber.ExecuteScalar().ToString());
+                    command.Parameters.AddWithValue("Монитор", monitor);
+                    command.Parameters.AddWithValue("Диск", sd);
+                    command.Parameters.AddWithValue("CPU", cpu);
+                    command.Parameters.AddWithValue("GPU", gpu);
+                    command.Parameters.AddWithValue("RAM", ram);
+                    command.Parameters.AddWithValue("Причина", textBox6.Text);
+                    if (textBox6.Text != "")
                     {
-                        MessageBox.Show("Вставка успешна завершена");
-                        FormMainMenu.SelfRef.UpdateBreaking();
+                        if (command.ExecuteNonQuery() == 1)
+                        {
+                            MessageBox.Show("Вставка успешна завершена");
+                            FormMainMenu.SelfRef.UpdateBreaking();
+                            if (FormMainMenu.SelfRef.activeForm != null)
+                                FormMainMenu.SelfRef.activeForm.Close();
+                            FormMainMenu.SelfRef.hideSubMenu();
+                            FormMainMenu.SelfRef.PanelBreakingSubMenu.Visible = true;
+                            NameActiveForm.NameForm = "Поломки";
+
+                            FormMainMenu.SelfRef.Reset();
+                         
+
+
+                        }
+                        else
+                        {
+                            command.Cancel();
+                        }
+
+
                     }
                     else
                     {
-                        command.Cancel();
+                        MessageBox.Show("Заполните поле \"Причина\"", "Предуприждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    
+                }
+                catch
+                {
+                      
 
                 }
-                else
+                
+            }
+            else
                 {
-                    MessageBox.Show("Заполните все поля","Предуприждение",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Выберите хотябы одну поломку", "Предуприждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
-            }
-            catch
-            {
-            
-            }
-            
         }
         private void SelectAcess()
         {

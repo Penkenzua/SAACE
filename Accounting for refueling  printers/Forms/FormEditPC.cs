@@ -142,9 +142,10 @@ namespace Accounting_for_refueling__printers.Forms
             }
             else
             {
-                MessageBox.Show("Таких данных нету в бд");  
+                MessageBox.Show("Такой записи нет или не введён идентификатор", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
             }
-          
+
         }
         void LoadTheme()
         {

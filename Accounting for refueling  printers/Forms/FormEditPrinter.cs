@@ -35,9 +35,9 @@ namespace Accounting_for_refueling__printers.Forms
 
 
             LoadTheme();
+
+
             
-
-
 
 
         }
@@ -48,26 +48,44 @@ namespace Accounting_for_refueling__printers.Forms
             SqlCommand command = new SqlCommand($"Select Printer_ID from Printer where Printer_ID = {textBox1.Text}", sqlConnection);
             SqlCommand SelectID = new SqlCommand($"Select Cartridge_ID from Cartridge where Cartridge.Модель = N'{comboBox2.Text}'", sqlConnection);
             SqlCommand SelectTypeCartridge = new SqlCommand($"Select Cartridge.Тип from Cartridge where Cartridge_ID = {SelectID.ExecuteScalar()}", sqlConnection);
-            if (textBox1.Text != "" && command.ExecuteScalar() != null)
+            if (textBox1.Text != "" && command.ExecuteScalar() != null )
             {
-                SqlCommand Update1 = new SqlCommand($"Update Printer SET " +
-                    $"Дата = '{date.Month}/{date.Day}/{date.Year}'," +
-                    $"Кабинет = N'{textBox2.Text}'," +
-                    $"Модель = N'{comboBox1.Text}', " +
-                    $"Картридж = {SelectID.ExecuteScalar()}," +
-                    $"Тип_картриджа = {SelectTypeCartridge.ExecuteScalar()}, " +
-                    $"Операции = N'{textBox3.Text}' " +
-                    $"where Printer_ID = {textBox1.Text}", sqlConnection);
-                if (Update1.ExecuteNonQuery() == 1)
+                if (textBox2.Text != "" && textBox3.Text != "")
                 {
-                    MessageBox.Show("Вставка успешно выполнена");
-                    FormMainMenu.SelfRef.UpdatePrinter();
+
+
+                    SqlCommand Update1 = new SqlCommand($"Update Printer SET " +
+                        $"Дата = '{date.Month}/{date.Day}/{date.Year}'," +
+                        $"Кабинет = N'{textBox2.Text}'," +
+                        $"Модель = N'{comboBox1.Text}', " +
+                        $"Картридж = {SelectID.ExecuteScalar()}," +
+                        $"Тип_картриджа = {SelectTypeCartridge.ExecuteScalar()}, " +
+                        $"Операции = N'{textBox3.Text}' " +
+                        $"where Printer_ID = {textBox1.Text}", sqlConnection);
+                    if (Update1.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Вставка успешно выполнена");
+                        FormMainMenu.SelfRef.UpdatePrinter();
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        textBox3.Text = "";
+                      
+                    }
+                    else
+                    {
+                        MessageBox.Show("Введены неверные данные или неверный формат");
+                        Update1.Cancel();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Введены неверные данные или неверный формат");
-                    Update1.Cancel();
+               MessageBox.Show("Заполните все поля","Предупреждение",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+
                 }
+            }
+            else
+            {
+               MessageBox.Show("Такой записи нет или не введён идентификатор","Предупреждение",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
             }
         }
         private void button1_Click(object sender, EventArgs e)

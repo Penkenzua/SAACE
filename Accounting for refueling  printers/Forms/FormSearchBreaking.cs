@@ -26,12 +26,14 @@ namespace Accounting_for_refueling__printers.Forms
         }
         private void FormSearchBreaking_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU2". При необходимости она может быть перемещена или удалена.
+            this.gPU2TableAdapter.Fill(this.databaseDataSetGPU.GPU2);
+
             LoadTheme();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetRAM.RAM1". При необходимости она может быть перемещена или удалена.
             this.rAM1TableAdapter.Fill(this.databaseDataSetRAM.RAM1);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetGPU.GPU2". При необходимости она может быть перемещена или удалена.
-            this.gPU2TableAdapter.Fill(this.databaseDataSetGPU.GPU2);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetCPU.CPU2". При необходимости она может быть перемещена или удалена.
+            
             this.cPU2TableAdapter.Fill(this.databaseDataSetCPU.CPU2);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetSD.Storage_device1". При необходимости она может быть перемещена или удалена.
             this.storage_device1TableAdapter.Fill(this.databaseDataSetSD.Storage_device1);
@@ -39,14 +41,14 @@ namespace Accounting_for_refueling__printers.Forms
             this.monitor1TableAdapter.Fill(this.databaseDataSetMonitor.Monitor1);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetBreaking.Breaking1". При необходимости она может быть перемещена или удалена.
             this.breaking1TableAdapter.Fill(this.databaseDataSetBreaking.Breaking1);
-      
+
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPC.PC3". При необходимости она может быть перемещена или удалена.
             this.pC3TableAdapter.Fill(this.databaseDataSetPC.PC3);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPC.PC2". При необходимости она может быть перемещена или удалена.
             this.pC2TableAdapter.Fill(this.databaseDataSetPC.PC2);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetPC.PC1". При необходимости она может быть перемещена или удалена.
             this.pC1TableAdapter.Fill(this.databaseDataSetPC.PC1);
-      
+
             try
             {
                 sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\Database.mdf;Integrated Security=True");
@@ -68,188 +70,222 @@ namespace Accounting_for_refueling__printers.Forms
             comboBox8.Text = "";
             comboBox9.Text = "";
             textBox1.Text = "";
-           
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
             filter = "";
             if (checkBox1.Checked && !checkBox2.Checked)
             {
-                DateTime date = DateTime.Parse(dateTimePicker1.Text);
-                if (comboBox1.Text != "")
+                try
                 {
-                    filter += $" PC_ID = {comboBox1.Text} and ";
+                    DateTime date = DateTime.Parse(dateTimePicker1.Text);
+                    if (comboBox1.Text != "")
+                    {
+                        filter += $" PC_ID = {comboBox1.Text} and ";
+                    }
+                    if (comboBox2.Text != "")
+                    {
+                        filter += $" Кабинет = N'{comboBox2.Text}' and ";
+                    }
+                    if (comboBox3.Text != "")
+                    {
+                        filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
+                    }
+                    if (comboBox4.Text != "")
+                    {
+                        filter += $"Инв_Номер = N'{comboBox4.Text}' and";
+                    }
+                    if (comboBox5.Text != "")
+                    {
+                        filter += $"Монитор = N'{comboBox5.Text}' and ";
+                    }
+                    if (comboBox6.Text != "")
+                    {
+                        filter += $"Диск like '{comboBox6.Text}%' and ";
+
+                    }
+
+                    if (comboBox7.Text != "")
+                    {
+                        filter += $"CPU  like '{comboBox7.Text}%' and ";
+
+                    }
+                    if (comboBox8.Text != "")
+                    {
+                        filter += $"GPU like '{comboBox8.Text}%' and ";
+
+                    }
+                    if (comboBox9.Text != "")
+                    {
+                        filter += $"RAM like '{comboBox9.Text}%' and ";
+
+                    }
+                    if (textBox1.Text != "")
+                    {
+                        filter += $"Причина like '{textBox1.Text}%' and ";
+                    }
+                    filter += $" Дата = '{date.Year}.{date.Month}.{date.Day}' and ";
+                    filter = filter.Remove(filter.Length - 4);
+
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
+
+                    DataSet dataSet = new DataSet();
+                    sqlDataAdapter.Fill(dataSet);
+                    dataGridView1.DataSource = dataSet.Tables[0];
+                    PanelSelects.Visible = false;
+                    PanelDatagrid.Visible = true;
                 }
-                if (comboBox2.Text != "")
+                catch
                 {
-                    filter += $" Кабинет = N'{comboBox2.Text}' and ";
-                }
-                if (comboBox3.Text != "")
-                {
-                    filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
-                }
-                if (comboBox4.Text != "")
-                {
-                    filter += $"Инв_Номер = N'{comboBox4.Text}' and";
-                }
-                if (comboBox5.Text != "")
-                {
-                    filter += $"Монитор = N'{comboBox5.Text}' and ";
-                }
-                if (comboBox6.Text != "")
-                {
-                    filter += $"Диск like '{comboBox6.Text}%' and ";
+                    MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
 
-                if (comboBox7.Text != "")
-                {
-                    filter += $"CPU  like '{comboBox7.Text}%' and ";
-
-                }
-                if (comboBox8.Text != "")
-                {
-                    filter += $"GPU like '{comboBox8.Text}%' and ";
-
-                }
-                if (comboBox9.Text != "")
-                {
-                    filter += $"RAM like '{comboBox9.Text}%' and ";
-
-                }
-                if (textBox1.Text != "")
-                {
-                    filter += $"Причина like '{textBox1.Text}%' and ";
-                }
-                filter += $" Дата = '{date.Year}.{date.Month}.{date.Day}' and ";
-                filter = filter.Remove(filter.Length - 4);
-
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
-
-                DataSet dataSet = new DataSet();
-                sqlDataAdapter.Fill(dataSet);
-                dataGridView1.DataSource = dataSet.Tables[0];
-                PanelSelects.Visible = false;
-                PanelDatagrid.Visible = true;
             }
-            else if(!checkBox1.Checked && !checkBox2.Checked)
+
+
+
+
+
+
+
+            else if (!checkBox1.Checked && !checkBox2.Checked)
             {
-                if (comboBox1.Text != "")
+                try
                 {
-                    filter += $" PC_ID = {comboBox1.Text} and ";
-                }
-                if (comboBox2.Text != "")
-                {
-                    filter += $" Кабинет = N'{comboBox2.Text}' and ";
-                }
-                if (comboBox3.Text != "")
-                {
-                    filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
-                }
-                if (comboBox4.Text != "")
-                {
-                    filter += $"Инв_Номер = N'{comboBox4.Text}' and";
-                }
-                if (comboBox5.Text != "")
-                {
-                    filter += $"Монитор = N'{comboBox5.Text}' and ";
-                }
-                if (comboBox6.Text != "")
-                {
-                    filter += $"Диск like '{comboBox6.Text}%' and ";
+                    if (comboBox1.Text != "")
+                    {
+                        filter += $" PC_ID = {comboBox1.Text} and ";
+                    }
+                    if (comboBox2.Text != "")
+                    {
+                        filter += $" Кабинет = N'{comboBox2.Text}' and ";
+                    }
+                    if (comboBox3.Text != "")
+                    {
+                        filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
+                    }
+                    if (comboBox4.Text != "")
+                    {
+                        filter += $"Инв_Номер = N'{comboBox4.Text}' and";
+                    }
+                    if (comboBox5.Text != "")
+                    {
+                        filter += $"Монитор = N'{comboBox5.Text}' and ";
+                    }
+                    if (comboBox6.Text != "")
+                    {
+                        filter += $"Диск like '{comboBox6.Text}%' and ";
+
+                    }
+
+                    if (comboBox7.Text != "")
+                    {
+                        filter += $"CPU  like '{comboBox7.Text}%' and ";
+
+                    }
+                    if (comboBox8.Text != "")
+                    {
+                        filter += $"GPU like '{comboBox8.Text}%' and ";
+
+                    }
+                    if (comboBox9.Text != "")
+                    {
+                        filter += $"RAM like '{comboBox9.Text}%' and ";
+
+                    }
+                    if (textBox1.Text != "")
+                    {
+                        filter += $"Причина like '{textBox1.Text}%' and ";
+                    }
+
+                    filter = filter.Remove(filter.Length - 4);
+                    MessageBox.Show(filter);
+
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
+
+                    DataSet dataSet = new DataSet();
+                    sqlDataAdapter.Fill(dataSet);
+                    dataGridView1.DataSource = dataSet.Tables[0];
+                    PanelSelects.Visible = false;
+                    PanelDatagrid.Visible = true;
 
                 }
-
-                if (comboBox7.Text != "")
+                catch
                 {
-                    filter += $"CPU  like '{comboBox7.Text}%' and ";
-
+                    MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (comboBox8.Text != "")
-                {
-                    filter += $"GPU like '{comboBox8.Text}%' and ";
-
-                }
-                if (comboBox9.Text != "")
-                {
-                    filter += $"RAM like '{comboBox9.Text}%' and ";
-
-                }
-                if (textBox1.Text != "")
-                {
-                    filter += $"Причина like '{textBox1.Text}%' and ";
-                }
-
-                filter = filter.Remove(filter.Length - 4);
-                MessageBox.Show(filter);
-
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
-
-                DataSet dataSet = new DataSet();
-                sqlDataAdapter.Fill(dataSet);
-                dataGridView1.DataSource = dataSet.Tables[0];
-                PanelSelects.Visible = false;
-                PanelDatagrid.Visible = true;
             }
+
             else if (checkBox1.Checked && checkBox2.Checked)
             {
-                DateTime date = DateTime.Parse(dateTimePicker1.Text);
-                DateTime date1 = DateTime.Parse(dateTimePicker2.Text);
-                if (comboBox1.Text != "")
+                try
                 {
-                    filter += $" PC_ID = {comboBox1.Text} and ";
+                    DateTime date = DateTime.Parse(dateTimePicker1.Text);
+                    DateTime date1 = DateTime.Parse(dateTimePicker2.Text);
+                    if (comboBox1.Text != "")
+                    {
+                        filter += $" PC_ID = {comboBox1.Text} and ";
+                    }
+                    if (comboBox2.Text != "")
+                    {
+                        filter += $" Кабинет = N'{comboBox2.Text}' and ";
+                    }
+                    if (comboBox3.Text != "")
+                    {
+                        filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
+                    }
+                    if (comboBox4.Text != "")
+                    {
+                        filter += $"Инв_Номер = N'{comboBox4.Text}' and";
+                    }
+                    if (comboBox5.Text != "")
+                    {
+                        filter += $"Монитор = N'{comboBox5.Text}' and ";
+                    }
+                    if (comboBox6.Text != "")
+                    {
+                        filter += $"Диск like '{comboBox6.Text}%' and ";
+
+                    }
+
+                    if (comboBox7.Text != "")
+                    {
+                        filter += $"CPU  like '{comboBox7.Text}%' and ";
+
+                    }
+                    if (comboBox8.Text != "")
+                    {
+                        filter += $"GPU like '{comboBox8.Text}%' and ";
+
+                    }
+                    if (comboBox9.Text != "")
+                    {
+                        filter += $"RAM like '{comboBox9.Text}%' and ";
+
+                    }
+                    if (textBox1.Text != "")
+                    {
+                        filter += $"Причина like '{textBox1.Text}%' and ";
+                    }
+                    filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
+                    filter = filter.Remove(filter.Length - 4);
+
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
+                    DataSet dataSet = new DataSet();
+                    sqlDataAdapter.Fill(dataSet);
+                    dataGridView1.DataSource = dataSet.Tables[0];
+                    PanelSelects.Visible = false;
+                    PanelDatagrid.Visible = true;
                 }
-                if (comboBox2.Text != "")
+                catch
                 {
-                    filter += $" Кабинет = N'{comboBox2.Text}' and ";
-                }
-                if (comboBox3.Text != "")
-                {
-                    filter += $" ФИО_МОЛ  like N'%{comboBox3.Text}%' and ";
-                }
-                if (comboBox4.Text != "")
-                {
-                    filter += $"Инв_Номер = N'{comboBox4.Text}' and";
-                }
-                if (comboBox5.Text != "")
-                {
-                    filter += $"Монитор = N'{comboBox5.Text}' and ";
-                }
-                if (comboBox6.Text != "")
-                {
-                    filter += $"Диск like '{comboBox6.Text}%' and ";
+                    MessageBox.Show("Введите хотя бы один фильтр", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
-
-                if (comboBox7.Text != "")
-                {
-                    filter += $"CPU  like '{comboBox7.Text}%' and ";
-
-                }
-                if (comboBox8.Text != "")
-                {
-                    filter += $"GPU like '{comboBox8.Text}%' and ";
-
-                }
-                if (comboBox9.Text != "")
-                {
-                    filter += $"RAM like '{comboBox9.Text}%' and ";
-
-                }
-                if (textBox1.Text != "")
-                {
-                    filter += $"Причина like '{textBox1.Text}%' and ";
-                }
-                filter += $" Дата between '{date.Year}.{date.Month}.{date.Day}' and '{date1.Year}.{date1.Month}.{date1.Day}' and ";
-                filter = filter.Remove(filter.Length - 4);
-
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"Select Breaking_ID as 'Идентификатор', PC_ID as 'Идентификатор ПК', Дата,Кабинет,ФИО_МОЛ as 'ФИО материально ответственного лица', Монитор,Диск,CPU as 'Процессор',GPU as 'Видеокарта',RAM as 'Оперетивная память',Причина from Breaking where {filter}", sqlConnection);
-                DataSet dataSet = new DataSet();
-                sqlDataAdapter.Fill(dataSet);
-                dataGridView1.DataSource = dataSet.Tables[0];
-                PanelSelects.Visible = false;
-                PanelDatagrid.Visible = true;
             }
         }
 
@@ -287,8 +323,11 @@ namespace Accounting_for_refueling__printers.Forms
             label7.ForeColor = ThemeColor.PrimaryColor;
             label8.ForeColor = ThemeColor.PrimaryColor;
             label9.ForeColor = ThemeColor.PrimaryColor;
+            label10.ForeColor = ThemeColor.PrimaryColor;
+            label11.ForeColor = ThemeColor.PrimaryColor;
+            label12.ForeColor = ThemeColor.PrimaryColor;
 
-
+            textBox1.ForeColor = ThemeColor.PrimaryColor;
             comboBox1.ForeColor = ThemeColor.PrimaryColor;
             comboBox2.ForeColor = ThemeColor.PrimaryColor;
             comboBox3.ForeColor = ThemeColor.PrimaryColor;
@@ -318,10 +357,10 @@ namespace Accounting_for_refueling__printers.Forms
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if (PanelSelects.Visible)
+            if (PanelDatagrid.Visible)
             {
-                PanelSelects.Visible = false;
-                PanelDatagrid.Visible = true;
+                PanelSelects.Visible = true;
+                PanelDatagrid.Visible = false;
                 filter = "";
             }
         }
@@ -347,13 +386,13 @@ namespace Accounting_for_refueling__printers.Forms
                 worksheet = workbook.ActiveSheet;
                 worksheet.Name = "Exported from gridview";
                 //Fill Excel.
-                worksheet.Cells[1, 1] = $"Учёт поломок за {now.ToString("Y").ToUpper()}";
+                worksheet.Cells[1, 1] = $"Учёт поломок";
 
                 for (int i = 2; i < dataGridView1.Columns.Count + 1; i++)
                 {
                     worksheet.Cells[2, i - 1] = dataGridView1.Columns[i - 1].HeaderText;
                 }
-              
+             
 
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
@@ -361,7 +400,7 @@ namespace Accounting_for_refueling__printers.Forms
                     {
 
 
-                        if (j == 1)
+                        if (j == 2)
                         {
                             worksheet.Cells[i + 3, j] = dataGridView1.Rows[i].Cells[j].Value.ToString().Remove(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 8);
 
@@ -380,10 +419,9 @@ namespace Accounting_for_refueling__printers.Forms
 
                 //Format export in Excel.
 
-
-                ((Range)worksheet.get_Range($"A1:I1")).Merge();
-                ((Range)worksheet.get_Range($"A1:I{dataGridView1.Rows.Count + 2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
-                ((Range)worksheet.get_Range($"A1:I2")).Cells.Font.FontStyle = "Bold";
+                ((Range)worksheet.get_Range($"A1:J1")).Merge();
+                ((Range)worksheet.get_Range($"A1:J{dataGridView1.Rows.Count + 2}")).Cells.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ((Range)worksheet.get_Range($"A1:J2")).Cells.Font.FontStyle = "Bold";
                 worksheet.Cells.Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 worksheet.Cells.Font.Name = "Arial";
                 worksheet.Cells.Font.Size = 10;
@@ -400,6 +438,8 @@ namespace Accounting_for_refueling__printers.Forms
             }
 
         }
+        
+    
 
     }
 }

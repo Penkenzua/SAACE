@@ -23,6 +23,7 @@ namespace Accounting_for_refueling__printers.Forms
        
         private void FormEditAccount_Load(object sender, EventArgs e)
         {
+            LoadTheme();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSetAcccount.Account". При необходимости она может быть перемещена или удалена.
             this.accountTableAdapter.Fill(this.databaseDataSetAcccount.Account);
             //LoadTheme();
@@ -37,50 +38,90 @@ namespace Accounting_for_refueling__printers.Forms
                 sqlConnection.Open();
             }
         }
-        private void comboBox1_TextUpdate(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlCommand Login = new SqlCommand($"Select LoginUser from Account where Account_ID = {comboBox1.Text}", sqlConnection);
-                SqlCommand Password = new SqlCommand($"Select PasswordUser from Account where Account_ID = {comboBox1.Text}", sqlConnection);
-                if (Login.ExecuteScalar()!=null && Password.ExecuteScalar()!=null )
-                {
-                textBox1.Text = Login.ExecuteScalar().ToString();
-                textBox2.Text = Password.ExecuteScalar().ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Такой записи нету");
-                }
-                
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
         
-        }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Select Account_ID  form Account where Account_ID = {comboBox1.Text}", sqlConnection);
-            if (sqlCommand.ExecuteScalar()!=null && textBox1.Text!="" && textBox2.Text!="")
+            SqlCommand sqlCommand = new SqlCommand($"Select Account_ID  from Account where Account_ID = {textBox1.Text}", sqlConnection);
+            if (textBox1.Text!="" &&sqlCommand.ExecuteScalar()!= null)
             {
-                SqlCommand Update = new SqlCommand($"Update Account SET " +
-                   $"LoginUser = N'{textBox1.Text}'," +
-                   $"PasswordUser = N'{textBox2.Text}' " +
-                   $" where Cartridge_ID = {comboBox1.Text}", sqlConnection);
-                if (Update.ExecuteNonQuery() == 1)
+
+
+                if (textBox2.Text != "" && textBox3.Text != "")
                 {
-                    MessageBox.Show("Вставка успешно выполнена");
-                    FormMainMenu.SelfRef.UpdateAccount();
+                    SqlCommand Update = new SqlCommand($"Update Account SET " +
+                       $"LoginUser = N'{textBox2.Text}'," +
+                       $"PasswordUser = N'{textBox3.Text}' " +
+                       $" where Cartridge_ID = {textBox1.Text}", sqlConnection);
+                    if (Update.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Вставка успешно выполнена");
+                        FormMainMenu.SelfRef.UpdateAccount();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Введены неверные данные");
+                        Update.Cancel();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Введены неверные данные");
-                    Update.Cancel();
+                    MessageBox.Show("Заполните все поля", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
                 }
+            }
+            else
+            {
+            MessageBox.Show("Такой записи нету или не введён идентификатор", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+           
+
+        }
+        void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btns.BackColor = ThemeColor.PrimaryColor;
+                    btns.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+                      
+            textBox1.ForeColor = ThemeColor.PrimaryColor;
+            textBox2.ForeColor = ThemeColor.PrimaryColor;
+            textBox3.ForeColor = ThemeColor.PrimaryColor;
+
+
+ 
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand($"Select Account_ID from Account where Account_ID = {textBox1.Text}", sqlConnection);
+            if (textBox1.Text != "" && command.ExecuteScalar() != null)
+            {
+                SqlCommand Edit1 = new SqlCommand($"Select LoginUser from Account where Account_ID ={textBox1.Text}", sqlConnection);
+                SqlCommand Edit2 = new SqlCommand($"Select PasswordUser from Account where Account_ID ={textBox1.Text}", sqlConnection);
+
+                textBox2.Text = Edit1.ExecuteScalar().ToString();
+                textBox3.Text = Edit2.ExecuteScalar().ToString();
+
+            }
+            else
+            {
+                MessageBox.Show("Запись таким ID не найдено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+
+
             }
         }
     }

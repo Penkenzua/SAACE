@@ -102,6 +102,7 @@ namespace Accounting_for_refueling__printers
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTools.SuspendLayout();
             this.panelAccountSubMenu.SuspendLayout();
@@ -132,7 +133,7 @@ namespace Accounting_for_refueling__printers
             this.panelMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(185, 481);
+            this.panelMenu.Size = new System.Drawing.Size(185, 511);
             this.panelMenu.TabIndex = 0;
             // 
             // panelTools
@@ -164,7 +165,7 @@ namespace Accounting_for_refueling__printers
             this.panelTools.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTools.Location = new System.Drawing.Point(0, 74);
             this.panelTools.Name = "panelTools";
-            this.panelTools.Size = new System.Drawing.Size(185, 407);
+            this.panelTools.Size = new System.Drawing.Size(185, 437);
             this.panelTools.TabIndex = 14;
             // 
             // btnInfo
@@ -1095,6 +1096,7 @@ namespace Accounting_for_refueling__printers
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.btnPrint);
             this.panelTitleBar.Controls.Add(this.btnDelete);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
@@ -1104,7 +1106,7 @@ namespace Accounting_for_refueling__printers
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(185, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(799, 74);
+            this.panelTitleBar.Size = new System.Drawing.Size(979, 74);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -1127,7 +1129,7 @@ namespace Accounting_for_refueling__printers
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
             this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinimize.Location = new System.Drawing.Point(694, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(874, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(26, 26);
             this.btnMinimize.TabIndex = 4;
@@ -1140,7 +1142,7 @@ namespace Accounting_for_refueling__printers
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(730, 3);
+            this.btnMaximize.Location = new System.Drawing.Point(910, 3);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(26, 26);
             this.btnMaximize.TabIndex = 3;
@@ -1153,7 +1155,7 @@ namespace Accounting_for_refueling__printers
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(766, 3);
+            this.btnClose.Location = new System.Drawing.Point(946, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(26, 26);
             this.btnClose.TabIndex = 2;
@@ -1180,7 +1182,7 @@ namespace Accounting_for_refueling__printers
             this.lblTittle.AutoSize = true;
             this.lblTittle.Font = new System.Drawing.Font("Roboto Cn", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTittle.ForeColor = System.Drawing.Color.White;
-            this.lblTittle.Location = new System.Drawing.Point(306, 26);
+            this.lblTittle.Location = new System.Drawing.Point(396, 26);
             this.lblTittle.Name = "lblTittle";
             this.lblTittle.Size = new System.Drawing.Size(59, 24);
             this.lblTittle.TabIndex = 0;
@@ -1193,7 +1195,7 @@ namespace Accounting_for_refueling__printers
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(185, 74);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(799, 407);
+            this.panelDesktopPane.Size = new System.Drawing.Size(979, 437);
             this.panelDesktopPane.TabIndex = 2;
             // 
             // dataGridView1
@@ -1242,11 +1244,10 @@ namespace Accounting_for_refueling__printers
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 60;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(799, 407);
+            this.dataGridView1.Size = new System.Drawing.Size(979, 437);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -1256,25 +1257,42 @@ namespace Accounting_for_refueling__printers
             this.pictureBox2.Image = global::Accounting_for_refueling__printers.Resource.LogoMain;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(799, 407);
+            this.pictureBox2.Size = new System.Drawing.Size(979, 437);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(76, 21);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(198, 33);
+            this.btnPrint.TabIndex = 3;
+            this.btnPrint.Text = "Экспорт в Excel всей таблицы";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Visible = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // FormMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(984, 481);
+            this.ClientSize = new System.Drawing.Size(1164, 511);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1000, 520);
+            this.MinimumSize = new System.Drawing.Size(1180, 550);
             this.Name = "FormMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormMainMenu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTools.ResumeLayout(false);
@@ -1366,10 +1384,11 @@ namespace Accounting_for_refueling__printers
         private System.Windows.Forms.Button btnEditAccount;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Button btnControlAccount;
-        private System.Windows.Forms.Panel PanelBreakingSubMenu;
         private System.Windows.Forms.Button btnSearchBreaking;
-        private System.Windows.Forms.Button btnBreaking;
         public System.Windows.Forms.Button btnDelete;
+        public System.Windows.Forms.Panel PanelBreakingSubMenu;
+        private System.Windows.Forms.Button btnBreaking;
+        private System.Windows.Forms.Button btnPrint;
     }
 }
 

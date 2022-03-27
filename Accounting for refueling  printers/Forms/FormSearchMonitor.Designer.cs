@@ -51,11 +51,11 @@ namespace Accounting_for_refueling__printers.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.monitor1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetMonitorTableAdapters.Monitor1TableAdapter();
             this.monitor2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetMonitorTableAdapters.Monitor2TableAdapter();
             this.monitor3TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetMonitorTableAdapters.Monitor3TableAdapter();
             this.monitor4TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetMonitorTableAdapters.Monitor4TableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monitor4BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetMonitor)).BeginInit();
@@ -196,9 +196,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.label1.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(231, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
+            this.label1.Size = new System.Drawing.Size(84, 19);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Инв.Номер:";
+            this.label1.Text = "Инв.номер:";
             // 
             // btnSearch
             // 
@@ -222,22 +222,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.panel2.Size = new System.Drawing.Size(800, 450);
             this.panel2.TabIndex = 25;
             this.panel2.Visible = false;
-            // 
-            // monitor1TableAdapter
-            // 
-            this.monitor1TableAdapter.ClearBeforeFill = true;
-            // 
-            // monitor2TableAdapter
-            // 
-            this.monitor2TableAdapter.ClearBeforeFill = true;
-            // 
-            // monitor3TableAdapter
-            // 
-            this.monitor3TableAdapter.ClearBeforeFill = true;
-            // 
-            // monitor4TableAdapter
-            // 
-            this.monitor4TableAdapter.ClearBeforeFill = true;
             // 
             // dataGridView1
             // 
@@ -291,6 +275,22 @@ namespace Accounting_for_refueling__printers.Forms
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // monitor1TableAdapter
+            // 
+            this.monitor1TableAdapter.ClearBeforeFill = true;
+            // 
+            // monitor2TableAdapter
+            // 
+            this.monitor2TableAdapter.ClearBeforeFill = true;
+            // 
+            // monitor3TableAdapter
+            // 
+            this.monitor3TableAdapter.ClearBeforeFill = true;
+            // 
+            // monitor4TableAdapter
+            // 
+            this.monitor4TableAdapter.ClearBeforeFill = true;
             // 
             // FormSearchMonitor
             // 

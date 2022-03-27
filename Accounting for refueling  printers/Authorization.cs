@@ -47,6 +47,7 @@ namespace Accounting_for_refueling__printers
 
         void InputOnSystem(string Value)
         {
+            this.TopMost = false;
             this.Hide();
             AcessRight.Acess = int.Parse(Value);
             FormMainMenu formMainMenu = new FormMainMenu();
@@ -73,7 +74,7 @@ namespace Accounting_for_refueling__printers
             }
             else
             {
-                MessageBox.Show("Неверный логин или пароль");
+                MessageBox.Show("Неверный логин или пароль","Предупреждение",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
             }
            
         }

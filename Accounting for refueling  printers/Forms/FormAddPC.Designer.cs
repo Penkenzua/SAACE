@@ -55,8 +55,9 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.gPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gPU2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetGPU = new Accounting_for_refueling__printers.DatabaseDataSetGPU();
+            this.gPU2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.rAM1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetRAM = new Accounting_for_refueling__printers.DatabaseDataSetRAM();
@@ -67,7 +68,6 @@ namespace Accounting_for_refueling__printers.Forms
             this.cPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetCPUTableAdapters.CPU2TableAdapter();
             this.gPU2TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetGPUTableAdapters.GPU2TableAdapter();
             this.rAM1TableAdapter = new Accounting_for_refueling__printers.DatabaseDataSetRAMTableAdapters.RAM1TableAdapter();
-            this.gPU2BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.monitor1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetMonitor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagedevice1BindingSource)).BeginInit();
@@ -76,11 +76,11 @@ namespace Accounting_for_refueling__printers.Forms
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetOC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPU2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAM1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -91,6 +91,7 @@ namespace Accounting_for_refueling__printers.Forms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(151, 27);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
             // 
@@ -316,17 +317,21 @@ namespace Accounting_for_refueling__printers.Forms
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(151, 27);
             this.comboBox5.TabIndex = 20;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
-            // gPU2BindingSource
+            // gPU2BindingSource1
             // 
-            this.gPU2BindingSource.DataMember = "GPU2";
-            this.gPU2BindingSource.DataSource = this.databaseDataSetGPU;
+            this.gPU2BindingSource1.DataMember = "GPU2";
+            this.gPU2BindingSource1.DataSource = this.databaseDataSetGPU;
             // 
             // databaseDataSetGPU
             // 
             this.databaseDataSetGPU.DataSetName = "DatabaseDataSetGPU";
             this.databaseDataSetGPU.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gPU2BindingSource
+            // 
+            this.gPU2BindingSource.DataMember = "GPU2";
+            this.gPU2BindingSource.DataSource = this.databaseDataSetGPU;
             // 
             // comboBox6
             // 
@@ -386,11 +391,6 @@ namespace Accounting_for_refueling__printers.Forms
             // 
             this.rAM1TableAdapter.ClearBeforeFill = true;
             // 
-            // gPU2BindingSource1
-            // 
-            this.gPU2BindingSource1.DataMember = "GPU2";
-            this.gPU2BindingSource1.DataSource = this.databaseDataSetGPU;
-            // 
             // FormAddPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,11 +426,11 @@ namespace Accounting_for_refueling__printers.Forms
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetOC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPU2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetCPU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetGPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rAM1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetRAM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gPU2BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
